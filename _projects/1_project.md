@@ -1,7 +1,7 @@
 ---
 layout: page
-title: project 1
-description: a project with a background image
+title: 악성코드 분석 프로젝트
+description: 2023년 1학기 S! 프로젝트
 img: assets/img/malware_project.jpg
 importance: 1
 category: work
@@ -15,7 +15,7 @@ To give your project a background in the portfolio page, just add the img tag to
 
     ---
     layout: page
-    title: project
+    title: adsf
     description: a project with a background image
     img: /assets/img/malware_project.jpg
     ---

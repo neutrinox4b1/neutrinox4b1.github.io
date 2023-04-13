@@ -89,6 +89,8 @@ blockquote {
 
   .card-title {
     color: var(--global-text-color);
+    font-size: large;
+    font-weight: bold;
   }
 
   .card-item {
@@ -743,6 +745,9 @@ html.transition *:after {
 // Extra Markdown style (post Customization)
 .post {
   font-weight: normal;
+  .post-title {
+    font-weight: 500;
+  }
   .post-meta {
     color: var(--global-text-color-light);
     font-size: 0.875rem;
