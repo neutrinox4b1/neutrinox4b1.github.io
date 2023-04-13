@@ -21,7 +21,10 @@
   type: time_table
   contents:
     - title: Contribution 🫡
-    - title: Security Factorial
+    - title: <a href="https://42seoul.kr/seoul42/main/view">42 Seoul</a>
+      institution: Cadet. <a href="https://profile.intra.42.fr/users/jelee2">jelee2</a>
+      year: 2023-NOW
+    - title: <a href="https://sites.google.com/site/ssfactorial">Security Factorial</a>
       institution: Information Security, Sejong Univ.
       year: 2022-NOW
     - title: License/Certificate 🪪
