@@ -1,12 +1,5 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - neutrinox4b1
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - neutrinox4b1/42-libft
