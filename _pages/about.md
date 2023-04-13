@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: <a href='https://sites.google.com/site/ssfactorial'>Security Factorial</a> of Sejong Univ.
 
 profile:
   align: right
