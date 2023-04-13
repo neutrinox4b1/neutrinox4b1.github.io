@@ -19,7 +19,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hello World!
+`Hello World!`
 
 My name is Jeongmin Lee and I'm majoring in Information Security🔒 at Sejong University.
 
