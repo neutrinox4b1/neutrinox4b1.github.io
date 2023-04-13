@@ -392,6 +392,7 @@ footer.sticky-bottom {
   h1 {
     color: var(--global-theme-color);
     font-size: 5rem;
+    // font-family: serif;
   }
 }
 
@@ -741,6 +742,7 @@ html.transition *:after {
 
 // Extra Markdown style (post Customization)
 .post {
+  font-weight: normal;
   .post-meta {
     color: var(--global-text-color-light);
     font-size: 0.875rem;
