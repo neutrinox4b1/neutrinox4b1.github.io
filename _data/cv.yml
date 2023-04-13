@@ -50,10 +50,10 @@
   contents:
     - title: 
       year: 2023
-    - title: <a href="/blog/2021/distill/">DAM CTF</a>
+    - title: <a href="#">DAM CTF</a>
       description: 16th (Team. Security Factorial)
-    - title: <a href="/blog/2021/distill/">RITSEC CTF</a>
-    - title: <a href="/blog/2021/distill/">Sejong Hacktheon 예선</a>
+    - title: <a href="/blog/2023/ritsec/">RITSEC CTF</a>
+    - title: <a href="#">Sejong Hacktheon 예선</a>
       description: 41th (Team. S!)
 
 - title: Academic Interests
