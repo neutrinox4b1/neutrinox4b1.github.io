@@ -677,6 +677,9 @@ html.transition *:after {
   transition-delay: 0 !important;
 }
 
+.post {
+  font-weight: normal;
+}
 .post .post-meta {
   color: var(--global-text-color-light);
   font-size: 0.875rem;
