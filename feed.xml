@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-04-16T12:42:11+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-04-16T13:16:55+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">Crack-the-key</title><link href="https://neutrinox4b1.github.io/blog/2023/crack_the_key/" rel="alternate" type="text/html" title="Crack-the-key" /><published>2023-04-08T00:00:00+00:00</published><updated>2023-04-08T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/crack_the_key</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/crack_the_key/"><![CDATA[<h2 id="background">Background</h2>
 <hr />
 <blockquote>
@@ -116,6 +116,11 @@
   <li><a href="../crack_the_key">crack-the-key</a></li>
 </ul>
 
+<p><strong><em>misc(unsolved)</em></strong></p>
+<ul>
+  <li><a href="../de-compressed">de-compressed</a></li>
+</ul>
+
 <h2 id="about">About</h2>
 <ul>
   <li>Starts: 토요일, 08 4 2023, 09:00 KST</li>
@@ -127,117 +132,7 @@
 </ul>
 
 <h2 id="overview">Overview</h2>
-<p>16th (Team. Security Factorial)</p>]]></content><author><name>neutrinox4b1</name></author><category term="crypto" /><category term="misc" /><category term="CTFs" /><summary type="html"><![CDATA[Team. Security Factorial]]></summary></entry><entry><title type="html">Crack_the_key copy</title><link href="https://neutrinox4b1.github.io/blog/2023/crack_the_key-copy/" rel="alternate" type="text/html" title="Crack_the_key copy" /><published>2023-04-08T00:00:00+00:00</published><updated>2023-04-08T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/crack_the_key%20copy</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/crack_the_key-copy/"><![CDATA[<h2 id="background">Background</h2>
-<hr />
-<blockquote>
-  <p>I have used an RSA key to encrypt the flag. Can you find a way to reconstruct the private key using the public key? (Check out factordb.com to help with brute forcing)</p>
-</blockquote>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
-</span><span class="kn">from</span> <span class="n">cryptography.hazmat.primitives.asymmetric</span> <span class="kn">import</span> <span class="n">rsa</span><span class="p">,</span> <span class="n">padding</span>
-<span class="kn">from</span> <span class="n">cryptography.hazmat.primitives</span> <span class="kn">import</span> <span class="n">serialization</span>
-<span class="kn">from</span> <span class="n">cryptography.hazmat.backends</span> <span class="kn">import</span> <span class="n">default_backend</span>
-<span class="kn">from</span> <span class="n">base64</span> <span class="kn">import</span> <span class="n">b64encode</span><span class="p">,</span> <span class="n">b64decode</span>
-<span class="kn">from</span> <span class="n">flag</span> <span class="kn">import</span> <span class="n">FLAG</span>
-
-<span class="c1"># public key file name
-</span><span class="n">PUB_FILE</span> <span class="o">=</span> <span class="s">'pub.pem'</span>
-<span class="n">FLAG_FILE</span> <span class="o">=</span> <span class="s">'flag.enc'</span>
-
-
-<span class="c1"># convert key to pem format
-</span><span class="k">def</span> <span class="nf">get_pem</span><span class="p">(</span><span class="n">key</span><span class="p">:</span><span class="n">rsa</span><span class="p">.</span><span class="n">RSAPrivateKey</span><span class="o">|</span><span class="n">rsa</span><span class="p">.</span><span class="n">RSAPublicKey</span><span class="p">):</span>
-    <span class="c1"># check the type of key, and create pem is respective format
-</span>    <span class="k">if</span> <span class="nf">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">rsa</span><span class="p">.</span><span class="n">RSAPublicKey</span><span class="p">):</span>
-        <span class="n">pem</span> <span class="o">=</span> <span class="n">key</span><span class="p">.</span><span class="nf">public_bytes</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="n">serialization</span><span class="p">.</span><span class="n">Encoding</span><span class="p">.</span><span class="n">PEM</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">serialization</span><span class="p">.</span><span class="n">PublicFormat</span><span class="p">.</span><span class="n">SubjectPublicKeyInfo</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">pem</span> <span class="o">=</span> <span class="n">key</span><span class="p">.</span><span class="nf">private_bytes</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="n">serialization</span><span class="p">.</span><span class="n">Encoding</span><span class="p">.</span><span class="n">PEM</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">serialization</span><span class="p">.</span><span class="n">PrivateFormat</span><span class="p">.</span><span class="n">PKCS8</span><span class="p">,</span> <span class="n">encryption_algorithm</span><span class="o">=</span><span class="n">serialization</span><span class="p">.</span><span class="nc">NoEncryption</span><span class="p">())</span>
-
-    <span class="c1"># return the key in pem format
-</span>    <span class="k">return</span> <span class="n">pem</span>
-
-
-<span class="c1"># loads in a public key that is saved in PEM format
-</span><span class="k">def</span> <span class="nf">load_public_key</span><span class="p">():</span>
-    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">PUB_FILE</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">pubf</span><span class="p">:</span>
-        <span class="n">pubkey</span> <span class="o">=</span> <span class="n">serialization</span><span class="p">.</span><span class="nf">load_pem_public_key</span><span class="p">(</span><span class="n">pubf</span><span class="p">.</span><span class="nf">read</span><span class="p">(),</span> <span class="n">backend</span><span class="o">=</span><span class="nf">default_backend</span><span class="p">())</span>
-    <span class="k">return</span> <span class="n">pubkey</span>
-
-
-<span class="c1"># encrypts a plaintext with the provided public key and returns the ciphertext encoded in base 64
-</span><span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">pubkey</span><span class="p">:</span><span class="n">rsa</span><span class="p">.</span><span class="n">RSAPublicKey</span><span class="p">,</span> <span class="n">ptxt</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="c1"># encrypt the flag using the public key
-</span>    <span class="n">ctxt</span> <span class="o">=</span> <span class="n">pubkey</span><span class="p">.</span><span class="nf">encrypt</span><span class="p">(</span><span class="n">ptxt</span><span class="p">.</span><span class="nf">encode</span><span class="p">(),</span> <span class="n">padding</span><span class="p">.</span><span class="nc">PKCS1v15</span><span class="p">())</span>
-
-    <span class="c1"># return the encrypted flag in base 64
-</span>    <span class="k">return</span> <span class="nf">b64encode</span><span class="p">(</span><span class="n">ctxt</span><span class="p">).</span><span class="nf">decode</span><span class="p">()</span>
-
-
-<span class="c1"># decrypts a ciphertext (encoded to base 64) with the provided private key and returns the decrypted string
-</span><span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">privkey</span><span class="p">:</span><span class="n">rsa</span><span class="p">.</span><span class="n">RSAPrivateKey</span><span class="p">,</span> <span class="n">ctxt</span><span class="p">:</span><span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="c1"># decode the ciphertext from base 64 and encrypt
-</span>    <span class="n">ptxt</span> <span class="o">=</span> <span class="n">privkey</span><span class="p">.</span><span class="nf">decrypt</span><span class="p">(</span><span class="nf">b64decode</span><span class="p">(</span><span class="n">ctxt</span><span class="p">),</span> <span class="n">padding</span><span class="p">.</span><span class="nc">PKCS1v15</span><span class="p">())</span>
-
-    <span class="c1"># return the decrypted string
-</span>    <span class="k">return</span> <span class="n">ptxt</span><span class="p">.</span><span class="nf">decode</span><span class="p">()</span>
-
-
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
-    <span class="c1"># Load in the key from PEM file
-</span>    <span class="n">pub_key</span> <span class="o">=</span> <span class="nf">load_public_key</span><span class="p">()</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">pub_key</span><span class="p">)</span>
-
-    <span class="c1"># save public key in PEM format to be printed out
-</span>    <span class="n">pub_key_pem</span> <span class="o">=</span> <span class="nf">get_pem</span><span class="p">(</span><span class="n">pub_key</span><span class="p">).</span><span class="nf">decode</span><span class="p">()</span>
-
-    <span class="c1"># encrypt the flag using the public key
-</span>    <span class="n">enc_flag</span> <span class="o">=</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">pub_key</span><span class="p">,</span> <span class="n">FLAG</span><span class="p">)</span>
-
-    <span class="c1"># write encrypted flag to file
-</span>    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="s">'flag.enc'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">enc_flag</span><span class="p">)</span>
-</code></pre></div></div>
-<p>문제 파일은 다음과 같다.
-<br />
-<br />
-<br /></p>
-
-<h2 id="solution">Solution</h2>
-<hr />
-<p>pub.pem을 열어보니 키의 길이가 그렇게 길지가 않았다. 문제 내용을 통해서 충분히 소인수분해 가능하리라 생각된다. pem파일을 어떻게 다루는지 몰랐지만 super_securt_rsa.py 파일을 통해서 사용법을 익히고</p>
-
-<p>cryptography.hazmat.primitives 모듈에 있는 함수들을 사용하여 직렬화 된 키를 역직렬화하고 n과 e의 값을 알아낸다</p>
-
-<p>factordb에서 n을 소인수분해하여 p와 q를 알아내고 phi값을 구한다.</p>
-
-<p>phi값을 통해 비밀키 d를 계산하고, flag.enc 파일을 비밀키로 복호화한다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">cryptography.hazmat.primitives</span> <span class="kn">import</span> <span class="n">serialization</span>
-<span class="kn">from</span> <span class="n">cryptography.hazmat.primitives.asymmetric</span> <span class="kn">import</span> <span class="n">rsa</span><span class="p">,</span> <span class="n">padding</span>
-<span class="kn">from</span> <span class="n">cryptography.hazmat.backends</span> <span class="kn">import</span> <span class="n">default_backend</span>
-<span class="kn">from</span> <span class="n">base64</span> <span class="kn">import</span> <span class="n">b64decode</span><span class="p">,</span> <span class="n">b64encode</span>
-<span class="kn">from</span> <span class="n">sympy.ntheory.factor_</span> <span class="kn">import</span> <span class="n">totient</span>
-<span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">PUB_FILE</span> <span class="o">=</span> <span class="s">'pub.pem'</span>
-<span class="n">FLAG_FILE</span> <span class="o">=</span> <span class="s">'flag.enc'</span>
-
-<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">PUB_FILE</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">pubf</span><span class="p">:</span>
-    <span class="n">pub_key</span> <span class="o">=</span> <span class="n">serialization</span><span class="p">.</span><span class="nf">load_pem_public_key</span><span class="p">(</span><span class="n">pubf</span><span class="p">.</span><span class="nf">read</span><span class="p">(),</span> <span class="n">backend</span><span class="o">=</span><span class="nf">default_backend</span><span class="p">())</span>
-<span class="n">n</span> <span class="o">=</span> <span class="n">pub_key</span><span class="p">.</span><span class="nf">public_numbers</span><span class="p">().</span><span class="n">n</span>
-<span class="n">e</span> <span class="o">=</span> <span class="n">pub_key</span><span class="p">.</span><span class="nf">public_numbers</span><span class="p">().</span><span class="n">e</span>
-
-<span class="n">p</span> <span class="o">=</span> <span class="mi">106824314365456746562761668584927045312727977773444260463553547734415788806571</span>
-<span class="n">q</span> <span class="o">=</span> <span class="mi">109380489566403719014973591337211389488057388775161611283670009403393352513149</span>
-
-<span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">d</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
-<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">FLAG_FILE</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">ff</span><span class="p">:</span>
-    <span class="n">enc_flag</span> <span class="o">=</span> <span class="n">ff</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
-<span class="n">flag</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="nf">bytes_to_long</span><span class="p">(</span><span class="nf">b64decode</span><span class="p">(</span><span class="n">enc_flag</span><span class="p">)),</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">long_to_bytes</span><span class="p">(</span><span class="n">flag</span><span class="p">))</span>
-</code></pre></div></div>
-<p><img width="100%" alt="Untitled" src="https://user-images.githubusercontent.com/101745344/231911605-dc628115-11bc-4db2-a06e-4f0bd6a57c9d.png" /></p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[DAM CTF 2023]]></summary></entry><entry><title type="html">A Fine Cipher</title><link href="https://neutrinox4b1.github.io/blog/2023/A_Fine_Cipher/" rel="alternate" type="text/html" title="A Fine Cipher" /><published>2023-04-01T00:00:00+00:00</published><updated>2023-04-01T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/A_Fine_Cipher</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/A_Fine_Cipher/"><![CDATA[<h2 id="background">Background</h2>
+<p>16th (Team. Security Factorial)</p>]]></content><author><name>neutrinox4b1</name></author><category term="crypto" /><category term="misc" /><category term="CTFs" /><summary type="html"><![CDATA[Team. Security Factorial]]></summary></entry><entry><title type="html">de-compressed</title><link href="https://neutrinox4b1.github.io/blog/2023/crack_the_key-copy/" rel="alternate" type="text/html" title="de-compressed" /><published>2023-04-08T00:00:00+00:00</published><updated>2023-04-08T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/crack_the_key%20copy</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/crack_the_key-copy/"><![CDATA[]]></content><author><name></name></author><category term="misc" /><summary type="html"><![CDATA[DAM CTF 2023]]></summary></entry><entry><title type="html">A Fine Cipher</title><link href="https://neutrinox4b1.github.io/blog/2023/A_Fine_Cipher/" rel="alternate" type="text/html" title="A Fine Cipher" /><published>2023-04-01T00:00:00+00:00</published><updated>2023-04-01T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/A_Fine_Cipher</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/A_Fine_Cipher/"><![CDATA[<h2 id="background">Background</h2>
 <hr />
 <p>암호문이 주어진다.</p>
 <blockquote>
