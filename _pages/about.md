@@ -25,4 +25,5 @@ My name is Jeongmin Lee and I'm majoring in Information Security🔒 at Sejong U
 
 I am interested in System Hacking, Cryptography, and next-generation security. I'm looking for a dream, but I definitely wanna be a awesome hacker. 🙃
 
-For more information, see CV and Social icons. 🙂
+For more information, see CV and Social icons. 🙂   
+Here is my other [blog](https://thfist-1071.tistory.com).
