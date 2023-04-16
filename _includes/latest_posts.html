@@ -10,13 +10,15 @@
               {% else %}
               {% assign latest_posts_limit = latest_posts_size %}
               {% endif %}
-              {% for item in latest_posts limit: latest_posts_limit %}
+              {% for item in latest_posts limit: latest_posts_size %}
+                {% if item.layout != 'post' %}
                 <tr>
                   <th scope="row">{{ item.date | date: "%b %-d, %Y" }}</th>
                   <td>
                     <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
                   </td>
                 </tr>
+                {% endif %}
               {%- endfor %}
               </table>
             </div>
