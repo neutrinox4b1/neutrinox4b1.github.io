@@ -32,29 +32,27 @@
       institution: 한국정보통신자격협회 (ICQA)
       year: 2022
 
-- title: Honors and Awards
+- title: Honors and Awards 🏆
   type: time_table
   contents:
-    - title: Awards 🏆
     # - year: 123
     #   items: 
     #     - Nobel Prize in Physics 
     #     - Matteucci Medal
-    - title: Speaker 🎤
     # - year: 2029
     #   items: 
     #     - Max Planck Medal
 
-- title: CTFs
+- title: Speaker 🎤
   type: time_table
   contents:
-    - title: 
-      year: 2023
-    - title: <a href="#">DAM CTF</a>
-      description: 16th (Team. Security Factorial)
-    - title: <a href="/blog/2023/ritsec/">RITSEC CTF</a>
-    - title: <a href="#">Sejong Hacktheon 예선</a>
-      description: 41th (Team. S!)
+    # - title: 
+    #   year: 2023
+    # - title: <a href="#">DAM CTF</a>
+    #   description: 16th (Team. Security Factorial)
+    # - title: <a href="/blog/2023/ritsec/">RITSEC CTF</a>
+    # - title: <a href="#">Sejong Hacktheon 예선</a>
+    #   description: 41th (Team. S!)
 
 - title: Academic Interests
   type: nested_list
