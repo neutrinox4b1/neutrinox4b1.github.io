@@ -1,5 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-04-16T16:48:26+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-</subtitle><entry><title type="html">Crack-the-key</title><link href="https://neutrinox4b1.github.io/blog/2023/crack_the_key/" rel="alternate" type="text/html" title="Crack-the-key" /><published>2023-04-08T00:00:00+00:00</published><updated>2023-04-08T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/crack_the_key</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/crack_the_key/"><![CDATA[<h2 id="background">Background</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-04-17T11:43:13+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+</subtitle><entry><title type="html">fastrology - new moon</title><link href="https://neutrinox4b1.github.io/blog/2023/fastrology/" rel="alternate" type="text/html" title="fastrology - new moon" /><published>2023-04-15T00:00:00+00:00</published><updated>2023-04-15T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/fastrology</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/fastrology/"><![CDATA[<h2 id="background">Background</h2>
+<hr />]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Plaid CTF 2023]]></summary></entry><entry><title type="html">Plaid CTF 2023</title><link href="https://neutrinox4b1.github.io/blog/2023/plaid/" rel="alternate" type="text/html" title="Plaid CTF 2023" /><published>2023-04-15T00:00:00+00:00</published><updated>2023-04-15T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/plaid</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/plaid/"><![CDATA[<p><img src="https://pbs.twimg.com/media/Fs6fQSVXsAYTgF4?format=jpg&amp;name=4096x4096" alt="untitled" width="100%" height="100%" /></p>
+<h2 id="writeups">Writeups</h2>
+<p><strong><em>crypto (unsolved)</em></strong></p>
+<ul>
+  <li><a href="../fastrology">fastrology - new moon</a></li>
+</ul>
+
+<h2 id="about">About</h2>
+<ul>
+  <li>Starts: 토요일, 15 4 2023, 06:00 KST</li>
+  <li>Ends: 월요일, 17 4 2023, 06:00 KST</li>
+  <li>On-line</li>
+  <li>Format: Jeopardy</li>
+  <li>Rating weight: 100.0</li>
+</ul>
+
+<h2 id="overview">Overview</h2>
+
+<p><img width="100%" alt="image" src="https://user-images.githubusercontent.com/101745344/232471147-8dc67a62-b184-4942-adff-a2ee4110c69b.png" /></p>
+
+<p>155th (Team. Security Factorial)</p>]]></content><author><name>neutrinox4b1</name></author><category term="crypto" /><category term="CTFs" /><summary type="html"><![CDATA[Team. Security Factorial]]></summary></entry><entry><title type="html">Crack-the-key</title><link href="https://neutrinox4b1.github.io/blog/2023/crack_the_key/" rel="alternate" type="text/html" title="Crack-the-key" /><published>2023-04-08T00:00:00+00:00</published><updated>2023-04-08T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/crack_the_key</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/crack_the_key/"><![CDATA[<h2 id="background">Background</h2>
 <hr />
 <blockquote>
   <p>I have used an RSA key to encrypt the flag. Can you find a way to reconstruct the private key using the public key? (Check out factordb.com to help with brute forcing)</p>
@@ -116,7 +137,7 @@
   <li><a href="../crack_the_key">crack-the-key</a></li>
 </ul>
 
-<p><strong><em>misc(unsolved)</em></strong></p>
+<p><strong><em>misc (unsolved)</em></strong></p>
 <ul>
   <li><a href="../de-compressed">de-compressed</a></li>
 </ul>
@@ -132,7 +153,105 @@
 </ul>
 
 <h2 id="overview">Overview</h2>
-<p>16th (Team. Security Factorial)</p>]]></content><author><name>neutrinox4b1</name></author><category term="crypto" /><category term="misc" /><category term="CTFs" /><summary type="html"><![CDATA[Team. Security Factorial]]></summary></entry><entry><title type="html">de-compressed</title><link href="https://neutrinox4b1.github.io/blog/2023/de-compressed/" rel="alternate" type="text/html" title="de-compressed" /><published>2023-04-08T00:00:00+00:00</published><updated>2023-04-08T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/de-compressed</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/de-compressed/"><![CDATA[]]></content><author><name></name></author><category term="misc" /><summary type="html"><![CDATA[DAM CTF 2023]]></summary></entry><entry><title type="html">A Fine Cipher</title><link href="https://neutrinox4b1.github.io/blog/2023/A_Fine_Cipher/" rel="alternate" type="text/html" title="A Fine Cipher" /><published>2023-04-01T00:00:00+00:00</published><updated>2023-04-01T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/A_Fine_Cipher</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/A_Fine_Cipher/"><![CDATA[<h2 id="background">Background</h2>
+<p>16th (Team. Security Factorial)</p>]]></content><author><name>neutrinox4b1</name></author><category term="crypto" /><category term="misc" /><category term="CTFs" /><summary type="html"><![CDATA[Team. Security Factorial]]></summary></entry><entry><title type="html">de-compressed</title><link href="https://neutrinox4b1.github.io/blog/2023/de-compressed/" rel="alternate" type="text/html" title="de-compressed" /><published>2023-04-08T00:00:00+00:00</published><updated>2023-04-08T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/de-compressed</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/de-compressed/"><![CDATA[<h2 id="background">Background</h2>
+<hr />
+<p>As an elite cyber security expert, you’ve been tasked with uncovering the secrets hidden within a message intercepted from a notorious spy.</p>
+
+<p>We suspect there may be more to this message than meets the eye. Can you use your skills in steganography to uncover whatever else might be hiding?</p>
+
+<p>The fate of national security is in your hands.</p>
+
+<p><img width="102" alt="image" src="https://user-images.githubusercontent.com/101745344/232465818-cbfae6d7-0845-4ac1-954c-c0bdfdad96d9.png" /></p>
+
+<p>message라는 zip 형식의 파일이 주어진다.</p>
+
+<p>여기서 플래그를 찾아내는 문제이다.
+<br /><br /><br /></p>
+
+<h2 id="solution">Solution</h2>
+<hr />
+<p>zip 파일을 분석해보면 secret.txt라는게 들어있는게 보인다.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="https://user-images.githubusercontent.com/101745344/232466385-73e9e7a3-c577-428c-ae3a-f82f4655191b-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="https://user-images.githubusercontent.com/101745344/232466385-73e9e7a3-c577-428c-ae3a-f82f4655191b-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="https://user-images.githubusercontent.com/101745344/232466385-73e9e7a3-c577-428c-ae3a-f82f4655191b-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="https://user-images.githubusercontent.com/101745344/232466385-73e9e7a3-c577-428c-ae3a-f82f4655191b.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>cyberchef를 통해서 해당 zip 파일을 upload 하면, extract file을 사용해서 secrte.txt가 있는 zip 파일을 얻어낼 수 있다.</p>
+
+<p><img width="100%" alt="image" src="https://user-images.githubusercontent.com/101745344/232466816-4840a608-023a-4b2e-aa55-bba4acbb3049.png" /></p>
+
+<p>secret.txt는 다음과 같다. 평범해보이지만 여기서 스테가노그래피가 적용되었음이 틀림없다.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="https://user-images.githubusercontent.com/101745344/232467172-61ae1a97-295c-4efa-9e58-7b5dd5b6dd84-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="https://user-images.githubusercontent.com/101745344/232467172-61ae1a97-295c-4efa-9e58-7b5dd5b6dd84-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="https://user-images.githubusercontent.com/101745344/232467172-61ae1a97-295c-4efa-9e58-7b5dd5b6dd84-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="https://user-images.githubusercontent.com/101745344/232467172-61ae1a97-295c-4efa-9e58-7b5dd5b6dd84.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>실제로 secret.txt에는 이상한 문자들이 가득 차 있었다. 여기까지 알아내었으나 이게 도대체 어떤 방식으로 flag가 숨겨져있는 지 알지 못했다.</p>
+
+<p>write up을 보니 <a href="https://330k.github.io/misc_tools/unicode_steganography.html">unicode steganography</a> 이었다. 여기에 입력을 하고 해독을 진행했다.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="https://user-images.githubusercontent.com/101745344/232467885-8e43c754-50d8-449b-b793-5175f19c1c24-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="https://user-images.githubusercontent.com/101745344/232467885-8e43c754-50d8-449b-b793-5175f19c1c24-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="https://user-images.githubusercontent.com/101745344/232467885-8e43c754-50d8-449b-b793-5175f19c1c24-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="https://user-images.githubusercontent.com/101745344/232467885-8e43c754-50d8-449b-b793-5175f19c1c24.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>짜잔.</p>
+
+<blockquote>
+  <p>dam{t1m3_t0_kick_b4ck_4nd_r3l4x}</p>
+</blockquote>
+
+<p>unicode steganography에 대해서 처음 알게 되었다.</p>]]></content><author><name></name></author><category term="misc" /><summary type="html"><![CDATA[DAM CTF 2023]]></summary></entry><entry><title type="html">A Fine Cipher</title><link href="https://neutrinox4b1.github.io/blog/2023/A_Fine_Cipher/" rel="alternate" type="text/html" title="A Fine Cipher" /><published>2023-04-01T00:00:00+00:00</published><updated>2023-04-01T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/A_Fine_Cipher</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/A_Fine_Cipher/"><![CDATA[<h2 id="background">Background</h2>
 <hr />
 <p>암호문이 주어진다.</p>
 <blockquote>
@@ -245,97 +364,4 @@
 
 <p>ㅠㅠㅠㅠ</p>
 
-<p>다 대입해보면서 품</p>]]></content><author><name></name></author><category term="misc" /><summary type="html"><![CDATA[RITSEC CTF 2023]]></summary></entry><entry><title type="html">Either or Niter nor</title><link href="https://neutrinox4b1.github.io/blog/2023/either_or_niter_nor/" rel="alternate" type="text/html" title="Either or Niter nor" /><published>2023-04-01T00:00:00+00:00</published><updated>2023-04-01T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/either_or_niter_nor</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/either_or_niter_nor/"><![CDATA[<h2 id="background">Background</h2>
-<hr />
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">env</span> <span class="n">python</span>
-
-<span class="n">flag</span> <span class="o">=</span> <span class="s">"XXXXXXXXXXXXXXXXXXXXX"</span>
-<span class="n">enc_flag</span> <span class="o">=</span> <span class="p">[</span><span class="mi">91</span><span class="p">,</span><span class="mi">241</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">166</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">192</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">188</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">164</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">152</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">252</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">152</span><span class="p">,</span><span class="mi">117</span><span class="p">,</span><span class="mi">164</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">162</span><span class="p">,</span><span class="mi">107</span><span class="p">]</span>
-
-<span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">KEY_LEN</span> <span class="o">=</span> <span class="mi">4</span>
-
-<span class="c1"># Encrypt the flag
-</span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">flag</span><span class="p">):</span>
-    <span class="n">enc_flag</span> <span class="o">=</span> <span class="nf">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">^</span> <span class="n">key</span><span class="p">[</span><span class="n">idx</span> <span class="o">%</span> <span class="nf">len</span><span class="p">(</span><span class="n">key</span><span class="p">)]</span>
-</code></pre></div></div>
-
-<p>enc_flag 부분이 python code가 잘못되어있는데..</p>
-
-<p>암튼</p>
-
-<p>문제에서 FLAG 형식이 MetaCTF{}라고 하여서 원문을 알고 있기 때문에</p>
-
-<p>XOR의 self-inverse 속성을 이용한다.
-<br />
-<br />
-<br /></p>
-<h2 id="solution">Solution</h2>
-<hr />
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#! /usr/bin/env python
-</span>
-<span class="n">flag</span> <span class="o">=</span> <span class="s">"XXXXXXXXXXXXXXXXXXXXX"</span>
-<span class="n">enc_flag</span> <span class="o">=</span> <span class="p">[</span><span class="mi">91</span><span class="p">,</span><span class="mi">241</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">166</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">192</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">188</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">164</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">152</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">252</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">152</span><span class="p">,</span><span class="mi">117</span><span class="p">,</span><span class="mi">164</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">162</span><span class="p">,</span><span class="mi">107</span><span class="p">]</span>
-
-<span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">148</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">199</span><span class="p">]</span>
-<span class="n">KEY_LEN</span> <span class="o">=</span> <span class="mi">4</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">enc_flag</span><span class="p">)</span>
-<span class="c1"># Encrypt the flag
-#for idx, c in enumerate(flag):
-#    enc_flag = ord(c) ^ key[idx % len(key)]
-</span><span class="n">res</span> <span class="o">=</span> <span class="s">''</span>
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">enc_flag</span><span class="p">):</span>
-	<span class="n">res</span> <span class="o">+=</span> <span class="nf">chr</span><span class="p">(</span><span class="n">c</span> <span class="o">^</span> <span class="n">key</span><span class="p">[</span><span class="n">idx</span> <span class="o">%</span> <span class="n">KEY_LEN</span><span class="p">])</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
-
-<span class="c1">#print(enc_flag[0] ^ ord('M'))
-#print(enc_flag[1] ^ ord('e'))
-#print(enc_flag[2] ^ ord('t'))
-#print(enc_flag[3] ^ ord('a'))
-</span></code></pre></div></div>
-
-<p>Meta를 xor한 값을 출력하고 키에 넣어서 복호화를 시도한다.</p>
-
-<blockquote>
-  <p>MetaCTF{x0r_th3_c0re}</p>
-</blockquote>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[RITSEC CTF 2023]]></summary></entry><entry><title type="html">RITSEC CTF 2023</title><link href="https://neutrinox4b1.github.io/blog/2023/ritsec/" rel="alternate" type="text/html" title="RITSEC CTF 2023" /><published>2023-04-01T00:00:00+00:00</published><updated>2023-04-01T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/ritsec</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/ritsec/"><![CDATA[<p><img src="https://ctf.ritsec.club/files/79b61d472d08735ce2609ed11588f791/ritsec_ctf_2023_1024.png" alt="untitled" width="70%" height="70%" class="center" /></p>
-
-<h2 id="writeups">Writeups</h2>
-<p><strong><em>crypto</em></strong></p>
-<ul>
-  <li><a href="../either_or_niter_nor">Either or Niter nor</a></li>
-  <li><a href="../A_Fine_Cipher">A Fine Cipher</a></li>
-</ul>
-
-<p><strong><em>steg</em></strong></p>
-<ul>
-  <li><a href="../weird">Weird</a></li>
-  <li><a href="../turtle">Turtle</a></li>
-</ul>
-
-<p><strong><em>misc</em></strong></p>
-<ul>
-  <li><a href="../chandi_bot_1">chandi bot 1</a></li>
-  <li><a href="../chandi_bot_2">chandi bot 2</a></li>
-  <li><a href="../chandi_bot_4">chandi bot 4</a></li>
-  <li><a href="../chandi_bot_5">chandi bot 5</a></li>
-</ul>
-
-<p>이 외에 문제는 <a href="https://gitlab.ritsec.cloud/competitions/ctf-2023-public">writeup</a>을 확인하면 좋을 것 같다. stego 등..</p>
-<h2 id="about">About</h2>
-<ul>
-  <li>Starts: 토요일, 01 4 2023, 01:00 KST</li>
-  <li>Ends: 월요일, 03 4 2023, 01:00 KST</li>
-  <li>On-line</li>
-  <li>Format: Jeopardy</li>
-  <li>Future weight: 25.44</li>
-  <li>Rating weight: 30.62
-    <h2 id="overview">Overview</h2>
-    <p><img width="100%" alt="image" src="https://user-images.githubusercontent.com/101745344/232290343-9c5f04bd-1488-472c-b281-ad38e6916d28.png" />
-<img width="100%" alt="image" src="https://user-images.githubusercontent.com/101745344/232303426-d503e5cf-974d-4967-9875-aec13ea19820.png" /></p>
-  </li>
-</ul>]]></content><author><name>neutrinox4b1</name></author><category term="crypto" /><category term="steg" /><category term="misc" /><category term="CTFs" /><summary type="html"><![CDATA[Team. Security Factorial]]></summary></entry></feed>
+<p>다 대입해보면서 품</p>]]></content><author><name></name></author><category term="misc" /><summary type="html"><![CDATA[RITSEC CTF 2023]]></summary></entry></feed>
