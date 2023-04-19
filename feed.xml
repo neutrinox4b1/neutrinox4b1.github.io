@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-04-19T07:43:29+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-04-19T13:39:53+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">fastrology - new moon</title><link href="https://neutrinox4b1.github.io/blog/2023/fastrology/" rel="alternate" type="text/html" title="fastrology - new moon" /><published>2023-04-15T00:00:00+00:00</published><updated>2023-04-15T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/fastrology</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/fastrology/"><![CDATA[<h2 id="background">Background</h2>
 <hr />]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Plaid CTF 2023]]></summary></entry><entry><title type="html">Plaid CTF 2023</title><link href="https://neutrinox4b1.github.io/blog/2023/plaid/" rel="alternate" type="text/html" title="Plaid CTF 2023" /><published>2023-04-15T00:00:00+00:00</published><updated>2023-04-15T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/plaid</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/plaid/"><![CDATA[<p><img src="https://pbs.twimg.com/media/Fs6fQSVXsAYTgF4?format=jpg&amp;name=4096x4096" alt="untitled" width="100%" height="100%" /></p>
 <h2 id="writeups">Writeups</h2>
@@ -6,17 +6,17 @@
 <ul>
   <li><a href="../fastrology">fastrology</a>
     <ul>
-      <li><a href="../newmoon">new_moon</a></li>
-      <li>waxing_crescent</li>
-      <li>full_moon</li>
-      <li>waxing_gibbous</li>
+      <li><a href="../new_moon">new_moon</a></li>
+      <li>waxing_crescent(../waxing_decrescent)</li>
+      <li>full_moon(../full_moon)</li>
+      <li>waxing_gibbous(../waxing_gibbous)</li>
     </ul>
   </li>
-  <li>bivalves</li>
-  <li>The Other CSS</li>
+  <li>bivalves(../bivalves)</li>
+  <li>The Other CSS(../the_other_css)</li>
 </ul>
 
-<p>write ups from <a href="https://imp.ress.me/blog/2023-04-17/plaidctf-2023#plaidctf-2023-writeups">4yn</a></p>
+<p>write-ups from <a href="https://imp.ress.me/blog/2023-04-17/plaidctf-2023#plaidctf-2023-writeups">4yn</a></p>
 
 <h2 id="about">About</h2>
 <ul>
