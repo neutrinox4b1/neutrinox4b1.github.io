@@ -1,5 +1,599 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-04-21T05:08:39+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-</subtitle><entry><title type="html">fastrology - new moon</title><link href="https://neutrinox4b1.github.io/blog/2023/fastrology/" rel="alternate" type="text/html" title="fastrology - new moon" /><published>2023-04-15T00:00:00+00:00</published><updated>2023-04-15T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/fastrology</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/fastrology/"><![CDATA[<h2 id="background">Background</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-04-27T15:49:30+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+</subtitle><entry><title type="html">BSidesSF CTF 2023</title><link href="https://neutrinox4b1.github.io/blog/2023/BSidesSF/" rel="alternate" type="text/html" title="BSidesSF CTF 2023" /><published>2023-04-22T00:00:00+00:00</published><updated>2023-04-22T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/BSidesSF</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/BSidesSF/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/101745344/234486532-b4ec8302-6a2a-469e-9fa6-af134b470550.png" alt="image" width="100%" height="100%" /></p>
+
+<h2 id="writeups">Writeups</h2>
+<h3 id="crypto">crypto</h3>
+<ul>
+  <li><a href="../rsalab">rsalab</a>
+    <ul>
+      <li><a href="../rsalab_2022_first">rsalab-2023: 2022-first</a></li>
+      <li><a href="../rsalab_2022_second">rsalab-2023: 2022-second</a></li>
+      <li><a href="">rsalab-2023: 2023</a></li>
+    </ul>
+  </li>
+  <li><a href="">keyservice</a></li>
+  <li><a href="">ecbreak</a> (unsolved)</li>
+  <li><a href="">codebook</a> (unsolved)</li>
+</ul>
+
+<p>해당 문제에서 PARI/GP 를 사용하는데 굳이 이걸 사용해야 하는지는 모르겠다.
+그냥 python으로 풀었다. PARI/GP라는 도구가 있다는 것을 알아두면 좋을 듯.</p>
+
+<h3 id="pwn">pwn</h3>
+
+<p><a href="https://github.com/BSidesSF/ctf-2023-release">Here</a> is an official write up</p>
+
+<h2 id="about">About</h2>
+
+<ul>
+  <li>Starts: 2023-04-22 00:00 UTC</li>
+  <li>Ends: 2023-04-24 00:00 UTC</li>
+  <li>On-line</li>
+  <li>Format: Jeopardy</li>
+  <li>Rating weight: 35.00</li>
+</ul>
+
+<h2 id="overview">Overview</h2>
+
+<p><img src="https://user-images.githubusercontent.com/101745344/234487645-45d13566-98eb-4f52-b39f-09ddefea130b.png" alt="Top 10 Teams" width="100%" height="100%" /></p>
+
+<p><img width="100%" alt="image" src="https://user-images.githubusercontent.com/101745344/234487267-81fe9579-015c-43c8-b764-21f46fecf246.png" /></p>
+
+<p>5th!!! (Team. Security Factorial) 🤩</p>
+
+<p><img width="100%" alt="image" src="https://user-images.githubusercontent.com/101745344/234487848-73614553-e93a-40ac-9e8b-6289fa2407ec.png" /></p>
+
+<p>what I sovled</p>]]></content><author><name>neutrinox4b1</name></author><category term="crypto" /><category term="pwn" /><category term="CTFs" /><summary type="html"><![CDATA[Team. Security Factorial]]></summary></entry><entry><title type="html">rsalab</title><link href="https://neutrinox4b1.github.io/blog/2023/rsalab/" rel="alternate" type="text/html" title="rsalab" /><published>2023-04-22T00:00:00+00:00</published><updated>2023-04-22T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/rsalab</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/rsalab/"><![CDATA[<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>          <span class="n">_____</span>                    <span class="n">_____</span>                    <span class="n">_____</span>
+         <span class="o">/</span>\    \                  <span class="o">/</span>\    \                  <span class="o">/</span>\    \
+        <span class="o">/</span><span class="p">::</span>\    \                <span class="o">/</span><span class="p">::</span>\    \                <span class="o">/</span><span class="p">::</span>\    \
+       <span class="o">/</span><span class="p">::::</span>\    \              <span class="o">/</span><span class="p">::::</span>\    \              <span class="o">/</span><span class="p">::::</span>\    \
+      <span class="o">/</span><span class="p">::::::</span>\    \            <span class="o">/</span><span class="p">::::::</span>\    \            <span class="o">/</span><span class="p">::::::</span>\    \
+     <span class="o">/</span><span class="p">:::</span><span class="o">/</span>\<span class="p">:::</span>\    \          <span class="o">/</span><span class="p">:::</span><span class="o">/</span>\<span class="p">:::</span>\    \          <span class="o">/</span><span class="p">:::</span><span class="o">/</span>\<span class="p">:::</span>\    \
+    <span class="o">/</span><span class="p">:::</span><span class="o">/</span><span class="n">__</span>\<span class="p">:::</span>\    \        <span class="o">/</span><span class="p">:::</span><span class="o">/</span><span class="n">__</span>\<span class="p">:::</span>\    \        <span class="o">/</span><span class="p">:::</span><span class="o">/</span><span class="n">__</span>\<span class="p">:::</span>\    \
+   <span class="o">/</span><span class="p">::::</span>\   \<span class="p">:::</span>\    \       \<span class="p">:::</span>\   \<span class="p">:::</span>\    \      <span class="o">/</span><span class="p">::::</span>\   \<span class="p">:::</span>\    \
+  <span class="o">/</span><span class="p">::::::</span>\   \<span class="p">:::</span>\    \    <span class="n">___</span>\<span class="p">:::</span>\   \<span class="p">:::</span>\    \    <span class="o">/</span><span class="p">::::::</span>\   \<span class="p">:::</span>\    \
+ <span class="o">/</span><span class="p">:::</span><span class="o">/</span>\<span class="p">:::</span>\   \<span class="p">:::</span>\<span class="n">____</span>\  <span class="o">/</span>\   \<span class="p">:::</span>\   \<span class="p">:::</span>\    \  <span class="o">/</span><span class="p">:::</span><span class="o">/</span>\<span class="p">:::</span>\   \<span class="p">:::</span>\    \
+<span class="o">/</span><span class="p">:::</span><span class="o">/</span>  \<span class="p">:::</span>\   \<span class="p">:::</span><span class="o">|</span>    <span class="o">|/</span><span class="p">::</span>\   \<span class="p">:::</span>\   \<span class="p">:::</span>\<span class="n">____</span>\<span class="o">/</span><span class="p">:::</span><span class="o">/</span>  \<span class="p">:::</span>\   \<span class="p">:::</span>\<span class="n">____</span>\
+\<span class="p">::</span><span class="o">/</span>   <span class="o">|</span><span class="p">::::</span>\  <span class="o">/</span><span class="p">:::</span><span class="o">|</span><span class="n">____</span><span class="o">|</span>\<span class="p">:::</span>\   \<span class="p">:::</span>\   \<span class="p">::</span><span class="o">/</span>    <span class="o">/</span>\<span class="p">::</span><span class="o">/</span>    \<span class="p">:::</span>\  <span class="o">/</span><span class="p">:::</span><span class="o">/</span>    <span class="o">/</span>
+ \<span class="o">/</span><span class="n">____</span><span class="o">|</span><span class="p">:::::</span>\<span class="o">/</span><span class="p">:::</span><span class="o">/</span>    <span class="o">/</span>  \<span class="p">:::</span>\   \<span class="p">:::</span>\   \<span class="o">/</span><span class="n">____</span><span class="o">/</span>  \<span class="o">/</span><span class="n">____</span><span class="o">/</span> \<span class="p">:::</span>\<span class="o">/</span><span class="p">:::</span><span class="o">/</span>    <span class="o">/</span>
+       <span class="o">|</span><span class="p">:::::::::</span><span class="o">/</span>    <span class="o">/</span>    \<span class="p">:::</span>\   \<span class="p">:::</span>\    \               \<span class="p">::::::</span><span class="o">/</span>    <span class="o">/</span>
+       <span class="o">|</span><span class="p">::</span><span class="o">|</span>\<span class="p">::::</span><span class="o">/</span>    <span class="o">/</span>      \<span class="p">:::</span>\   \<span class="p">:::</span>\<span class="n">____</span>\               \<span class="p">::::</span><span class="o">/</span>    <span class="o">/</span>
+       <span class="o">|</span><span class="p">::</span><span class="o">|</span> \<span class="p">::</span><span class="o">/</span><span class="n">____</span><span class="o">/</span>        \<span class="p">:::</span>\  <span class="o">/</span><span class="p">:::</span><span class="o">/</span>    <span class="o">/</span>               <span class="o">/</span><span class="p">:::</span><span class="o">/</span>    <span class="o">/</span>
+       <span class="o">|</span><span class="p">::</span><span class="o">|</span>  <span class="o">~|</span>               \<span class="p">:::</span>\<span class="o">/</span><span class="p">:::</span><span class="o">/</span>    <span class="o">/</span>               <span class="o">/</span><span class="p">:::</span><span class="o">/</span>    <span class="o">/</span>
+       <span class="o">|</span><span class="p">::</span><span class="o">|</span>   <span class="o">|</span>                \<span class="p">::::::</span><span class="o">/</span>    <span class="o">/</span>               <span class="o">/</span><span class="p">:::</span><span class="o">/</span>    <span class="o">/</span>
+       \<span class="p">::</span><span class="o">|</span>   <span class="o">|</span>                 \<span class="p">::::</span><span class="o">/</span>    <span class="o">/</span>               <span class="o">/</span><span class="p">:::</span><span class="o">/</span>    <span class="o">/</span>
+        \<span class="p">:</span><span class="o">|</span>   <span class="o">|</span>                  \<span class="p">::</span><span class="o">/</span>    <span class="o">/</span>                \<span class="p">::</span><span class="o">/</span>    <span class="o">/</span>
+         \<span class="o">|</span><span class="n">___</span><span class="o">|</span>                   \<span class="o">/</span><span class="n">____</span><span class="o">/</span>                  \<span class="o">/</span><span class="n">____</span><span class="o">/</span>
+          <span class="n">__</span>          <span class="n">__</span>                     <span class="n">__</span>
+         <span class="o">/</span> <span class="o">/</span>   <span class="n">____</span> <span class="n">_</span><span class="o">/</span> <span class="o">/</span><span class="n">_</span>  <span class="n">____</span>  <span class="n">_________</span> <span class="n">_</span><span class="o">/</span> <span class="o">/</span><span class="n">_____</span>  <span class="n">_______</span>  <span class="n">__</span>
+        <span class="o">/</span> <span class="o">/</span>   <span class="o">/</span> <span class="n">__</span> <span class="sb">`/ __ \/ __ \/ ___/ __ `</span><span class="o">/</span> <span class="n">__</span><span class="o">/</span> <span class="n">__</span> \<span class="o">/</span> <span class="n">___</span><span class="o">/</span> <span class="o">/</span> <span class="o">/</span> <span class="o">/</span>
+       <span class="o">/</span> <span class="o">/</span><span class="n">___</span><span class="o">/</span> <span class="o">/</span><span class="n">_</span><span class="o">/</span> <span class="o">/</span> <span class="o">/</span><span class="n">_</span><span class="o">/</span> <span class="o">/</span> <span class="o">/</span><span class="n">_</span><span class="o">/</span> <span class="o">/</span> <span class="o">/</span>  <span class="o">/</span> <span class="o">/</span><span class="n">_</span><span class="o">/</span> <span class="o">/</span> <span class="o">/</span><span class="n">_</span><span class="o">/</span> <span class="o">/</span><span class="n">_</span><span class="o">/</span> <span class="o">/</span> <span class="o">/</span>  <span class="o">/</span> <span class="o">/</span><span class="n">_</span><span class="o">/</span> <span class="o">/</span>
+      <span class="o">/</span><span class="n">_____</span><span class="o">/</span>\<span class="n">__</span><span class="p">,</span><span class="n">_</span><span class="o">/</span><span class="n">_</span><span class="p">.</span><span class="n">___</span><span class="o">/</span>\<span class="n">____</span><span class="o">/</span><span class="n">_</span><span class="o">/</span>   \<span class="n">__</span><span class="p">,</span><span class="n">_</span><span class="o">/</span>\<span class="n">__</span><span class="o">/</span>\<span class="n">____</span><span class="o">/</span><span class="n">_</span><span class="o">/</span>   \<span class="n">__</span><span class="p">,</span> <span class="o">/</span>
+                                                        <span class="o">/</span><span class="n">____</span><span class="o">/</span>
+                             <span class="mi">2023</span> <span class="n">Edition</span>
+</code></pre></div></div>
+
+<h2 id="background">Background</h2>
+<hr />
+
+<p>해당 문제는 터미널 기반의 문제이다. RSA Lab에서 RSA에 대해 배우고 단게별로 문제를 풀면 flag를 획득한다.</p>
+
+<p>help를 치면 이렇게 나온다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RSA Lab 2023 help:
+
+Commands:
+help                 // Prints this help
+help first           // Read this first
+help 2022            // Help on last year's challenges
+help 2023            // See what's new for 2023
+help conventions     // Describe the conventions used by this challenge lab
+help rsa             // Explanation of RSA
+help mod             // Explanation of modular arithmetic
+help code            // Dump sample code to help with some challenges
+help challenge &lt;n&gt;   // Get help on a specific challenge
+status               // Print the challenge statuses
+challenge &lt;n&gt;        // Complete the nth challenge
+
+getflag 2022-first   // Flag for completing first half of 2022 challenges
+getflag 2022-second  // Flag for completing second half of 2022 challenges
+getflag 2023         // Flag for completing the 2023 challenges
+
+exit                 // Exit the lab
+^d                   // Same as exit but 100% more Unix-points
+</code></pre></div></div>
+
+<p>문제를 풀기 위해서는 status의 과제를 모두 통과해야하는 것 같다.</p>
+
+<p><img width="100%" alt="Untitled (1)" src="https://user-images.githubusercontent.com/101745344/234496501-514e7a9f-da45-4ee5-b3ff-4a94b785c66b.png" /></p>
+
+<p>차근차근 풀어보도록 하자</p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[BSidesSF CTF 2023]]></summary></entry><entry><title type="html">rsalab-2023: 2022-first</title><link href="https://neutrinox4b1.github.io/blog/2023/rsalab_2022_first/" rel="alternate" type="text/html" title="rsalab-2023: 2022-first" /><published>2023-04-22T00:00:00+00:00</published><updated>2023-04-22T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/rsalab_2022_first</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/rsalab_2022_first/"><![CDATA[<h2 id="chal-1">chal 1</h2>
+<hr />
+
+<blockquote>
+  <p>Challenge 1:</p>
+
+  <p>Before your start on attacking RSA, it’s important to first understand
+basic RSA operations like encryption and decryption. For this
+challenge, we have generated a public key. Your job is to encrypt the
+provided message with that public key to get the ciphertext.</p>
+
+  <p>RSA encryption uses the encrypting exponent, e. Decryption is the same
+mathematical operation except that it uses the decrypting exponent, d.
+If you can encrypt with the provided e then you could decrypt (if you
+had d) just as easily.</p>
+
+  <p>== Generated Public Key ==
+Public Modulus (n): 93305094700222905881852268067388846454838857633497427869837725956270630098447
+Encrypting Exponent (e): 65537</p>
+
+  <p>Message to encrypt (m): 1234567890</p>
+
+  <p>What is the ciphertext (c) for the message (m) using the public key?</p>
+</blockquote>
+
+<p>랜덤으로 두 소수의 곱 n을 주고 공개 키 e를 65537로 준다.</p>
+
+<p>암호화 할 메시지 1234567890을 제공하고 우리에게 암호문 c를 구하라고 한다.</p>
+
+<p>암호문 c를 구하는 식은 다음과 같다.</p>
+
+\[c = m^e \pmod N\]
+
+<p>RSA의 원리를 알고 있으면 단순히 파이썬으로 계산 가능하다.</p>
+
+<p><img width="100%" alt="Untitled (2)" src="https://user-images.githubusercontent.com/101745344/234497947-9245d880-7c31-4b98-ac3b-21e7f4d8c0d8.png" /></p>
+
+<h2 id="chal-2">chal 2</h2>
+<hr />
+
+<blockquote>
+  <p>One of the most intimidating things about RSA when you first read
+about it is the notion of a “modular inverse”. In our everyday lives
+we’re pretty familiar with the idea that (1/3) * 3 = 1 or that (5/7) *
+(7/5) = 1.  That is, 1/3 is the inverse of 3 and 5/7 is the inverse of
+7/5.  What happens though when the numbers “wrap around” because of a
+modulus? As one example, you can verify easily that the inverse of 2
+mod 5 is 3 mod 5 because 2 * 3 = 6 and 6 mod 5 = 1. The idea that 2
+and 3 are inverses mod 5 is not at all obvious. Or, even if mod 5 is
+obvious, in the general case where the modulus is large inverses are
+not obvious.</p>
+
+  <p>In this challenge you are given e and n (as well as the factors of n,
+p and q)and you need to find the modular inverse of e mod
+phi(n). Recall that when n has two factors phi(n) is (p - 1) * (q - 1).</p>
+
+  <p>== Generated Public Key ==
+Public Modulus (n): 74626406913082933436196613326885245917286648370318001460622007824392110131473
+Encrypting Exponent (e): 65537
+== Secret Primes ==
+Prime p: 257799152770944809771969932762122277973
+Prime q: 289474989001956426553102966123893079501</p>
+
+  <p>What is secret decrypting exponent (d) that is the couterpart of e?</p>
+</blockquote>
+
+<p>여기서는 n의 소인수 p, q 그리고 e와 n이 주어진다. 우리는 이것을 이용해서 비밀 키 d를 찾아야 한다.</p>
+
+<p>비밀 키 d는 다음과 모듈러 phi(N)에 대한 e의 역원이다.</p>
+
+<p>다시 말해, \(d = e^{-1} \bmod\phi(n)\)</p>
+
+<p>\(\phi(n)\) 은 <a href="https://ko.wikipedia.org/wiki/%EC%98%A4%EC%9D%BC%EB%9F%AC_%ED%94%BC_%ED%95%A8%EC%88%98">오일러 피 함수</a>이다.</p>
+
+<p>오일러 피 함수 \(\phi(n)\)은 1 부터 n까지 서로소인 정수의 개수이다.</p>
+
+<p>n이 소수인 경우 소수의 정의에 의해서(1과 자기 자신 이외에는 나누어떨어지지 않는 수) \(\phi(n) = n-1\)이다.</p>
+
+<p>또한 eulier phi function은 곱셈적 함수이다. \(\phi(m)\phi(n) = \phi(m*n)\) m, n이 서로소일 경우 위 특성을 만족한다.</p>
+
+<p>n은 소수 p, q의 곱이므로 \(\phi(n) = (p-1)(q-1)\) 이다.</p>
+
+<p>따라서, d를 구하기 위해서 phi를 구하고 python의 pow 함수를 사용해서 그냥 역원을 구한다.
+역원을 구하는 방법에는 사실 여러가지(Extended Euclidean Algorithm, Fermat’s little theorem, CRT.. ) 가 있으나 python에서 코딩할 때는 pow함수가 제일 편했다.</p>
+
+<p><img width="100%" alt="Untitled (3)" src="https://user-images.githubusercontent.com/101745344/234498893-064ce9a9-87b2-4e4a-9517-7f833ee2cfc3.png" /></p>
+
+<h2 id="chal-3">chal 3</h2>
+<hr />
+
+<blockquote>
+  <p>RSA Lab 2023&gt; challenge 3
+Challenge 3:</p>
+
+  <p>RSA is an “asymmetric” encryption algorithm because the key used to
+decrypt (d) is not the same key that is used to encrypt (e). This
+challenge will let you experience that first-hand. You provide your
+public key (n) and (e) and this challenge will encrypt a secret
+message (m) and provide you the ciphertext (c). Then using your
+decrypting exponent (d) you can decrypt the ciphertext back to the
+secret message.</p>
+
+  <p>You are highly encouraged to generate your own key here instead of
+finding RSA keys somewhere.</p>
+
+  <p>To pass this challenge the n value you provide must be at least 512
+bits, not be prime and the e value you choose must be at least 100.
+65537 is a good choice for e.</p>
+
+  <p>What is n for your public key?
+What is e for your public key?
+The ciphertext you must decrypt is ~~
+What was m (decrypt with the d you’ve made for your key!)?</p>
+</blockquote>
+
+<p>n과 e를 우리가 직접 설정하고, (n &gt; 2^512) 공개 키로 암호화된 암호문이 주어지면, 비밀키 d를 구해서 평문 m을 구하는 문제이다.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="https://user-images.githubusercontent.com/101745344/234502714-a8d37614-201e-4036-becb-a7ccee170398-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="https://user-images.githubusercontent.com/101745344/234502714-a8d37614-201e-4036-becb-a7ccee170398-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="https://user-images.githubusercontent.com/101745344/234502714-a8d37614-201e-4036-becb-a7ccee170398-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="https://user-images.githubusercontent.com/101745344/234502714-a8d37614-201e-4036-becb-a7ccee170398.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p><img width="100%" alt="Untitled (5)" src="https://user-images.githubusercontent.com/101745344/234502816-e354a41d-8319-4e7b-a445-6bc67eb84646.png" /></p>
+
+<p><br /></p>
+
+<h2 id="chal4">chal4</h2>
+<hr />
+
+<blockquote>
+  <p>Challenge 4:</p>
+
+  <p>RSA is only secure when factoring n is hard. If you can factor n into
+p and q then you can compute Euler’s phi(n) (the totient function)
+which, when n only has two prime factors, is just (p - 1) * (q -
+1). With phi(n) you can use e to find d which gives you the private
+key!</p>
+
+  <p>In this challenge, a secret message has been encrypted with a very
+weak RSA key. The RSA key’s n is approximately 128 bits meaning
+(assuming they are the same size) p and q are about 64 bit each. It’s
+your job to decrypt the secret message by breaking the RSA key (factor
+n!) and then determining d using n’s prime factors. 128-bit RSA keys
+are just big enough you can’t use trivial methods like trial division
+but are easily small enough that almost anything more sophisticated
+will factor them in seconds.</p>
+
+  <p>== Generated Public Key ==
+Public Modulus (n): 264077764893712564681347373214293350341
+Encrypting Exponent (e): 65537</p>
+
+  <p>Message to decrypt (c): 54832408036442361586583231856828192577</p>
+
+  <p>What is the plaintext (m) for the encrypted message (c) for the public key?</p>
+
+</blockquote>
+
+<p>n이 주어진다. 근데 작은 값으로 주어진다. 128bit? factordb에는 없지만 sympy를 사용해서</p>
+
+<p>factorint 함수를 쓰면 짧은 시가니 내에 소인수분해 가능하다.
+p, q와 d, e를 가지고 그대로 복호화를 진행한다.</p>
+
+<p><img width="100%" alt="Untitled (6)" src="https://user-images.githubusercontent.com/101745344/234505663-bd4e1834-a8fd-43ff-9c95-14c906588fa3.png" /></p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[BSidesSF CTF 2023]]></summary></entry><entry><title type="html">rsalab-2023: 2022-second</title><link href="https://neutrinox4b1.github.io/blog/2023/rsalab_2022_second/" rel="alternate" type="text/html" title="rsalab-2023: 2022-second" /><published>2023-04-22T00:00:00+00:00</published><updated>2023-04-22T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/rsalab_2022_second</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/rsalab_2022_second/"><![CDATA[<h2 id="chal5">chal5</h2>
+<hr />
+<blockquote>
+
+  <p>RSA’s security relies on factorization being a hard
+problem. Unfortunately there are many different factorization
+algorithms that are quite fast in certain special cases. This makes
+generating secure RSA keys quite challenging because tons of gotchas
+and pitfalls must be avoided. One pitfall is when p and q are too
+close together because an algorithm known as “Fermat’s Factorization”
+can be used.</p>
+
+  <p>In this challenge, a 2048 bit RSA key has been generated using two
+1024 bit primes, p and q. The flaw is that p and q share approximately
+their first 500 bits. That may not sound that bad since they still are
+different in their lower ~524 bits but you’ll see that isn’t nearly
+enough.</p>
+
+  <p>== Generated Public Key ==
+Public Modulus (n): 22405122633149055254468898274004923596511690574974006785686187503492892589357574744535993295077492325228172254189750999904789469356835714253647260532700221459539938191049960718649060390151586432028905117617424934384127074434014708131144368723366107676800553371178796444480641212873137943528917006100401312354828735660698995549955544616190429280129374364429383670097971958746268702652900714570491155591692914913831296028906122397062969273814017536500466917748313682684791617969207037439210103798408871933002887965263161028390833749225838651430953091773543610296729931665487698493371696649359773073295341988091864672723
+Encrypting Exponent (e): 65537</p>
+
+  <p>Message to decrypt (c): 1343764331983475976194248762615196884217993241259533146937949125655180166318190562689425198741022442602795994848558013476717986413166399397352777157002111962402098412405451272562527857524985403325408531206882963492659271287475564560431474566236425493765532201181568738630009814380470566415722855226861117071738058299095667813279908859983824294430183012941421528254336194877031110488435771782163260967643723744467092372789994060221938991077110748344580376976075982446569598095120831267152558895150355155221291466069612108979761771703356209961037461284120337224777865112556903205822551030379976657190172637086375375956</p>
+
+  <p>What is the plaintext (m) for the encrypted message (c) for the public key?</p>
+</blockquote>
+
+<p>문제 설명으로 RSA의 보안에 대해 말하면서 p와 q가 너무 가까이 있을 때, <a href="https://en.wikipedia.org/wiki/Fermat%27s_factorization_method">페르마의 인수분해</a> 를 사용해서 인수분해가 가능하다는 점 말하고 있다.</p>
+
+<p>이 문제에서는 2048bit RSA키를 사용했는데, 1024bit 소수인 p, q의 상위 500bit가 같다고 한다..?</p>
+
+<p><a href="https://thfist-1071.tistory.com/287">페르마의 인수분해(Fermat’s factorization)</a> 를 알아보자.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">gmpy2</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">def</span> <span class="nf">fermat_factor</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+	<span class="k">assert</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span>
+
+	<span class="n">a</span> <span class="o">=</span> <span class="nf">isqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+	<span class="n">b2</span> <span class="o">=</span> <span class="nf">square</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="n">n</span>
+
+	<span class="k">while</span> <span class="ow">not</span> <span class="nf">is_square</span><span class="p">(</span><span class="n">b2</span><span class="p">):</span>
+		<span class="n">a</span> <span class="o">+=</span> <span class="mi">1</span>
+		<span class="n">b2</span> <span class="o">=</span> <span class="nf">square</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="n">n</span>
+	<span class="n">p</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="nf">isqrt</span><span class="p">(</span><span class="n">b2</span><span class="p">)</span>
+	<span class="n">q</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="nf">isqrt</span><span class="p">(</span><span class="n">b2</span><span class="p">)</span>
+	<span class="k">return</span> <span class="nf">int</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="nf">int</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">18591041750066104805694644125475822217138845454999018451376291014002236118737677741945801452265967427385328870504340867759887658626230537889404405328402972320697534493646506788176239956535661160577115540233743665055788735475144323118355778121581522689104124090257864606575753070381939285335267569926686763933015807507520250446761860887445010059045093838900120476189942416311193436822140236188994597893564691038050916232514881113387812933288894253958566283536791219562650105123724211953729422449529379167036932011131935205362056319687399437389769149678508230114724102936149598105947222617951921759315464450166816277677</span>
+
+<span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="nf">fermat_factor</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">11197577525203709864013157483165591253511648596493804229220018595718747597880797053926324498120818805925644290908210076535514011008392942746402001786570124673114420099211359424936984192474348550550648561818157030752214835530179478926840741848983061797484237032737666858381648363646144707172957445520703115079966113359894746267959489322946794904839694234909100338398729931521338568337851031556381455901448812748544945321191593697003020906544966521540475413221085772073598484914670452281698070647061610547506801899275274121515024264602861021205900973565206693352932605617053991454832035549377781013566919152763723599359</span>
+<span class="n">d</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</code></pre></div></div>
+<p>페르마의 인수분해를 이해하고 이 방법을 사용하여 가까운 p, q를 계산한다. 그리고 phi 값과 비밀 키 d를 계산하여 메시지를 복호화한다.</p>
+
+<p><br />
+<br />
+<br /></p>
+
+<h2 id="chal6">chal6</h2>
+<hr />
+<blockquote>
+  <p>Challenge 6:</p>
+
+  <p>It is critically important that the primes used in an RSA key have
+never been used in any other RSA key. If two keys happen to share a
+prime then a quick comparison using the GCD algorithm between the two
+n values will find a common prime. This is a common flaw for keys
+generated on devices with poor (or no) entropy on first boot.</p>
+
+  <p>This challenge generates two keys that share a prime. Use the GCD
+between the two n to find the common prime.</p>
+
+  <p>== Generated Public Key 1 ==
+Public Modulus (n): 25449901729048999354150822070261365497231918136402271223890475420244516084873536419988755639538782816617860413431990558853188599954939040804423677297357143851285167509765873669354748714608166198598065807416454278666768389193032163479628062218936717813665904454623566361604009418392854595721867280794797932293797950088125274735132000331270289313592293407883441343709145338800340954464105294713829831182121750750693363089621834396105647116133120261569131656811040239040683391603078248706493130025192020782839446997631923955802540931875648863543334174940793573902487734642226149905987305000079909875253490409698329989011
+Encrypting Exponent (e): 65537
+Encrypted message (c): 11042188935017003681915669745645346147001354892841525260129526396039378887687559333939310707873464491165852171685938824535273884101484998031327983885389066872722038959222024987088214737246155847900662099544001079305777927725901210628308686951371050909972734797847794065001285824770586972310711415787447621128604338301355777299243772068695246591373305581688846234322507189878696544638413485623056600612813351688184476137345300112559730378473340737963711818591727834045565798274038776627216218943534251551998959477074265261077880032130693677657943219191681333557286594813699484086840635922615152246360597803628480236329</p>
+
+  <p>== Generated Public Key 2 ==
+Public Modulus (n): 25833177301355336409295958728570401034593937604004218709897733329508793524047599209812508251116122305233788432725358235733312116259134687222765175903480869382000728889941651178524135778872655666000097785582116820843637624289190162277902144359292068435360355632431901163855726087795023350796459792413420604929277279323059395709352657905953136841213912511546766209916309663282915376329323885225177610800115551866090868724858103468052708029103301301706311665808498993830378742223160816871982578006665772721853644287750732285998695682039637069547010308064748306803758198921394270755416841565865719831216860358740221654369
+Encrypting Exponent (e): 65537
+Encrypted message (c): 1045465852847567054092433931013007236760747796563420808150430165963944046835875107779120241778315226330898435669400335309587900793688362880352123670869132166086383213904326344797237457320331354171464504462697827411741943382830261794376339298686828385334393884439460865478874686674326061003782020656185275787961529959600655019122530110031172443747962924678204918671751293745967740707123532852341695939964951534309411015064351752772228206966189118152221969401555859255819431723296345686158661134960917123368718002500489215252337341345358271234395003575976687819645900229033777590219882225894164253966608170559803738247</p>
+
+  <p>The same message (m) was encrypted with both keys, what was the message?</p>
+</blockquote>
+
+<p>chal 6에서는 소수를 공유하는 n1과 n2를 가지고 같은 평문 m을 암호화한 c1, c2가 주어진다.</p>
+
+<p>우리는 같은 소수인 p만 구할 수 있으면 q1, q2를 구할 수 있고, 평문을 얻을 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">math</span>
+
+<span class="n">n1</span> <span class="o">=</span> <span class="mi">23961207948934282060921275927106256984588579862297064909294419822628020831137859012533665585680401079617525891657160314843265392087703677661514070008778245757376589832018857671168658947609552898309863722471590433161404311066485506643535655064095602959070603448876248352462428008073717624931014698247716223002245277854092473328864152849887078938466198665589402538275832040341274030550127782915780958979656803648029256866128973722273034230936690989945924869163652770425095028385072206241453834554096537703595906838146425608013038337168987508330459967207197635912294621142753591950486556080478536055111373084199919826333</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="mi">27697113117149630032439601770803961489312401267841621268178967878892047166143543614283547846429077063115325033124511766328865212440574487123480678342143282760961258057142993115142788154610800649248459980664842753640230180372034002023565113015274290156313224719578123472052529062727127920068159292359391608459242722316611819451931667892407903653856362604093935363601327903912797348238778861683764561935583036639271289327157255275646263716608075997857481160501257545682748119756591079321146656796810080522248859651389058665283161234167380790571498565242528802870820072931751575211810103576822373893035261758524084377481</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
+<span class="n">c1</span> <span class="o">=</span> <span class="mi">16951586501574350065871519708702933708039830376487950009023799938006658207497008247003520472287914831765589657454204235422035289129270965037211579172983549756205587909982005995596282294264202204593549374460087968294511298319066803610705933709261666949226527586578193032146767821374165089476578289018181014246731826894875290705061900920775688750978710003567153578367552600434069440078517587123933327122097024555424820931549532059061989611451248922872184817475689082333480829209215804456854772658681019696389220871513732992164881734706421472217213452117451714414295578925176339139328701073726981757209540065002504410768</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="mi">6495117567215470504161311278301047471634180093042957972503066547014345976364076023746501000442447657300767946105426444954345673997427842073599004885589072078678136083135329874207500605674926380237383520704532058733518768736444009979311442286785102868094047367660982395638593992156526481377258646746937950402752295616209365322165176295534981703991553930680139919156861792558808574341857188106418389761694625611544906956645528251521016275561465072476345538276794778029641060381064596656410772328827265142497968869382276532877905612093081286659336134629362643374291071162630981135067949982464196930049981481010737621017</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">math</span><span class="p">.</span><span class="nf">gcd</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">)</span>
+<span class="n">q1</span> <span class="o">=</span> <span class="n">n1</span> <span class="o">//</span> <span class="n">p</span>
+<span class="n">q2</span> <span class="o">=</span> <span class="n">n2</span> <span class="o">//</span> <span class="n">p</span>
+
+<span class="n">phi1</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q1</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">phi2</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">phi1</span><span class="p">)</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">phi2</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">pow</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">n1</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">pow</span><span class="p">(</span><span class="n">c2</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">n2</span><span class="p">))</span>
+
+</code></pre></div></div>
+
+<p>소인수분해에 비해서 최대공약수 gcd를 찾는 알고리즘은 굉장히 빠른 편이다. \(n_1 = pq_1\), \(n_2 = pq_2\) 라고 하고 p, q1, q2 모두 소수이므로</p>
+
+<p>p라는 최대공약수를 가진다. 따라서 gcd를 계산하면 평문까지 계산 가능하다.</p>
+
+<p><br />
+<br />
+<br /></p>
+
+<h2 id="chal7">chal7</h2>
+<hr />
+
+<blockquote>
+  <p>Challenge 7:</p>
+
+  <p>The modular arithmetic aspect of RSA is one of the main security
+features that prevent trivial decryption of messages. It’s important
+that the modulus n reduces the resulting value’s size. For example, if
+the encrypting exponent were 3 and the ciphertext were 125 then a
+simple cube root would reveal that the encrypted message was 5.
+Because of this, RSA is generally considered insecure when used
+“raw” like in this challenge. Messages are supposed to be padded in
+size so that 5 becomes something like 100000000…000005. Exact
+padding schemes vary and are supposed to have some randomness to
+them. Also, the encrypting exponent needs to be big enough that
+encryption operations produce results many times the size of n so that
+the modulus by n reduces them greatly. Finally, it’s important that
+the same message is not encrypted with multiple keys. Using “Chinese
+Remainder Theorem” (CRT) a message encrypted with multiple keys can be
+reconstructed if the sum of the modulus size for all the key exceeds
+the size of the encrypted result (pre-modulus).</p>
+
+  <p>In this challenge, the message getting encrypted is 64 bits and the
+encrypting exponent is 101. This produces a result that is
+approximately 101 * 64 = 6500 bits. The message is then encrypted
+with four different 2048 bit RSA keys.  The four keys combined are
+about 8200 bits which is bigger than the 6500 bit intermediate result
+of the encryption operation.  Using CRT the 6500 bit encrypted message
+can be recovered and then the 101st integer root can be taken to
+recover the original 64 bit message.</p>
+
+  <p>== Generated Public Key 1 ==
+Public Modulus (n): 20481259162754315512823664767250516362357109979613031020353226338965535780784816213116206770865486797211937322020632683678047469494906987516508762269370175971157612342411883895670121853642914082924632879102005752328403574147824612604243974197869468994641686450419041502230456255206674112856965536291137302593064700942179420274200007418452284861822613777909763242128619597189994245284345662583963557025093265826619008287203419437375901990440697747673200913284373554199189476219296416848276118147055868938459469083463818781834416396696990180132559009390009462008717094373210828134404125015880666148172823362561041730817
+Encrypting Exponent (e): 101
+Encrypted message (c): 5688122506654217984814036752568226084552760754303263397426340747793696327918694942313194683536125453466764384399651625352636305269415284965148345524130502713071762324258634142360654272139449100971795097741139269721177647655370462964795608054060779830279548111138125033208768149072643969082480045600561049391692613245511861790965191123340075114822601051984457408900922013902985831315444720745045605995111815212220107633730204247632821689593910800767587164193667916723672428827269623862733475672118717028861604329888922341583202372891349515405936468931132803283563291706953502233993707233009140954971405171844344770717</p>
+
+  <p>== Generated Public Key 2 ==
+Public Modulus (n): 24523351661873967315302433905589287327796615996150758928480917421545426895223707606912434471847105869925775814378708667299653612426878459305444641305926325003188933916967729625600828194935540974831889531789632327388690276170864521916875568741163703920243251264028966607343093541934727375510474234116539993137601064167252746840189945246496534756952257638436824052605932699961348375845670115095509031950539420986309891845998644074343296102861584257939622928509394815785003793722157838128553737315887649378938485454532264010987801585716930804715810378430090590521582465103927377640635208135541617512369206074774436213803
+Encrypting Exponent (e): 101
+Encrypted message (c): 8153833288826767260666496697239667022303854292226890521513768785253217336408864961070983223497951496308617907626826770008055111494180316963694276756851858537662308729112588683325181030850361295583786770400624689942400449317772617090290303193469308172160002905535395618304538379473221820985360618363817919690116239863960112877401853334148920278042063530634716776001520163230586605035245985256346314390820630314193135274382891182748472860072817501756487312147837746666566586415679944171049289114523563572429253149339558659077199946949321191431481523480365566360907197350687917363023638422537989391188417157595688683620</p>
+
+  <p>== Generated Public Key 3 ==
+Public Modulus (n): 23954463274874492606399156947555755947978786520249444496424310837148539977962520155283781042569413129145983718395856040910500959415134900007595557308934068067964839987971811746988466234253809899936524774991478521613787760976776446741518125451300323892336109841161302288698010400270458071623715489453873837614180982475165334519210093094337266784360643208454277184795541498045313524825174287697452742377821165196037639512792335977077137031235976879510222702512793758948445597170407977731556992352420887449184997648778831124369830785890331893127696533018542197649913920648994542674984023108075187189249091082907449103429
+Encrypting Exponent (e): 101
+Encrypted message (c): 7160608361453533085695870829457255053871313946946642856939802426577166869923489672138399058984082600324251235116072782634929235120568568743867415658827600527434015918407398414562046472361153622834037228339269640503431782221866930692664960012190203674241609640402968388423760822600883081146425742255497938528210710999317375059584391376453212303193469959113966739871695775568032910783501427626391976380955083127210471251386513164877395160460033283560844923453544938420915407415708908758470775552725103120154847888576481023053231342455226944318433475104801237550340643235574035392557808603951014445926721270127900089250</p>
+
+  <p>== Generated Public Key 4 ==
+Public Modulus (n): 22436814373126465516813567811202687213496136771448222949962923232442204236072758632464928785414923211637494097264201922705945336025725993401002829632361744216496251275809316059445262124628984647308860316643753373833531748336825867910878514905601187381403854268907794893689647715717803764232844350679658846241319334176901390028458572367087531515793173972950935439509765323997146441785621865465605656295841927576274378494121900591434974972448107018454368384159663865091454833996450629867119381017268199432865420413353550305513139597224880191625637142343984264920442292440207862946177489984360347175630064770016485767659
+Encrypting Exponent (e): 101
+Encrypted message (c): 13774772535033896374823368844812082297425952736241949535608441452390944427220940148422927558519933121917991422775932663352562778038971025494326994420256881547157176052810326330682581850770968238927449719455477070259206898277725783377919045600730126996556000759215342853262831208946312226088512918258368585846314225942120112838219101270414428994857878149970635307795960368417726740421958383076016410535440339172450575927730582587318028102110431972954833148674476831985715363078709758358720390571804813042297180015221163368901417250225082721170859825064829325034064493913826247647420630818470346996119864892810256761338</p>
+
+  <p>The same message (m) was encrypted with all keys, what was the message?</p>
+
+</blockquote>
+
+<p>문제를 읽어보면 알 수 있는데, 모듈러의 필요성? 에 대해 논하고 있다. 이와 관련한 공격이 Hastad Attack이다.</p>
+
+<p>문제에서 평문 m에 대해서 n이 4개가 주어지고 그에 대한 암호문 c가 4개가 주어진다.</p>
+
+<p>공개 e가 101로 작은 편이다. CRT(Chinese Remainder Theorem)을 사용하면 각 \(n\) 에 대해서 \(m^e \equiv c \bmod n\) 식을 연립할 수 있다.</p>
+
+\[m^e \equiv c_1 \bmod n_1\]
+
+\[m^e \equiv c_2 \bmod n_2\]
+
+\[m^e \equiv c_3 \bmod n_3\]
+
+\[m^e \equiv c_4 \bmod n_4\]
+
+<p>CRT를 사용하면 위 합동식을 만족하는 \(m^e \equiv c^t \bmod n_1n_2n_3n_4\) 를 계산할 수 있다.</p>
+
+<p>각 n값이 여기선ms 2048bit이고, \(n_1n_2n_3n_4\)는 대략 8200bit이다. 그러나 평문의 길이가 64bit이고 공개키가 곱해져도 101*64  약 6500bit이다.</p>
+
+<p>\(\therefore m^e = c^t\) 이다. 따라서 평문을 구하려면 e제곱근을 씌우면 된다. 이는 gmpy에 나와있고 precision을 높게 설정하여 정확한 결과를 얻는 것이 중요하다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sympy.ntheory.modular</span> <span class="kn">import</span> <span class="n">crt</span>
+<span class="kn">from</span> <span class="n">gmpy2</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">n1</span> <span class="o">=</span> <span class="mi">30659273995054576739763628255172624727092940462827010233730881864352343409875790306780785255079676108450643113895196670140372072488260756221527719141181694391384851401316213904014758045767538641070403652765749115003725889662096011166158624290353811349000837183413355261378734217251562825652634441601787063140464648711237675860356445224693294689348754591821242591605957005020006277199651260152062537478522473123504432813454568829272893458619188245316759412753043885288221441470200468478427385774166401425705444880625217684839712754580291890680819596351561852122793718208906041700162119288292433075258231828665159749831</span>
+<span class="n">c1</span> <span class="o">=</span> <span class="mi">30553799943805784881181859332971687056231840821941060595486511493569019299112602645939402787971842944787951817751499481973193382641102254614549274838034258108875078957076834259124724849681382059109326890202067806228583609049649746944208914749312665463381835285754159699217663035131294095388990788853269080381687085385234458326915503913917235880917113275517522554721652019855552126043676002553710305567049994601402364894761608194852016920312337045875726560396931525013645385001765318148340088003995318254659751809769649850758168959195389670537523688995397651036417696239511842347433402889811852200402755780657734010798</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="mi">22833359550353423832386168277197067415829654885889854802801441719094427886929299292574543739099140885368233993632794066385267553955779553533223337569264129450318179975238551050470586704413827638115552356212528949713868234061906347182711380272588701462198020716807257838542474453575207354363284332436577245326972620901080176584012829011896237404054704621286697439105231779212131689510008361475530337814907418447846986160006832211695942671352106962918832122972474494652766935728588620401503353692964014914786999023801625904200303136179822429748894588263451927226981258597711028706827256017819767831805230937940292310787</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="mi">16292813908143679059549578105667325276330640758031927255652296628313227747807697566179156721182552748381324975925120456363678956841303741703421948369838727836275094744517450202948165490980736843006466992443515389623104446284830781385122579237524992029863569886490530741173710424662595581740893188363464065511083719480024374666221105889107574474536612956932658232432212057535847609882157397159685070410878694576999567885302003136345503317102708553162964996550901879795268222432403133110526644103645079830524264123395403587559662105858935074386956469424028770374767977892915413925474566887668476500469757851625927825952</span>
+<span class="n">n3</span> <span class="o">=</span> <span class="mi">22439906256247410483154256220737666393800238039260002166036218359966758961442490296335972448274281594004945759472169484700107160090585115801894165003300865910353549295404130857508696917010151760717142782054921657456558048273085296460247411023807499066480818246742469867528306044752033178931765842549083110211948228138928683081800662682301753807759519160422473339052583615370806843402452352999054419606126071307519690153647525694945563091950983216799587284476461595214503618013588576885279083472029566224720063593576344064225986729418983507271277874075312065371596237817015446411498350208357800176631868197891588404357</span>
+<span class="n">c3</span> <span class="o">=</span> <span class="mi">17382024390585956525350510138023571107141674025506492930899964558842609572293597084496118345579145315655602179653287087490135794996115870591548621552097546900328491374396519573378265322736589658534551985538620293502656633015377972281073868811381091883038116203088997406103018498219681017583878777666156615204933322075143930697232625600853009206302072108294014742390935829160699700057260650834789243691914701955177597721002405947663164803916593276445387910556911606353806212374970129731972621922508936402861612768125291867926794357352187241889200370531552902501060131513706655801465205220097668269354347581370965224347</span>
+<span class="n">n4</span> <span class="o">=</span> <span class="mi">27795455077391143925353821355192611576706571000111155677679564418670557294587872223077428540309288307996926740818036761760842764429374284534363861962972380815356412779200095236383414036113546412274332657474628855092194135847741135530850910214364243480294812928926781961567717345785313745700091625621977001403597796280667538488842907436176764104262103463404523397919075613022978881223656303513200791051242692521578798642822442457398413600795354762794101340896098847358377062119836755610811005740493132035938705347041485122589125708733325472166069355545191617042073342219014955956251670138618794613319255842139561686019</span>
+<span class="n">c4</span> <span class="o">=</span> <span class="mi">22348792457639688439269576858999705942434824406616600473361605603433335359370788864198200444971872769213538611985517752390447152027189618284886067967771237994659512457904911783044701411428197133905953169256646060650269309196759631742499345406806769477115600146189298433687772827363083406511877123804632350229520793759472528540490485847095385645809637534665804175115204343724694115563343800451868659913783641866046654015883938366801698080765918577909855903150149849308262225538455783696852914979103213804392392254797489140390004680002619709858114097991730142096004563720511125110244522416664699590568144882968357288245</span>
+
+<span class="n">e</span> <span class="o">=</span> <span class="mi">101</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="nf">crt</span><span class="p">([</span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">n3</span><span class="p">,</span> <span class="n">n4</span><span class="p">],</span> <span class="p">[</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="n">c4</span><span class="p">])</span>
+
+<span class="k">with</span> <span class="nf">local_context</span><span class="p">()</span> <span class="k">as</span> <span class="n">lcx</span><span class="p">:</span>
+	<span class="n">lcx</span><span class="p">.</span><span class="n">precision</span> <span class="o">=</span> <span class="mi">500</span>
+	<span class="nf">print</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="nf">root</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">101</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<p>이전에 42CTF에서 낮은 지수 공격으로 풀이한 <a href="https://thfist-1071.tistory.com/286">문제</a> 덕분에 코드 작성이 수월했다.</p>
+
+<p><br />
+<br />
+<br /></p>
+
+<h2 id="chal-8">chal 8</h2>
+<hr />
+
+<blockquote>
+  <p>One of the slowest aspects of RSA encryption and decryption operations
+is the need to perform modular arithmetic mod n. The other operations
+that are slow are the ones that use the decrypting exponent, d, since
+d tends to be quite large like n.</p>
+
+  <p>One common optimization is to implement RSA operations mod p and mod q
+and then use the Chinese Remainder Theorem to assemble the smaller
+results into the final result mod n. This is called RSA-CRT.</p>
+
+  <p>Although RSA-CRT can be substantially faster than traditional RSA, it
+requires saving p and q as part of the private key and then the
+intermediate steps to perform an RSA operation use p and q. If a
+hardware fault (like a bit flip) occurs during an operation with p or
+q there is risk that p or q could get exposed in the final calculation
+result.</p>
+
+  <p>In this challenge, two signatures are provided. One signature is valid
+and the other signature was produced using RSA-CRT with a fault,
+resulting in an invalid signature.</p>
+
+  <p>Using the faulty signature you need to recover the private key.</p>
+
+  <p>See <a href="https://eprint.iacr.org/2002/073.pdf">https://eprint.iacr.org/2002/073.pdf</a> for a discussion of this
+issue and section 2.2 for specifics.</p>
+
+  <p>== Generated Public Key ==
+Public Modulus (n): 20899851420518054169431759447347893057967126432529840822618705773725040657187851627038820741621587244417570394625487217589429686841690466355995204840069564832095801958851178117356761899148369832359056379093182640822090088377076718180997755157082531136818934634343066462081473329092706557294018732912311196211640732008881059449407553324597528886949229785507352439653076202687923814841265833268414083833740885434761579408597607733001397957177755634804098309723998108250180276177840002837843398103412016363900005099464121528929815819037364521988829066723443134870857662613976736453043640964137751047117688414635981378929
+Encrypting Exponent (e): 65537</p>
+
+  <p>Signed Message (m): 84104289759115639336216796537728691235054590162939875781567981454377398967452</p>
+
+  <p>Good Message Signature (s): 13347953491130680263167763260997447750304703376646972204281470820113038500553340657236686665841082219052890360633462416496388987043017073810006842751180806632079445865366327045482137290248483706025463796288787213456987172939242413235013038897827959551680246338224930132236335092300172580167211487451418170862346652967789906906183888568777776542188582457416236522132197027162752132091490482404046179580747005963981803929187323971770305361199691138240822918724483628681155948375985734727260468204275324172193915144777771055174894948675386054309147507256052179111036690726002126113238979187204091496564519576727303639091</p>
+
+  <p>Bad Message Signature (s): 15686728617946397369236113133590646374519006095614161107094979287794444293769703791838545384521716203868866705114203547922806095045948071047918760317946914916580007950732397525064957909013773877410078922571075082033419438133100666489977253453092561364819001620763547057800317425908689149855395982791270054126675909590125195273604706361385217787381560119382479478116659429608474258996597749199326957279299809954156243025623539037652778346319771991722201811294924191188876319270240345704694028562588239751101793258551107918237644519542170111601791828052877944481054742772944392007733755223380834713906691645283896443242</p>
+
+  <p>What is the private decrypting exponent (d) for the public key?</p>
+</blockquote>
+
+<p>이제 전자 서명에 대한 문제가 나온다.</p>
+
+<p>이 문제는 올바른 서명과 잘못된 서명, e와 n, 서명된 메시지가 주어진다.</p>
+
+<p>good_m이 서명된 메시지였다.</p>
+
+<p>전자 서명은 공개키를 사용해서 암호화하는 과정을 반대로 하면 된다. 비밀 키를 사용해서 암호화하고 공개 키 e를 사용해서 복호화하는 것이다.</p>
+
+<p><a href="https://crypto.stackexchange.com/questions/63710/fault-attack-on-rsa-crt">Fault attack on RSA-CRT</a></p>
+
+<p>StackExchange의 Cryptography에서 잘못된 signature에 대한 공격이 보이는데, 그 원리가 어떻게 동작하는지 아직은 이해하지 못했다. 그러나 문제에 명시된 RSA-CRT와 연관이 있어 보였다.</p>
+
+<p>RSA-CRT 기존 RSA78에서 키의 크기가 커질수록 지수 연산이 증가하여 속도가 느려진다는 단점을 개선하기 위해 제안된 기술이다. RSA82부터 적용되었으며, n에서의 연산을 p와 q에서 진행하고 CRT를 이용하여 결합한다.</p>
+
+<p>해당 기법은 오류주입 공격에 취약하다는 단점이 있고, 단점을 개선하기 위한 연구가 활발히 진행되었다.</p>
+
+<p>이것에 대해서 논문 리뷰 등으로 알아봐야겠다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">math</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">24690794458892498053187785142960642939178500318699495164847630709231833096436763064224730784945291858669531384204993482009806942530700620262452729557648436324466267460035062915876022688322741698227671640341575560241487943748066849491699567064874327042483006363166680317211975315401818829348093407177865000189653984716283511833470818087463969838379474426628684810235283565679797987665119284068691125553316360688162853283084327023064811590177848438660880135502686155217526221871720239612235257493396635651786501366820447815440677253383097075436294034630618345815151557509315285089368925340836650261417067967731932697969</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
+<span class="c1">#signed_m = 2880534221174364579627023503943386149615051796169277373207703953376533898912
+</span><span class="n">good_s</span> <span class="o">=</span> <span class="mi">61067243206611</span><span class="n">t67670446056235564877917199914105865489449633621020320107323816293413365258923320980545771041471569930806617461117650190342181363779960100778699267357636320249500980875282596270437298446423448148082469650418243515298006591113157817434322259842352981179114727912586676508977925091517126441055614607528691859477993532883105151807739541503096756091775202412091481424289453567803095100929164906979616178788865653749506623602681535415469946713492248070615979270624385045977549452575436520512313382685533872589113650750836927606229762863950079934757387880718894654390903750030254607383863114988897296408065021</span>
+<span class="n">bad_s</span> <span class="o">=</span> <span class="mi">4087400597207177777454894354934240526956333688339245473252643680991847305960220779692616294560522393784616168495675116891571476893287552360853522561280670583031123386901572778964729851686181398133887709030299107485141030474363414456645287822523240358224844041558479331500369873063023476722643505482268387942089172829787896647548647783185853672271478198932412582943956831531830745346331539280028225102925635309983185735083842685703718035329533296284064517081861986931189887814573106151531597342880028307008827294167231486870848880840389770964919004708270106799945166236470129045047102126610079217031465863053769045974</span>
+
+<span class="n">good_m</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="n">good_s</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">bad_m</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="n">bad_s</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">math</span><span class="p">.</span><span class="nf">gcd</span><span class="p">(</span><span class="n">good_m</span> <span class="o">-</span> <span class="n">bad_m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="n">p</span>
+
+<span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>앞서 링크를 걸어둔 stackexchange 의 글을 참고하여 위 코드를 작성하였다.</p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[BSidesSF CTF 2023]]></summary></entry><entry><title type="html">fastrology - new moon</title><link href="https://neutrinox4b1.github.io/blog/2023/fastrology/" rel="alternate" type="text/html" title="fastrology - new moon" /><published>2023-04-15T00:00:00+00:00</published><updated>2023-04-15T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/fastrology</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/fastrology/"><![CDATA[<h2 id="background">Background</h2>
 <hr />]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Plaid CTF 2023]]></summary></entry><entry><title type="html">Plaid CTF 2023</title><link href="https://neutrinox4b1.github.io/blog/2023/plaid/" rel="alternate" type="text/html" title="Plaid CTF 2023" /><published>2023-04-15T00:00:00+00:00</published><updated>2023-04-15T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/plaid</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/plaid/"><![CDATA[<p><img src="https://pbs.twimg.com/media/Fs6fQSVXsAYTgF4?format=jpg&amp;name=4096x4096" alt="untitled" width="100%" height="100%" /></p>
 <h2 id="writeups">Writeups</h2>
 <p><strong><em>crypto (unsolved)</em></strong></p>
@@ -7,13 +601,13 @@
   <li><a href="../fastrology">fastrology</a>
     <ul>
       <li><a href="../new_moon">new_moon</a></li>
-      <li>waxing_crescent(../waxing_decrescent)</li>
-      <li>full_moon(../full_moon)</li>
-      <li>waxing_gibbous(../waxing_gibbous)</li>
+      <li><a href="../waxing_decrescent">waxing_crescent</a></li>
+      <li><a href="../full_moon">full_moon</a></li>
+      <li><a href="../waxing_gibbous">waxing_gibbous</a></li>
     </ul>
   </li>
-  <li>bivalves(../bivalves)</li>
-  <li>The Other CSS(../the_other_css)</li>
+  <li><a href="../bivalves">bivalves</a></li>
+  <li><a href="../the_other_css">The Other CSS</a></li>
 </ul>
 
 <p>write-ups from <a href="https://imp.ress.me/blog/2023-04-17/plaidctf-2023#plaidctf-2023-writeups">4yn</a></p>
@@ -302,77 +896,4 @@
 
 <blockquote>
   <p>RS{IFYOUAREINTERESTEDCHECKOUTMORECRYTPOCTFSATCRYPTOHACK}</p>
-</blockquote>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[RITSEC CTF 2023]]></summary></entry><entry><title type="html">Chandi bot 1</title><link href="https://neutrinox4b1.github.io/blog/2023/chandi_bot_1/" rel="alternate" type="text/html" title="Chandi bot 1" /><published>2023-04-01T00:00:00+00:00</published><updated>2023-04-01T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/chandi_bot_1</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/chandi_bot_1/"><![CDATA[<h2 id="solution">Solution</h2>
-<hr />
-
-<p><img src="https://user-images.githubusercontent.com/101745344/231845298-29aeaf6d-04ee-4b37-a226-766de025d880.png" alt="ritsec2023_4" /></p>
-
-<blockquote>
-  <p>RS{QUANTUM_RESISTANT_ENCRYPTION}</p>
-</blockquote>]]></content><author><name></name></author><category term="misc" /><summary type="html"><![CDATA[RITSEC CTF 2023]]></summary></entry><entry><title type="html">Chandi bot 2</title><link href="https://neutrinox4b1.github.io/blog/2023/chandi_bot_2/" rel="alternate" type="text/html" title="Chandi bot 2" /><published>2023-04-01T00:00:00+00:00</published><updated>2023-04-01T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/chandi_bot_2</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/chandi_bot_2/"><![CDATA[<h2 id="solution">Solution</h2>
-<hr />
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/ritsec2023_5-480.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/ritsec2023_5-800.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/ritsec2023_5-1400.webp" />
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/ritsec2023_5.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
-
-  </picture>
-
-</figure>
-
-    </div>
-</div>
-
-<blockquote>
-  <p>RS{HMMM_WHAT_ARE_YOU_LOOKING_AT}</p>
-</blockquote>]]></content><author><name></name></author><category term="misc" /><summary type="html"><![CDATA[RITSEC CTF 2023]]></summary></entry><entry><title type="html">Chandi bot 4</title><link href="https://neutrinox4b1.github.io/blog/2023/chandi_bot_4/" rel="alternate" type="text/html" title="Chandi bot 4" /><published>2023-04-01T00:00:00+00:00</published><updated>2023-04-01T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/chandi_bot_4</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/chandi_bot_4/"><![CDATA[<h2 id="background">Background</h2>
-<hr />
-<p><img width="418" alt="Untitled" src="https://user-images.githubusercontent.com/101745344/231843579-630a035a-a50a-4190-9a67-7642e4552b7b.png" /></p>
-
-<p>/balance 라고 하면 현재 포인트를 출력한다.</p>
-
-<p>/rps는 찬디와 가위바위보를 하는 건데 항상 짐.</p>
-
-<p>가위바위보 시에 포인트를 걸고 하는데, 포인트를 정수로 입력받는다.
-<br />
-<br />
-<br /></p>
-
-<h2 id="solution">Solution</h2>
-<hr />
-
-<p>포인트는 0이면 안되고 자신의 포인트보다 작거나 같아야 한다는 걸 조건으로 사용하는 듯.</p>
-
-<p>포인트를 음수로 지정하고 lose하면 오히려 포인트를 번다.</p>
-
-<p><img width="472" alt="Untitled (1)" src="https://user-images.githubusercontent.com/101745344/231843564-a70b4d63-62c8-468e-9ed3-6f098318850f.png" /></p>
-
-<p>음수를 검사하지 않으므로</p>
-
-<p><img width="388" alt="Untitled (2)" src="https://user-images.githubusercontent.com/101745344/231843571-797f1e5a-f230-4252-8522-f9b02fda3576.png" /></p>
-
-<p><img width="567" alt="Untitled (3)" src="https://user-images.githubusercontent.com/101745344/231843575-f0bb5c16-457d-4f0e-a776-8f85d44fde03.png" /></p>
-
-<blockquote>
-  <p>RS{TWO_NEGATIVES_DO_MAKE_A_POSITIVE}</p>
-</blockquote>]]></content><author><name></name></author><category term="misc" /><summary type="html"><![CDATA[RITSEC CTF 2023]]></summary></entry><entry><title type="html">Chandi bot 5</title><link href="https://neutrinox4b1.github.io/blog/2023/chandi_bot_5/" rel="alternate" type="text/html" title="Chandi bot 5" /><published>2023-04-01T00:00:00+00:00</published><updated>2023-04-01T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/chandi_bot_5</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/chandi_bot_5/"><![CDATA[<h2 id="solution">Solution</h2>
-<hr />
-
-<p><img width="495" alt="Untitled (4)" src="https://user-images.githubusercontent.com/101745344/231844470-cdbbbebe-cc80-4e50-bbd4-6a95885acbcc.png" /></p>
-
-<blockquote>
-  <p>RS{TRIVIAL_TRIVIA_TRIUMPHS}</p>
-</blockquote>
-
-<p>ㅠㅠㅠㅠ</p>
-
-<p>다 대입해보면서 품</p>]]></content><author><name></name></author><category term="misc" /><summary type="html"><![CDATA[RITSEC CTF 2023]]></summary></entry></feed>
+</blockquote>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[RITSEC CTF 2023]]></summary></entry></feed>

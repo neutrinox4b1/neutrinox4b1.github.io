@@ -10,9 +10,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Weird | Neutrinox4b1 ⚛  </title>
+    <title>rsalab-2023: 2022-first | Neutrinox4b1 ⚛  </title>
     <meta name="author" content="Neutrinox4b1 ⚛  ">
-    <meta name="description" content="RITSEC CTF 2023">
+    <meta name="description" content="BSidesSF CTF 2023">
 
 
     <!-- Bootstrap & MDB -->
@@ -32,7 +32,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://neutrinox4b1.github.io/blog/2023/weird/">
+    <link rel="canonical" href="https://neutrinox4b1.github.io/blog/2023/rsalab_2022_first/">
     
     <!-- Dark Mode -->
     
@@ -117,30 +117,135 @@
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Weird</h1>
-    <p class="post-meta">April 1, 2023</p>
+    <h1 class="post-title">rsalab-2023: 2022-first</h1>
+    <p class="post-meta">April 22, 2023</p>
     <p class="post-tags">
       <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
         ·  
-        <a href="/blog/category/steg">
-          <i class="fas fa-tag fa-sm"></i> steg</a>  
+        <a href="/blog/category/crypto">
+          <i class="fas fa-tag fa-sm"></i> crypto</a>  
           
 
     </p>
   </header>
 
   <article class="post-content">
-    <h2 id="background">Background</h2>
+    <h2 id="chal-1">chal 1</h2>
 <hr>
-<p>This file was supposed to contain a secret message but it looks like just a blank page. Something weird is going on here.</p>
 
-<p><br>
-<br>
-<br></p>
+<blockquote>
+  <p>Challenge 1:</p>
 
-<h2 id="solution">Solution</h2>
+  <p>Before your start on attacking RSA, it’s important to first understand
+basic RSA operations like encryption and decryption. For this
+challenge, we have generated a public key. Your job is to encrypt the
+provided message with that public key to get the ciphertext.</p>
+
+  <p>RSA encryption uses the encrypting exponent, e. Decryption is the same
+mathematical operation except that it uses the decrypting exponent, d.
+If you can encrypt with the provided e then you could decrypt (if you
+had d) just as easily.</p>
+
+  <p>== Generated Public Key ==
+Public Modulus (n): 93305094700222905881852268067388846454838857633497427869837725956270630098447
+Encrypting Exponent (e): 65537</p>
+
+  <p>Message to encrypt (m): 1234567890</p>
+
+  <p>What is the ciphertext (c) for the message (m) using the public key?</p>
+</blockquote>
+
+<p>랜덤으로 두 소수의 곱 n을 주고 공개 키 e를 65537로 준다.</p>
+
+<p>암호화 할 메시지 1234567890을 제공하고 우리에게 암호문 c를 구하라고 한다.</p>
+
+<p>암호문 c를 구하는 식은 다음과 같다.</p>
+
+\[c = m^e \pmod N\]
+
+<p>RSA의 원리를 알고 있으면 단순히 파이썬으로 계산 가능하다.</p>
+
+<p><img width="100%" alt="Untitled (2)" src="https://user-images.githubusercontent.com/101745344/234497947-9245d880-7c31-4b98-ac3b-21e7f4d8c0d8.png"></p>
+
+<h2 id="chal-2">chal 2</h2>
 <hr>
-<p>그냥 png 초반이길래 stegsolve 돌리면 풀리겠거니 하고 돌려보았다.</p>
+
+<blockquote>
+  <p>One of the most intimidating things about RSA when you first read
+about it is the notion of a “modular inverse”. In our everyday lives
+we’re pretty familiar with the idea that (1/3) * 3 = 1 or that (5/7) *
+(7/5) = 1.  That is, 1/3 is the inverse of 3 and 5/7 is the inverse of
+7/5.  What happens though when the numbers “wrap around” because of a
+modulus? As one example, you can verify easily that the inverse of 2
+mod 5 is 3 mod 5 because 2 * 3 = 6 and 6 mod 5 = 1. The idea that 2
+and 3 are inverses mod 5 is not at all obvious. Or, even if mod 5 is
+obvious, in the general case where the modulus is large inverses are
+not obvious.</p>
+
+  <p>In this challenge you are given e and n (as well as the factors of n,
+p and q)and you need to find the modular inverse of e mod
+phi(n). Recall that when n has two factors phi(n) is (p - 1) * (q - 1).</p>
+
+  <p>== Generated Public Key ==
+Public Modulus (n): 74626406913082933436196613326885245917286648370318001460622007824392110131473
+Encrypting Exponent (e): 65537
+== Secret Primes ==
+Prime p: 257799152770944809771969932762122277973
+Prime q: 289474989001956426553102966123893079501</p>
+
+  <p>What is secret decrypting exponent (d) that is the couterpart of e?</p>
+</blockquote>
+
+<p>여기서는 n의 소인수 p, q 그리고 e와 n이 주어진다. 우리는 이것을 이용해서 비밀 키 d를 찾아야 한다.</p>
+
+<p>비밀 키 d는 다음과 모듈러 phi(N)에 대한 e의 역원이다.</p>
+
+<p>다시 말해, \(d = e^{-1} \bmod\phi(n)\)</p>
+
+<p>\(\phi(n)\) 은 <a href="https://ko.wikipedia.org/wiki/%EC%98%A4%EC%9D%BC%EB%9F%AC_%ED%94%BC_%ED%95%A8%EC%88%98" rel="external nofollow noopener" target="_blank">오일러 피 함수</a>이다.</p>
+
+<p>오일러 피 함수 \(\phi(n)\)은 1 부터 n까지 서로소인 정수의 개수이다.</p>
+
+<p>n이 소수인 경우 소수의 정의에 의해서(1과 자기 자신 이외에는 나누어떨어지지 않는 수) \(\phi(n) = n-1\)이다.</p>
+
+<p>또한 eulier phi function은 곱셈적 함수이다. \(\phi(m)\phi(n) = \phi(m*n)\) m, n이 서로소일 경우 위 특성을 만족한다.</p>
+
+<p>n은 소수 p, q의 곱이므로 \(\phi(n) = (p-1)(q-1)\) 이다.</p>
+
+<p>따라서, d를 구하기 위해서 phi를 구하고 python의 pow 함수를 사용해서 그냥 역원을 구한다.
+역원을 구하는 방법에는 사실 여러가지(Extended Euclidean Algorithm, Fermat’s little theorem, CRT.. ) 가 있으나 python에서 코딩할 때는 pow함수가 제일 편했다.</p>
+
+<p><img width="100%" alt="Untitled (3)" src="https://user-images.githubusercontent.com/101745344/234498893-064ce9a9-87b2-4e4a-9517-7f833ee2cfc3.png"></p>
+
+<h2 id="chal-3">chal 3</h2>
+<hr>
+
+<blockquote>
+  <p>RSA Lab 2023&gt; challenge 3
+Challenge 3:</p>
+
+  <p>RSA is an “asymmetric” encryption algorithm because the key used to
+decrypt (d) is not the same key that is used to encrypt (e). This
+challenge will let you experience that first-hand. You provide your
+public key (n) and (e) and this challenge will encrypt a secret
+message (m) and provide you the ciphertext (c). Then using your
+decrypting exponent (d) you can decrypt the ciphertext back to the
+secret message.</p>
+
+  <p>You are highly encouraged to generate your own key here instead of
+finding RSA keys somewhere.</p>
+
+  <p>To pass this challenge the n value you provide must be at least 512
+bits, not be prime and the e value you choose must be at least 100.
+65537 is a good choice for e.</p>
+
+  <p>What is n for your public key?
+What is e for your public key?
+The ciphertext you must decrypt is ~~
+What was m (decrypt with the d you’ve made for your key!)?</p>
+</blockquote>
+
+<p>n과 e를 우리가 직접 설정하고, (n &gt; 2^512) 공개 키로 암호화된 암호문이 주어지면, 비밀키 d를 구해서 평문 m을 구하는 문제이다.</p>
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -148,13 +253,13 @@
 
   <picture>
     
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/ritsec2023_2-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/ritsec2023_2-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/ritsec2023_2-1400.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="https://user-images.githubusercontent.com/101745344/234502714-a8d37614-201e-4036-becb-a7ccee170398-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="https://user-images.githubusercontent.com/101745344/234502714-a8d37614-201e-4036-becb-a7ccee170398-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="https://user-images.githubusercontent.com/101745344/234502714-a8d37614-201e-4036-becb-a7ccee170398-1400.webp"></source>
     
 
     <!-- Fallback to the original file -->
-    <img src="/assets/img/ritsec2023_2.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+    <img src="https://user-images.githubusercontent.com/101745344/234502714-a8d37614-201e-4036-becb-a7ccee170398.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
 
   </picture>
 
@@ -163,10 +268,47 @@
     </div>
 </div>
 
-<p>blue plane 0에 있었다.</p>
+<p><img width="100%" alt="Untitled (5)" src="https://user-images.githubusercontent.com/101745344/234502816-e354a41d-8319-4e7b-a445-6bc67eb84646.png"></p>
+
+<p><br></p>
+
+<h2 id="chal4">chal4</h2>
+<hr>
+
 <blockquote>
-  <p>RS{Th4t5_w4cky_m4n}</p>
+  <p>Challenge 4:</p>
+
+  <p>RSA is only secure when factoring n is hard. If you can factor n into
+p and q then you can compute Euler’s phi(n) (the totient function)
+which, when n only has two prime factors, is just (p - 1) * (q -
+1). With phi(n) you can use e to find d which gives you the private
+key!</p>
+
+  <p>In this challenge, a secret message has been encrypted with a very
+weak RSA key. The RSA key’s n is approximately 128 bits meaning
+(assuming they are the same size) p and q are about 64 bit each. It’s
+your job to decrypt the secret message by breaking the RSA key (factor
+n!) and then determining d using n’s prime factors. 128-bit RSA keys
+are just big enough you can’t use trivial methods like trial division
+but are easily small enough that almost anything more sophisticated
+will factor them in seconds.</p>
+
+  <p>== Generated Public Key ==
+Public Modulus (n): 264077764893712564681347373214293350341
+Encrypting Exponent (e): 65537</p>
+
+  <p>Message to decrypt (c): 54832408036442361586583231856828192577</p>
+
+  <p>What is the plaintext (m) for the encrypted message (c) for the public key?</p>
+
 </blockquote>
+
+<p>n이 주어진다. 근데 작은 값으로 주어진다. 128bit? factordb에는 없지만 sympy를 사용해서</p>
+
+<p>factorint 함수를 쓰면 짧은 시가니 내에 소인수분해 가능하다.
+p, q와 d, e를 가지고 그대로 복호화를 진행한다.</p>
+
+<p><img width="100%" alt="Untitled (6)" src="https://user-images.githubusercontent.com/101745344/234505663-bd4e1834-a8fd-43ff-9c95-14c906588fa3.png"></p>
 
   </article>
 
@@ -190,12 +332,6 @@
   
 
   <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/rsalab_2022_first/">rsalab-2023: 2022-first</a>
-  </li>
-
-  
-
-  <li class="my-2">
     <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/rsalab/">rsalab</a>
   </li>
 
@@ -203,6 +339,12 @@
 
   <li class="my-2">
     <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/BSidesSF/">BSidesSF CTF 2023</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/plaid/">Plaid CTF 2023</a>
   </li>
 
 </div>
