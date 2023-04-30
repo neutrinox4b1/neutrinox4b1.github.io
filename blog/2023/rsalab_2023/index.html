@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Head -->
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>rsalab-2023: 2023 | Neutrinox4b1 ⚛  </title>
+    <meta name="author" content="Neutrinox4b1 ⚛  ">
+    <meta name="description" content="BSidesSF CTF 2023">
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700%7CRoboto+Slab:100,300,400,500,700%7CMaterial+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://neutrinox4b1.github.io/blog/2023/rsalab_2023/">
+    
+    <!-- Dark Mode -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
+
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/dark_mode.js"></script>
+    
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav sticky-bottom-footer">
+
+    <!-- Header -->
+    <header>
+
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+        <div class="container">
+          <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Neutrinox4b1 ⚛ </span></a>
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+
+              <!-- About -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/">about</a>
+              </li>
+              
+              <!-- Blog -->
+              <li class="nav-item active">
+                <a class="nav-link" href="/blog/">posts<span class="sr-only">(current)</span></a>
+              </li>
+
+              <!-- Other pages -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/projects/">projects</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/publications/">publications</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/repositories/">repositories</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/cv/">cv</a>
+              </li>
+
+              <!-- Toogle theme mode -->
+              <li class="toggle-container">
+                <button id="light-toggle" title="Change theme">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Scrolling Progress Bar -->
+      <progress id="progress" value="0">
+        <div class="progress-container">
+          <span class="progress-bar"></span>
+        </div>
+      </progress>
+    </header>
+
+
+    <!-- Content -->
+    <div class="container mt-5">
+      <!-- _layouts/post.html -->
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">rsalab-2023: 2023</h1>
+    <p class="post-meta">April 22, 2023</p>
+    <p class="post-tags">
+      <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
+        ·  
+        <a href="/blog/category/crypto">
+          <i class="fas fa-tag fa-sm"></i> crypto</a>  
+          
+
+    </p>
+  </header>
+
+  <article class="post-content">
+    <h2 id="chal-9">chal 9</h2>
+<hr>
+
+<blockquote>
+  <p>RSA has a surprising property which is that you can find the
+corresponding message for a signature by using public information.
+This trick is sometimes called “backwards signing”.</p>
+
+  <p>In RSA encryption and decryption are inverses of each other and
+signing with RSA is “just” decryption (since decryption uses the
+private key exponent).</p>
+
+  <p>That is, to sign a hash, h: s = h^d mod n
+To verify the signature: h = s^e mod n</p>
+
+  <p>For backwards signing, you choose what you want the signature to be,
+and then you encrypt it to find the corresponding message.</p>
+
+  <p>This feature of RSA is generally considered useless since you can’t
+sign a message of your choosing but instead find the message for a
+corresponding signature of your choosing. This does mean though that a
+user can’t be trusted to be a key’s owner (know the private key) just
+because they can produce message, signature pairs.</p>
+
+  <p>Real RSA uses special padding and hashing for signatures to futher
+protect against this attack.</p>
+
+  <p>== Generated Public Key ==
+Public Modulus (n): 24533061184862923089766842266937709955348483510442254957527201429040457306127231816854361814390314274799678334728610846526694752136741139457387232637745609256075046628082913933383614440983887946878757172433434436148789484612563231023429613118425585912877858399834851305468141443600339447893244986912426487850291915333585997809446724241871262958017885162519626776440696240046918014553834295399539449016513791013320438701009833183751246556802370384335035624742462194154825848427994933300821470381746681305670941933149874796836343967598524215326610358236803467552784985170432200967998309816818287928747819743156393386881</p>
+
+  <p>Public Exponent (e): 65537</p>
+
+  <p>“Prove” that you know the private key by providing a message and its signature</p>
+
+  <p>Provide a message:</p>
+</blockquote>
+
+<p>비밀키를 모르더라도 비밀키를 알고 있는 것처럼 행사할 수 있다.</p>
+
+<p>문제를 풀기 위해서는 비밀키를 알고 있는가가 아니라 전자서명으로 된 인증이 올바른가이다.</p>
+
+<p>우리는 m과 서명된 메시지를 입력한다. m을 직접 입력한다는 부분이 미심쩍었다.</p>
+
+<p>\(m &gt; 1\)이다.</p>
+
+<p>원래는 해시함수를 통과하긴 하지만 대충(어차피 나도 잘 모름) RSA적인 관점에서 볼 때 인증하는 방법은</p>
+
+<p>서명된 메시지 \(S\) 를 공개키로 복호화하여 원래 메시지 m과 일치하는지 보는 것이다.</p>
+
+<p>서명된 메시지는 평문 \(m\) 에 대해 \(m^d\pmod n\) 을 취해서 만든다. 평문이 1이었다면 얼마를 제곱하든 1이어서 동쉽게 비밀키를 갖고 있는 척 행사할 수 있겠지만 평문의 길이는 2 이상이다.</p>
+
+<p>생각해보니 n제곱을 해도 그대로를 유지할 수 있는 값이 있다. 직관으로 풀기는 했지만.. 모듈러를 이용하면 된다.</p>
+
+<p>\(-1 \equiv n-1 \pmod n\) 이다 . 따라서 법 n에 대해 n-1에 홀수제곱을 하면 그대로 유지된다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n</span> <span class="o">=</span> <span class="mi">25256073407685101361045149844323633767698315526043802706675244545879080102829086865006486425356623218432748358863391334491848699795753359617183619214051796505739081279549544290641410087124570404479559660436938764203536263171162155734977659836164741088713198882924545541824892512209062325914581709137770596094954316641588756809017375809134426545143231602707780507162476692466333349494429598071006500486235928256195560885704873555861120434692000064225986424239938189034539186022239015639415185394829052720781958588901090383930281556654465491211774190177206549598174898573083778674741145204477640696965405596615557348337</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">#print(pow(n-1, e, n))
+</span></code></pre></div></div>
+
+<p>따라서 평문과 서명한 곳 모두 n-1을 넣으면 된다.</p>
+
+<p><br>
+<br>
+<br></p>
+
+<h2 id="chal-10">chal 10</h2>
+<hr>
+
+<blockquote>
+  <p>Challenge 10:</p>
+
+  <p>Many encryption schemes has a property knows an “malleability” where
+mathematical operations on encrypted messages have a predictable
+effect on the corresponding decrypted message.</p>
+
+  <p>For example, with XOR if you flip a bit in the ciphertext that
+corresponds to the same bit being flipped in the plaintext.</p>
+
+  <p>For RSA the malleable property is multiplication.  That is, for two
+messages, m1 and m2:</p>
+
+  <p>enc(m1, e, n) * enc(m2, e, n) == enc(m1 * m2, e, n)</p>
+
+  <p>Stated more concretely, the encryption (or signature) of 15 is the
+same as the encryption (or sig) of 3 times the encryption (or sig) of
+5.</p>
+
+  <p>In this challenge you are asked to generate a signature for a 256 bit
+hash. You are given the ability to sign smaller messages. Use this
+ability to construct a signature from the smaller factor’s signatures.</p>
+
+  <p>== Generated Public Key ==
+Public Modulus (n): 26597011486511412024809645523478823707874990885549518281172459460467312736191563992828259699537456737788165184415493887923357769817800241493274009559191864868778160011341036642252279938211119099587110500708890742359749082848605411950741029067589197319382510538254382368372078781818251590036487112171673901397260667007425954953597067325406271282784203926945808717854671580221793032052255101899198990273445337825342567339278962836836518172746746380871359035254149682823538279317555727051640268215627972016693336753615128751141374797722100358823429431151708759143038125318730566865319338906481253443083615249222819529079</p>
+
+  <p>Hash to be signed (h): 408859615633242917990483791134156446533717099762363341572097273937162430640</p>
+
+  <p>Enter a small ‘hash’ to be signed (limit 128 bits) (enter 0 to end signing loop):</p>
+
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">24900908032491461588022606267711012618777170425165888488564026504898164147020507933105037620621766948761685444744820930833516955461757694486185381124402215830356729256318415538287134730815620583431517012407594320087554112050427313289319449639236280135074443790933363102809474612915298748672507295283755173901887035781921261534281316471333106256093385530779360545801535922986618974149832891183747414731486261856485235529155123168932248055281663723337505855685255666964440055436326953819062323220611283413484880084468900038101211138480456907802925140734764762381563490235068496745185445924570425641435371093936974732683</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mi">420942217652284463695926929134246632918290241372929171888074042606770749370</span>
+
+<span class="c1">#print(factorint(h))
+</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="mi">14459937923395292762207799172076214405751164107488775942591920342186043247567414581315289313987388519760967277050387139448268396704110046190110174285969441759109268489788479403334163537247554722441076229714167280878555761422227595536197165221961761222897506022031807883060506038696297043373391362838261845480319281834623666289736790605556310535492105591118752610526003520385182311117222819503892535061120065292314487654293707926943150051340727235043456573771584953290386759604882272573684102909965876345467718779355863727392843568823160444669804700864981398799355640221740529240113839702411425694439614626484787834468</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="mi">5300236953830097274200687385646621956796833009545815120793648625327992393191715082285032808073291909530292064058200573949154932601232908858849751708631123601048067356903843793171934118722037671698713962537797835004496002714754185879467362663712358968501684996373960495646084375221051348634263001721017410193944863731660031033675738820799570019223077490104102263950189505673323159139585697896464725181606979263496563188773986081081182216992980232152985708893996572991922985419536447445970626126439811449670758928847031587063112543417214559561802505482583671237833372593836120230812864927112854197420050941264002747484</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="mi">2599642643367309665313016702535107728365847135866430837442936404734034438336502775613678478402899821049308701081785328950669088630657807062587949595983410806530595737725432029233264239031721854244512818219180714908382012162914817265262500657964144989704844746013099263011531723638141093545305127007988014587361334936158121993492755039523181985870640039595755053405837246664479812590110786159799137348725304968008917383301974860155812268693588607205810949907753691714965748806980994461835295502451380455893622178791546845039365064382886392992842906412490910742734800789385905964286703713980742255696232512071933470375</span>
+<span class="n">s4</span> <span class="o">=</span> <span class="mi">15038515885852859404946285938993355235251578846554720216379900579714360304695948427476781803168355353575918019245824451897312004319768190296793340647943307035037379947025400673491796370357440667186794911401158524659357563944561328092640640126872450510599459605072629179507557509458210235016442738048409387287108954884714446170004258364334493064718229957113887413574272595958487141658065769602519258269815070058411089961711124259191970381467323706668863440507152704396131439712534898380400414968895137133025976982663803710404866259817753610833610945542553308796872064068008413449878242846170729833587130322782451210579</span>
+<span class="n">s5</span> <span class="o">=</span> <span class="mi">20945379779182231079326246152547313568860821317744955279758454874891270812968806030826616061206658672518431449127954969357356420025358789009205896416722069602404378563153747238195408914906499210679169245527027911435958811376233680292167686663121153322210492019843516354652710782095580862374761110625976821395028198181858899943431300391844519684266566328038041707330371832278568928969835408935433166789701504597367352179747696449321353624902722763702246832226313394183857362701949627438412047944803958348101356823855378018633519613600493936245890525688297927207188132107060433208811318527365166298175724694591047385089</span>
+<span class="n">s6</span> <span class="o">=</span> <span class="mi">11706126170608489710219029519640329542542189896537832137046784524611943664079911933363471690517379025784836936911499084268683755519818467026273464246343832731277598237990505593301260459603666189272870125127537089555519116179838576660471906098264664692879236217237992562670287267967921114304023377055264187648324145014037442710572399974707376513718634199224088730285137481866073819135489094415906366378662290289407547250647793182382448672311680379722395028939219772292311943734438198794940565814854636718546065122687818801763445767615270880754512191219600944751544013358236107461323269866318224904699204000263237087763</span>
+<span class="n">s7</span> <span class="o">=</span> <span class="mi">9013742716007165876938272078468828519692853525721797054310385000970439801766365611604981777184513376477450348047789655763878949498217800607579767293082872624414202444173999191085484508582323225856713731567518957965212447040845043734956883559458443584260533883011544117823485213546116387181228727115933450562619593427740244263044440835603752129214406287801695421552360899349309947885258589127819528862017750465361761337879742012225156287630814252711799788313515278019451345773276692525862010494507111862955400201412883507656630869357520660946152880942389538930759909410094714525317497422691620975359679060669108595654</span>
+
+<span class="nf">print</span><span class="p">((</span><span class="n">s1</span> <span class="o">*</span> <span class="n">s2</span> <span class="o">*</span> <span class="n">s3</span> <span class="o">*</span> <span class="n">s4</span> <span class="o">*</span> <span class="n">s5</span> <span class="o">*</span> <span class="n">s6</span> <span class="o">*</span> <span class="n">s7</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>메시지를 나눠서(소인수분해) 서명을 거치고 그것들을 곱한게 원래 메시지가 서명된 결과와 같다.</p>
+
+<p><br>
+<br>
+<br></p>
+
+<h2 id="chal11">chal11</h2>
+<hr>
+
+<blockquote>
+  <p>Challenge 11:</p>
+
+  <p>In this challenge a key has been specially generated to be weak to
+Pollard’s p - 1 factorization algorithm.</p>
+
+  <p>Pollard’s algorithm is efficient when one of its primes, p, is of a
+special form. That is, that p - 1 only has small factors, not big
+ones.  One small example of this is the prime 17. Since 17 - 1 is 16
+and 16 is a power of 2, 16 only has small factors.</p>
+
+  <p>Using Pollard’s p - 1 algorithm factor n to determine the private key
+and decrypt the provided encrypted message.</p>
+
+  <p>== Generated Public Key ==
+Public Modulus (n): 1562740576875926053963568439431043132570859750342060085936155450501367959202237451559245998650681586817107674508099698488548794333209123094321535226812149074549994250717424845943257096310321044933056832620277600091412496967165459838929894070837613936948360423482826116023101916641608446694431472075351285288395471056020558739102389949599996073569571540252780810308351226069260418388536601159789923166448952774854041871941222467222950785218226278334407717661114139153710009249495944990863499493589437163166773069936904157341115939562016733752500365072423198000267819847182816252687095099878227308729781845546809014117683
+Public Exponent (e): 65537
+Encrypted Message (c): 185667812051563211627449964521090700491112094252216136537012648302676743027328841766120367273987248854861842010582653954963500819922080231682618546629930614091146842357476401470418830608404432012946036486905219891551018073676325391355892046910838164439241834300414387543371780702358621485100086460698320251921840309515815248178504277604670321654654069236647506879111952999561284774432499531309530624708020301714766953629998347596973526012582725976168677281000305002101328869358809319830521547600610534952798091301132582699995406155132149631626706052515825846828732708852442739447450027019156161738270350407707922978462</p>
+
+  <p>What was the message that was encrypted?</p>
+
+</blockquote>
+
+<p>폴라드의 p-1 소인수분해법을 말하고 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">math</span>
+<span class="kn">import</span> <span class="n">random</span>
+
+<span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">b</span><span class="p">:</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+<span class="k">def</span> <span class="nf">pollards_p_1</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">B</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">B</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+        <span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">d</span>
+    <span class="k">return</span> <span class="bp">None</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">328216822836871012412990056304559615315223381251549448310618920730079324194803049448542413154647891592400254010846160666973370595211856406959229495640559480803630442169695773693434207838794966830141953549770849007186589517678446598039304837744368914482936522522642894114111995387702323509115019967968927269365100834297852527717210965831523078826141176299586826041060198171440293040461319764080384431099747016635530034582493638156024624950670383010323927384527002383082748190693579318306931632591901644540608262380244366548419261747316676262045709615261380493181737907177834240978300203839717149146325663163039058178821</span>
+<span class="c1">#factor = pollards_p_1(n)
+#print(factor)
+</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">2090753421405061459233887722215639678732446296270472867051170715058041504115839643148113585449844362584157062640843028276995436222769391276926000178976997438717950268992303404629113864135734336080695045342500178065507361237951542504681110909471085992400586135138141744759399613604727350594559264188045496880823</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="n">p</span>
+
+<span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">315317728665804991857387763660278906602602264377159059712297130956616449109154781271543982308583734968918321033943118849634005791606698190706604725422532788055252864991569023796933130945361569507977071930460115482455652821691768286947530770973011249595630065934606837599255800620442790440509154959210959290058137728568939394709461783504665603301691404516859113352394280688157611687624351636255049875885462371706886934819978224697792402103805165856021534796894480076596365413774555857911997436806331087940946632831392572463005464563289707353236430750258634055437182337253576423794476164097838578656868651379809875821254</span>
+<span class="n">d</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">pow</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p><a href="https://librewiki.net/wiki/%ED%8F%B4%EB%9D%BC%EB%93%9C_p-1_%EC%86%8C%EC%9D%B8%EC%88%98%EB%B6%84%ED%95%B4%EB%B2%95" rel="external nofollow noopener" target="_blank">폴라드 p-1 소인수분해법</a></p>
+
+<p>구현하고 이를 이용해서 평문을 찾는다.</p>
+
+<p>폴라드의 p-1 소인수분해법에 관한 자세한 내용은 내 <a href="">블로그</a>에 적어두었다.</p>
+
+  </article>
+
+
+  
+    
+    <br>
+    <hr>
+    <br>
+    <ul class="list-disc pl-8"></ul>
+
+    <!-- Adds related posts to the end of an article -->
+    <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2>
+    <p class="mb-2">Here are some more articles you might like to read next:</p>
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/rsalab_2022_second/">rsalab-2023: 2022-second</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/rsalab_2022_first/">rsalab-2023: 2022-first</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/rsalab/">rsalab</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/BSidesSF/">BSidesSF CTF 2023</a>
+  </li>
+
+</div>
+
+    </div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5">
+      <div class="container">
+        © Copyright 2023 Neutrinox4b1 ⚛  . Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>.
+
+      </div>
+    </footer>
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    <!-- Masonry & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
+    
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js"></script><!-- Load Common JS -->
+  <script defer src="/assets/js/common.js"></script>
+  <script defer src="/assets/js/copy_code.js" type="text/javascript"></script>
+
+    
+  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+  <script async src="https://badge.dimensions.ai/badge.js"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": navbarHeight });
+    $("progress-container").css({ "padding-top": navbarHeight });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+</html>
