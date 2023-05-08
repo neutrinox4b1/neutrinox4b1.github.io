@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-08T07:46:49+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-08T12:01:40+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">Gib me Initials of Victor</title><link href="https://neutrinox4b1.github.io/blog/2023/Gib_me_Initials_of_Victor/" rel="alternate" type="text/html" title="Gib me Initials of Victor" /><published>2023-05-06T00:00:00+00:00</published><updated>2023-05-06T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/Gib_me_Initials_of_Victor</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/Gib_me_Initials_of_Victor/"><![CDATA[<h2 id="background">Background</h2>
 
 <hr />
@@ -91,7 +91,7 @@ That’s what someone did…</p>
 <ul>
   <li><a href="../just_a_xor">Just a XOR</a></li>
   <li><a href="../Gib_me_Initials_of_Victor">Gib me Initials of Victor</a></li>
-  <li><a href="">Scream Like Viking</a> (unsolved)</li>
+  <li><a href="../Scream_Like_Viking">Scream Like Viking</a> (unsolved)</li>
   <li><a href="">SuchPrivacy</a> (unsolved)</li>
 </ul>
 
@@ -147,7 +147,171 @@ That’s what someone did…</p>
 </figure>
 
     </div>
-</div>]]></content><author><name>neutrinox4b1</name></author><category term="crypto" /><category term="CTFs" /><summary type="html"><![CDATA[Team. Security Factorial]]></summary></entry><entry><title type="html">Just a XOR</title><link href="https://neutrinox4b1.github.io/blog/2023/just_a_xor/" rel="alternate" type="text/html" title="Just a XOR" /><published>2023-05-06T00:00:00+00:00</published><updated>2023-05-06T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/just_a_xor</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/just_a_xor/"><![CDATA[<h2 id="background">Background</h2>
+</div>]]></content><author><name>neutrinox4b1</name></author><category term="crypto" /><category term="CTFs" /><summary type="html"><![CDATA[Team. Security Factorial]]></summary></entry><entry><title type="html">Scream Like Viking</title><link href="https://neutrinox4b1.github.io/blog/2023/Scream_Like_Viking/" rel="alternate" type="text/html" title="Scream Like Viking" /><published>2023-05-06T00:00:00+00:00</published><updated>2023-05-06T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/Scream_Like_Viking</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/Scream_Like_Viking/"><![CDATA[<h2 id="background">Background</h2>
+
+<hr />
+
+<blockquote>
+  <p><em>Author: Ectario#7001</em></p>
+
+  <p>Our protagonist John is in a room, he hears some kind of noise, like something resonating. But he doesn’t understand it… Perhaps he could play with his own echoes to guess what the meaning of this famous resonance could be…</p>
+
+</blockquote>
+
+<h3 id="serverpy">server.py</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
+</span>
+<span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">getPrime</span><span class="p">,</span> <span class="n">bytes_to_long</span><span class="p">,</span> <span class="n">long_to_bytes</span>
+<span class="kn">from</span> <span class="n">Crypto.Util.Padding</span> <span class="kn">import</span> <span class="n">pad</span>
+
+<span class="n">e</span> <span class="o">=</span> <span class="mi">17</span>
+<span class="n">p</span> <span class="o">=</span> <span class="nf">getPrime</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
+<span class="n">q</span> <span class="o">=</span> <span class="nf">getPrime</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">q</span>
+
+<span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">m</span> <span class="o">&lt;</span> <span class="n">N</span>    
+    <span class="n">c</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="nf">bytes_to_long</span><span class="p">(</span><span class="nf">pad</span><span class="p">(</span><span class="nf">long_to_bytes</span><span class="p">(</span><span class="n">m</span><span class="p">),</span> <span class="mi">50</span><span class="p">)),</span> <span class="n">e</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nf">int</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">encrypt_flag</span><span class="p">():</span>
+    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="s">"flag.txt"</span><span class="p">,</span> <span class="s">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="nf">bytes_to_long</span><span class="p">(</span><span class="nf">pad</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="mi">50</span><span class="p">)),</span> <span class="n">e</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">c</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Enter your option (Encrypt or Flag) &gt; "</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span>
+            <span class="n">cmd</span> <span class="o">=</span> <span class="p">(</span><span class="nf">input</span><span class="p">().</span><span class="nf">strip</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">cmd</span> <span class="o">==</span> <span class="s">"Encrypt"</span><span class="p">:</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"Enter your integer to encrypt &gt; "</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span>
+                <span class="n">m</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">())</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+                <span class="nf">print</span><span class="p">(</span><span class="nf">str</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">+</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">cmd</span> <span class="o">==</span> <span class="s">"Flag"</span><span class="p">:</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="nf">encrypt_flag</span><span class="p">()</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"Flag cipher for you: "</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">+</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+                <span class="k">return</span>
+    <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"An error occured:</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="nf">main</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>RSA에 대한 문제이다.</p>
+
+<p>main에서 Encrypt나 Flag를 입력받고 Encrypt일 경우에는 encrypt할 숫자를 입력한다.</p>
+
+<p>Flag일 경우엔 flag를 바이너리모드로 읽어서 암호화하여 출력한다.</p>
+
+<p>원하는 평문은 마음대로 입력 가능하지만, 0부터 N사이여야 한다.</p>
+
+<p>모든 암호화 과정에는 평문을 50 byte 단위로 padding한다.</p>
+
+<p><br />
+<br />
+<br /></p>
+
+<h2 id="solution">Solution</h2>
+
+<hr />
+
+<p>Flag를 입력하면 프로그램이 종료되니 그 전에 비밀키 d를 파악해야 한다.</p>
+
+<p>일단 50 패딩으로 인해 낮은 지수 공격은 어려울듯</p>
+
+<p>풀이를 보니 hastad Attack을 이용했다. 왜 계속 한 연결 내에서만 문제를 풀려고 했는지 싶다.</p>
+
+<p>낮은 지수 e에 대해서 Hastad Attack이 가능하다.</p>
+
+<p>같은 평문인 flag.txt에 대해서 다른 N끼리 작은 공개키 17을 가지고 암호화된다.</p>
+
+<p>연결을 반복하면서 합동식을 여러 개 수집하고 이에 대해서 hastad 공격을 수행한다.</p>
+
+<p>아니 근데 N을 모르지 않나?</p>
+
+<p>N을 계산하기 위해서 Encrypt가 존재한다. 임의의 평문들에 대해서 같은 모듈리 N으로 암호화되기 때문에 gcd를 이용한 N 계산이 가능하다.</p>
+
+<p>평문 m에 대해서 \(m^e \equiv c \bmod N\)이다. 우리는 c와 e, 그리고 m을 알고 있다.</p>
+
+<p>\(m^e - c \equiv \bmod N\) 이고 \(N \mid (m^e - c)\) 이다. \(m_1, m_2, m_3\)에 대해 \(c_1, c_2, c_3\)를 가지고 있으므로</p>
+
+<p>\(\gcd(m_1^e-c_1, m_2^e-c_2, m_3^e-c_3)\) 계산 시 N을 가질 가능성이 있다. 얘네들끼리 서로소라면 더 잘 구할 수 있을듯..?</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="n">Crypto.Util.Padding</span> <span class="kn">import</span> <span class="n">pad</span><span class="p">,</span> <span class="n">unpad</span>
+<span class="kn">from</span> <span class="n">math</span> <span class="kn">import</span> <span class="n">gcd</span>
+<span class="kn">from</span> <span class="n">sympy.ntheory.modular</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="n">gmpy2</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">def</span> <span class="nf">get_n</span><span class="p">():</span>
+	<span class="n">msg</span> <span class="o">=</span> <span class="p">[</span><span class="nf">long_to_bytes</span><span class="p">(</span><span class="nf">getPrime</span><span class="p">(</span><span class="mi">150</span><span class="p">)),</span> <span class="nf">long_to_bytes</span><span class="p">(</span><span class="nf">getPrime</span><span class="p">(</span><span class="mi">150</span><span class="p">)),</span> <span class="nf">long_to_bytes</span><span class="p">(</span><span class="nf">getPrime</span><span class="p">(</span><span class="mi">150</span><span class="p">))]</span>
+	<span class="n">server_msg</span> <span class="o">=</span> <span class="p">[</span><span class="nf">pad</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">msg</span><span class="p">]</span>
+	<span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">msg</span><span class="p">)):</span>
+		<span class="n">p</span><span class="p">.</span><span class="nf">sendlineafter</span><span class="p">(</span><span class="sa">b</span><span class="s">'&gt; '</span><span class="p">,</span> <span class="sa">b</span><span class="s">'Encrypt'</span><span class="p">)</span>
+		<span class="n">p</span><span class="p">.</span><span class="nf">sendlineafter</span><span class="p">(</span><span class="sa">b</span><span class="s">'&gt; '</span><span class="p">,</span> <span class="nf">str</span><span class="p">(</span><span class="nf">bytes_to_long</span><span class="p">(</span><span class="n">msg</span><span class="p">[</span><span class="n">i</span><span class="p">])).</span><span class="nf">encode</span><span class="p">())</span>
+		<span class="n">ans</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="nf">recvline</span><span class="p">().</span><span class="nf">strip</span><span class="p">().</span><span class="nf">decode</span><span class="p">()))</span>
+	<span class="n">multiples</span> <span class="o">=</span> <span class="p">[</span><span class="nf">bytes_to_long</span><span class="p">(</span><span class="n">server_msg</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">**</span> <span class="mi">17</span> <span class="o">-</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">server_msg</span><span class="p">))]</span>
+	<span class="n">N</span> <span class="o">=</span> <span class="nf">gcd</span><span class="p">(</span><span class="o">*</span><span class="n">multiples</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">N</span>
+
+<span class="k">def</span> <span class="nf">get_flag</span><span class="p">():</span>
+	<span class="n">p</span><span class="p">.</span><span class="nf">sendlineafter</span><span class="p">(</span><span class="sa">b</span><span class="s">'&gt; '</span><span class="p">,</span> <span class="sa">b</span><span class="s">'Flag'</span><span class="p">)</span>
+	<span class="n">p</span><span class="p">.</span><span class="nf">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="s">': '</span><span class="p">)</span>
+	<span class="n">flag</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="nf">recvline</span><span class="p">().</span><span class="nf">strip</span><span class="p">().</span><span class="nf">decode</span><span class="p">())</span>
+	<span class="n">p</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+	<span class="k">return</span> <span class="n">flag</span>
+
+<span class="k">def</span> <span class="nf">delete_no_coprime</span><span class="p">(</span><span class="n">argn</span><span class="p">,</span> <span class="n">argc</span><span class="p">):</span>
+	<span class="n">retn</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">retc</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">argn</span><span class="p">)):</span>
+		<span class="n">keep</span> <span class="o">=</span> <span class="bp">True</span>
+		<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">argn</span><span class="p">)):</span>
+			<span class="k">if</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">argn</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">argn</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+				<span class="n">keep</span> <span class="o">=</span> <span class="bp">False</span>
+				<span class="k">break</span>
+		<span class="k">if</span> <span class="n">keep</span><span class="p">:</span>
+			<span class="n">retn</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">argn</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+			<span class="n">retc</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">argc</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+	<span class="k">return</span> <span class="n">retn</span><span class="p">,</span> <span class="n">retc</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">17</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+	<span class="n">p</span> <span class="o">=</span> <span class="nf">remote</span><span class="p">(</span><span class="s">'51.68.95.78'</span><span class="p">,</span> <span class="mi">32773</span><span class="p">)</span>
+	<span class="n">n</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">get_n</span><span class="p">())</span>
+	<span class="n">c</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">get_flag</span><span class="p">())</span>
+
+<span class="n">n</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="nf">delete_no_coprime</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nf">crt</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nf">local_context</span><span class="p">()</span> <span class="k">as</span> <span class="n">lcx</span><span class="p">:</span>
+	<span class="n">lcx</span><span class="p">.</span><span class="n">precision</span> <span class="o">=</span> <span class="mi">12000</span>
+	<span class="n">flag</span> <span class="o">=</span> <span class="nf">unpad</span><span class="p">(</span><span class="nf">long_to_bytes</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="nf">root</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">e</span><span class="p">))),</span><span class="mi">50</span><span class="p">)</span>
+	<span class="nf">print</span><span class="p">(</span><span class="n">flag</span><span class="p">.</span><span class="nf">decode</span><span class="p">())</span>
+	<span class="nf">open</span><span class="p">(</span><span class="s">'flag.txt'</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">).</span><span class="nf">write</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>원래 coprime 검사를 넣지 않았는데 풀이에서 있길래 넣었다. 이렇게 하면 정확도가 더 올라간다.</p>
+
+<p>CRT는 모든 n이 서로소여야 하기 때문이다.</p>
+
+<p>n과 flag를 암호화 한 값들을 구하고 hastad공격을 수행한다.</p>
+
+<p>CTF가 끝나서 맞는지 확인할 수는 없지만 Flag 형식을 보아 맞는 것으로 생각된다.</p>
+
+<p><img width="100%" alt="Untitled (4)" src="https://user-images.githubusercontent.com/101745344/236817966-e12871a1-51ce-4e83-b5e8-2f22f3150432.png" /></p>
+
+<p>PWNME{3e851a6cc5525581446cad5694185b99}</p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[PwnMe 2023 - 8bits]]></summary></entry><entry><title type="html">Just a XOR</title><link href="https://neutrinox4b1.github.io/blog/2023/just_a_xor/" rel="alternate" type="text/html" title="Just a XOR" /><published>2023-05-06T00:00:00+00:00</published><updated>2023-05-06T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/just_a_xor</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/just_a_xor/"><![CDATA[<h2 id="background">Background</h2>
 
 <hr />
 
@@ -653,182 +817,4 @@ exit                 // Exit the lab
 
 <p><img width="100%" alt="Untitled (1)" src="https://user-images.githubusercontent.com/101745344/234496501-514e7a9f-da45-4ee5-b3ff-4a94b785c66b.png" /></p>
 
-<p>차근차근 풀어보도록 하자</p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[BSidesSF CTF 2023]]></summary></entry><entry><title type="html">rsalab-2023: 2022-first</title><link href="https://neutrinox4b1.github.io/blog/2023/rsalab_2022_first/" rel="alternate" type="text/html" title="rsalab-2023: 2022-first" /><published>2023-04-22T00:00:00+00:00</published><updated>2023-04-22T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/rsalab_2022_first</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/rsalab_2022_first/"><![CDATA[<h2 id="chal-1">chal 1</h2>
-<hr />
-
-<blockquote>
-  <p>Challenge 1:</p>
-
-  <p>Before your start on attacking RSA, it’s important to first understand
-basic RSA operations like encryption and decryption. For this
-challenge, we have generated a public key. Your job is to encrypt the
-provided message with that public key to get the ciphertext.</p>
-
-  <p>RSA encryption uses the encrypting exponent, e. Decryption is the same
-mathematical operation except that it uses the decrypting exponent, d.
-If you can encrypt with the provided e then you could decrypt (if you
-had d) just as easily.</p>
-
-  <p>== Generated Public Key ==
-Public Modulus (n): 93305094700222905881852268067388846454838857633497427869837725956270630098447
-Encrypting Exponent (e): 65537</p>
-
-  <p>Message to encrypt (m): 1234567890</p>
-
-  <p>What is the ciphertext (c) for the message (m) using the public key?</p>
-</blockquote>
-
-<p>랜덤으로 두 소수의 곱 n을 주고 공개 키 e를 65537로 준다.</p>
-
-<p>암호화 할 메시지 1234567890을 제공하고 우리에게 암호문 c를 구하라고 한다.</p>
-
-<p>암호문 c를 구하는 식은 다음과 같다.</p>
-
-\[c = m^e \pmod N\]
-
-<p>RSA의 원리를 알고 있으면 단순히 파이썬으로 계산 가능하다.</p>
-
-<p><img width="100%" alt="Untitled (2)" src="https://user-images.githubusercontent.com/101745344/234497947-9245d880-7c31-4b98-ac3b-21e7f4d8c0d8.png" /></p>
-
-<h2 id="chal-2">chal 2</h2>
-<hr />
-
-<blockquote>
-  <p>One of the most intimidating things about RSA when you first read
-about it is the notion of a “modular inverse”. In our everyday lives
-we’re pretty familiar with the idea that (1/3) * 3 = 1 or that (5/7) *
-(7/5) = 1.  That is, 1/3 is the inverse of 3 and 5/7 is the inverse of
-7/5.  What happens though when the numbers “wrap around” because of a
-modulus? As one example, you can verify easily that the inverse of 2
-mod 5 is 3 mod 5 because 2 * 3 = 6 and 6 mod 5 = 1. The idea that 2
-and 3 are inverses mod 5 is not at all obvious. Or, even if mod 5 is
-obvious, in the general case where the modulus is large inverses are
-not obvious.</p>
-
-  <p>In this challenge you are given e and n (as well as the factors of n,
-p and q)and you need to find the modular inverse of e mod
-phi(n). Recall that when n has two factors phi(n) is (p - 1) * (q - 1).</p>
-
-  <p>== Generated Public Key ==
-Public Modulus (n): 74626406913082933436196613326885245917286648370318001460622007824392110131473
-Encrypting Exponent (e): 65537
-== Secret Primes ==
-Prime p: 257799152770944809771969932762122277973
-Prime q: 289474989001956426553102966123893079501</p>
-
-  <p>What is secret decrypting exponent (d) that is the couterpart of e?</p>
-</blockquote>
-
-<p>여기서는 n의 소인수 p, q 그리고 e와 n이 주어진다. 우리는 이것을 이용해서 비밀 키 d를 찾아야 한다.</p>
-
-<p>비밀 키 d는 다음과 모듈러 phi(N)에 대한 e의 역원이다.</p>
-
-<p>다시 말해, \(d = e^{-1} \bmod\phi(n)\)</p>
-
-<p>\(\phi(n)\) 은 <a href="https://ko.wikipedia.org/wiki/%EC%98%A4%EC%9D%BC%EB%9F%AC_%ED%94%BC_%ED%95%A8%EC%88%98">오일러 피 함수</a>이다.</p>
-
-<p>오일러 피 함수 \(\phi(n)\)은 1 부터 n까지 서로소인 정수의 개수이다.</p>
-
-<p>n이 소수인 경우 소수의 정의에 의해서(1과 자기 자신 이외에는 나누어떨어지지 않는 수) \(\phi(n) = n-1\)이다.</p>
-
-<p>또한 eulier phi function은 곱셈적 함수이다. \(\phi(m)\phi(n) = \phi(m*n)\) m, n이 서로소일 경우 위 특성을 만족한다.</p>
-
-<p>n은 소수 p, q의 곱이므로 \(\phi(n) = (p-1)(q-1)\) 이다.</p>
-
-<p>따라서, d를 구하기 위해서 phi를 구하고 python의 pow 함수를 사용해서 그냥 역원을 구한다.
-역원을 구하는 방법에는 사실 여러가지(Extended Euclidean Algorithm, Fermat’s little theorem, CRT.. ) 가 있으나 python에서 코딩할 때는 pow함수가 제일 편했다.</p>
-
-<p><img width="100%" alt="Untitled (3)" src="https://user-images.githubusercontent.com/101745344/234498893-064ce9a9-87b2-4e4a-9517-7f833ee2cfc3.png" /></p>
-
-<h2 id="chal-3">chal 3</h2>
-<hr />
-
-<blockquote>
-  <p>RSA Lab 2023&gt; challenge 3
-Challenge 3:</p>
-
-  <p>RSA is an “asymmetric” encryption algorithm because the key used to
-decrypt (d) is not the same key that is used to encrypt (e). This
-challenge will let you experience that first-hand. You provide your
-public key (n) and (e) and this challenge will encrypt a secret
-message (m) and provide you the ciphertext (c). Then using your
-decrypting exponent (d) you can decrypt the ciphertext back to the
-secret message.</p>
-
-  <p>You are highly encouraged to generate your own key here instead of
-finding RSA keys somewhere.</p>
-
-  <p>To pass this challenge the n value you provide must be at least 512
-bits, not be prime and the e value you choose must be at least 100.
-65537 is a good choice for e.</p>
-
-  <p>What is n for your public key?
-What is e for your public key?
-The ciphertext you must decrypt is ~~
-What was m (decrypt with the d you’ve made for your key!)?</p>
-</blockquote>
-
-<p>n과 e를 우리가 직접 설정하고, (n &gt; 2^512) 공개 키로 암호화된 암호문이 주어지면, 비밀키 d를 구해서 평문 m을 구하는 문제이다.</p>
-
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="https://user-images.githubusercontent.com/101745344/234502714-a8d37614-201e-4036-becb-a7ccee170398-480.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="https://user-images.githubusercontent.com/101745344/234502714-a8d37614-201e-4036-becb-a7ccee170398-800.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="https://user-images.githubusercontent.com/101745344/234502714-a8d37614-201e-4036-becb-a7ccee170398-1400.webp" />
-    
-
-    <!-- Fallback to the original file -->
-    <img src="https://user-images.githubusercontent.com/101745344/234502714-a8d37614-201e-4036-becb-a7ccee170398.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
-
-  </picture>
-
-</figure>
-
-    </div>
-</div>
-
-<p><img width="100%" alt="Untitled (5)" src="https://user-images.githubusercontent.com/101745344/234502816-e354a41d-8319-4e7b-a445-6bc67eb84646.png" /></p>
-
-<p><br /></p>
-
-<h2 id="chal4">chal4</h2>
-<hr />
-
-<blockquote>
-  <p>Challenge 4:</p>
-
-  <p>RSA is only secure when factoring n is hard. If you can factor n into
-p and q then you can compute Euler’s phi(n) (the totient function)
-which, when n only has two prime factors, is just (p - 1) * (q -
-1). With phi(n) you can use e to find d which gives you the private
-key!</p>
-
-  <p>In this challenge, a secret message has been encrypted with a very
-weak RSA key. The RSA key’s n is approximately 128 bits meaning
-(assuming they are the same size) p and q are about 64 bit each. It’s
-your job to decrypt the secret message by breaking the RSA key (factor
-n!) and then determining d using n’s prime factors. 128-bit RSA keys
-are just big enough you can’t use trivial methods like trial division
-but are easily small enough that almost anything more sophisticated
-will factor them in seconds.</p>
-
-  <p>== Generated Public Key ==
-Public Modulus (n): 264077764893712564681347373214293350341
-Encrypting Exponent (e): 65537</p>
-
-  <p>Message to decrypt (c): 54832408036442361586583231856828192577</p>
-
-  <p>What is the plaintext (m) for the encrypted message (c) for the public key?</p>
-
-</blockquote>
-
-<p>n이 주어진다. 근데 작은 값으로 주어진다. 128bit? factordb에는 없지만 sympy를 사용해서</p>
-
-<p>factorint 함수를 쓰면 짧은 시가니 내에 소인수분해 가능하다.
-p, q와 d, e를 가지고 그대로 복호화를 진행한다.</p>
-
-<p><img width="100%" alt="Untitled (6)" src="https://user-images.githubusercontent.com/101745344/234505663-bd4e1834-a8fd-43ff-9c95-14c906588fa3.png" /></p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[BSidesSF CTF 2023]]></summary></entry></feed>
+<p>차근차근 풀어보도록 하자</p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[BSidesSF CTF 2023]]></summary></entry></feed>
