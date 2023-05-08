@@ -10,9 +10,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Chandi bot 2 | Neutrinox4b1 ⚛  </title>
+    <title>StorBox | Neutrinox4b1 ⚛  </title>
     <meta name="author" content="Neutrinox4b1 ⚛  ">
-    <meta name="description" content="RITSEC CTF 2023">
+    <meta name="description" content="TAMU CTF 2023">
 
 
     <!-- Bootstrap & MDB -->
@@ -32,7 +32,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://neutrinox4b1.github.io/blog/2023/chandi_bot_2/">
+    <link rel="canonical" href="https://neutrinox4b1.github.io/blog/2023/stor_box/">
     
     <!-- Dark Mode -->
     
@@ -117,8 +117,8 @@
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Chandi bot 2</h1>
-    <p class="post-meta">April 1, 2023</p>
+    <h1 class="post-title">StorBox</h1>
+    <p class="post-meta">April 29, 2023</p>
     <p class="post-tags">
       <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
         ·  
@@ -130,32 +130,36 @@
   </header>
 
   <article class="post-content">
-    <h2 id="solution">Solution</h2>
-<hr>
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
+    <blockquote>
+  <p>Author: <code class="language-plaintext highlighter-rouge">kit</code></p>
 
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/ritsec2023_5-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/ritsec2023_5-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/ritsec2023_5-1400.webp"></source>
-    
+  <p>Some hackers leaked out a few locations of the same coffee shop line for a meet up. We have sent agents out to all three of these locations but there was no luck finding them. Where else could they be meeting up?</p>
 
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/ritsec2023_5.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  <p>Location 1: 1462 N Beauregard St B</p>
 
-  </picture>
+  <p>Location 2: 801 N Glebe Rd</p>
 
-</figure>
+  <p>Location 3: 2925 S Glebe Rd</p>
 
-    </div>
-</div>
+  <p>Flag format will be the street address with spaces replaced with underscores, for example: <code class="language-plaintext highlighter-rouge">gigem{200_Discovery_Dr}</code></p>
 
-<blockquote>
-  <p>RS{HMMM_WHAT_ARE_YOU_LOOKING_AT}</p>
 </blockquote>
+
+<p><img width="100%" alt="Untitled (5)" src="https://user-images.githubusercontent.com/101745344/236756966-c07abc9e-c9d3-4e0a-837d-46ecca69758c.png"></p>
+
+<p>각 location을 찍어보면 다음과 같이 정삼각형 모양이 보임</p>
+
+<p>각 지도들은 모두 스타벅스를 가리키고 있음.</p>
+
+<p>따라서 가운데 위치한 스타벅스를 넣으면 되겠다가 직관으로 느껴짐!</p>
+
+<p><img width="100%" alt="Untitled (6)" src="https://user-images.githubusercontent.com/101745344/236757029-f4990ef7-c8cc-42c3-9da1-9c30d74f967c.png"></p>
+
+<p>950 S George Mason Dr, Arlington, VA 22204 미국</p>
+
+<p>도로명 주소만 따면 950 S George Mason Dr</p>
+
+<p>flag : <code class="language-plaintext highlighter-rouge">gigem{950_S_George_Mason_Dr</code></p>
 
   </article>
 
@@ -191,7 +195,7 @@
   
 
   <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/stor_box/">StorBox</a>
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/number_pensive/">Numbers : pensive :</a>
   </li>
 
 </div>

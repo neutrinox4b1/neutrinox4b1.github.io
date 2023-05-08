@@ -10,9 +10,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Chandi bot 2 | Neutrinox4b1 ⚛  </title>
+    <title>Numbers : pensive : | Neutrinox4b1 ⚛  </title>
     <meta name="author" content="Neutrinox4b1 ⚛  ">
-    <meta name="description" content="RITSEC CTF 2023">
+    <meta name="description" content="TAMU CTF 2023">
 
 
     <!-- Bootstrap & MDB -->
@@ -32,7 +32,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://neutrinox4b1.github.io/blog/2023/chandi_bot_2/">
+    <link rel="canonical" href="https://neutrinox4b1.github.io/blog/2023/number_pensive/">
     
     <!-- Dark Mode -->
     
@@ -117,45 +117,121 @@
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Chandi bot 2</h1>
-    <p class="post-meta">April 1, 2023</p>
+    <h1 class="post-title">Numbers : pensive :</h1>
+    <p class="post-meta">April 29, 2023</p>
     <p class="post-tags">
       <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
         ·  
-        <a href="/blog/category/misc">
-          <i class="fas fa-tag fa-sm"></i> misc</a>  
+        <a href="/blog/category/crypto">
+          <i class="fas fa-tag fa-sm"></i> crypto</a>  
           
 
     </p>
   </header>
 
   <article class="post-content">
-    <h2 id="solution">Solution</h2>
-<hr>
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
+    <blockquote>
+  <p>Author: <code class="language-plaintext highlighter-rouge">nhwn</code></p>
 
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/ritsec2023_5-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/ritsec2023_5-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/ritsec2023_5-1400.webp"></source>
-    
+  <p>It wouldn’t be a real CTF without some contrived RSA challenge, right?</p>
 
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/ritsec2023_5.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-    </div>
-</div>
-
-<blockquote>
-  <p>RS{HMMM_WHAT_ARE_YOU_LOOKING_AT}</p>
 </blockquote>
+
+<h2 id="0x00-분석">[0x00] 분석</h2>
+<hr>
+
+<p><img width="100%" alt="Untitled (4)" src="https://user-images.githubusercontent.com/101745344/236756226-02d01da2-a279-4954-b22c-614b581b8117.png"></p>
+
+<p>서버에 연결하면 다음과 같이 n이 주어지고 e가 주어진다.</p>
+
+<p>우리가 e를 입력하면 그에 해당하는 d를 준다.</p>
+
+<p>65537을 입력하면 break시킨다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">getPrime</span>
+<span class="kn">from</span> <span class="n">Crypto.Random.random</span> <span class="kn">import</span> <span class="n">getrandbits</span><span class="p">,</span> <span class="n">randint</span>
+<span class="kn">from</span> <span class="n">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="n">math</span> <span class="kn">import</span> <span class="n">gcd</span>
+
+<span class="n">flag</span> <span class="o">=</span> <span class="nc">Path</span><span class="p">(</span><span class="s">"flag.txt"</span><span class="p">).</span><span class="nf">read_text</span><span class="p">()</span>
+
+<span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="nf">getPrime</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="nf">getPrime</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">q</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">break</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"n = </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"e = </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">chosen_e</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="s">"Give me an `e`, and I'll give you a `d`: "</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">chosen_e</span> <span class="o">==</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Nice try!"</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="nf">pow</span><span class="p">(</span><span class="n">chosen_e</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">phi</span><span class="p">))</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"That's not invertible :pensive:"</span><span class="p">)</span>
+        <span class="k">continue</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nf">getrandbits</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"If you can decrypt this, I'll give you a flag!"</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">ans</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="s">"Your answer: "</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">ans</span> <span class="o">==</span> <span class="n">m</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Numbers, am I right :pensive:"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>뭔가 우리한테 e를 입력하게 해주고 d를 주는게 이상하다.</p>
+
+<p><br>
+<br>
+<br></p>
+
+<h2 id="0x01-풀이">[0x01] 풀이</h2>
+<hr>
+
+<p>저번에 비슷한 문제를 풀어보기도? 한거 같아서</p>
+
+<p>e에 -1을 넣어봤다.</p>
+
+<p>그러면 $(-1)^{-1} \equiv (\phi - 1)^{-1} \bmod \phi$ 이다. 그럼 여기에 +1을 하면 $\phi$를 구할 수 있다.</p>
+
+<p>그럼 비밀키를 계산할 수 있고 복호화 가능하다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="nf">remote</span><span class="p">(</span><span class="s">"tamuctf.com"</span><span class="p">,</span> <span class="mi">443</span><span class="p">,</span> <span class="n">ssl</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">sni</span><span class="o">=</span><span class="s">"numbers-pensive"</span><span class="p">)</span>
+
+<span class="n">p</span><span class="p">.</span><span class="nf">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="s">'n = '</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="nf">recvline</span><span class="p">())</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">'n:'</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">p</span><span class="p">.</span><span class="nf">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="s">'d`: '</span><span class="p">)</span>
+<span class="n">p</span><span class="p">.</span><span class="nf">sendline</span><span class="p">(</span><span class="sa">b</span><span class="s">'-1'</span><span class="p">)</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="nf">recvline</span><span class="p">())</span>
+<span class="n">phi</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="s">'phi:'</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
+<span class="n">d</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+
+<span class="n">p</span><span class="p">.</span><span class="nf">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="s">'flag!</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="nf">recvline</span><span class="p">())</span>
+
+<span class="n">ans</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">p</span><span class="p">.</span><span class="nf">recv</span><span class="p">()</span>
+<span class="n">p</span><span class="p">.</span><span class="nf">sendline</span><span class="p">(</span><span class="nf">str</span><span class="p">(</span><span class="n">ans</span><span class="p">).</span><span class="nf">encode</span><span class="p">())</span>
+
+<span class="n">p</span><span class="p">.</span><span class="nf">interactive</span><span class="p">()</span>
+</code></pre></div></div>
 
   </article>
 
