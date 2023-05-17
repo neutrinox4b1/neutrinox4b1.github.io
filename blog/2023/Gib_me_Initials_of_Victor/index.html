@@ -22,7 +22,7 @@
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700%7CRoboto+Slab:100,300,400,500,700%7CMaterial+Icons">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
 
     <!-- Code Syntax Highlighting -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
@@ -148,7 +148,7 @@ That’s what someone did…</p>
 <span class="kn">from</span> <span class="n">Crypto.Util.Padding</span> <span class="kn">import</span> <span class="n">pad</span><span class="p">,</span> <span class="n">unpad</span>
 <span class="kn">import</span> <span class="n">os</span>
 
-<span class="n">FLAG</span> <span class="o">=</span> <span class="s">"PWNME{redacted}"</span>
+<span class="n">FLAG</span> <span class="o">=</span> <span class="sh">"</span><span class="s">PWNME{redacted}</span><span class="sh">"</span>
 <span class="n">KEY</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="nf">urandom</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">encrypt_flag</span><span class="p">():</span>
@@ -156,9 +156,9 @@ That’s what someone did…</p>
     <span class="n">cipher</span> <span class="o">=</span> <span class="n">AES</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">KEY</span><span class="p">,</span> <span class="n">AES</span><span class="p">.</span><span class="n">MODE_CBC</span><span class="p">,</span> <span class="n">iv</span><span class="p">)</span>
     <span class="n">encrypted</span> <span class="o">=</span> <span class="n">cipher</span><span class="p">.</span><span class="nf">encrypt</span><span class="p">(</span><span class="nf">pad</span><span class="p">(</span><span class="n">FLAG</span><span class="p">.</span><span class="nf">encode</span><span class="p">(),</span> <span class="mi">16</span><span class="p">))</span>
     <span class="n">signature</span> <span class="o">=</span> <span class="p">[</span><span class="nf">hex</span><span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">)[</span><span class="mi">2</span><span class="p">:].</span><span class="nf">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="n">iv</span><span class="p">,</span> <span class="n">KEY</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])]</span>
-    <span class="n">signature</span> <span class="o">=</span> <span class="s">""</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">signature</span><span class="p">)</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="sh">""</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">signature</span><span class="p">)</span>
     <span class="n">ciphertext</span> <span class="o">=</span> <span class="n">iv</span><span class="p">.</span><span class="nf">hex</span><span class="p">()[</span><span class="mi">4</span><span class="p">:]</span> <span class="o">+</span> <span class="n">encrypted</span><span class="p">.</span><span class="nf">hex</span><span class="p">()</span> <span class="o">+</span> <span class="n">signature</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s">"ciphertext"</span><span class="p">:</span> <span class="n">ciphertext</span><span class="p">}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="sh">"</span><span class="s">ciphertext</span><span class="sh">"</span><span class="p">:</span> <span class="n">ciphertext</span><span class="p">}</span>
 </code></pre></div></div>
 
 <h3 id="outputtxt">output.txt</h3>
@@ -190,14 +190,14 @@ That’s what someone did…</p>
 <span class="kn">from</span> <span class="n">Crypto.Util.Padding</span> <span class="kn">import</span> <span class="n">pad</span><span class="p">,</span> <span class="n">unpad</span>
 <span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">long_to_bytes</span><span class="p">,</span> <span class="n">bytes_to_long</span>
 
-<span class="n">ciphertext</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">.</span><span class="nf">fromhex</span><span class="p">(</span> <span class="s">'a37b8ab32e581d2615359cc7858e966090d328df2be8b5ad889561d9abce6f961fe03a95a2051e882db2373b33b5a43a1c13ff62af7f835df3cc1ccc64571e74'</span><span class="p">)</span>
-<span class="n">iv14</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">.</span><span class="nf">fromhex</span><span class="p">(</span><span class="s">'ca92b5919084c02658a2e3d57ee3'</span><span class="p">)</span>
-<span class="n">sign</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">.</span><span class="nf">fromhex</span><span class="p">(</span><span class="s">'f8b84587c727d56c4d37983e7b80ce3c'</span><span class="p">)</span>
+<span class="n">ciphertext</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">.</span><span class="nf">fromhex</span><span class="p">(</span> <span class="sh">'</span><span class="s">a37b8ab32e581d2615359cc7858e966090d328df2be8b5ad889561d9abce6f961fe03a95a2051e882db2373b33b5a43a1c13ff62af7f835df3cc1ccc64571e74</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">iv14</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">.</span><span class="nf">fromhex</span><span class="p">(</span><span class="sh">'</span><span class="s">ca92b5919084c02658a2e3d57ee3</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">sign</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">.</span><span class="nf">fromhex</span><span class="p">(</span><span class="sh">'</span><span class="s">f8b84587c727d56c4d37983e7b80ce3c</span><span class="sh">'</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mh">0x0100</span><span class="p">,</span> <span class="mh">0xffff</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
     <span class="n">iv</span> <span class="o">=</span> <span class="nf">long_to_bytes</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">iv14</span>
     <span class="c1"># print(iv)
-</span>    <span class="n">key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">''</span>
+</span>    <span class="n">key</span> <span class="o">=</span> <span class="sa">b</span><span class="sh">''</span>
     <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="n">iv</span><span class="p">,</span> <span class="n">sign</span><span class="p">):</span>
         <span class="n">key</span> <span class="o">+=</span> <span class="nf">long_to_bytes</span><span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">)</span>
     <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -207,10 +207,10 @@ That’s what someone did…</p>
     <span class="k">try</span><span class="p">:</span>
         <span class="nf">unpad</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
         <span class="n">flag</span> <span class="o">=</span> <span class="n">flag</span><span class="p">.</span><span class="nf">decode</span><span class="p">()</span>
-        <span class="k">if</span> <span class="s">'PWNME'</span> <span class="ow">in</span> <span class="n">flag</span><span class="p">:</span>
+        <span class="k">if</span> <span class="sh">'</span><span class="s">PWNME</span><span class="sh">'</span> <span class="ow">in</span> <span class="n">flag</span><span class="p">:</span>
             <span class="nf">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
     <span class="k">except</span><span class="p">:</span>
-        <span class="nf">print</span><span class="p">(</span><span class="s">''</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">''</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="sh">''</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><img width="100%" alt="Untitled (8)" src="https://user-images.githubusercontent.com/101745344/236761012-dd734dc2-3dbf-434f-baed-56c2d3df7a64.png"></p>
@@ -233,25 +233,25 @@ That’s what someone did…</p>
   
 
   <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/Invalid_RSA_decryption_code/">Invalid_RSA_decryption_code</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/HackTheon2023/">HackTheon Sejong 2023: 28th</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/Find_key/">Find Key</a>
+  </li>
+
+  
+
+  <li class="my-2">
     <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/just_a_xor/">Just a XOR</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/Scream_Like_Viking/">Scream Like Viking</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/PwnMe_2023/">PwnMe 2023 - 8bits</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/stor_box/">StorBox</a>
   </li>
 
 </div>

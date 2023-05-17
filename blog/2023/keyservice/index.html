@@ -22,7 +22,7 @@
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700%7CRoboto+Slab:100,300,400,500,700%7CMaterial+Icons">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
 
     <!-- Code Syntax Highlighting -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
@@ -196,17 +196,17 @@ Public exponent: 386536362012194867183505437832410252204159958288047732376502599
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">RSAwienerHacker</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">n</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="s">'input n: '</span><span class="p">).</span><span class="nf">strip</span><span class="p">())</span>
-<span class="n">e</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="s">'input e: '</span><span class="p">).</span><span class="nf">strip</span><span class="p">())</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">'</span><span class="s">input n: </span><span class="sh">'</span><span class="p">).</span><span class="nf">strip</span><span class="p">())</span>
+<span class="n">e</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">'</span><span class="s">input e: </span><span class="sh">'</span><span class="p">).</span><span class="nf">strip</span><span class="p">())</span>
 
 <span class="n">d</span> <span class="o">=</span> <span class="nf">hack_RSA</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">d</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-	<span class="nf">print</span><span class="p">(</span><span class="s">'failed'</span><span class="p">)</span>
+	<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">failed</span><span class="sh">'</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
 	<span class="nf">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-	<span class="n">h</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="s">'input h for sign: '</span><span class="p">).</span><span class="nf">strip</span><span class="p">())</span>
-	<span class="nf">print</span><span class="p">(</span><span class="s">'signed h:'</span><span class="p">,</span> <span class="nf">pow</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+	<span class="n">h</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">'</span><span class="s">input h for sign: </span><span class="sh">'</span><span class="p">).</span><span class="nf">strip</span><span class="p">())</span>
+	<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">signed h:</span><span class="sh">'</span><span class="p">,</span> <span class="nf">pow</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>d가 failed 되는 경우도 있는데 여러번 하다보면 된다.</p>
@@ -273,25 +273,25 @@ Public exponent: 386536362012194867183505437832410252204159958288047732376502599
   
 
   <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/Invalid_RSA_decryption_code/">Invalid_RSA_decryption_code</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/HackTheon2023/">HackTheon Sejong 2023: 28th</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/Find_key/">Find Key</a>
+  </li>
+
+  
+
+  <li class="my-2">
     <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/just_a_xor/">Just a XOR</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/Scream_Like_Viking/">Scream Like Viking</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/PwnMe_2023/">PwnMe 2023 - 8bits</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/Gib_me_Initials_of_Victor/">Gib me Initials of Victor</a>
   </li>
 
 </div>

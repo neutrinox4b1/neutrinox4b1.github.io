@@ -22,7 +22,7 @@
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700%7CRoboto+Slab:100,300,400,500,700%7CMaterial+Icons">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
 
     <!-- Code Syntax Highlighting -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
@@ -144,8 +144,8 @@
 <span class="kn">from</span> <span class="n">flag</span> <span class="kn">import</span> <span class="n">FLAG</span>
 
 <span class="c1"># public key file name
-</span><span class="n">PUB_FILE</span> <span class="o">=</span> <span class="s">'pub.pem'</span>
-<span class="n">FLAG_FILE</span> <span class="o">=</span> <span class="s">'flag.enc'</span>
+</span><span class="n">PUB_FILE</span> <span class="o">=</span> <span class="sh">'</span><span class="s">pub.pem</span><span class="sh">'</span>
+<span class="n">FLAG_FILE</span> <span class="o">=</span> <span class="sh">'</span><span class="s">flag.enc</span><span class="sh">'</span>
 
 
 <span class="c1"># convert key to pem format
@@ -162,7 +162,7 @@
 
 <span class="c1"># loads in a public key that is saved in PEM format
 </span><span class="k">def</span> <span class="nf">load_public_key</span><span class="p">():</span>
-    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">PUB_FILE</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">pubf</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">PUB_FILE</span><span class="p">,</span> <span class="sh">'</span><span class="s">rb</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">pubf</span><span class="p">:</span>
         <span class="n">pubkey</span> <span class="o">=</span> <span class="n">serialization</span><span class="p">.</span><span class="nf">load_pem_public_key</span><span class="p">(</span><span class="n">pubf</span><span class="p">.</span><span class="nf">read</span><span class="p">(),</span> <span class="n">backend</span><span class="o">=</span><span class="nf">default_backend</span><span class="p">())</span>
     <span class="k">return</span> <span class="n">pubkey</span>
 
@@ -185,7 +185,7 @@
 </span>    <span class="k">return</span> <span class="n">ptxt</span><span class="p">.</span><span class="nf">decode</span><span class="p">()</span>
 
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
     <span class="c1"># Load in the key from PEM file
 </span>    <span class="n">pub_key</span> <span class="o">=</span> <span class="nf">load_public_key</span><span class="p">()</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">pub_key</span><span class="p">)</span>
@@ -197,7 +197,7 @@
 </span>    <span class="n">enc_flag</span> <span class="o">=</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">pub_key</span><span class="p">,</span> <span class="n">FLAG</span><span class="p">)</span>
 
     <span class="c1"># write encrypted flag to file
-</span>    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="s">'flag.enc'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span>    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">'</span><span class="s">flag.enc</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">enc_flag</span><span class="p">)</span>
 </code></pre></div></div>
 <p>문제 파일은 다음과 같다.
@@ -222,10 +222,10 @@
 <span class="kn">from</span> <span class="n">sympy.ntheory.factor_</span> <span class="kn">import</span> <span class="n">totient</span>
 <span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">PUB_FILE</span> <span class="o">=</span> <span class="s">'pub.pem'</span>
-<span class="n">FLAG_FILE</span> <span class="o">=</span> <span class="s">'flag.enc'</span>
+<span class="n">PUB_FILE</span> <span class="o">=</span> <span class="sh">'</span><span class="s">pub.pem</span><span class="sh">'</span>
+<span class="n">FLAG_FILE</span> <span class="o">=</span> <span class="sh">'</span><span class="s">flag.enc</span><span class="sh">'</span>
 
-<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">PUB_FILE</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">pubf</span><span class="p">:</span>
+<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">PUB_FILE</span><span class="p">,</span> <span class="sh">'</span><span class="s">rb</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">pubf</span><span class="p">:</span>
     <span class="n">pub_key</span> <span class="o">=</span> <span class="n">serialization</span><span class="p">.</span><span class="nf">load_pem_public_key</span><span class="p">(</span><span class="n">pubf</span><span class="p">.</span><span class="nf">read</span><span class="p">(),</span> <span class="n">backend</span><span class="o">=</span><span class="nf">default_backend</span><span class="p">())</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">pub_key</span><span class="p">.</span><span class="nf">public_numbers</span><span class="p">().</span><span class="n">n</span>
 <span class="n">e</span> <span class="o">=</span> <span class="n">pub_key</span><span class="p">.</span><span class="nf">public_numbers</span><span class="p">().</span><span class="n">e</span>
@@ -235,7 +235,7 @@
 
 <span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">d</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
-<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">FLAG_FILE</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">ff</span><span class="p">:</span>
+<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">FLAG_FILE</span><span class="p">,</span> <span class="sh">'</span><span class="s">r</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">ff</span><span class="p">:</span>
     <span class="n">enc_flag</span> <span class="o">=</span> <span class="n">ff</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
 <span class="n">flag</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="nf">bytes_to_long</span><span class="p">(</span><span class="nf">b64decode</span><span class="p">(</span><span class="n">enc_flag</span><span class="p">)),</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">long_to_bytes</span><span class="p">(</span><span class="n">flag</span><span class="p">))</span>
@@ -258,25 +258,25 @@
   
 
   <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/Invalid_RSA_decryption_code/">Invalid_RSA_decryption_code</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/HackTheon2023/">HackTheon Sejong 2023: 28th</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/Find_key/">Find Key</a>
+  </li>
+
+  
+
+  <li class="my-2">
     <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/just_a_xor/">Just a XOR</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/Scream_Like_Viking/">Scream Like Viking</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/PwnMe_2023/">PwnMe 2023 - 8bits</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/Gib_me_Initials_of_Victor/">Gib me Initials of Victor</a>
   </li>
 
 </div>

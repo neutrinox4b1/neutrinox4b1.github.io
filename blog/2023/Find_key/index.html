@@ -10,9 +10,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>rsalab-2023: 2022-first | Neutrinox4b1 ⚛  </title>
+    <title>Find Key | Neutrinox4b1 ⚛  </title>
     <meta name="author" content="Neutrinox4b1 ⚛  ">
-    <meta name="description" content="BSidesSF CTF 2023">
+    <meta name="description" content="HackTheon Sejong 2023">
 
 
     <!-- Bootstrap & MDB -->
@@ -32,7 +32,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://neutrinox4b1.github.io/blog/2023/rsalab_2022_first/">
+    <link rel="canonical" href="https://neutrinox4b1.github.io/blog/2023/Find_key/">
     
     <!-- Dark Mode -->
     
@@ -117,198 +117,106 @@
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">rsalab-2023: 2022-first</h1>
-    <p class="post-meta">April 22, 2023</p>
+    <h1 class="post-title">Find Key</h1>
+    <p class="post-meta">May 11, 2023</p>
     <p class="post-tags">
       <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
         ·  
-        <a href="/blog/category/crypto">
-          <i class="fas fa-tag fa-sm"></i> crypto</a>  
+        <a href="/blog/category/misc">
+          <i class="fas fa-tag fa-sm"></i> misc</a>  
           
 
     </p>
   </header>
 
   <article class="post-content">
-    <h2 id="chal-1">chal 1</h2>
-<hr>
+    <h2 id="analysis">Analysis</h2>
 
-<blockquote>
-  <p>Challenge 1:</p>
+<p>Travel 파일을 준다.</p>
 
-  <p>Before your start on attacking RSA, it’s important to first understand
-basic RSA operations like encryption and decryption. For this
-challenge, we have generated a public key. Your job is to encrypt the
-provided message with that public key to get the ciphertext.</p>
+<p>해당 파일의 헤더를 확인하니 zip 파일이어서 압축을 해제했더니 word 파일 구조인 것 같다.</p>
 
-  <p>RSA encryption uses the encrypting exponent, e. Decryption is the same
-mathematical operation except that it uses the decrypting exponent, d.
-If you can encrypt with the provided e then you could decrypt (if you
-had d) just as easily.</p>
+<p>word/media 경로로 이동하면 아래와 같은 이미지 파일들을 확인할 수 있다.</p>
 
-  <p>== Generated Public Key ==
-Public Modulus (n): 93305094700222905881852268067388846454838857633497427869837725956270630098447
-Encrypting Exponent (e): 65537</p>
+<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/4f42f54a-9f23-4c20-bf7d-e65c2027f769" alt="2023-05-11 09 56 44"></p>
 
-  <p>Message to encrypt (m): 1234567890</p>
+<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/b294ba13-f88f-46e7-a93d-ef2e8a1e0746" alt="★Sejong Tour Plan!!★ PNG"></p>
 
-  <p>What is the ciphertext (c) for the message (m) using the public key?</p>
-</blockquote>
+<p>세종청사 → 베어트리 파크 → 세종전통시장 → 우주측지관측센터 순으로 돌아다니면서 도장을 모아야 한다?</p>
 
-<p>랜덤으로 두 소수의 곱 n을 주고 공개 키 e를 65537로 준다.</p>
+<p>이 중 image8은 열리지 않아서 헤더를 확인하니 zip 파일이어서 압축을 해제해봤다. 구조를 보니 word 파일 같아서 확장자를 변경 후 열어보면 xor key값이 나온다.</p>
 
-<p>암호화 할 메시지 1234567890을 제공하고 우리에게 암호문 c를 구하라고 한다.</p>
+<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/a7816615-5a6b-464d-8910-4d2461101fb4" alt="2023-05-11 10 00 08"></p>
 
-<p>암호문 c를 구하는 식은 다음과 같다.</p>
+<p>일단 정부세종청사가 시직아니 세종청사를 위주로 보기로 했다.</p>
 
-\[c = m^e \pmod N\]
+<p>HexEditor를 뜯어보니 파일 내부에 다른 헤더? 가 보여서</p>
 
-<p>RSA의 원리를 알고 있으면 단순히 파이썬으로 계산 가능하다.</p>
+<p>Extract File를 하기로 생각했다.</p>
 
-<p><img width="100%" alt="Untitled (2)" src="https://user-images.githubusercontent.com/101745344/234497947-9245d880-7c31-4b98-ac3b-21e7f4d8c0d8.png"></p>
+<p><img width="100%" alt="Untitled (6)" src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/52b5f882-e7ee-49a9-bdf6-0285ec98ab2b"></p>
 
-<h2 id="chal-2">chal 2</h2>
-<hr>
+<p>stamp1 : MHg3OTZGNzU1R</p>
 
-<blockquote>
-  <p>One of the most intimidating things about RSA when you first read
-about it is the notion of a “modular inverse”. In our everyday lives
-we’re pretty familiar with the idea that (1/3) * 3 = 1 or that (5/7) *
-(7/5) = 1.  That is, 1/3 is the inverse of 3 and 5/7 is the inverse of
-7/5.  What happens though when the numbers “wrap around” because of a
-modulus? As one example, you can verify easily that the inverse of 2
-mod 5 is 3 mod 5 because 2 * 3 = 6 and 6 mod 5 = 1. The idea that 2
-and 3 are inverses mod 5 is not at all obvious. Or, even if mod 5 is
-obvious, in the general case where the modulus is large inverses are
-not obvious.</p>
+<p>어? 다른 파일들도 보자</p>
 
-  <p>In this challenge you are given e and n (as well as the factors of n,
-p and q)and you need to find the modular inverse of e mod
-phi(n). Recall that when n has two factors phi(n) is (p - 1) * (q - 1).</p>
+<p>몇몇 파일들에는 Stamp가 있고 몇몇 파일들에는 없다 페이크인듯.</p>
 
-  <p>== Generated Public Key ==
-Public Modulus (n): 74626406913082933436196613326885245917286648370318001460622007824392110131473
-Encrypting Exponent (e): 65537
-== Secret Primes ==
-Prime p: 257799152770944809771969932762122277973
-Prime q: 289474989001956426553102966123893079501</p>
+<p><img width="907" alt="Untitled (7)" src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/ed1dbeeb-1f25-44bc-b71f-5b4efda6792f"></p>
 
-  <p>What is secret decrypting exponent (d) that is the couterpart of e?</p>
-</blockquote>
+<p>stamp2: jYxNzI2NTVGNjE1R</p>
 
-<p>여기서는 n의 소인수 p, q 그리고 e와 n이 주어진다. 우리는 이것을 이용해서 비밀 키 d를 찾아야 한다.</p>
+<p><img width="887" alt="Untitled (8)" src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/90c972ba-dac6-47d7-8f1a-97ca871d24ed"></p>
 
-<p>비밀 키 d는 다음과 모듈러 phi(N)에 대한 e의 역원이다.</p>
+<p>stamp3: jc3Njg2OTc0NjU1Rj</p>
 
-<p>다시 말해, \(d = e^{-1} \bmod\phi(n)\)</p>
+<p><img width="670" alt="Untitled (9)" src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/2e83df2a-f811-4d4c-925e-62910063ef29"></p>
 
-<p>\(\phi(n)\) 은 <a href="https://ko.wikipedia.org/wiki/%EC%98%A4%EC%9D%BC%EB%9F%AC_%ED%94%BC_%ED%95%A8%EC%88%98" rel="external nofollow noopener" target="_blank">오일러 피 함수</a>이다.</p>
+<p>stamp4: Y4NjE2MzZCNjU3Mg==</p>
 
-<p>오일러 피 함수 \(\phi(n)\)은 1 부터 n까지 서로소인 정수의 개수이다.</p>
+<p>합치면</p>
 
-<p>n이 소수인 경우 소수의 정의에 의해서(1과 자기 자신 이외에는 나누어떨어지지 않는 수) \(\phi(n) = n-1\)이다.</p>
+<p>stamp: MHg3OTZGNzU1RjYxNzI2NTVGNjE1Rjc3Njg2OTc0NjU1RjY4NjE2MzZCNjU3Mg==</p>
 
-<p>또한 eulier phi function은 곱셈적 함수이다. \(\phi(m)\phi(n) = \phi(m*n)\) m, n이 서로소일 경우 위 특성을 만족한다.</p>
+<p>어? base64인가</p>
 
-<p>n은 소수 p, q의 곱이므로 \(\phi(n) = (p-1)(q-1)\) 이다.</p>
+<p><img width="100%" alt="Untitled (10)" src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/eab90ebc-337e-418d-9c16-5e8528f540a3"></p>
 
-<p>따라서, d를 구하기 위해서 phi를 구하고 python의 pow 함수를 사용해서 그냥 역원을 구한다.
-역원을 구하는 방법에는 사실 여러가지(Extended Euclidean Algorithm, Fermat’s little theorem, CRT.. ) 가 있으나 python에서 코딩할 때는 pow함수가 제일 편했다.</p>
+<p>stamp: 0x796F755F6172655F615F77686974655F6861636B6572</p>
 
-<p><img width="100%" alt="Untitled (3)" src="https://user-images.githubusercontent.com/101745344/234498893-064ce9a9-87b2-4e4a-9517-7f833ee2cfc3.png"></p>
+<p>xor_key: 0x746869735F69735F786F725F6B65795F76616C75655F</p>
 
-<h2 id="chal-3">chal 3</h2>
-<hr>
+<p>this_is_xor_key_value_         22바이트</p>
 
-<blockquote>
-  <p>RSA Lab 2023&gt; challenge 3
-Challenge 3:</p>
+<p>you_are_a_white_hacker     22 바이트</p>
 
-  <p>RSA is an “asymmetric” encryption algorithm because the key used to
-decrypt (d) is not the same key that is used to encrypt (e). This
-challenge will let you experience that first-hand. You provide your
-public key (n) and (e) and this challenge will encrypt a secret
-message (m) and provide you the ciphertext (c). Then using your
-decrypting exponent (d) you can decrypt the ciphertext back to the
-secret message.</p>
+<p>입력했는데 안된다.</p>
 
-  <p>You are highly encouraged to generate your own key here instead of
-finding RSA keys somewhere.</p>
+<p><img width="100%" alt="Untitled (11)" src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/d92bdf05-8ffe-4445-a233-b42c459c99a1"></p>
 
-  <p>To pass this challenge the n value you provide must be at least 512
-bits, not be prime and the e value you choose must be at least 100.
-65537 is a good choice for e.</p>
+<p>마지막 파일에 zip이 존재한다.</p>
 
-  <p>What is n for your public key?
-What is e for your public key?
-The ciphertext you must decrypt is ~~
-What was m (decrypt with the d you’ve made for your key!)?</p>
-</blockquote>
+<p>해당 내용에 flag.txt가 있고 여기에 암호가 걸려있다.</p>
 
-<p>n과 e를 우리가 직접 설정하고, (n &gt; 2^512) 공개 키로 암호화된 암호문이 주어지면, 비밀키 d를 구해서 평문 m을 구하는 문제이다.</p>
+<p>암호를 알아내야한다.</p>
 
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
 
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="https://user-images.githubusercontent.com/101745344/234502714-a8d37614-201e-4036-becb-a7ccee170398-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="https://user-images.githubusercontent.com/101745344/234502714-a8d37614-201e-4036-becb-a7ccee170398-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="https://user-images.githubusercontent.com/101745344/234502714-a8d37614-201e-4036-becb-a7ccee170398-1400.webp"></source>
-    
+<span class="n">key</span> <span class="o">=</span> <span class="mh">0x746869735F69735F786F725F6B65795F76616C75655F</span>
+<span class="n">stamp</span> <span class="o">=</span> <span class="mh">0x796F755F6172655F615F77686974655F6861636B6572</span>
 
-    <!-- Fallback to the original file -->
-    <img src="https://user-images.githubusercontent.com/101745344/234502714-a8d37614-201e-4036-becb-a7ccee170398.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">key:</span><span class="sh">'</span><span class="p">,</span> <span class="nf">long_to_bytes</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">stamp:</span><span class="sh">'</span><span class="p">,</span> <span class="nf">long_to_bytes</span><span class="p">(</span><span class="n">stamp</span><span class="p">))</span>
 
-  </picture>
+<span class="n">secret</span> <span class="o">=</span> <span class="nf">long_to_bytes</span><span class="p">(</span><span class="n">key</span><span class="o">^</span><span class="n">stamp</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">secret</span><span class="p">.</span><span class="nf">hex</span><span class="p">())</span>
 
-</figure>
+</code></pre></div></div>
 
-    </div>
-</div>
+<p>여기까지 와서 암호를 계속 16진수로 입력해서 틀렸었다.</p>
 
-<p><img width="100%" alt="Untitled (5)" src="https://user-images.githubusercontent.com/101745344/234502816-e354a41d-8319-4e7b-a445-6bc67eb84646.png"></p>
-
-<p><br></p>
-
-<h2 id="chal4">chal4</h2>
-<hr>
-
-<blockquote>
-  <p>Challenge 4:</p>
-
-  <p>RSA is only secure when factoring n is hard. If you can factor n into
-p and q then you can compute Euler’s phi(n) (the totient function)
-which, when n only has two prime factors, is just (p - 1) * (q -
-1). With phi(n) you can use e to find d which gives you the private
-key!</p>
-
-  <p>In this challenge, a secret message has been encrypted with a very
-weak RSA key. The RSA key’s n is approximately 128 bits meaning
-(assuming they are the same size) p and q are about 64 bit each. It’s
-your job to decrypt the secret message by breaking the RSA key (factor
-n!) and then determining d using n’s prime factors. 128-bit RSA keys
-are just big enough you can’t use trivial methods like trial division
-but are easily small enough that almost anything more sophisticated
-will factor them in seconds.</p>
-
-  <p>== Generated Public Key ==
-Public Modulus (n): 264077764893712564681347373214293350341
-Encrypting Exponent (e): 65537</p>
-
-  <p>Message to decrypt (c): 54832408036442361586583231856828192577</p>
-
-  <p>What is the plaintext (m) for the encrypted message (c) for the public key?</p>
-
-</blockquote>
-
-<p>n이 주어진다. 근데 작은 값으로 주어진다. 128bit? factordb에는 없지만 sympy를 사용해서</p>
-
-<p>factorint 함수를 쓰면 짧은 시가니 내에 소인수분해 가능하다.
-p, q와 d, e를 가지고 그대로 복호화를 진행한다.</p>
-
-<p><img width="100%" alt="Untitled (6)" src="https://user-images.githubusercontent.com/101745344/234505663-bd4e1834-a8fd-43ff-9c95-14c906588fa3.png"></p>
+<p>그러나 암호를 10진수로 입력해야 풀린다.
+정말 쓰레기 같은 문제다.</p>
 
   </article>
 
@@ -338,13 +246,13 @@ p, q와 d, e를 가지고 그대로 복호화를 진행한다.</p>
   
 
   <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/Find_key/">Find Key</a>
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/just_a_xor/">Just a XOR</a>
   </li>
 
   
 
   <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/just_a_xor/">Just a XOR</a>
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/Scream_Like_Viking/">Scream Like Viking</a>
   </li>
 
 </div>
