@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <!-- Head -->
+<!-- _layouts/distill.html --><html>
   <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
     
@@ -10,10 +8,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>006 serises | Neutrinox4b1 ⚛  </title>
+    <title>TJCTF 2023 | Neutrinox4b1 ⚛  </title>
     <meta name="author" content="Neutrinox4b1 ⚛  ">
-    <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-">
+    <meta name="description" content="Team. Security Factorial">
 
 
     <!-- Bootstrap & MDB -->
@@ -33,7 +30,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://neutrinox4b1.github.io/blog/2023/006series/">
+    <link rel="canonical" href="https://neutrinox4b1.github.io/blog/2023/TJCTF-2023/">
     
     <!-- Dark Mode -->
     
@@ -43,10 +40,82 @@
     <script src="/assets/js/dark_mode.js"></script>
     
 
+
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    <script src="/assets/js/distillpub/overrides.js"></script>
+    
+    <!-- Page/Post style -->
+    <style type="text/css">
+      .fake-img {
+  background: #bbb;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 11px;
+} .fake-img p {
+  font-family: monospace;
+  color: white;
+  text-align: left;
+  margin: 12px 0;
+  text-align: center;
+  font-size: 16px;
+}
+
+    </style>
   </head>
 
-  <!-- Body -->
-  <body class="fixed-top-nav sticky-bottom-footer">
+  <body>
+<d-front-matter>
+    <script async type="text/json">{
+      "title": "TJCTF 2023",
+      "description": "Team. Security Factorial",
+      "published": "May 27, 2023",
+      "authors": [
+        {
+          "author": "neutrinox4b1",
+          "authorURL": "",
+          "affiliations": [
+            {
+              "name": "Security Factorial",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  
 
     <!-- Header -->
     <header>
@@ -112,92 +181,85 @@
 
 
     <!-- Content -->
-    <div class="container mt-5">
-      <!-- _layouts/post.html -->
+    <div class="post distill">
 
-<div class="post">
+      <d-title>
+        <h1>TJCTF 2023</h1>
+        <p>Team. Security Factorial</p>
+      </d-title>
 
-  <header class="post-header">
-    <h1 class="post-title">006 serises</h1>
-    <p class="post-meta">May 20, 2023</p>
-    <p class="post-tags">
-      <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
-        ·  
-        <a href="/blog/category/crypto">
-          <i class="fas fa-tag fa-sm"></i> crypto</a>  
-          
+      <d-byline></d-byline>
 
-    </p>
-  </header>
+      <d-article>
+        <d-contents>
+          <nav class="l-text figcaption">
+          <h3>Contents</h3>
+            <div><a href="#writeups">writeups</a></div>
+            <div><a href="#about">about</a></div>
+            <div><a href="#overview">overview</a></div>
+            
+          </nav>
+        </d-contents>
 
-  <article class="post-content">
-    <h2 id="background">Background</h2>
-<hr>
+        <p><img src="https://pbs.twimg.com/card_img/1660535605883961344/zK4M8xU8?format=png&amp;name=900x900" alt="image" width="100%" height="100%"></p>
 
-<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/d9a93a77-2890-4f78-aa10-ba5f5512574c" alt="Untitled (7)" width="100%" height="100%"></p>
+<h2 id="writeups">Writeups</h2>
+<h3 id="crypto">crypto</h3>
+<ul>
+  <li><a href="../babyrsa">baby-rsa</a></li>
+</ul>
 
-<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/30267e82-570c-46d7-83bf-fb749ca81926" alt="Untitled (8)"></p>
+<h2 id="about">About</h2>
 
-<p><br>
-<br>
-<br></p>
+<ul>
+  <li>Starts: 금요일, 26 5 2023, 09:00 KST</li>
+  <li>Ends: 일요일, 28 5 2023, 09:00 KST</li>
+  <li>On-line</li>
+  <li>Format: Jeopardy</li>
+  <li>Rating weight: 24.76</li>
+</ul>
 
-<h2 id="solution">Solution</h2>
-<hr>
-<p>3개의 문제로 되어있고, 각 문제 파일에는 특정 알고리즘으로 hash화 된 암호가 있다.</p>
+<h2 id="overview">Overview</h2>
 
-<p><a href="https://crackstation.net/" rel="external nofollow noopener" target="_blank">CrackStation - Online Password Hash Cracking - MD5, SHA1, Linux, Rainbow Tables, etc.</a></p>
+<p>DEFCON은 풀어보다가 너무 어렵고, 리버싱에 벽을 느꼈다.
+리버싱도 공부해서 돌아와야겠다.</p>
 
-<p>이 사이트에 넣으면 대부분 나오고</p>
+      </d-article>
 
-<p>안나오는 암호는</p>
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
 
-<p><a href="https://hashes.com/en/decrypt/hash" rel="external nofollow noopener" target="_blank">Decrypt MD5, SHA1, MySQL, NTLM, SHA256, SHA512, Wordpress, Bcrypt hashes for free online</a></p>
+      <d-bibliography src="/assets/bibliography/"></d-bibliography><div id="giscus_thread" style="max-width: 800px; margin: 0 auto;">
+  <script>
+    let giscusTheme = localStorage.getItem("theme");
+    let giscusAttributes = {
+        "src": "https://giscus.app/client.js",
+        "data-repo": "alshedivat/al-folio",
+        "data-repo-id": "R_kgDOJWM2aA",
+        "data-category": "General",
+        "data-category-id": "DIC_kwDOJWM2aM4CVvE4",
+        "data-mapping": "title",
+        "data-strict": "1",
+        "data-reactions-enabled": "1",
+        "data-emit-metadata": "0",
+        "data-input-position": "bottom",
+        "data-theme": giscusTheme,
+        "data-lang": "ko",
+        "crossorigin": "anonymous",
+        "async": "",
+    };
 
-<p>여기에 넣으면 나왔다.</p>
 
-<p>md5, sha256, sha512 알고리즘이 사용되었다.</p>
-
-  </article>
-
-
-  
-    
-    <br>
-    <hr>
-    <br>
-    <ul class="list-disc pl-8"></ul>
-
-    <!-- Adds related posts to the end of an article -->
-    <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2>
-    <p class="mb-2">Here are some more articles you might like to read next:</p>
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/babyrsa/">Baby RSA</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/TJCTF-2023/">TJCTF 2023</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/rsa5/">RSA5</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/rsa4/">RSA4</a>
-  </li>
-
+    let giscusScript = document.createElement("script");
+    Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+    document.getElementById("giscus_thread").appendChild(giscusScript);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" rel="external nofollow noopener" target="_blank">comments powered by giscus.</a>
+</noscript>
 </div>
-
-    </div>
+</div>
 
     <!-- Footer -->    <footer class="sticky-bottom mt-5">
       <div class="container">
@@ -206,39 +268,9 @@
       </div>
     </footer>
 
-    <!-- JavaScripts -->
-    <!-- jQuery -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
     <!-- Bootsrap & MDB scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
-
-    <!-- Masonry & imagesLoaded -->
-  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-  <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
-    
-  <!-- Medium Zoom JS -->
-  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
-  <script defer src="/assets/js/zoom.js"></script><!-- Load Common JS -->
-  <script defer src="/assets/js/common.js"></script>
-  <script defer src="/assets/js/copy_code.js" type="text/javascript"></script>
-
-    
-  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
-  <script async src="https://badge.dimensions.ai/badge.js"></script>
-
-    <!-- MathJax -->
-  <script type="text/javascript">
-    window.MathJax = {
-      tex: {
-        tags: 'ams'
-      }
-    };
-  </script>
-  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
-  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 
     
     
@@ -320,5 +352,6 @@
   }
 </script>
 
-  </body>
+  
+</body>
 </html>

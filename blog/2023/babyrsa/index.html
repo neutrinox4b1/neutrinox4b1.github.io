@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>006 serises | Neutrinox4b1 ⚛  </title>
+    <title>Baby RSA | Neutrinox4b1 ⚛  </title>
     <meta name="author" content="Neutrinox4b1 ⚛  ">
     <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 ">
@@ -33,7 +33,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://neutrinox4b1.github.io/blog/2023/006series/">
+    <link rel="canonical" href="https://neutrinox4b1.github.io/blog/2023/babyrsa/">
     
     <!-- Dark Mode -->
     
@@ -118,8 +118,8 @@
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">006 serises</h1>
-    <p class="post-meta">May 20, 2023</p>
+    <h1 class="post-title">Baby RSA</h1>
+    <p class="post-meta">May 27, 2023</p>
     <p class="post-tags">
       <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
         ·  
@@ -131,32 +131,22 @@
   </header>
 
   <article class="post-content">
-    <h2 id="background">Background</h2>
+    <h2 id="solution">Solution</h2>
 <hr>
 
-<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/d9a93a77-2890-4f78-aa10-ba5f5512574c" alt="Untitled (7)" width="100%" height="100%"></p>
+<p>낮은 지수 공격이다.</p>
 
-<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/30267e82-570c-46d7-83bf-fb749ca81926" alt="Untitled (8)"></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="n">gmpy2</span> <span class="kn">import</span> <span class="o">*</span>
 
-<p><br>
-<br>
-<br></p>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10888751337932558679268839254528888070769213269691871364279830513893837690735136476085167796992556016532860022833558342573454036339582519895539110327482234861870963870144864609120375793020750736090740376786289878349313047032806974605398302398698622431086259032473375162446051603492310000290666366063094482985737032132318650015539702912720882013509099961316767073167848437729826084449943115059234376990825162006299979071912964494228966947974497569783878833130690399504361180345909411669130822346252539746722020515514544334793717997364522192699435604525968953070151642912274210943050922313389271251805397541777241902027</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">2449457955338174702664398437699732241330055959255401949300755756893329242892325068765174475595370736008843435168081093064803408113260941928784442707977000585466461075146434876354981528996602615111767938231799146073229307631775810351487333</span>
 
-<h2 id="solution">Solution</h2>
-<hr>
-<p>3개의 문제로 되어있고, 각 문제 파일에는 특정 알고리즘으로 hash화 된 암호가 있다.</p>
-
-<p><a href="https://crackstation.net/" rel="external nofollow noopener" target="_blank">CrackStation - Online Password Hash Cracking - MD5, SHA1, Linux, Rainbow Tables, etc.</a></p>
-
-<p>이 사이트에 넣으면 대부분 나오고</p>
-
-<p>안나오는 암호는</p>
-
-<p><a href="https://hashes.com/en/decrypt/hash" rel="external nofollow noopener" target="_blank">Decrypt MD5, SHA1, MySQL, NTLM, SHA256, SHA512, Wordpress, Bcrypt hashes for free online</a></p>
-
-<p>여기에 넣으면 나왔다.</p>
-
-<p>md5, sha256, sha512 알고리즘이 사용되었다.</p>
+<span class="k">with</span> <span class="nf">local_context</span><span class="p">()</span> <span class="k">as</span> <span class="n">lcx</span><span class="p">:</span>
+    <span class="n">lcx</span><span class="p">.</span><span class="n">precision</span> <span class="o">=</span> <span class="mi">1000</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">long_to_bytes</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="nf">root</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">e</span><span class="p">))))</span>
+</code></pre></div></div>
 
   </article>
 
@@ -174,12 +164,6 @@
   
 
   <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/babyrsa/">Baby RSA</a>
-  </li>
-
-  
-
-  <li class="my-2">
     <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/TJCTF-2023/">TJCTF 2023</a>
   </li>
 
@@ -193,6 +177,12 @@
 
   <li class="my-2">
     <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/rsa4/">RSA4</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/rsa3/">RSA3</a>
   </li>
 
 </div>

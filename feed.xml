@@ -1,5 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-30T01:08:59+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-</subtitle><entry><title type="html">006 serises</title><link href="https://neutrinox4b1.github.io/blog/2023/006series/" rel="alternate" type="text/html" title="006 serises" /><published>2023-05-20T00:00:00+00:00</published><updated>2023-05-20T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/006series</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/006series/"><![CDATA[<h2 id="background">Background</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-30T10:31:00+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+</subtitle><entry><title type="html">TJCTF 2023</title><link href="https://neutrinox4b1.github.io/blog/2023/TJCTF-2023/" rel="alternate" type="text/html" title="TJCTF 2023" /><published>2023-05-27T00:00:00+00:00</published><updated>2023-05-27T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/TJCTF%202023</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/TJCTF-2023/"><![CDATA[<p><img src="https://pbs.twimg.com/card_img/1660535605883961344/zK4M8xU8?format=png&amp;name=900x900" alt="image" width="100%" height="100%" /></p>
+
+<h2 id="writeups">Writeups</h2>
+<h3 id="crypto">crypto</h3>
+<ul>
+  <li><a href="../babyrsa">baby-rsa</a></li>
+</ul>
+
+<h2 id="about">About</h2>
+
+<ul>
+  <li>Starts: 금요일, 26 5 2023, 09:00 KST</li>
+  <li>Ends: 일요일, 28 5 2023, 09:00 KST</li>
+  <li>On-line</li>
+  <li>Format: Jeopardy</li>
+  <li>Rating weight: 24.76</li>
+</ul>
+
+<h2 id="overview">Overview</h2>
+
+<p>DEFCON은 풀어보다가 너무 어렵고, 리버싱에 벽을 느꼈다.
+리버싱도 공부해서 돌아와야겠다.</p>]]></content><author><name>neutrinox4b1</name></author><category term="crypto" /><category term="CTFs" /><summary type="html"><![CDATA[Team. Security Factorial]]></summary></entry><entry><title type="html">Baby RSA</title><link href="https://neutrinox4b1.github.io/blog/2023/babyrsa/" rel="alternate" type="text/html" title="Baby RSA" /><published>2023-05-27T00:00:00+00:00</published><updated>2023-05-27T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/babyrsa</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/babyrsa/"><![CDATA[<h2 id="solution">Solution</h2>
+<hr />
+
+<p>낮은 지수 공격이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="n">gmpy2</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10888751337932558679268839254528888070769213269691871364279830513893837690735136476085167796992556016532860022833558342573454036339582519895539110327482234861870963870144864609120375793020750736090740376786289878349313047032806974605398302398698622431086259032473375162446051603492310000290666366063094482985737032132318650015539702912720882013509099961316767073167848437729826084449943115059234376990825162006299979071912964494228966947974497569783878833130690399504361180345909411669130822346252539746722020515514544334793717997364522192699435604525968953070151642912274210943050922313389271251805397541777241902027</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">2449457955338174702664398437699732241330055959255401949300755756893329242892325068765174475595370736008843435168081093064803408113260941928784442707977000585466461075146434876354981528996602615111767938231799146073229307631775810351487333</span>
+
+<span class="k">with</span> <span class="nf">local_context</span><span class="p">()</span> <span class="k">as</span> <span class="n">lcx</span><span class="p">:</span>
+    <span class="n">lcx</span><span class="p">.</span><span class="n">precision</span> <span class="o">=</span> <span class="mi">1000</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">long_to_bytes</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="nf">root</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">e</span><span class="p">))))</span>
+</code></pre></div></div>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Solution]]></summary></entry><entry><title type="html">006 serises</title><link href="https://neutrinox4b1.github.io/blog/2023/006series/" rel="alternate" type="text/html" title="006 serises" /><published>2023-05-20T00:00:00+00:00</published><updated>2023-05-20T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/006series</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/006series/"><![CDATA[<h2 id="background">Background</h2>
 <hr />
 
 <p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/d9a93a77-2890-4f78-aa10-ba5f5512574c" alt="Untitled (7)" width="100%" height="100%" /></p>
@@ -336,136 +372,4 @@
 <span class="nf">print</span><span class="p">(</span><span class="nf">long_to_bytes</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
 </code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">byuctf{coprime_means_factoring_N_becomes_much_easier}</code></p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry><entry><title type="html">RSA4</title><link href="https://neutrinox4b1.github.io/blog/2023/rsa4/" rel="alternate" type="text/html" title="RSA4" /><published>2023-05-20T00:00:00+00:00</published><updated>2023-05-20T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/rsa4</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/rsa4/"><![CDATA[<h2 id="background">Background</h2>
-
-<hr />
-
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/457f060b-6f07-4bf8-b45c-78bc724d3575-480.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/457f060b-6f07-4bf8-b45c-78bc724d3575-800.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/457f060b-6f07-4bf8-b45c-78bc724d3575-1400.webp" />
-    
-
-    <!-- Fallback to the original file -->
-    <img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/457f060b-6f07-4bf8-b45c-78bc724d3575" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
-
-  </picture>
-
-</figure>
-
-    </div>
-</div>
-
-<p>이건 그냥 Hastad Attack 하라고 준다. 같은 평문 m이랑,, 작은 지수랑, 서로 다른 n을 가지고 암호화 한 결과를 보여주니</p>
-
-<p>Hastad Attack을 수행해본다.</p>
-
-<p><br />
-<br />
-<br /></p>
-
-<h2 id="solution">Solution</h2>
-
-<hr />
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="n">sympy.ntheory.modular</span> <span class="kn">import</span> <span class="n">crt</span>
-<span class="kn">from</span> <span class="n">gmpy2</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">n1</span> <span class="o">=</span> <span class="mi">25204912957894049536633029588071532883154221495361435745558539407530325536509218257991893451902442183954212400671502526830623527340613723328379300388737939211263541814108106183164630301938900862986688763583982133846507136234797325243547177627054271161715200611591594812723672399437505379398941496184886411879923583394041753902383846644013849190900416111230521180435101859101110596828380586449182686175177638441549656137307050392520754146511496313215137339773851458160180450925216541537448515297981124184019831730808991821344392915274230294654187421183676471212265322367890189804699510021526923237231850244056681024361</span>
-<span class="n">c1</span> <span class="o">=</span> <span class="mi">8177192204481601898705460379101384591996531766013815643642297541939314169289538943467463950155787562006058743758523755363825964609610993939021120980839831173842134605117089923025444468026164578567348718360392736482132312367435114106411271743218631041094275894508404221506482038656928803775293360599721583316194630449469869000491476753827928793659938654925187969087524783314008405767753004191090522037968098548258698350055999105058915648497702724525585509</span>
-<span class="n">n2</span> <span class="o">=</span> <span class="mi">17730912385401458370516374144454354828481353051514329263921774569034415114147424203611660978860008058118764431105602401970281692066419254457694301039461623568501484102567802483628476717695013320444442267232019104240173401975387173805390636521671252624249730700497552226732834062715286458634274525026438931671208367178653031967364951679420066768732647183187381700016195545187024094717207787859217993871236368911145957298126589666514319408022801341248744002320245345234912423717815146532293315342644702101415345900126397475592837306256140915525455824350305349773210334856093169535686115299159772550674315375987529523179</span>
-<span class="n">c2</span> <span class="o">=</span> <span class="mi">8177192204481601898705460379101384591996531766013815643642297541939314169289538943467463950155787562006058743758523755363825964609610993939021120980839831173842134605117089923025444468026164578567348718360392736482132312367435114106411271743218631041094275894508404221506482038656928803775293360599721583316194630449469869000491476753827928793659938654925187969087524783314008405767753004191090522037968098548258698350055999105058915648497702724525585509</span>
-<span class="n">n3</span> <span class="o">=</span> <span class="mi">23693871552180460990138635073805949225912252125308334418081834697641804631104724668330415198785050388969117484647897131795893896100932121531733121069301557203541651575306855376180158639595396645851251320756224273151350168394783274111111375428683335001923152182758469432988805562827169898721409159172411067426322303967736140645806651181720610635139163613355013365367013643617931710120446074129630384181873406149243284193113399417540744056880787819360491511062694356302764642727497777585348003477373456680752873785829149551421840290660162776229985812994060664107888011786183808824620497078292008444842754064007647832261</span>
-<span class="n">c3</span> <span class="o">=</span> <span class="mi">8177192204481601898705460379101384591996531766013815643642297541939314169289538943467463950155787562006058743758523755363825964609610993939021120980839831173842134605117089923025444468026164578567348718360392736482132312367435114106411271743218631041094275894508404221506482038656928803775293360599721583316194630449469869000491476753827928793659938654925187969087524783314008405767753004191090522037968098548258698350055999105058915648497702724525585509</span>
-
-<span class="n">e</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">ct</span> <span class="o">=</span> <span class="nf">crt</span><span class="p">([</span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">n3</span><span class="p">],</span> <span class="p">[</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">])</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">ct</span><span class="p">)</span>
-
-<span class="k">with</span> <span class="nf">local_context</span><span class="p">()</span> <span class="k">as</span> <span class="n">lcx</span><span class="p">:</span>
-    <span class="n">lcx</span><span class="p">.</span><span class="n">precision</span> <span class="o">=</span> <span class="mi">1000</span>
-    <span class="nf">print</span><span class="p">(</span><span class="nf">long_to_bytes</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="nf">root</span><span class="p">(</span><span class="n">ct</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">3</span><span class="p">))))</span>
-</code></pre></div></div>
-
-<p>CRT를 계산하고 세제곱근을 씌움</p>
-
-<p><code class="language-plaintext highlighter-rouge">byuctf{hastad_broadcast_attack_is_why_e_needs_to_be_very_large}</code></p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry><entry><title type="html">RSA5</title><link href="https://neutrinox4b1.github.io/blog/2023/rsa5/" rel="alternate" type="text/html" title="RSA5" /><published>2023-05-20T00:00:00+00:00</published><updated>2023-05-20T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/rsa5</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/rsa5/"><![CDATA[<h2 id="background">Background</h2>
-<hr />
-
-<blockquote>
-  <p>n = 158307578375429142391814474806884486236362186916188452580137711655290101749246194796158132723192108831610021920979976831387798531310286521988621973910776725756124498277292094830880179737057636826926718870947402385998304759357604096043571760391265436342427330673679572532727716853811470803394787706010603830747</p>
-
-  <p>e1 = 65537</p>
-
-  <p>c1 = 147465654815005020063943150787541676244006907179548061733683379407115931956604160894199596187128857070739585522099795520030109295201146791378167977530770154086872347421667566213107792455663772279848013855378166127142983660396920011133029349489200452580907847840266595584254579298524777000061248118561875608240</p>
-
-  <p>e2 = 65521</p>
-
-  <p>c2 = 142713643080475406732653557020038566547302005567266455940547551173573770529850069157484999432568532977025654715928532390305041525635025949965799289602536953914794718670859158768092964083443092374251987427058692219234329521939404919423432910655508395090232621076454399975588453154238832799760275047924852124717</p>
-
-</blockquote>
-
-<p>같은 n에 대해 서로 다른 공개 키 e1, e2로 암호화된 암호문 c1, c2를 제공한다.</p>
-
-<p>평문 \(m\) 에 대해</p>
-
-\[c_1 = m^{e_1} \bmod n\]
-
-\[c_2 = m^{e_2} \bmod n\]
-
-<p>\(e_1, e_2\) 는 서로소이다. \(\therefore \gcd(e_1, e_2) = 1\)</p>
-
-<p>따라서 EEA를 이용해서 베주항등식 \(e_1s + e_2t = 1\) 을 만족하는 s, t를 찾을 수 있다.</p>
-
-<p>그렇게 되면 \(c_1^s c_2^t = m^1\) 이 되어 평문을 구할 수 있다.</p>
-
-<p><br />
-<br />
-<br /></p>
-
-<h2 id="solution">Solution</h2>
-
-<hr />
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">n</span> <span class="o">=</span> <span class="mi">158307578375429142391814474806884486236362186916188452580137711655290101749246194796158132723192108831610021920979976831387798531310286521988621973910776725756124498277292094830880179737057636826926718870947402385998304759357604096043571760391265436342427330673679572532727716853811470803394787706010603830747</span>
-
-<span class="n">e1</span> <span class="o">=</span> <span class="mi">65537</span>
-
-<span class="n">c1</span> <span class="o">=</span> <span class="mi">147465654815005020063943150787541676244006907179548061733683379407115931956604160894199596187128857070739585522099795520030109295201146791378167977530770154086872347421667566213107792455663772279848013855378166127142983660396920011133029349489200452580907847840266595584254579298524777000061248118561875608240</span>
-
-<span class="n">e2</span> <span class="o">=</span> <span class="mi">65521</span>
-
-<span class="n">c2</span> <span class="o">=</span> <span class="mi">142713643080475406732653557020038566547302005567266455940547551173573770529850069157484999432568532977025654715928532390305041525635025949965799289602536953914794718670859158768092964083443092374251987427058692219234329521939404919423432910655508395090232621076454399975588453154238832799760275047924852124717</span>
-
-<span class="k">def</span> <span class="nf">EEA</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">u1</span><span class="p">,</span> <span class="n">u2</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span> <span class="p">:</span>
-    <span class="k">if</span> <span class="n">r2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">gcd: </span><span class="si">{</span><span class="n">r1</span><span class="si">}</span><span class="se">\n</span><span class="s">u: </span><span class="si">{</span><span class="n">u1</span><span class="si">}</span><span class="se">\n</span><span class="s">v: </span><span class="si">{</span><span class="n">v1</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
-        <span class="k">return</span>
-    <span class="n">q</span> <span class="o">=</span> <span class="n">r1</span><span class="o">//</span><span class="n">r2</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">r1</span><span class="o">%</span><span class="n">r2</span>
-    <span class="n">u</span> <span class="o">=</span> <span class="n">u1</span> <span class="o">-</span> <span class="n">q</span><span class="o">*</span><span class="n">u2</span>
-    <span class="n">v</span> <span class="o">=</span> <span class="n">v1</span> <span class="o">-</span> <span class="n">q</span><span class="o">*</span><span class="n">v2</span>
-
-    <span class="k">return</span> <span class="nc">EEA</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">u2</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-
-<span class="c1">#EEA(e1, e2, 1, 0, 0, 1)
-</span>
-<span class="n">s</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4095</span>
-<span class="n">t</span> <span class="o">=</span> <span class="mi">4096</span>
-
-<span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="nf">pow</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="nf">pow</span><span class="p">(</span><span class="n">c2</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span> <span class="o">%</span> <span class="n">n</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">long_to_bytes</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
-</code></pre></div></div>
-
-<p>s와 t를 구하여  \(c_1^s c_2^t = m^1\)를 계산하고 결과를 출력한다. 너무 숫자가 커지지 않도록 모듈러 성질을 이용하여 제곱한다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">byuctf{NEVER_USE_SAME_MODULUS_WITH_DIFFERENT_e_VALUES}</code></p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry></feed>
+<p><code class="language-plaintext highlighter-rouge">byuctf{coprime_means_factoring_N_becomes_much_easier}</code></p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry></feed>
