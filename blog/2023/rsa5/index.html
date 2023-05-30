@@ -10,9 +10,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Gib me Initials of Victor | Neutrinox4b1 ⚛  </title>
+    <title>RSA5 | Neutrinox4b1 ⚛  </title>
     <meta name="author" content="Neutrinox4b1 ⚛  ">
-    <meta name="description" content="PwnMe 2023 - 8bits">
+    <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+">
 
 
     <!-- Bootstrap & MDB -->
@@ -32,7 +33,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://neutrinox4b1.github.io/blog/2023/Gib_me_Initials_of_Victor/">
+    <link rel="canonical" href="https://neutrinox4b1.github.io/blog/2023/rsa5/">
     
     <!-- Dark Mode -->
     
@@ -117,8 +118,8 @@
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Gib me Initials of Victor</h1>
-    <p class="post-meta">May 6, 2023</p>
+    <h1 class="post-title">RSA5</h1>
+    <p class="post-meta">May 20, 2023</p>
     <p class="post-tags">
       <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
         ·  
@@ -131,50 +132,34 @@
 
   <article class="post-content">
     <h2 id="background">Background</h2>
-
 <hr>
 
 <blockquote>
-  <p>Imagine making an encryption system.
-That’s what someone did…</p>
+  <p>n = 158307578375429142391814474806884486236362186916188452580137711655290101749246194796158132723192108831610021920979976831387798531310286521988621973910776725756124498277292094830880179737057636826926718870947402385998304759357604096043571760391265436342427330673679572532727716853811470803394787706010603830747</p>
 
-  <p>Find a way to recover the flag.</p>
+  <p>e1 = 65537</p>
+
+  <p>c1 = 147465654815005020063943150787541676244006907179548061733683379407115931956604160894199596187128857070739585522099795520030109295201146791378167977530770154086872347421667566213107792455663772279848013855378166127142983660396920011133029349489200452580907847840266595584254579298524777000061248118561875608240</p>
+
+  <p>e2 = 65521</p>
+
+  <p>c2 = 142713643080475406732653557020038566547302005567266455940547551173573770529850069157484999432568532977025654715928532390305041525635025949965799289602536953914794718670859158768092964083443092374251987427058692219234329521939404919423432910655508395090232621076454399975588453154238832799760275047924852124717</p>
 
 </blockquote>
 
-<h3 id="serverpy">server.py</h3>
+<p>같은 n에 대해 서로 다른 공개 키 e1, e2로 암호화된 암호문 c1, c2를 제공한다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">AES</span>
-<span class="kn">from</span> <span class="n">Crypto.Util.Padding</span> <span class="kn">import</span> <span class="n">pad</span><span class="p">,</span> <span class="n">unpad</span>
-<span class="kn">import</span> <span class="n">os</span>
+<p>평문 \(m\) 에 대해</p>
 
-<span class="n">FLAG</span> <span class="o">=</span> <span class="sh">"</span><span class="s">PWNME{redacted}</span><span class="sh">"</span>
-<span class="n">KEY</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="nf">urandom</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+\[c_1 = m^{e_1} \bmod n\]
 
-<span class="k">def</span> <span class="nf">encrypt_flag</span><span class="p">():</span>
-    <span class="n">iv</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="nf">urandom</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">cipher</span> <span class="o">=</span> <span class="n">AES</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">KEY</span><span class="p">,</span> <span class="n">AES</span><span class="p">.</span><span class="n">MODE_CBC</span><span class="p">,</span> <span class="n">iv</span><span class="p">)</span>
-    <span class="n">encrypted</span> <span class="o">=</span> <span class="n">cipher</span><span class="p">.</span><span class="nf">encrypt</span><span class="p">(</span><span class="nf">pad</span><span class="p">(</span><span class="n">FLAG</span><span class="p">.</span><span class="nf">encode</span><span class="p">(),</span> <span class="mi">16</span><span class="p">))</span>
-    <span class="n">signature</span> <span class="o">=</span> <span class="p">[</span><span class="nf">hex</span><span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">)[</span><span class="mi">2</span><span class="p">:].</span><span class="nf">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="n">iv</span><span class="p">,</span> <span class="n">KEY</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])]</span>
-    <span class="n">signature</span> <span class="o">=</span> <span class="sh">""</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">signature</span><span class="p">)</span>
-    <span class="n">ciphertext</span> <span class="o">=</span> <span class="n">iv</span><span class="p">.</span><span class="nf">hex</span><span class="p">()[</span><span class="mi">4</span><span class="p">:]</span> <span class="o">+</span> <span class="n">encrypted</span><span class="p">.</span><span class="nf">hex</span><span class="p">()</span> <span class="o">+</span> <span class="n">signature</span>
-    <span class="k">return</span> <span class="p">{</span><span class="sh">"</span><span class="s">ciphertext</span><span class="sh">"</span><span class="p">:</span> <span class="n">ciphertext</span><span class="p">}</span>
-</code></pre></div></div>
+\[c_2 = m^{e_2} \bmod n\]
 
-<h3 id="outputtxt">output.txt</h3>
+<p>\(e_1, e_2\) 는 서로소이다. \(\therefore \gcd(e_1, e_2) = 1\)</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{"ciphertext":"ca92b5919084c02658a2e3d57ee3a37b8ab32e581d2615359cc7858e966090d328df2be8b5ad889561d9abce6f961fe03a95a2051e882db2373b33b5a43a1c13ff62af7f835df3cc1ccc64571e74f8b84587c727d56c4d37983e7b80ce3c"}
-</code></pre></div></div>
+<p>따라서 EEA를 이용해서 베주항등식 \(e_1s + e_2t = 1\) 을 만족하는 s, t를 찾을 수 있다.</p>
 
-<p>server.py에서  AES를 사용한다.</p>
-
-<p>iv, key 모두 랜덤이고, encrypted에서는 flag를 AES로 암호화한다.</p>
-
-<p>signature는 key를 역순으로 한 것과 iv를 원소마다 xor하여 만든다.</p>
-
-<p>iv의 하위 14byte와, 암호문, 시그니처를 더해서 ciphertext를 만든다.</p>
-
-<p>따라서 key의 14byte까지는 xor하여 되돌릴 수 있다.</p>
+<p>그렇게 되면 \(c_1^s c_2^t = m^1\) 이 되어 평문을 구할 수 있다.</p>
 
 <p><br>
 <br>
@@ -184,38 +169,41 @@ That’s what someone did…</p>
 
 <hr>
 
-<p>앞 2byte는 bruteforce한다</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">AES</span>
-<span class="kn">from</span> <span class="n">Crypto.Util.Padding</span> <span class="kn">import</span> <span class="n">pad</span><span class="p">,</span> <span class="n">unpad</span>
-<span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">long_to_bytes</span><span class="p">,</span> <span class="n">bytes_to_long</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">158307578375429142391814474806884486236362186916188452580137711655290101749246194796158132723192108831610021920979976831387798531310286521988621973910776725756124498277292094830880179737057636826926718870947402385998304759357604096043571760391265436342427330673679572532727716853811470803394787706010603830747</span>
 
-<span class="n">ciphertext</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">.</span><span class="nf">fromhex</span><span class="p">(</span> <span class="sh">'</span><span class="s">a37b8ab32e581d2615359cc7858e966090d328df2be8b5ad889561d9abce6f961fe03a95a2051e882db2373b33b5a43a1c13ff62af7f835df3cc1ccc64571e74</span><span class="sh">'</span><span class="p">)</span>
-<span class="n">iv14</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">.</span><span class="nf">fromhex</span><span class="p">(</span><span class="sh">'</span><span class="s">ca92b5919084c02658a2e3d57ee3</span><span class="sh">'</span><span class="p">)</span>
-<span class="n">sign</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">.</span><span class="nf">fromhex</span><span class="p">(</span><span class="sh">'</span><span class="s">f8b84587c727d56c4d37983e7b80ce3c</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">e1</span> <span class="o">=</span> <span class="mi">65537</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mh">0x0100</span><span class="p">,</span> <span class="mh">0xffff</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="n">iv</span> <span class="o">=</span> <span class="nf">long_to_bytes</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">iv14</span>
-    <span class="c1"># print(iv)
-</span>    <span class="n">key</span> <span class="o">=</span> <span class="sa">b</span><span class="sh">''</span>
-    <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="n">iv</span><span class="p">,</span> <span class="n">sign</span><span class="p">):</span>
-        <span class="n">key</span> <span class="o">+=</span> <span class="nf">long_to_bytes</span><span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">)</span>
-    <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    
-    <span class="n">cipher</span> <span class="o">=</span> <span class="n">AES</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">AES</span><span class="p">.</span><span class="n">MODE_CBC</span><span class="p">,</span> <span class="n">iv</span><span class="p">)</span>
-    <span class="n">flag</span> <span class="o">=</span> <span class="n">cipher</span><span class="p">.</span><span class="nf">decrypt</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="nf">unpad</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
-        <span class="n">flag</span> <span class="o">=</span> <span class="n">flag</span><span class="p">.</span><span class="nf">decode</span><span class="p">()</span>
-        <span class="k">if</span> <span class="sh">'</span><span class="s">PWNME</span><span class="sh">'</span> <span class="ow">in</span> <span class="n">flag</span><span class="p">:</span>
-            <span class="nf">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="nf">print</span><span class="p">(</span><span class="sh">''</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="sh">''</span><span class="p">)</span>
+<span class="n">c1</span> <span class="o">=</span> <span class="mi">147465654815005020063943150787541676244006907179548061733683379407115931956604160894199596187128857070739585522099795520030109295201146791378167977530770154086872347421667566213107792455663772279848013855378166127142983660396920011133029349489200452580907847840266595584254579298524777000061248118561875608240</span>
+
+<span class="n">e2</span> <span class="o">=</span> <span class="mi">65521</span>
+
+<span class="n">c2</span> <span class="o">=</span> <span class="mi">142713643080475406732653557020038566547302005567266455940547551173573770529850069157484999432568532977025654715928532390305041525635025949965799289602536953914794718670859158768092964083443092374251987427058692219234329521939404919423432910655508395090232621076454399975588453154238832799760275047924852124717</span>
+
+<span class="k">def</span> <span class="nf">EEA</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">u1</span><span class="p">,</span> <span class="n">u2</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span> <span class="p">:</span>
+    <span class="k">if</span> <span class="n">r2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">gcd: </span><span class="si">{</span><span class="n">r1</span><span class="si">}</span><span class="se">\n</span><span class="s">u: </span><span class="si">{</span><span class="n">u1</span><span class="si">}</span><span class="se">\n</span><span class="s">v: </span><span class="si">{</span><span class="n">v1</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">r1</span><span class="o">//</span><span class="n">r2</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">r1</span><span class="o">%</span><span class="n">r2</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">u1</span> <span class="o">-</span> <span class="n">q</span><span class="o">*</span><span class="n">u2</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">v1</span> <span class="o">-</span> <span class="n">q</span><span class="o">*</span><span class="n">v2</span>
+
+    <span class="k">return</span> <span class="nc">EEA</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">u2</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+
+<span class="c1">#EEA(e1, e2, 1, 0, 0, 1)
+</span>
+<span class="n">s</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4095</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">4096</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="nf">pow</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="nf">pow</span><span class="p">(</span><span class="n">c2</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span> <span class="o">%</span> <span class="n">n</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">long_to_bytes</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
 </code></pre></div></div>
 
-<p><img width="100%" alt="Untitled (8)" src="https://user-images.githubusercontent.com/101745344/236761012-dd734dc2-3dbf-434f-baed-56c2d3df7a64.png"></p>
+<p>s와 t를 구하여  \(c_1^s c_2^t = m^1\)를 계산하고 결과를 출력한다. 너무 숫자가 커지지 않도록 모듈러 성질을 이용하여 제곱한다.</p>
 
-<p>PWNME{1t_1s_d4ng3r0us_wh3n_t0_m4ny_1nf0_4r3_g1v3n}</p>
+<p><code class="language-plaintext highlighter-rouge">byuctf{NEVER_USE_SAME_MODULUS_WITH_DIFFERENT_e_VALUES}</code></p>
 
   </article>
 
@@ -233,12 +221,6 @@ That’s what someone did…</p>
   
 
   <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/rsa5/">RSA5</a>
-  </li>
-
-  
-
-  <li class="my-2">
     <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/rsa4/">RSA4</a>
   </li>
 
@@ -252,6 +234,12 @@ That’s what someone did…</p>
 
   <li class="my-2">
     <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/rsa2/">RSA2</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/rsa1/">RSA1</a>
   </li>
 
 </div>
