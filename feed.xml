@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-01T02:35:57+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-02T08:38:12+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">TJCTF 2023</title><link href="https://neutrinox4b1.github.io/blog/2023/TJCTF-2023/" rel="alternate" type="text/html" title="TJCTF 2023" /><published>2023-05-27T00:00:00+00:00</published><updated>2023-05-27T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/TJCTF%202023</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/TJCTF-2023/"><![CDATA[<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/b7b0e77f-60e1-427e-9c43-7326efd07d80" alt="image" width="100%" height="100%" /></p>
 
 <h2 id="writeups">Writeups</h2>
@@ -53,6 +53,8 @@
 </code></pre></div></div>
 
 <p>\(g^X = s \bmod p\) 에서 x를 구하면 된다.</p>
+
+<p>이를 이산로그 문제(Decrete Logrithm Problem, DLP)라고 한다. 이산로그 문제는 \(a^x = b\) 를 계산하기는 쉽지만, \(x = \log_a b\) 를 계산하기는 어렵다는 문제에 기반한다.</p>
 
 <p><br />
 <br />
