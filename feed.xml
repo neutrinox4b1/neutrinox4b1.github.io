@@ -1,5 +1,778 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-02T08:38:12+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-</subtitle><entry><title type="html">TJCTF 2023</title><link href="https://neutrinox4b1.github.io/blog/2023/TJCTF-2023/" rel="alternate" type="text/html" title="TJCTF 2023" /><published>2023-05-27T00:00:00+00:00</published><updated>2023-05-27T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/TJCTF%202023</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/TJCTF-2023/"><![CDATA[<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/b7b0e77f-60e1-427e-9c43-7326efd07d80" alt="image" width="100%" height="100%" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-05T22:43:24+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+</subtitle><entry><title type="html">DanteCTF 2023: 28th</title><link href="https://neutrinox4b1.github.io/blog/2023/DanteCTF2023/" rel="alternate" type="text/html" title="DanteCTF 2023: 28th" /><published>2023-06-03T00:00:00+00:00</published><updated>2023-06-03T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/DanteCTF2023</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/DanteCTF2023/"><![CDATA[<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/176fe41a-fc4a-47a0-9d5c-cc913ab68707" alt="image" width="100%" height="100%" /></p>
+
+<h2 id="writeups">Writeups</h2>
+<h3 id="crypto">crypto</h3>
+<ul>
+  <li><a href="../small_inscription">Small Inscription</a></li>
+  <li><a href="../diy_enc">DIY enc</a></li>
+  <li><a href="../adventurer_knapsack">Adventurer’s Knapsack</a></li>
+  <li><a href="../piedpic">PiedPic</a> (after CTF)</li>
+</ul>
+
+<h2 id="about">About</h2>
+
+<ul>
+  <li>Starts: 02 June, 07:00:00 UTC</li>
+  <li>Ends: 04 June, 21:00:00 UTC</li>
+  <li>On-line</li>
+  <li>Format: Jeopardy</li>
+  <li>Rating weight: first edition CTF</li>
+</ul>
+
+<h2 id="overview">Overview</h2>
+
+<p><img width="100%" alt="image" src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/b6750302-d414-435b-b579-69965fdacdfb" /></p>
+
+<p><img width="100%" alt="image" src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/392510fe-fe86-48ca-a740-7d18779c5a7e" /></p>]]></content><author><name>neutrinox4b1</name></author><category term="crypto" /><category term="CTFs" /><summary type="html"><![CDATA[Team. Security Factorial]]></summary></entry><entry><title type="html">Adventurer’s Knapsack</title><link href="https://neutrinox4b1.github.io/blog/2023/adventurer_knapsack/" rel="alternate" type="text/html" title="Adventurer’s Knapsack" /><published>2023-06-03T00:00:00+00:00</published><updated>2023-06-03T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/adventurer_knapsack</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/adventurer_knapsack/"><![CDATA[<h2 id="background">Background</h2>
+
+<hr />
+
+<blockquote>
+  <p>For every good trip in the afterworld you need a good knapsack!</p>
+
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">SECRET</span> <span class="kn">import</span> <span class="n">flag</span><span class="p">,</span> <span class="n">privk</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span>
+<span class="kn">from</span> <span class="n">sage.numerical.knapsack</span> <span class="kn">import</span> <span class="n">Superincreasing</span>
+
+<span class="n">flag_int</span><span class="o">=</span><span class="nf">bytes_to_long</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+<span class="n">L</span><span class="o">=</span><span class="nf">len</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span><span class="o">*</span><span class="mi">8</span>
+<span class="k">assert</span> <span class="n">L</span><span class="o">==</span><span class="mi">176</span>
+
+<span class="k">assert</span> <span class="nc">Superincreasing</span><span class="p">(</span><span class="n">privk</span><span class="p">).</span><span class="nf">is_superincreasing</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="nf">sum</span><span class="p">(</span><span class="n">privk</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+
+<span class="n">pubk</span><span class="o">=</span> <span class="p">[(</span><span class="n">n</span><span class="o">*</span><span class="n">i</span><span class="p">)</span><span class="o">%</span><span class="n">m</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">privk</span><span class="p">]</span>
+<span class="nf">shuffle</span><span class="p">(</span><span class="n">pubk</span><span class="p">)</span>
+
+<span class="n">ct</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">flag_int</span> <span class="o">&amp;</span> <span class="mi">2</span><span class="o">^</span><span class="p">(</span><span class="n">L</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ct</span> <span class="o">+=</span> <span class="n">pubk</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">ct</span><span class="o">=</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">pubk</span><span class="o">=</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>output</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ct</span><span class="o">=</span><span class="mi">134386949562122693902447468860044804076193605907011732452713809</span>
+<span class="n">pubk</span><span class="o">=</span><span class="p">[</span><span class="mi">1153413051608659765690966350509215244410441599304795977869609</span><span class="p">,</span> <span class="mi">2649449263344909989917079612505852691099017868921045204503001</span><span class="p">,</span> <span class="mi">745658406444288115599679966003279655234335830084858834237308</span><span class="p">,</span> <span class="mi">1501654946090437610990754702516907678101625380332752375035668</span><span class="p">,</span> <span class="mi">1731839829398712068254721510140854227151979937383544415747007</span><span class="p">,</span> <span class="mi">1917601407897641951467210159479072437634885900660588177638690</span><span class="p">,</span> <span class="mi">1279706235765006419446891128348418014918258703242746751774802</span><span class="p">,</span> <span class="mi">1502580060849949686295755918606576574401174920193784713780905</span><span class="p">,</span> <span class="mi">2625238880672952214121734023768335384083807769582181928490912</span><span class="p">,</span> <span class="mi">606270761347913487563503974039985349892695737642480888692673</span><span class="p">,</span> <span class="mi">1247631701502816565834505451954908666946807272758349376525460</span><span class="p">,</span> <span class="mi">1562927544947712147039232078400564527346400651105722414913451</span><span class="p">,</span> <span class="mi">204096614275302553698473272845405530981891754187470359119553</span><span class="p">,</span> <span class="mi">1408018363672404061681568720260167530505766870069064372609687</span><span class="p">,</span> <span class="mi">1514590716273119237466038973941614240250338689732745719237095</span><span class="p">,</span> <span class="mi">2378692629623187882152238082542498660097457763282705253592516</span><span class="p">,</span> <span class="mi">1893448995872418605597767637872034355760298442376725665221500</span><span class="p">,</span> <span class="mi">1637024298884398444455002361181118258859555824359194604735915</span><span class="p">,</span> <span class="mi">2719190822110427203521259100337406967675292817189502308970586</span><span class="p">,</span> <span class="mi">2640870406011836531895866622802297978015773425016511436224746</span><span class="p">,</span> <span class="mi">2165892993782024615017169562260093941947231862572312098360126</span><span class="p">,</span> <span class="mi">243718966168901036068447727263550985619152373055872226083935</span><span class="p">,</span> <span class="mi">2035400781995083294650022079235484020577386045959257768911516</span><span class="p">,</span> <span class="mi">2138400566976843848333310914369509998597969306214629098228227</span><span class="p">,</span> <span class="mi">112446566505736446843650023065053298590439688801621609445463</span><span class="p">,</span> <span class="mi">1714002630387312920696314035459338893617306790872241960138133</span><span class="p">,</span> <span class="mi">1024850412773050992775197227041922238903279669151026216857401</span><span class="p">,</span> <span class="mi">2358925636863552279599329365327470285835734283277847908682469</span><span class="p">,</span> <span class="mi">960291266922907753413813833147215291189556626243314954787079</span><span class="p">,</span> <span class="mi">2471269462645122667857359212039928357870430231828538257093882</span><span class="p">,</span> <span class="mi">2254711914646827325445684712569610067589509795259364668236116</span><span class="p">,</span> <span class="mi">3152079429165479260024384396045171484908571393583704823372</span><span class="p">,</span> <span class="mi">7245670391945130618733779447100310448574448728525664206342</span><span class="p">,</span> <span class="mi">1983149526457025777875960503986209872411223710838977852503058</span><span class="p">,</span> <span class="mi">2478783519269282209571656363015372788707598874749559775480572</span><span class="p">,</span> <span class="mi">1343348424777313491462495265503752251552490742957120510636719</span><span class="p">,</span> <span class="mi">696771540364873293374125391721639926054346725167043556235151</span><span class="p">,</span> <span class="mi">1378786198781394641622092749054458248463201336911200937601879</span><span class="p">,</span> <span class="mi">2061021991295597315833886722674966530095259597797968883012294</span><span class="p">,</span> <span class="mi">2022299356352726041687770564469412023446862842882981592269287</span><span class="p">,</span> <span class="mi">2103599714903473220709442681420827901041209667891008147827086</span><span class="p">,</span> <span class="mi">318411403427754276460826728673462955336165520042588782589752</span><span class="p">,</span> <span class="mi">215426626468659219531748316787016104062139403274288645837575</span><span class="p">,</span> <span class="mi">1810672814632234704157982310036649412989583692109880020715868</span><span class="p">,</span> <span class="mi">1514381356252789312341658830031933431769544487506032804303686</span><span class="p">,</span> <span class="mi">701593629336714590272170031617304310014522607636754911394706</span><span class="p">,</span> <span class="mi">1366393539801496516181470203059815247106762948304006271700287</span><span class="p">,</span> <span class="mi">2448152175170733851656170383862433487614634519538309624376469</span><span class="p">,</span> <span class="mi">1348207685418679830438595499051323725246184075503096280525585</span><span class="p">,</span> <span class="mi">70307869056203425509508941958172047909143575785204200382316</span><span class="p">,</span> <span class="mi">716048162378262413393444002306977733357269701046546820427233</span><span class="p">,</span> <span class="mi">1579543039327077934414801734410703417448650262925810895689104</span><span class="p">,</span> <span class="mi">261575250132422239529017823101514330063089023490414947560266</span><span class="p">,</span> <span class="mi">2298073834787955133523836383569782771499748656944587718350271</span><span class="p">,</span> <span class="mi">918734699998715338244933400142282901634195616477790962697785</span><span class="p">,</span> <span class="mi">1982726185421882131804832692278501191521239007312758901721603</span><span class="p">,</span> <span class="mi">2584890453270172498684967368927270137126808850953779575592179</span><span class="p">,</span> <span class="mi">2622231303407390255810045713997561793019571011029869053290302</span><span class="p">,</span> <span class="mi">2577578579371795996917469250652847487787210673097187661267819</span><span class="p">,</span> <span class="mi">52144522625291137606092085190356852042443658323935004932658</span><span class="p">,</span> <span class="mi">1416019353492624837460500845581684985017464744695269553974900</span><span class="p">,</span> <span class="mi">136970671991524060358119224318550078760913486366857079847622</span><span class="p">,</span> <span class="mi">834407238570805549772432172630329624434383380940991215927379</span><span class="p">,</span> <span class="mi">622449476884676778937441422703209818813479141928257844680738</span><span class="p">,</span> <span class="mi">75067376696273791715981861842467067761435213138416895182154</span><span class="p">,</span> <span class="mi">219032040463804253458387980109524000738996399683050582926151</span><span class="p">,</span> <span class="mi">439103475084696638030508995976505786583616604910062247189836</span><span class="p">,</span> <span class="mi">1814202485052573717557187805902619765498642274743527729845605</span><span class="p">,</span> <span class="mi">1809698821925924543769848657654790341645044302785867813389478</span><span class="p">,</span> <span class="mi">360799055878429084258361181388858219414492903048758868025849</span><span class="p">,</span> <span class="mi">1586166800958488919817817851585852792648429629996334111648546</span><span class="p">,</span> <span class="mi">1684449894575565311005197544335614943548593903243337992651255</span><span class="p">,</span> <span class="mi">2069964614705320281752099612563790595789747891496953733286554</span><span class="p">,</span> <span class="mi">2383149085148417442984621113438766849202060480802298928504567</span><span class="p">,</span> <span class="mi">526576610310349463764463832215907813169637952107722736362933</span><span class="p">,</span> <span class="mi">2462384442192741714387155278581783095614148718252893047502032</span><span class="p">,</span> <span class="mi">1061123570633350127543993385427619277887339043459642290750330</span><span class="p">,</span> <span class="mi">2170337927119054739024756083589705438210829415028768430188065</span><span class="p">,</span> <span class="mi">1200050666804720124511437996307551173659020227930487994985079</span><span class="p">,</span> <span class="mi">2655883363845532618772372239182511478421388787749297124780670</span><span class="p">,</span> <span class="mi">2400366221315751744740914435412206064709757878402509681320567</span><span class="p">,</span> <span class="mi">1173657318458121971155227157097755748671613663720232863891389</span><span class="p">,</span> <span class="mi">2702520926423527204458471819466137878152774358799689088058931</span><span class="p">,</span> <span class="mi">1690170859505110606818345405862828775136343478978847042328275</span><span class="p">,</span> <span class="mi">1534078663419643827290143498400949737327886416197686994660731</span><span class="p">,</span> <span class="mi">67307923426097644994998144902520797699024298403980303434111</span><span class="p">,</span> <span class="mi">105900771966130069543014590856819375500591733506963326392870</span><span class="p">,</span> <span class="mi">1858315637671237418113116342617022884354114188545817840978328</span><span class="p">,</span> <span class="mi">1064629001068824587104664159978412758949275255254084550523914</span><span class="p">,</span> <span class="mi">2378499828514660026308510311669274507417089906258942129443532</span><span class="p">,</span> <span class="mi">1437038254440508929035886831353499155523639468412138764665702</span><span class="p">,</span> <span class="mi">1984789428563986128172566164401185992024372439606411478873714</span><span class="p">,</span> <span class="mi">219041554944305423274893335373532788223766017073784541497174</span><span class="p">,</span> <span class="mi">2258288062942706796109719679247868131726532075245958863791837</span><span class="p">,</span> <span class="mi">2772281247871871850634946427392047539575130353284512078765669</span><span class="p">,</span> <span class="mi">287574274087253959175794635355688561944575733972684978310059</span><span class="p">,</span> <span class="mi">2506025164018419623148043296951490494501935889338095366634059</span><span class="p">,</span> <span class="mi">235059835346923216758180386880687400027687902442088694735840</span><span class="p">,</span> <span class="mi">1644980912717446933824947561736174848219586263634409721003675</span><span class="p">,</span> <span class="mi">1572840165579931577196516350362024381905217854603697776041632</span><span class="p">,</span> <span class="mi">659043619562898691459776258453697360116377910757700817074496</span><span class="p">,</span> <span class="mi">1789216845698992031188821923143638138110868462297673924399671</span><span class="p">,</span> <span class="mi">1619100265825813762658500374679864193297950892033415641273987</span><span class="p">,</span> <span class="mi">361622554311934817224321204425771742355136985271179452404586</span><span class="p">,</span> <span class="mi">1898110845159102949773873772106782968253686319372837328037927</span><span class="p">,</span> <span class="mi">1968514570942060836557553492419028248475360105567872527412401</span><span class="p">,</span> <span class="mi">2459217543243151143119668450477701832326870800044537134671540</span><span class="p">,</span> <span class="mi">298544910182500292656435254358404317205755259496560309792209</span><span class="p">,</span> <span class="mi">149906488969205922910503787131112087129095370674239599761480</span><span class="p">,</span> <span class="mi">615128983633335650829480404526011441387035964724705781227149</span><span class="p">,</span> <span class="mi">1077311278249221585358350663793203600568999654323339628822008</span><span class="p">,</span> <span class="mi">340604959778757686208546159797366254984487404276704596265048</span><span class="p">,</span> <span class="mi">2332026928038585949313502074443960101452763880940874494501577</span><span class="p">,</span> <span class="mi">1739243153345581325528540737224323607202795982152905642771734</span><span class="p">,</span> <span class="mi">1680538202455739744022542793687266947201505214643714877523750</span><span class="p">,</span> <span class="mi">2724281269173957168495717556121364664645869091558917805784718</span><span class="p">,</span> <span class="mi">269955770435536528672574267859575090488788926596254183227452</span><span class="p">,</span> <span class="mi">690867554053394862659304254064387000029666479498855734237421</span><span class="p">,</span> <span class="mi">432334115075872216419409402565362264792449816981222325643073</span><span class="p">,</span> <span class="mi">676995838914493183476507857322088404501355459686529360459634</span><span class="p">,</span> <span class="mi">1429248591704369402439595219528531969683836212824391038823312</span><span class="p">,</span> <span class="mi">1017541352206082542392140501303781094306429691035385881417504</span><span class="p">,</span> <span class="mi">2329844650769556101295502159924139103054143477213374150786305</span><span class="p">,</span> <span class="mi">484858725227698005716951674371786913299715671869938549254945</span><span class="p">,</span> <span class="mi">2019689616323100753637596042131256181018624688715434347628557</span><span class="p">,</span> <span class="mi">1531241724877679796713573169951128798510990437088543573162829</span><span class="p">,</span> <span class="mi">890650951428215068675080339622669325809995937765921979552973</span><span class="p">,</span> <span class="mi">2085385535263634731442857611465786088907319306579156575195133</span><span class="p">,</span> <span class="mi">713169162170327285267994411761813261171538088821176083933328</span><span class="p">,</span> <span class="mi">2132830238580678189966853709725365975652915158636890126368754</span><span class="p">,</span> <span class="mi">2553075820773697497394173548451121149981470668395232632816981</span><span class="p">,</span> <span class="mi">2629967663190816381736734446344114126948186032409785237304019</span><span class="p">,</span> <span class="mi">108116358838841746722808565576915423329500511368084412883493</span><span class="p">,</span> <span class="mi">1834294852239160644199990545816723571619353004716348864130329</span><span class="p">,</span> <span class="mi">1821434442055147592774988792496293274693309790398954022521895</span><span class="p">,</span> <span class="mi">8865090478398312740523263053884430262802597528119654938777</span><span class="p">,</span> <span class="mi">2675920017512301584484169753459126007770241705090918340436173</span><span class="p">,</span> <span class="mi">775970259397762593874930203087656823881846996489043140104336</span><span class="p">,</span> <span class="mi">2230908984261303398356523561629589786652122370089276373673822</span><span class="p">,</span> <span class="mi">1563242041071359605567033922906138813920273984873554393518266</span><span class="p">,</span> <span class="mi">1412706933098260353222281247078459699919952588682625174886674</span><span class="p">,</span> <span class="mi">556387281158977265306446356941453288617418606345908136803395</span><span class="p">,</span> <span class="mi">443407639913099340937929414918212333352927652924517508010826</span><span class="p">,</span> <span class="mi">94333245228596603560696949047484359941006690420461641212581</span><span class="p">,</span> <span class="mi">1666507411487482973410645185048130718079862020211812194555851</span><span class="p">,</span> <span class="mi">2665722910713379936159164129832898978798026422689891199196396</span><span class="p">,</span> <span class="mi">2669405938547056354829211076633313140708911016566170884850843</span><span class="p">,</span> <span class="mi">202245527646294028617600062733867777929713151687456763274537</span><span class="p">,</span> <span class="mi">1331317632107340377871282683312084191299890870783752240012329</span><span class="p">,</span> <span class="mi">428820015026787077576128392443567174723873281867688412814441</span><span class="p">,</span> <span class="mi">580822016053542720196362662419423244064692449107102822301234</span><span class="p">,</span> <span class="mi">1443675785490246411043062710802186999048965372808110107659119</span><span class="p">,</span> <span class="mi">2298534171326758584024691931436081584600036610807140491328791</span><span class="p">,</span> <span class="mi">2719407492061457004381985636495256791796955801861767579899449</span><span class="p">,</span> <span class="mi">1429136078033486101134969751145412644748324277396941228294087</span><span class="p">,</span> <span class="mi">1078947633205179129710839151819627291842615570015956594682809</span><span class="p">,</span> <span class="mi">475791981348384907163442694660952440388755824594198529913775</span><span class="p">,</span> <span class="mi">1163466286751344872926586836930564447841921809539261826505059</span><span class="p">,</span> <span class="mi">2069383431903347015918184864426942857108005221730030159796260</span><span class="p">,</span> <span class="mi">135245305729701630000796486837595347226266408275246670713937</span><span class="p">,</span> <span class="mi">508548307523515781106994147442038828539274755394295066068411</span><span class="p">,</span> <span class="mi">2239326817114831698533142359236649886367489224488220926335634</span><span class="p">,</span> <span class="mi">1484417566387325697897597844553666378698131036967802335733369</span><span class="p">,</span> <span class="mi">1668923214242042014489842678366631946682280497032807887066371</span><span class="p">,</span> <span class="mi">2578230169323207370277795509029631593492372061179654885236334</span><span class="p">,</span> <span class="mi">1351498705692317567037267236529785140053641258658101372130807</span><span class="p">,</span> <span class="mi">67344713331883772397519008348838267343026244863882333750769</span><span class="p">,</span> <span class="mi">1197105587451303888458675620420382520115448483852598832335116</span><span class="p">,</span> <span class="mi">1175778597436703549016514382085730407955923337312856127546676</span><span class="p">,</span> <span class="mi">2444116136207088642953938608890976139838919275737893120525002</span><span class="p">,</span> <span class="mi">2047067250254711126671223695230847457870829969257424934259832</span><span class="p">,</span> <span class="mi">1520116617448531698215483753208803490076383825023770165172330</span><span class="p">,</span> <span class="mi">2499314155373490163145661426570824684843417156213389633843574</span><span class="p">,</span> <span class="mi">938680244240331032933006622695829904424986381635035490902837</span><span class="p">,</span> <span class="mi">2366872519973373406463469286818707121279968786244910078616602</span><span class="p">,</span> <span class="mi">1689512006863085258567872248746396733612668173694765296637902</span><span class="p">,</span> <span class="mi">2522847704426437604863362214701927991957171894471788086309747</span><span class="p">,</span> <span class="mi">2358706258382913178503960456525602854624615948086839221241765</span><span class="p">,</span> <span class="mi">2547045358928916904668881789693079740079298224013319738904902</span><span class="p">,</span> <span class="mi">1456413016015393341327945933058199232664867021676744739242308</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>sage를 사용한다.</p>
+
+<p>flag 길이는 22byte</p>
+
+<p>privk 수열이 superincreasing을 만족한다.</p>
+
+<p>Superincreasing 이란</p>
+
+<p>양의 실수 \(S_1, S_2, S_3 …\) 에 대해서  \(S_{n+1} &gt; \sum_{j=1}^n S_j\) 를 만족하는 수열을 말한다.</p>
+
+<p>예를 들어 (1, 3, 6, 13, 27, 52) 가 있다.</p>
+
+<p><img width="512" alt="Untitled (13)" src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/bb544511-699d-4435-a563-6bb4cebfe8da" /></p>
+
+<p>sage에서 다음과 같이 사용한다.</p>
+
+<p>privk 리스트가 superincreasing을 만족한다.</p>
+
+<p>n과 m은 서로소이며, m은 sum(privk) 보다 크다.</p>
+
+<p>pubk는 각 privk 요소에 n을 곱하고 m으로 나눈 값이다. n이 뭔지는 모른다.</p>
+
+<p>flag_int의 상위 비트부터 i로 보면서 해당 값이 1이면 ct에 pubk[i]를 더한다.</p>
+
+<p>찾아보니 <strong>Merkle–Hellman knapsack cryptosystem</strong> 인 것 같다.</p>
+
+<p>문제 설명과도 맞는다.</p>
+
+<p>https://blog.sp301415.com/solving-integer-problems-using-lll/</p>
+
+<p>https://mathweb.ucsd.edu/~crypto/Projects/JenniferBakker/Math187/#Anchor-Th-54278</p>
+
+<p>LLL algorithm을 사용하면 복호화가 가능하다고는 한다</p>
+
+<p><br />
+<br />
+<br /></p>
+
+<h2 id="solution">Solution</h2>
+
+<hr />
+
+<p><a href="https://hackmd.io/@dogdogeatcatcat/Sk-ZYdHXF">https://hackmd.io/@dogdogeatcatcat/Sk-ZYdHXF</a></p>
+
+<p><strong>PBjar CTF 2021</strong> 에서 출제된 문제로 Knapsack 암호학 문제가 있었다.</p>
+
+<p>여기서 writeup을 일부 해석하고 수정하고자 한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">enc_Flag</span> <span class="o">=</span> <span class="mi">134386949562122693902447468860044804076193605907011732452713809</span>
+<span class="n">Public_key</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1153413051608659765690966350509215244410441599304795977869609</span><span class="p">,</span> <span class="mi">2649449263344909989917079612505852691099017868921045204503001</span><span class="p">,</span> <span class="mi">745658406444288115599679966003279655234335830084858834237308</span><span class="p">,</span> <span class="mi">1501654946090437610990754702516907678101625380332752375035668</span><span class="p">,</span> <span class="mi">1731839829398712068254721510140854227151979937383544415747007</span><span class="p">,</span> <span class="mi">1917601407897641951467210159479072437634885900660588177638690</span><span class="p">,</span> <span class="mi">1279706235765006419446891128348418014918258703242746751774802</span><span class="p">,</span> <span class="mi">1502580060849949686295755918606576574401174920193784713780905</span><span class="p">,</span> <span class="mi">2625238880672952214121734023768335384083807769582181928490912</span><span class="p">,</span> <span class="mi">606270761347913487563503974039985349892695737642480888692673</span><span class="p">,</span> <span class="mi">1247631701502816565834505451954908666946807272758349376525460</span><span class="p">,</span> <span class="mi">1562927544947712147039232078400564527346400651105722414913451</span><span class="p">,</span> <span class="mi">204096614275302553698473272845405530981891754187470359119553</span><span class="p">,</span> <span class="mi">1408018363672404061681568720260167530505766870069064372609687</span><span class="p">,</span> <span class="mi">1514590716273119237466038973941614240250338689732745719237095</span><span class="p">,</span> <span class="mi">2378692629623187882152238082542498660097457763282705253592516</span><span class="p">,</span> <span class="mi">1893448995872418605597767637872034355760298442376725665221500</span><span class="p">,</span> <span class="mi">1637024298884398444455002361181118258859555824359194604735915</span><span class="p">,</span> <span class="mi">2719190822110427203521259100337406967675292817189502308970586</span><span class="p">,</span> <span class="mi">2640870406011836531895866622802297978015773425016511436224746</span><span class="p">,</span> <span class="mi">2165892993782024615017169562260093941947231862572312098360126</span><span class="p">,</span> <span class="mi">243718966168901036068447727263550985619152373055872226083935</span><span class="p">,</span> <span class="mi">2035400781995083294650022079235484020577386045959257768911516</span><span class="p">,</span> <span class="mi">2138400566976843848333310914369509998597969306214629098228227</span><span class="p">,</span> <span class="mi">112446566505736446843650023065053298590439688801621609445463</span><span class="p">,</span> <span class="mi">1714002630387312920696314035459338893617306790872241960138133</span><span class="p">,</span> <span class="mi">1024850412773050992775197227041922238903279669151026216857401</span><span class="p">,</span> <span class="mi">2358925636863552279599329365327470285835734283277847908682469</span><span class="p">,</span> <span class="mi">960291266922907753413813833147215291189556626243314954787079</span><span class="p">,</span> <span class="mi">2471269462645122667857359212039928357870430231828538257093882</span><span class="p">,</span> <span class="mi">2254711914646827325445684712569610067589509795259364668236116</span><span class="p">,</span> <span class="mi">3152079429165479260024384396045171484908571393583704823372</span><span class="p">,</span> <span class="mi">7245670391945130618733779447100310448574448728525664206342</span><span class="p">,</span> <span class="mi">1983149526457025777875960503986209872411223710838977852503058</span><span class="p">,</span> <span class="mi">2478783519269282209571656363015372788707598874749559775480572</span><span class="p">,</span> <span class="mi">1343348424777313491462495265503752251552490742957120510636719</span><span class="p">,</span> <span class="mi">696771540364873293374125391721639926054346725167043556235151</span><span class="p">,</span> <span class="mi">1378786198781394641622092749054458248463201336911200937601879</span><span class="p">,</span> <span class="mi">2061021991295597315833886722674966530095259597797968883012294</span><span class="p">,</span> <span class="mi">2022299356352726041687770564469412023446862842882981592269287</span><span class="p">,</span> <span class="mi">2103599714903473220709442681420827901041209667891008147827086</span><span class="p">,</span> <span class="mi">318411403427754276460826728673462955336165520042588782589752</span><span class="p">,</span> <span class="mi">215426626468659219531748316787016104062139403274288645837575</span><span class="p">,</span> <span class="mi">1810672814632234704157982310036649412989583692109880020715868</span><span class="p">,</span> <span class="mi">1514381356252789312341658830031933431769544487506032804303686</span><span class="p">,</span> <span class="mi">701593629336714590272170031617304310014522607636754911394706</span><span class="p">,</span> <span class="mi">1366393539801496516181470203059815247106762948304006271700287</span><span class="p">,</span> <span class="mi">2448152175170733851656170383862433487614634519538309624376469</span><span class="p">,</span> <span class="mi">1348207685418679830438595499051323725246184075503096280525585</span><span class="p">,</span> <span class="mi">70307869056203425509508941958172047909143575785204200382316</span><span class="p">,</span> <span class="mi">716048162378262413393444002306977733357269701046546820427233</span><span class="p">,</span> <span class="mi">1579543039327077934414801734410703417448650262925810895689104</span><span class="p">,</span> <span class="mi">261575250132422239529017823101514330063089023490414947560266</span><span class="p">,</span> <span class="mi">2298073834787955133523836383569782771499748656944587718350271</span><span class="p">,</span> <span class="mi">918734699998715338244933400142282901634195616477790962697785</span><span class="p">,</span> <span class="mi">1982726185421882131804832692278501191521239007312758901721603</span><span class="p">,</span> <span class="mi">2584890453270172498684967368927270137126808850953779575592179</span><span class="p">,</span> <span class="mi">2622231303407390255810045713997561793019571011029869053290302</span><span class="p">,</span> <span class="mi">2577578579371795996917469250652847487787210673097187661267819</span><span class="p">,</span> <span class="mi">52144522625291137606092085190356852042443658323935004932658</span><span class="p">,</span> <span class="mi">1416019353492624837460500845581684985017464744695269553974900</span><span class="p">,</span> <span class="mi">136970671991524060358119224318550078760913486366857079847622</span><span class="p">,</span> <span class="mi">834407238570805549772432172630329624434383380940991215927379</span><span class="p">,</span> <span class="mi">622449476884676778937441422703209818813479141928257844680738</span><span class="p">,</span> <span class="mi">75067376696273791715981861842467067761435213138416895182154</span><span class="p">,</span> <span class="mi">219032040463804253458387980109524000738996399683050582926151</span><span class="p">,</span> <span class="mi">439103475084696638030508995976505786583616604910062247189836</span><span class="p">,</span> <span class="mi">1814202485052573717557187805902619765498642274743527729845605</span><span class="p">,</span> <span class="mi">1809698821925924543769848657654790341645044302785867813389478</span><span class="p">,</span> <span class="mi">360799055878429084258361181388858219414492903048758868025849</span><span class="p">,</span> <span class="mi">1586166800958488919817817851585852792648429629996334111648546</span><span class="p">,</span> <span class="mi">1684449894575565311005197544335614943548593903243337992651255</span><span class="p">,</span> <span class="mi">2069964614705320281752099612563790595789747891496953733286554</span><span class="p">,</span> <span class="mi">2383149085148417442984621113438766849202060480802298928504567</span><span class="p">,</span> <span class="mi">526576610310349463764463832215907813169637952107722736362933</span><span class="p">,</span> <span class="mi">2462384442192741714387155278581783095614148718252893047502032</span><span class="p">,</span> <span class="mi">1061123570633350127543993385427619277887339043459642290750330</span><span class="p">,</span> <span class="mi">2170337927119054739024756083589705438210829415028768430188065</span><span class="p">,</span> <span class="mi">1200050666804720124511437996307551173659020227930487994985079</span><span class="p">,</span> <span class="mi">2655883363845532618772372239182511478421388787749297124780670</span><span class="p">,</span> <span class="mi">2400366221315751744740914435412206064709757878402509681320567</span><span class="p">,</span> <span class="mi">1173657318458121971155227157097755748671613663720232863891389</span><span class="p">,</span> <span class="mi">2702520926423527204458471819466137878152774358799689088058931</span><span class="p">,</span> <span class="mi">1690170859505110606818345405862828775136343478978847042328275</span><span class="p">,</span> <span class="mi">1534078663419643827290143498400949737327886416197686994660731</span><span class="p">,</span> <span class="mi">67307923426097644994998144902520797699024298403980303434111</span><span class="p">,</span> <span class="mi">105900771966130069543014590856819375500591733506963326392870</span><span class="p">,</span> <span class="mi">1858315637671237418113116342617022884354114188545817840978328</span><span class="p">,</span> <span class="mi">1064629001068824587104664159978412758949275255254084550523914</span><span class="p">,</span> <span class="mi">2378499828514660026308510311669274507417089906258942129443532</span><span class="p">,</span> <span class="mi">1437038254440508929035886831353499155523639468412138764665702</span><span class="p">,</span> <span class="mi">1984789428563986128172566164401185992024372439606411478873714</span><span class="p">,</span> <span class="mi">219041554944305423274893335373532788223766017073784541497174</span><span class="p">,</span> <span class="mi">2258288062942706796109719679247868131726532075245958863791837</span><span class="p">,</span> <span class="mi">2772281247871871850634946427392047539575130353284512078765669</span><span class="p">,</span> <span class="mi">287574274087253959175794635355688561944575733972684978310059</span><span class="p">,</span> <span class="mi">2506025164018419623148043296951490494501935889338095366634059</span><span class="p">,</span> <span class="mi">235059835346923216758180386880687400027687902442088694735840</span><span class="p">,</span> <span class="mi">1644980912717446933824947561736174848219586263634409721003675</span><span class="p">,</span> <span class="mi">1572840165579931577196516350362024381905217854603697776041632</span><span class="p">,</span> <span class="mi">659043619562898691459776258453697360116377910757700817074496</span><span class="p">,</span> <span class="mi">1789216845698992031188821923143638138110868462297673924399671</span><span class="p">,</span> <span class="mi">1619100265825813762658500374679864193297950892033415641273987</span><span class="p">,</span> <span class="mi">361622554311934817224321204425771742355136985271179452404586</span><span class="p">,</span> <span class="mi">1898110845159102949773873772106782968253686319372837328037927</span><span class="p">,</span> <span class="mi">1968514570942060836557553492419028248475360105567872527412401</span><span class="p">,</span> <span class="mi">2459217543243151143119668450477701832326870800044537134671540</span><span class="p">,</span> <span class="mi">298544910182500292656435254358404317205755259496560309792209</span><span class="p">,</span> <span class="mi">149906488969205922910503787131112087129095370674239599761480</span><span class="p">,</span> <span class="mi">615128983633335650829480404526011441387035964724705781227149</span><span class="p">,</span> <span class="mi">1077311278249221585358350663793203600568999654323339628822008</span><span class="p">,</span> <span class="mi">340604959778757686208546159797366254984487404276704596265048</span><span class="p">,</span> <span class="mi">2332026928038585949313502074443960101452763880940874494501577</span><span class="p">,</span> <span class="mi">1739243153345581325528540737224323607202795982152905642771734</span><span class="p">,</span> <span class="mi">1680538202455739744022542793687266947201505214643714877523750</span><span class="p">,</span> <span class="mi">2724281269173957168495717556121364664645869091558917805784718</span><span class="p">,</span> <span class="mi">269955770435536528672574267859575090488788926596254183227452</span><span class="p">,</span> <span class="mi">690867554053394862659304254064387000029666479498855734237421</span><span class="p">,</span> <span class="mi">432334115075872216419409402565362264792449816981222325643073</span><span class="p">,</span> <span class="mi">676995838914493183476507857322088404501355459686529360459634</span><span class="p">,</span> <span class="mi">1429248591704369402439595219528531969683836212824391038823312</span><span class="p">,</span> <span class="mi">1017541352206082542392140501303781094306429691035385881417504</span><span class="p">,</span> <span class="mi">2329844650769556101295502159924139103054143477213374150786305</span><span class="p">,</span> <span class="mi">484858725227698005716951674371786913299715671869938549254945</span><span class="p">,</span> <span class="mi">2019689616323100753637596042131256181018624688715434347628557</span><span class="p">,</span> <span class="mi">1531241724877679796713573169951128798510990437088543573162829</span><span class="p">,</span> <span class="mi">890650951428215068675080339622669325809995937765921979552973</span><span class="p">,</span> <span class="mi">2085385535263634731442857611465786088907319306579156575195133</span><span class="p">,</span> <span class="mi">713169162170327285267994411761813261171538088821176083933328</span><span class="p">,</span> <span class="mi">2132830238580678189966853709725365975652915158636890126368754</span><span class="p">,</span> <span class="mi">2553075820773697497394173548451121149981470668395232632816981</span><span class="p">,</span> <span class="mi">2629967663190816381736734446344114126948186032409785237304019</span><span class="p">,</span> <span class="mi">108116358838841746722808565576915423329500511368084412883493</span><span class="p">,</span> <span class="mi">1834294852239160644199990545816723571619353004716348864130329</span><span class="p">,</span> <span class="mi">1821434442055147592774988792496293274693309790398954022521895</span><span class="p">,</span> <span class="mi">8865090478398312740523263053884430262802597528119654938777</span><span class="p">,</span> <span class="mi">2675920017512301584484169753459126007770241705090918340436173</span><span class="p">,</span> <span class="mi">775970259397762593874930203087656823881846996489043140104336</span><span class="p">,</span> <span class="mi">2230908984261303398356523561629589786652122370089276373673822</span><span class="p">,</span> <span class="mi">1563242041071359605567033922906138813920273984873554393518266</span><span class="p">,</span> <span class="mi">1412706933098260353222281247078459699919952588682625174886674</span><span class="p">,</span> <span class="mi">556387281158977265306446356941453288617418606345908136803395</span><span class="p">,</span> <span class="mi">443407639913099340937929414918212333352927652924517508010826</span><span class="p">,</span> <span class="mi">94333245228596603560696949047484359941006690420461641212581</span><span class="p">,</span> <span class="mi">1666507411487482973410645185048130718079862020211812194555851</span><span class="p">,</span> <span class="mi">2665722910713379936159164129832898978798026422689891199196396</span><span class="p">,</span> <span class="mi">2669405938547056354829211076633313140708911016566170884850843</span><span class="p">,</span> <span class="mi">202245527646294028617600062733867777929713151687456763274537</span><span class="p">,</span> <span class="mi">1331317632107340377871282683312084191299890870783752240012329</span><span class="p">,</span> <span class="mi">428820015026787077576128392443567174723873281867688412814441</span><span class="p">,</span> <span class="mi">580822016053542720196362662419423244064692449107102822301234</span><span class="p">,</span> <span class="mi">1443675785490246411043062710802186999048965372808110107659119</span><span class="p">,</span> <span class="mi">2298534171326758584024691931436081584600036610807140491328791</span><span class="p">,</span> <span class="mi">2719407492061457004381985636495256791796955801861767579899449</span><span class="p">,</span> <span class="mi">1429136078033486101134969751145412644748324277396941228294087</span><span class="p">,</span> <span class="mi">1078947633205179129710839151819627291842615570015956594682809</span><span class="p">,</span> <span class="mi">475791981348384907163442694660952440388755824594198529913775</span><span class="p">,</span> <span class="mi">1163466286751344872926586836930564447841921809539261826505059</span><span class="p">,</span> <span class="mi">2069383431903347015918184864426942857108005221730030159796260</span><span class="p">,</span> <span class="mi">135245305729701630000796486837595347226266408275246670713937</span><span class="p">,</span> <span class="mi">508548307523515781106994147442038828539274755394295066068411</span><span class="p">,</span> <span class="mi">2239326817114831698533142359236649886367489224488220926335634</span><span class="p">,</span> <span class="mi">1484417566387325697897597844553666378698131036967802335733369</span><span class="p">,</span> <span class="mi">1668923214242042014489842678366631946682280497032807887066371</span><span class="p">,</span> <span class="mi">2578230169323207370277795509029631593492372061179654885236334</span><span class="p">,</span> <span class="mi">1351498705692317567037267236529785140053641258658101372130807</span><span class="p">,</span> <span class="mi">67344713331883772397519008348838267343026244863882333750769</span><span class="p">,</span> <span class="mi">1197105587451303888458675620420382520115448483852598832335116</span><span class="p">,</span> <span class="mi">1175778597436703549016514382085730407955923337312856127546676</span><span class="p">,</span> <span class="mi">2444116136207088642953938608890976139838919275737893120525002</span><span class="p">,</span> <span class="mi">2047067250254711126671223695230847457870829969257424934259832</span><span class="p">,</span> <span class="mi">1520116617448531698215483753208803490076383825023770165172330</span><span class="p">,</span> <span class="mi">2499314155373490163145661426570824684843417156213389633843574</span><span class="p">,</span> <span class="mi">938680244240331032933006622695829904424986381635035490902837</span><span class="p">,</span> <span class="mi">2366872519973373406463469286818707121279968786244910078616602</span><span class="p">,</span> <span class="mi">1689512006863085258567872248746396733612668173694765296637902</span><span class="p">,</span> <span class="mi">2522847704426437604863362214701927991957171894471788086309747</span><span class="p">,</span> <span class="mi">2358706258382913178503960456525602854624615948086839221241765</span><span class="p">,</span> <span class="mi">2547045358928916904668881789693079740079298224013319738904902</span><span class="p">,</span> <span class="mi">1456413016015393341327945933058199232664867021676744739242308</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">176</span>
+
+<span class="n">L</span> <span class="o">=</span> <span class="nc">Matrix</span><span class="p">(</span><span class="n">ZZ</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nf">ceil</span><span class="p">(</span><span class="n">n</span><span class="o">^</span><span class="mf">0.5</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">N</span> <span class="o">*</span> <span class="n">Public_key</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">j</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">N</span> <span class="o">*</span> <span class="n">enc_Flag</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="p">:</span>
+            <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">L</span> <span class="o">=</span> <span class="nc">Matrix</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">L</span><span class="p">.</span><span class="nc">LLL</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="k">if</span> <span class="nf">all</span><span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">v</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">][:</span><span class="n">n</span><span class="p">]):</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="p">[</span> <span class="p">(</span><span class="o">-</span><span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+        <span class="n">calc_sum</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="nf">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nf">zip</span><span class="p">(</span><span class="n">Public_key</span><span class="p">,</span> <span class="n">ans</span><span class="p">)))</span>
+        
+        <span class="k">if</span> <span class="n">calc_sum</span> <span class="o">==</span> <span class="n">enc_Flag</span><span class="p">:</span>
+            <span class="n">binary_Flag</span> <span class="o">=</span> <span class="sh">""</span>
+            <span class="nf">print</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">ans</span><span class="p">))</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+                <span class="n">binary_Flag</span> <span class="o">+=</span> <span class="nf">str</span><span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="n">_</span><span class="p">])</span>
+                <span class="n">Flag</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">binary_Flag</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">Flag</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>수정된 writeup. sage로 작성하였고 해당 풀이는 https://eprint.iacr.org/2007/066.pdf 논문에 따라</p>
+
+<p>더 효율적인 방법으로 풀이한 것으로 생각된다.</p>
+
+<p>개념 상 그래도 위에 LLL 풀이와 같을텐데</p>
+
+<p><img width="526" alt="Untitled (14)" src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/19fb708f-3b08-458f-8ccf-2bff89b2e5f0" /></p>
+
+<p>Lattice에서 LLL 알고리즘을 사용하여</p>
+
+<p><img width="240" alt="Untitled (15)" src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/04a5aced-658b-4894-8c35-faa7736402f1" /></p>
+
+<p>0과 1로만 구성된 행을 찾으면 답이 된다(?)</p>
+
+<p>이와 유사한 개념으로 코딩되어 있음.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">long_to_bytes</span><span class="p">(</span><span class="mi">40147749352719187954456224660113107553601063811642489</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>구한 값을 넣으면</p>
+
+<p><code class="language-plaintext highlighter-rouge">DANTE{kN4ps4ck_w_l0w_d3NS1ty}</code></p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry><entry><title type="html">DIY enc</title><link href="https://neutrinox4b1.github.io/blog/2023/diy_enc/" rel="alternate" type="text/html" title="DIY enc" /><published>2023-06-03T00:00:00+00:00</published><updated>2023-06-03T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/diy_enc</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/diy_enc/"><![CDATA[<h2 id="background">Background</h2>
+
+<hr />
+
+<blockquote>
+  <p>I met a strange soul who claimed to have invented a more robust version of AES and dared me to break it. Could you help me?</p>
+
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
+</span>
+<span class="kn">import</span> <span class="n">os</span>
+<span class="kn">from</span> <span class="n">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">AES</span>
+<span class="kn">from</span> <span class="n">base64</span> <span class="kn">import</span> <span class="n">b64encode</span>
+<span class="kn">from</span> <span class="n">secret</span> <span class="kn">import</span> <span class="n">FLAG</span>
+
+<span class="k">assert</span> <span class="nf">len</span><span class="p">(</span><span class="n">FLAG</span><span class="p">)</span> <span class="o">==</span> <span class="mi">19</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
+
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Encrypting flag...</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="nf">urandom</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">nonce</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="nf">urandom</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">cipher</span> <span class="o">=</span> <span class="n">AES</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">AES</span><span class="p">.</span><span class="n">MODE_CTR</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="n">nonce</span><span class="p">)</span>
+    
+    <span class="c1"># longer ciphertext =&gt; safer ciphertext
+</span>    <span class="n">flag_enc</span> <span class="o">=</span> <span class="n">cipher</span><span class="p">.</span><span class="nf">encrypt</span><span class="p">(</span><span class="n">FLAG</span><span class="o">*</span><span class="mi">3</span><span class="p">).</span><span class="nf">hex</span><span class="p">()</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">Encrypted flag = </span><span class="si">{</span><span class="n">flag_enc</span><span class="si">}</span><span class="se">\n</span><span class="sh">'</span><span class="p">)</span>
+
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">You can choose only the length of the plaintext, but not the plaintext. You will not trick me :)</span><span class="sh">'</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+        <span class="n">length</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">'</span><span class="s">&gt; </span><span class="sh">'</span><span class="p">))</span>
+        <span class="k">assert</span> <span class="n">length</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">length</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">,</span> <span class="sh">"</span><span class="s">Invalid input</span><span class="sh">"</span>
+        <span class="n">pt</span> <span class="o">=</span> <span class="nf">b64encode</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="nf">urandom</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
+        <span class="n">cipher</span> <span class="o">=</span> <span class="n">AES</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">AES</span><span class="p">.</span><span class="n">MODE_CTR</span><span class="p">,</span> <span class="n">nonce</span><span class="o">=</span><span class="n">nonce</span><span class="p">)</span>
+        <span class="n">ct</span> <span class="o">=</span> <span class="n">cipher</span><span class="p">.</span><span class="nf">encrypt</span><span class="p">(</span><span class="n">pt</span><span class="p">).</span><span class="nf">hex</span><span class="p">()</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">ct = </span><span class="si">{</span><span class="n">ct</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Enough.</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>nc <a href="http://challs.dantectf.it/">challs.dantectf.it</a> 31510</p>
+
+<p>AES에서 CTR 방식을 사용한다.</p>
+
+<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/3f10fdcb-7110-46a6-aa3f-708b1b4bfaa7" alt="Untitled" width="100%" height="100%" /></p>
+
+<p>flag 길이는 19byte이다.</p>
+
+<p>flag*3을 AES CTR로 암호화한다. 길이는 57byte이다. 57 = 16 * 3 + 9</p>
+
+<p>CTR mode는 암호문 길이와 평문 길이가 동일하다</p>
+
+<p>7번동안 length를 입력받는다. 3 &lt; length &lt; 100 이어야 한다.</p>
+
+<p>length 길이만큼 랜덤한 값을 b64로 encoding하여 암호화하고 그 값을 출력한다.</p>
+
+<p>우리가 알 수 있는건 몇 byte를 넣는지, 그리고 그 결과가 몇 byte인지 알 수 있다.</p>
+
+<p><img width="222" alt="Untitled (11)" src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/e7d7ab56-4a45-4e14-95fa-157ba715703c" /></p>
+
+<p>nonce가 15byte.. 이건 뭐지</p>
+
+<p>하위 2byte가 그대로이다.</p>
+
+<p><img width="302" alt="Untitled (12)" src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/e45d6af6-e3ed-4061-a6d4-4841d1666d78" /></p>
+
+<p>다른 길이에서도 하위 2byte는 같다.</p>
+
+<p>길이가 5일때는 하위 1byte가 같다.</p>
+
+<p>base64 에서 끝이 ==인 것은 길이가 3n+1일 때,</p>
+
+<p>끝이 =인것은 길이가 3n+2 일때이다.</p>
+
+<p>같은 key와 nonce를 사용하기 때문에 같은 평문에 대해서 같은 값이 나온다.</p>
+
+<p>그러면 우리는 특정 평문과 결과를 알고 있으므로 그 전에 사용된</p>
+
+<p>CTR이 AES된 값을 알 수 있고 이를 이용해서 flag 일부를 복호화가 가능하다.</p>
+
+<p><br />
+<br />
+<br /></p>
+
+<h2 id="solution">Solution</h2>
+
+<hr />
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">ct</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">def</span> <span class="nf">collect</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+    <span class="n">p</span><span class="p">.</span><span class="nf">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="sh">'</span><span class="s">&gt; </span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">p</span><span class="p">.</span><span class="nf">sendline</span><span class="p">(</span><span class="nf">str</span><span class="p">(</span><span class="n">l</span><span class="p">).</span><span class="nf">encode</span><span class="p">())</span>
+    <span class="n">p</span><span class="p">.</span><span class="nf">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="sh">'</span><span class="s"> = </span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">ct</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="nf">recvline</span><span class="p">().</span><span class="nf">strip</span><span class="p">().</span><span class="nf">decode</span><span class="p">())</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="nf">remote</span><span class="p">(</span><span class="sh">'</span><span class="s">challs.dantectf.it</span><span class="sh">'</span><span class="p">,</span> <span class="mi">31510</span><span class="p">)</span>
+<span class="n">p</span><span class="p">.</span><span class="nf">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="sh">'</span><span class="s">= </span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">flag</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="nf">recvline</span><span class="p">().</span><span class="nf">strip</span><span class="p">().</span><span class="nf">decode</span><span class="p">()</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">div flag:</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">flag</span><span class="p">),</span> <span class="mi">38</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">38</span><span class="p">])</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">div block:</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nf">len</span><span class="p">(</span><span class="n">flag</span><span class="p">),</span> <span class="mi">32</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">32</span><span class="p">])</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">''</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">''</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">''</span><span class="p">)</span>
+
+<span class="nf">collect</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># 8byte
+</span><span class="nf">collect</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="c1"># 12 byte
+</span><span class="nf">collect</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1">#16 byte
+</span><span class="nf">collect</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+<span class="nf">collect</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+<span class="nf">collect</span><span class="p">(</span><span class="mi">19</span><span class="p">)</span>
+<span class="nf">collect</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
+<span class="c1">#collect(25)
+#collect(28)
+#collect(31)
+#collect(34)
+#collect(37)
+#collect(40)
+#collect(43)
+</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">ct</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">''</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">''</span><span class="p">)</span>
+
+<span class="n">decrypt</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">x</span><span class="sh">'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">19</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">ct</span><span class="p">)):</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="nf">xor</span><span class="p">(</span><span class="sa">b</span><span class="sh">'</span><span class="s">==</span><span class="sh">'</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">.</span><span class="nf">fromhex</span><span class="p">(</span><span class="n">ct</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="o">-</span><span class="mi">4</span><span class="p">:]))</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="mi">12</span> <span class="o">+</span> <span class="mi">8</span> <span class="o">*</span> <span class="n">i</span>
+    <span class="n">decrypt</span><span class="p">[((</span><span class="n">idx</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="mi">19</span><span class="p">]</span> <span class="o">=</span> <span class="nf">xor</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">.</span><span class="nf">fromhex</span><span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="n">idx</span><span class="p">:</span> <span class="n">idx</span><span class="o">+</span><span class="mi">4</span><span class="p">])).</span><span class="nf">decode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">decrypt</span><span class="p">[((</span><span class="n">idx</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">19</span><span class="p">]</span> <span class="o">=</span> <span class="nf">xor</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">.</span><span class="nf">fromhex</span><span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="n">idx</span><span class="p">:</span> <span class="n">idx</span><span class="o">+</span><span class="mi">4</span><span class="p">])).</span><span class="nf">decode</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">decrypt</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>복호화된 값을 조합하면 flag를 얻을 수 있다.</p>
+
+<p>block 단위로하여 len이 한 블록을 넘어가면 다른 CTR이 사용되어 어려워질줄 알았는데</p>
+
+<p>그러면 아마 Flag도 동일한 CTR을 사용하기 때문인 것 같다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">DANTE{l355_1S_m0R3}</code></p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry><entry><title type="html">PiedPic</title><link href="https://neutrinox4b1.github.io/blog/2023/piedpic/" rel="alternate" type="text/html" title="PiedPic" /><published>2023-06-03T00:00:00+00:00</published><updated>2023-06-03T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/piedpic</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/piedpic/"><![CDATA[<h2 id="background">Background</h2>
+
+<hr />
+
+<blockquote>
+  <p>Dante took many pictures of his journey to the afterlife. They contain many revelations. I’ll give you one of these pictures if you’ll give me one of yours!</p>
+
+</blockquote>
+
+<p>nc <a href="http://challs.dantectf.it:31511/tcp">challs.dantectf.it 31511</a></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
+</span>
+<span class="kn">from</span> <span class="n">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="n">Crypto.Random</span> <span class="kn">import</span> <span class="n">get_random_bytes</span>
+<span class="kn">from</span> <span class="n">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">from</span> <span class="n">base64</span> <span class="kn">import</span> <span class="n">b64encode</span><span class="p">,</span> <span class="n">b64decode</span>
+
+<span class="n">flag_file</span> <span class="o">=</span> <span class="sh">"</span><span class="s">flag.png</span><span class="sh">"</span>
+
+<span class="k">def</span> <span class="nf">encrypt_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="n">perm_table</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">2</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">3</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">4</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">5</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)}</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">image</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="nf">assert</span><span class="p">(</span><span class="n">size</span> <span class="o">==</span> <span class="nf">len</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+    <span class="n">pixels</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">image</span><span class="p">.</span><span class="nf">getdata</span><span class="p">())</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">pixels</span><span class="p">)):</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">pixels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">kbyte</span> <span class="o">=</span> <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        
+        <span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">^</span><span class="mi">255</span> <span class="k">if</span> <span class="n">kbyte</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="p">)</span> <span class="k">else</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>  
+        <span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="o">=</span> <span class="n">perm_table</span><span class="p">[</span><span class="nf">int</span><span class="p">(</span><span class="n">kbyte</span><span class="p">)</span> <span class="o">%</span> <span class="mi">6</span><span class="p">]</span>
+        <span class="n">pixels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">color</span><span class="p">[</span><span class="n">r</span><span class="p">],</span> <span class="n">color</span><span class="p">[</span><span class="n">g</span><span class="p">],</span> <span class="n">color</span><span class="p">[</span><span class="n">b</span><span class="p">])</span>
+ 
+    <span class="n">image</span><span class="p">.</span><span class="nf">putdata</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span>
+    <span class="n">bs</span> <span class="o">=</span> <span class="nc">BytesIO</span><span class="p">()</span>
+    <span class="n">image</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="n">bs</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">flag_file</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:])</span>
+
+    <span class="k">return</span> <span class="nf">b64encode</span><span class="p">(</span><span class="n">bs</span><span class="p">.</span><span class="nf">getvalue</span><span class="p">())</span>
+
+<span class="k">def</span> <span class="nf">handle</span><span class="p">():</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Dante took many pictures of his journey to the afterlife.</span><span class="sh">"</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">They contain many revelations. I give you one of these pictures if you give me one of yours!</span><span class="sh">"</span><span class="p">)</span>
+
+    <span class="n">answer</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Do you accept the exchange [y/n]?</span><span class="sh">"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="sh">'</span><span class="s">y</span><span class="sh">'</span><span class="p">:</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">flag_file</span><span class="p">)</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="nf">get_random_bytes</span><span class="p">(</span><span class="n">flag</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">flag</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    
+        <span class="n">encrypted_flag</span> <span class="o">=</span> <span class="nf">encrypt_image</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">My picture:</span><span class="se">\n\n</span><span class="si">{</span><span class="n">encrypted_flag</span><span class="p">.</span><span class="nf">decode</span><span class="p">()</span><span class="si">}</span><span class="se">\n\n</span><span class="sh">"</span><span class="p">)</span>
+    
+        <span class="n">data</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Your picture:</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">frombytes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nf">b64decode</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="n">flag</span><span class="p">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">flag</span><span class="p">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="n">encrypted_data</span> <span class="o">=</span> <span class="nf">encrypt_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">This is for you:</span><span class="se">\n\n</span><span class="si">{</span><span class="n">encrypted_data</span><span class="p">.</span><span class="nf">decode</span><span class="p">()</span><span class="si">}</span><span class="se">\n\n</span><span class="sh">"</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Bye!</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nf">handle</span><span class="p">()</span>
+    <span class="k">except</span> <span class="nb">Exception</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Something went wrong, bye!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>flag를 encrypt 한 값을 주고 우리에게 image byte 값을 입력하라고 한다.</p>
+
+<p>입력 후 해당 byte를 encrypt한 값을 출력한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">encrypt_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="n">perm_table</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">2</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">3</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">4</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">5</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)}</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">image</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># width x height
+</span>    <span class="nf">assert</span><span class="p">(</span><span class="n">size</span> <span class="o">==</span> <span class="nf">len</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+    <span class="n">pixels</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">image</span><span class="p">.</span><span class="nf">getdata</span><span class="p">())</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">pixels</span><span class="p">)):</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">pixels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">kbyte</span> <span class="o">=</span> <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        
+        <span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">^</span><span class="mi">255</span> <span class="k">if</span> <span class="n">kbyte</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="p">)</span> <span class="k">else</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>  
+        <span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="o">=</span> <span class="n">perm_table</span><span class="p">[</span><span class="nf">int</span><span class="p">(</span><span class="n">kbyte</span><span class="p">)</span> <span class="o">%</span> <span class="mi">6</span><span class="p">]</span>
+        <span class="n">pixels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">color</span><span class="p">[</span><span class="n">r</span><span class="p">],</span> <span class="n">color</span><span class="p">[</span><span class="n">g</span><span class="p">],</span> <span class="n">color</span><span class="p">[</span><span class="n">b</span><span class="p">])</span>
+ 
+    <span class="n">image</span><span class="p">.</span><span class="nf">putdata</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span>
+    <span class="n">bs</span> <span class="o">=</span> <span class="nc">BytesIO</span><span class="p">()</span>
+    <span class="n">image</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="n">bs</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">flag_file</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:])</span>
+
+    <span class="k">return</span> <span class="nf">b64encode</span><span class="p">(</span><span class="n">bs</span><span class="p">.</span><span class="nf">getvalue</span><span class="p">())</span>
+</code></pre></div></div>
+
+<p>encrypt 부분을 보면 key와 image를 가지고</p>
+
+<p>color에서 각 픽셀별로 kbyte에 따라 그냥 둘 지, 아니면 255로 xor할지가 결졍된다.</p>
+
+<p>xor은 아마 색 반전인듯. kbyte의 하위 1bit가 1이면 R을 255로 xor</p>
+
+<p>두 번째 bit가 1이면 G ^ 255, 세 번째가 1이면 B ^ 255를 color 리스트에 넣는다.</p>
+
+<p>r, g, b에는 perm_table에서 kbyte를 6으로 나눈 나머지 값의 인덱스를 넣는다.</p>
+
+<p>pixels[i]에 그렇게 r, g, b를 구성하는데 perm table에 따라 r, g, b순서가 바뀐다.</p>
+
+<p>한 번의 입력 기회로 원래 이미지를 복구 할 수 있는 힌트를 알아내어야 한다.</p>
+
+<p>Official Writeup :</p>
+
+<p><a href="https://github.com/suvoni/CTF_Writeups/tree/main/danteCTF_2023">https://github.com/suvoni/CTF_Writeups/tree/main/danteCTF_2023</a></p>
+
+<p><br />
+<br />
+<br /></p>
+
+<h2 id="solution">Solution</h2>
+
+<hr />
+
+<p>문제를 풀기 위한 방법은 픽셀의 RGB에 (1, 2, 4)를 사용하는 것이다.</p>
+
+<p>(1, 2, 4)를 사용하면 255로 xor한 값을 대상으로 크기비교를 통해 원래 위치를 알아낼 수 있고, 255와 xor했다는 걸 알기에 복호화 가능하다.</p>
+
+<p>예를 들어, RGB에서 R이 부정되면 (254, 2, 4)가 되고</p>
+
+<p>perm table에서 선택된 순열이(0, 2, 1)이면 (254, 2, 4)는 (254, 4, 2)가 된다.</p>
+
+<p>그러나 (254, 4, 2)를 보면 254가 첫번째, 2가 2번째 4가 3번째여야 함을 알 수 있다.</p>
+
+<p>이러한 과정으로 원래 픽셀들을 복호화 가능하다.</p>
+
+<details>
+<summary>exploit code</summary>
+<div>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">time</span>
+<span class="kn">from</span> <span class="n">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="n">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="n">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">from</span> <span class="n">base64</span> <span class="kn">import</span> <span class="n">b64encode</span><span class="p">,</span> <span class="n">b64decode</span>
+<span class="kn">from</span> <span class="n">Crypto.Random</span> <span class="kn">import</span> <span class="n">get_random_bytes</span>
+
+<span class="k">def</span> <span class="nf">encrypt_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="n">perm_table</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">2</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">3</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">4</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">5</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)}</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">image</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="nf">assert</span><span class="p">(</span><span class="n">size</span> <span class="o">==</span> <span class="nf">len</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+    <span class="n">pixels</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">image</span><span class="p">.</span><span class="nf">getdata</span><span class="p">())</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">pixels</span><span class="p">)):</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">pixels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">kbyte</span> <span class="o">=</span> <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        
+        <span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">^</span><span class="mi">255</span> <span class="k">if</span> <span class="n">kbyte</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="p">)</span> <span class="k">else</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>  
+        <span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="o">=</span> <span class="n">perm_table</span><span class="p">[</span><span class="nf">int</span><span class="p">(</span><span class="n">kbyte</span><span class="p">)</span> <span class="o">%</span> <span class="mi">6</span><span class="p">]</span>
+        <span class="n">pixels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">color</span><span class="p">[</span><span class="n">r</span><span class="p">],</span> <span class="n">color</span><span class="p">[</span><span class="n">g</span><span class="p">],</span> <span class="n">color</span><span class="p">[</span><span class="n">b</span><span class="p">])</span>
+ 
+    <span class="n">image</span><span class="p">.</span><span class="nf">putdata</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span>
+    <span class="n">bs</span> <span class="o">=</span> <span class="nc">BytesIO</span><span class="p">()</span>
+    <span class="n">image</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="n">bs</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">flag_file</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:])</span>
+
+    <span class="k">return</span> <span class="nf">b64encode</span><span class="p">(</span><span class="n">bs</span><span class="p">.</span><span class="nf">getvalue</span><span class="p">())</span>
+
+<span class="k">def</span> <span class="nf">get_key_by_value</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="p">.</span><span class="nf">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">val</span> <span class="o">==</span> <span class="n">value</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">key</span>
+    <span class="k">return</span> <span class="bp">None</span>  <span class="c1"># Value not found
+</span>
+<span class="n">p</span> <span class="o">=</span> <span class="nf">remote</span><span class="p">(</span><span class="sh">'</span><span class="s">challs.dantectf.it</span><span class="sh">'</span><span class="p">,</span> <span class="mi">31511</span><span class="p">)</span>
+<span class="n">sl</span> <span class="o">=</span> <span class="mf">0.2</span> <span class="c1">#Sleep time
+</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    
+    <span class="c1"># Get the initial lines
+</span>    <span class="n">line</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="nf">recvline</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">).</span><span class="nf">rstrip</span><span class="p">())</span>
+
+    <span class="c1"># Say yes
+</span>    <span class="k">if</span> <span class="sh">'</span><span class="s">yours</span><span class="sh">'</span> <span class="ow">in</span> <span class="n">line</span><span class="p">.</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">).</span><span class="nf">rstrip</span><span class="p">():</span>
+        <span class="n">time</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">p</span><span class="p">.</span><span class="nf">sendline</span><span class="p">(</span><span class="sa">b</span><span class="sh">'</span><span class="s">y</span><span class="sh">'</span><span class="p">)</span>
+        <span class="n">time</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="nf">recvline</span><span class="p">().</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="nf">recvline</span><span class="p">().</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">:</span>
+        
+        <span class="c1"># Read in the encrypted flag image and get its size
+</span>        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="p">.</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">).</span><span class="nf">rstrip</span><span class="p">().</span><span class="nf">encode</span><span class="p">()</span>
+        <span class="n">encrypted_bytes</span> <span class="o">=</span> <span class="nf">b64decode</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="n">bs</span> <span class="o">=</span> <span class="nc">BytesIO</span><span class="p">(</span><span class="n">encrypted_bytes</span><span class="p">)</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">bs</span><span class="p">,</span> <span class="n">formats</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">PNG</span><span class="sh">'</span><span class="p">])</span>
+
+        <span class="n">flag_size</span> <span class="o">=</span> <span class="n">flag</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">flag</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Flag Size (in pixels): </span><span class="sh">'</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">flag_size</span><span class="p">))</span>
+        
+        <span class="c1"># Now create our own custom image to encrypt to reverse engineer the key
+</span>        <span class="c1"># We will set all (R,G,B) values to (1,2,4) so that we can know which
+</span>        <span class="c1"># permutation/substitution is used based upon the encrypted image
+</span>        <span class="n">t_image</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="sh">'</span><span class="s">RGBA</span><span class="sh">'</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span> <span class="mi">478</span><span class="p">))</span>
+        <span class="n">t_pixels</span> <span class="o">=</span> <span class="n">t_image</span><span class="p">.</span><span class="nf">load</span><span class="p">()</span>
+
+        <span class="n">red_value</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">green_value</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="n">blue_value</span> <span class="o">=</span> <span class="mi">4</span>
+
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">478</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">640</span><span class="p">):</span>
+                <span class="n">t_pixels</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">red_value</span><span class="p">,</span> <span class="n">green_value</span><span class="p">,</span> <span class="n">blue_value</span><span class="p">)</span>
+        
+        <span class="n">t_img_enc</span> <span class="o">=</span> <span class="nf">b64encode</span><span class="p">(</span><span class="n">t_image</span><span class="p">.</span><span class="nf">tobytes</span><span class="p">())</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="nf">get_random_bytes</span><span class="p">(</span><span class="n">flag</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">flag</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">frombytes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nf">b64decode</span><span class="p">(</span><span class="n">t_img_enc</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="n">flag</span><span class="p">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">flag</span><span class="p">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="n">test_size</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">image</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="c1"># Send our crafted image to the server for encryption
+</span>        <span class="n">p</span><span class="p">.</span><span class="nf">sendline</span><span class="p">(</span><span class="n">t_img_enc</span><span class="p">)</span>
+        <span class="n">time</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="n">sl</span><span class="p">)</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="nf">recvline</span><span class="p">().</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">).</span><span class="nf">rstrip</span><span class="p">()</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="n">time</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="n">sl</span><span class="p">)</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="nf">recvline</span><span class="p">().</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">).</span><span class="nf">rstrip</span><span class="p">()</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="n">time</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="n">sl</span><span class="p">)</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="nf">recvline</span><span class="p">().</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">).</span><span class="nf">rstrip</span><span class="p">()</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="n">time</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="n">sl</span><span class="p">)</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="nf">recvline</span><span class="p">().</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">).</span><span class="nf">rstrip</span><span class="p">()</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="n">time</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="nf">recvline</span><span class="p">().</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">).</span><span class="nf">rstrip</span><span class="p">()</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+        <span class="c1">#Read in the encrypted test image and get its size
+</span>        <span class="n">t2_enc_bytes</span> <span class="o">=</span> <span class="nf">b64decode</span><span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="nf">encode</span><span class="p">())</span>
+        <span class="n">t2_bs</span> <span class="o">=</span> <span class="nc">BytesIO</span><span class="p">(</span><span class="n">t2_enc_bytes</span><span class="p">)</span>
+        <span class="n">t2_image</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">t2_bs</span><span class="p">,</span> <span class="n">formats</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">PNG</span><span class="sh">'</span><span class="p">])</span>
+        <span class="n">t2_size</span> <span class="o">=</span> <span class="n">t2_image</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">t2_image</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="c1">#Now recover the key from the image
+</span>        <span class="n">t2_pixels</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">t2_image</span><span class="p">.</span><span class="nf">getdata</span><span class="p">())</span>
+        <span class="n">perm_table</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">2</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">3</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">4</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">5</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)}</span>
+        <span class="n">rev_table</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">2</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">3</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">4</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">5</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)}</span>
+
+        <span class="n">keystream</span> <span class="o">=</span> <span class="sa">b</span><span class="sh">''</span>
+
+        <span class="c1">#for i in range(20):
+</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">t2_pixels</span><span class="p">)):</span>
+
+            <span class="c1">#First, reverse the permutation
+</span>            <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="o">=</span> <span class="n">t2_pixels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">tup1</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+            <span class="n">p1</span> <span class="o">=</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">p3</span> <span class="o">=</span> <span class="bp">None</span>
+            <span class="k">if</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">254</span><span class="p">:</span>
+                <span class="n">p1</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">253</span><span class="p">:</span>
+                <span class="n">p1</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">4</span> <span class="ow">or</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">251</span><span class="p">:</span>
+                <span class="n">p1</span> <span class="o">=</span> <span class="mi">2</span>
+            <span class="k">if</span> <span class="n">g</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">g</span> <span class="o">==</span> <span class="mi">254</span><span class="p">:</span>
+                <span class="n">p2</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">elif</span> <span class="n">g</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">g</span> <span class="o">==</span> <span class="mi">253</span><span class="p">:</span>
+                <span class="n">p2</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">g</span> <span class="o">==</span> <span class="mi">4</span> <span class="ow">or</span> <span class="n">g</span> <span class="o">==</span> <span class="mi">251</span><span class="p">:</span>
+                <span class="n">p2</span> <span class="o">=</span> <span class="mi">2</span>
+            <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">254</span><span class="p">:</span>
+                <span class="n">p3</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">elif</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">253</span><span class="p">:</span>
+                <span class="n">p3</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">4</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">251</span><span class="p">:</span>
+                <span class="n">p3</span> <span class="o">=</span> <span class="mi">2</span>
+            <span class="n">perm</span> <span class="o">=</span> <span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">)</span>
+            <span class="n">rem</span> <span class="o">=</span> <span class="nf">get_key_by_value</span><span class="p">(</span><span class="n">perm_table</span><span class="p">,</span> <span class="n">perm</span><span class="p">)</span>
+            <span class="n">new_pos</span> <span class="o">=</span> <span class="n">rev_table</span><span class="p">[</span><span class="n">rem</span><span class="p">]</span>
+            <span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">b1</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">tup1</span><span class="p">[</span><span class="n">new_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">tup1</span><span class="p">[</span><span class="n">new_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">tup1</span><span class="p">[</span><span class="n">new_pos</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
+
+            <span class="c1">#Second, reverse the substitution
+</span>            <span class="n">key_int</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="n">r1</span> <span class="o">==</span> <span class="mi">254</span><span class="p">:</span>
+                <span class="n">key_int</span> <span class="o">=</span> <span class="n">key_int</span> <span class="o">|</span> <span class="mi">1</span>
+                <span class="n">r1</span> <span class="o">=</span> <span class="n">r1</span> <span class="o">^</span> <span class="mi">255</span>
+            <span class="k">if</span> <span class="n">g1</span> <span class="o">==</span> <span class="mi">253</span><span class="p">:</span>
+                <span class="n">key_int</span> <span class="o">=</span> <span class="n">key_int</span> <span class="o">|</span> <span class="mi">2</span>
+                <span class="n">g1</span> <span class="o">=</span> <span class="n">g1</span> <span class="o">^</span> <span class="mi">255</span>
+            <span class="k">if</span> <span class="n">b1</span> <span class="o">==</span> <span class="mi">251</span><span class="p">:</span>
+                <span class="n">key_int</span> <span class="o">=</span> <span class="n">key_int</span> <span class="o">|</span> <span class="mi">4</span>
+                <span class="n">b1</span> <span class="o">=</span> <span class="n">b1</span> <span class="o">^</span> <span class="mi">255</span>
+
+            <span class="k">while</span> <span class="n">key_int</span> <span class="o">%</span> <span class="mi">6</span> <span class="o">!=</span> <span class="n">rem</span><span class="p">:</span>
+                <span class="n">key_int</span> <span class="o">+=</span> <span class="mi">8</span>
+
+            <span class="n">key_byte</span> <span class="o">=</span> <span class="n">key_int</span><span class="p">.</span><span class="nf">to_bytes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="sh">'</span><span class="s">big</span><span class="sh">'</span><span class="p">)</span>
+            <span class="n">keystream</span> <span class="o">+=</span> <span class="n">key_byte</span>
+            <span class="n">t2_pixels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+   
+        <span class="c1">#Now, use the keystream to decrypt the flag image
+</span>        <span class="n">flag_pixels</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">flag</span><span class="p">.</span><span class="nf">getdata</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">flag_pixels</span><span class="p">)):</span>
+
+            <span class="c1">#First, reverse the permutation using the key
+</span>            <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="o">=</span> <span class="n">flag_pixels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">tup1</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+            <span class="n">kb</span> <span class="o">=</span> <span class="n">keystream</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">new_pos</span> <span class="o">=</span> <span class="n">rev_table</span><span class="p">[</span><span class="n">kb</span> <span class="o">%</span> <span class="mi">6</span><span class="p">]</span>
+
+            <span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">b1</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">tup1</span><span class="p">[</span><span class="n">new_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">tup1</span><span class="p">[</span><span class="n">new_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">tup1</span><span class="p">[</span><span class="n">new_pos</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
+
+            <span class="c1">#Second, reverse the substitution using the key
+</span>            <span class="k">if</span> <span class="n">kb</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">r1</span> <span class="o">=</span> <span class="n">r1</span> <span class="o">^</span> <span class="mi">255</span>
+            <span class="k">if</span> <span class="n">kb</span> <span class="o">&amp;</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">g1</span> <span class="o">=</span> <span class="n">g1</span> <span class="o">^</span> <span class="mi">255</span>
+            <span class="k">if</span> <span class="n">kb</span> <span class="o">&amp;</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="n">b1</span> <span class="o">=</span> <span class="n">b1</span> <span class="o">^</span> <span class="mi">255</span>
+
+            <span class="n">flag_pixels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+
+        <span class="c1">#end of while loop
+</span>        <span class="n">flag</span><span class="p">.</span><span class="nf">putdata</span><span class="p">(</span><span class="n">flag_pixels</span><span class="p">)</span>
+        <span class="n">flag</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="sh">'</span><span class="s">flag.png</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">PNG</span><span class="sh">'</span><span class="p">)</span>
+        <span class="k">break</span>
+
+<span class="n">p</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+
+<span class="c1"># DANTE{Att4cks_t0_p1x3L_Encrypt3d_piCtUrES_511f0c49f8be}
+</span></code></pre></div>    </div>
+  </div>
+</details>
+
+<details>
+<summary>description</summary>
+<div>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>            <span class="n">p1</span> <span class="o">=</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">p3</span> <span class="o">=</span> <span class="bp">None</span>
+            <span class="k">if</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">254</span><span class="p">:</span>
+                <span class="n">p1</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">253</span><span class="p">:</span>
+                <span class="n">p1</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">4</span> <span class="ow">or</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">251</span><span class="p">:</span>
+                <span class="n">p1</span> <span class="o">=</span> <span class="mi">2</span>
+            <span class="k">if</span> <span class="n">g</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">g</span> <span class="o">==</span> <span class="mi">254</span><span class="p">:</span>
+                <span class="n">p2</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">elif</span> <span class="n">g</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">g</span> <span class="o">==</span> <span class="mi">253</span><span class="p">:</span>
+                <span class="n">p2</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">g</span> <span class="o">==</span> <span class="mi">4</span> <span class="ow">or</span> <span class="n">g</span> <span class="o">==</span> <span class="mi">251</span><span class="p">:</span>
+                <span class="n">p2</span> <span class="o">=</span> <span class="mi">2</span>
+            <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">254</span><span class="p">:</span>
+                <span class="n">p3</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">elif</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">253</span><span class="p">:</span>
+                <span class="n">p3</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">4</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">251</span><span class="p">:</span>
+                <span class="n">p3</span> <span class="o">=</span> <span class="mi">2</span>
+            <span class="n">perm</span> <span class="o">=</span> <span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">)</span>
+            <span class="n">rem</span> <span class="o">=</span> <span class="nf">get_key_by_value</span><span class="p">(</span><span class="n">perm_table</span><span class="p">,</span> <span class="n">perm</span><span class="p">)</span>
+            <span class="n">new_pos</span> <span class="o">=</span> <span class="n">rev_table</span><span class="p">[</span><span class="n">rem</span><span class="p">]</span>
+            <span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">b1</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">tup1</span><span class="p">[</span><span class="n">new_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">tup1</span><span class="p">[</span><span class="n">new_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">tup1</span><span class="p">[</span><span class="n">new_pos</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
+
+            <span class="c1">#Second, reverse the substitution
+</span>            <span class="n">key_int</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="n">r1</span> <span class="o">==</span> <span class="mi">254</span><span class="p">:</span>
+                <span class="n">key_int</span> <span class="o">=</span> <span class="n">key_int</span> <span class="o">|</span> <span class="mi">1</span>
+                <span class="n">r1</span> <span class="o">=</span> <span class="n">r1</span> <span class="o">^</span> <span class="mi">255</span>
+            <span class="k">if</span> <span class="n">g1</span> <span class="o">==</span> <span class="mi">253</span><span class="p">:</span>
+                <span class="n">key_int</span> <span class="o">=</span> <span class="n">key_int</span> <span class="o">|</span> <span class="mi">2</span>
+                <span class="n">g1</span> <span class="o">=</span> <span class="n">g1</span> <span class="o">^</span> <span class="mi">255</span>
+            <span class="k">if</span> <span class="n">b1</span> <span class="o">==</span> <span class="mi">251</span><span class="p">:</span>
+                <span class="n">key_int</span> <span class="o">=</span> <span class="n">key_int</span> <span class="o">|</span> <span class="mi">4</span>
+                <span class="n">b1</span> <span class="o">=</span> <span class="n">b1</span> <span class="o">^</span> <span class="mi">255</span>
+
+            <span class="k">while</span> <span class="n">key_int</span> <span class="o">%</span> <span class="mi">6</span> <span class="o">!=</span> <span class="n">rem</span><span class="p">:</span>
+                <span class="n">key_int</span> <span class="o">+=</span> <span class="mi">8</span>
+</code></pre></div>    </div>
+
+    <p>이 부분이 핵심인데, 순서를 알아내면 키를 복구하는 것 또한 가능하다.</p>
+
+  </div>
+</details>
+
+<p><br /></p>
+
+<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/09a840d0-3577-41a2-a840-d8dfa143812b" alt="Untitled" width="100%" height="100%" /></p>
+
+<p>복호화가 되면 이러한 이미지를 얻는다.</p>
+
+<p>여기 플래그가 숨겨져 있다.</p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry><entry><title type="html">Small Inscription</title><link href="https://neutrinox4b1.github.io/blog/2023/small_inscription/" rel="alternate" type="text/html" title="Small Inscription" /><published>2023-06-03T00:00:00+00:00</published><updated>2023-06-03T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/small_inscription</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/small_inscription/"><![CDATA[<h2 id="background">Background</h2>
+
+<hr />
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
+</span>
+<span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">bytes_to_long</span><span class="p">,</span> <span class="n">getPrime</span>
+<span class="kn">from</span> <span class="n">secret</span> <span class="kn">import</span> <span class="n">FLAG</span>
+
+<span class="k">assert</span> <span class="nf">len</span><span class="p">(</span><span class="n">FLAG</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">30</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
+
+    <span class="n">msg</span> <span class="o">=</span> <span class="nf">bytes_to_long</span><span class="p">(</span>
+        <span class="sa">b</span><span class="sh">'</span><span class="s">There is something reeeally important you should know, the flag is </span><span class="sh">'</span><span class="o">+</span><span class="n">FLAG</span><span class="p">)</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nf">getPrime</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">*</span><span class="nf">getPrime</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="mi">3</span>
+
+    <span class="n">ct</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">ct</span><span class="o">=</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">N</span><span class="o">=</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>output</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ct</span><span class="o">=</span><span class="mi">747861028284745583986165203504322648396510749839398405070811323707600711491863944680330526354962376022146478962637944671170833980881833864618493670661754856280282476606632288562133960228178540799118953209069757642578754327847269832940273765635707176669208611276095564465950147643941533690293945372328223742576232667549253123094054598941291288949397775419176103429124455420699502573739842580940268711628697334920678442711510187864949808113210697096786732976916002133678253353848775265650016864896187184151924272716863071499925744529203583206734774883138969347565787210674308042083803787880001925683349235960512445949</span>
+<span class="n">N</span><span class="o">=</span><span class="mi">20948184905072216948549865445605798631663501453911333956435737119029531982149517142273321144075961800694876109056203145122426451759388059831044529163118093342195028080582365702020138256379699270302368673086923715628087508705525518656689253472590622223905341942685751355443776992006890500774938631896675247850244098414397183590972496171655304801215957299268404242039713841456437577844606152809639584428764129318729971500384064454823140992681760685982999247885351122505154646928804561614506313946302901152432476414517575301827992421830229939161942896560958118364164451179787855749084154517490249401036072261469298158281</span>
+</code></pre></div></div>
+
+<p>코드가 주어지고 그 결과가 주어진다. 여기서 e라는 작은 지수를 사용하였기 때문에 작은 지수 공격이 가능하다.</p>
+
+<p><br />
+<br />
+<br /></p>
+
+<h2 id="solution">Solution</h2>
+
+<hr />
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="n">gmpy2</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">ct</span><span class="o">=</span><span class="mi">747861028284745583986165203504322648396510749839398405070811323707600711491863944680330526354962376022146478962637944671170833980881833864618493670661754856280282476606632288562133960228178540799118953209069757642578754327847269832940273765635707176669208611276095564465950147643941533690293945372328223742576232667549253123094054598941291288949397775419176103429124455420699502573739842580940268711628697334920678442711510187864949808113210697096786732976916002133678253353848775265650016864896187184151924272716863071499925744529203583206734774883138969347565787210674308042083803787880001925683349235960512445949</span>
+<span class="n">N</span><span class="o">=</span><span class="mi">20948184905072216948549865445605798631663501453911333956435737119029531982149517142273321144075961800694876109056203145122426451759388059831044529163118093342195028080582365702020138256379699270302368673086923715628087508705525518656689253472590622223905341942685751355443776992006890500774938631896675247850244098414397183590972496171655304801215957299268404242039713841456437577844606152809639584428764129318729971500384064454823140992681760685982999247885351122505154646928804561614506313946302901152432476414517575301827992421830229939161942896560958118364164451179787855749084154517490249401036072261469298158281</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">with</span> <span class="nf">local_context</span><span class="p">()</span> <span class="k">as</span> <span class="n">lcx</span><span class="p">:</span>
+	<span class="n">lcx</span><span class="p">.</span><span class="n">precision</span> <span class="o">=</span> <span class="mi">5000</span>
+	<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">):</span>
+		<span class="n">msg</span> <span class="o">=</span> <span class="nf">long_to_bytes</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="nf">root</span><span class="p">(</span><span class="n">ct</span> <span class="o">+</span> <span class="n">_</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> <span class="n">e</span><span class="p">)))</span> 
+		<span class="k">if</span> <span class="sa">b</span><span class="sh">'</span><span class="s">There</span><span class="sh">'</span> <span class="ow">in</span> <span class="n">msg</span><span class="p">:</span>
+			<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">loop:</span><span class="sh">'</span><span class="p">,</span><span class="n">_</span><span class="p">)</span>
+			<span class="nf">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>처음에는 단순히 croot를 계산했으나 답이 나오지 않았다. 작은 지수라 하더라도 모듈러가 적용되었던 것이다.</p>
+
+<p>따라서 여기서는 brute force를 수행하였다.</p>
+
+<p>mod를 일일이 찾아가면서 브루트포싱을 수행했는데,</p>
+
+<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/8c5d35d5-1406-4000-8956-ca7b4aacbdbe" alt="Untitled" width="100%" height="100%" /></p>
+
+<p>3624번째 mod 에서 flag가 출력되었다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">DANTE{sM4ll_R00tzz}</code></p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry><entry><title type="html">TJCTF 2023</title><link href="https://neutrinox4b1.github.io/blog/2023/TJCTF-2023/" rel="alternate" type="text/html" title="TJCTF 2023" /><published>2023-05-27T00:00:00+00:00</published><updated>2023-05-27T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/TJCTF%202023</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/TJCTF-2023/"><![CDATA[<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/b7b0e77f-60e1-427e-9c43-7326efd07d80" alt="image" width="100%" height="100%" /></p>
 
 <h2 id="writeups">Writeups</h2>
 <h3 id="crypto">crypto</h3>
@@ -179,179 +952,4 @@
     </div>
 </div>
 
-<p>12nd</p>]]></content><author><name>neutrinox4b1</name></author><category term="crypto" /><category term="CTFs" /><summary type="html"><![CDATA[Team. Security Factorial]]></summary></entry><entry><title type="html">Compact</title><link href="https://neutrinox4b1.github.io/blog/2023/compact/" rel="alternate" type="text/html" title="Compact" /><published>2023-05-20T00:00:00+00:00</published><updated>2023-05-20T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/compact</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/compact/"><![CDATA[<h2 id="background">Background</h2>
-<hr />
-
-<blockquote>
-  <p>Apparently this is meant to replace the Latin alphabet??</p>
-
-  <p>Flag format: <code class="language-plaintext highlighter-rouge">byuctf{word or phrase}</code> case insensitve.</p>
-
-</blockquote>
-
-<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/aa79b8b0-0a53-4e80-9676-1d39ee118b61" alt="Untitled" width="100%" height="100%" /></p>
-
-<p>이 이미지에서 단어를 찾아내어야 한다.</p>
-
-<p>모스 부호와 관련있어보이긴 했어서 무작정 검색했었다.</p>
-
-<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/69e15a00-7098-4906-83f9-564da23858ca" alt="Untitled" width="100%" height="100%" /></p>
-
-<p>그랬더니 이 표가 보인다.</p>
-
-<p>왼쪽 박스 부분이 연관있어보이긴 하는데, 제목과도 합치면 이 박스가 Compact 되어있는 것 같다.</p>
-
-<p>이걸 어떻게 해석하지?</p>
-
-<p><br />
-<br />
-<br /></p>
-
-<h2 id="solution">Solution</h2>
-<hr />
-
-<p>계속.. 찾아다니고 이것저것 숫자를 넣어보고  <a href="https://www.dcode.fr/baudot-code">https://www.dcode.fr/baudot-code</a> 이것도 보고 그랬는데</p>
-
-<p>결과적으로 <a href="https://www.dcode.fr/symbols-ciphers">https://www.dcode.fr/symbols-ciphers</a> 을 찾아보다가 dotsies cipher와 유사해보였다. 디코딩을 하니까</p>
-
-<p><a href="https://www.dcode.fr/symbols-ciphers">https://www.dcode.fr/symbols-ciphers</a></p>
-
-<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/94b03cce-96eb-45e2-b3d3-ab40d1cf90ac" alt="Untitled" width="100%" height="100%" /></p>
-
-<p><code class="language-plaintext highlighter-rouge">byuctf{well its definitely more compact}</code></p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry><entry><title type="html">𐐗𐐡𐐆𐐑𐐓𐐄?</title><link href="https://neutrinox4b1.github.io/blog/2023/deseret/" rel="alternate" type="text/html" title="𐐗𐐡𐐆𐐑𐐓𐐄?" /><published>2023-05-20T00:00:00+00:00</published><updated>2023-05-20T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/deseret</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/deseret/"><![CDATA[<h2 id="background">Background</h2>
-<hr />
-
-<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/de52a73b-a134-4a2c-bf9f-19daa8abc29e" alt="Untitled" width="100%" height="100%" /></p>
-
-<p>별 말 없이 사진만 던져짐</p>
-
-<p>제목을 검색하니 문자가 데저릿 문자라는걸 알겠음</p>
-
-<p><br />
-<br />
-<br /></p>
-
-<h2 id="solution">Solution</h2>
-<hr />
-
-<p><a href="https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%A0%80%EB%A0%9B_%EB%AC%B8%EC%9E%90">https://ko.wikipedia.org/wiki/데저렛_문자</a></p>
-
-<p>데저릿을 번역하는 사이트</p>
-
-<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/50d183f7-8188-4e9a-b9fb-636c85eea6c9" alt="Untitled" width="100%" height="100%" /></p>
-
-<p><a href="https://www.2deseret.com/">https://www.2deseret.com/</a></p>
-
-<p>앞에 저 부분이 ㅋㅋ 읽어보니 byuctf</p>
-
-<p>근데 뒤에 해석되지 않는 부분은 발음과 비슷한 걸 검색해서 찾음</p>
-
-<p><code class="language-plaintext highlighter-rouge">byuctf{deseret_means_honeybee}</code></p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry><entry><title type="html">Poem</title><link href="https://neutrinox4b1.github.io/blog/2023/poem/" rel="alternate" type="text/html" title="Poem" /><published>2023-05-20T00:00:00+00:00</published><updated>2023-05-20T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/poem</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/poem/"><![CDATA[<h2 id="background">Background</h2>
-<hr />
-
-<blockquote>
-  <p><code class="language-plaintext highlighter-rouge">epcndkohlxfgvenkzcllkoclivdckskvpkddcyoceipkvrcslkdhycbcscwcsc</code></p>
-
-  <p>Spaces and punctuation were removed :)</p>
-
-  <p>Flag format - <code class="language-plaintext highlighter-rouge">byuctf{the phrase goes here}</code> note there are spaces in the flag, no other punctuation needed.</p>
-
-</blockquote>
-
-<p><code class="language-plaintext highlighter-rouge">epcndkohlxfgvenkzcllkoclivdckskvpkddcyoceipkvrcslkdhycbcscwcsc</code></p>
-
-<p>아니 이게 암호문임</p>
-
-<p><br />
-<br />
-<br /></p>
-
-<h2 id="solution">Solution</h2>
-<hr />
-<p><a href="https://www.dcode.fr/keyboard-change-cipher">Keyboard Change Cipher - Online QWERTY Shifter/Converter (dcode.fr)</a></p>
-
-<p>thefragisbyuctf a message so crealacharrengetohackelsarinewe levele</p>
-
-<p>l ↔ r 바꾸면</p>
-
-<p>the flag is byuctf a message so clear a challenge to hackers a line we revere</p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry><entry><title type="html">RSA1</title><link href="https://neutrinox4b1.github.io/blog/2023/rsa1/" rel="alternate" type="text/html" title="RSA1" /><published>2023-05-20T00:00:00+00:00</published><updated>2023-05-20T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/rsa1</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/rsa1/"><![CDATA[<h2 id="background">Background</h2>
-<hr />
-
-<blockquote>
-  <p>n = 287838647563564518717519107521814079281</p>
-
-  <p>e = 7</p>
-
-  <p>c = 258476617615202392748150555415953446503</p>
-
-</blockquote>
-
-<p>287838647563564518717519107521814079281 = 15631612382272805561 * 18413880828441662521</p>
-
-<p><br />
-<br />
-<br /></p>
-
-<h2 id="solution">Solution</h2>
-<hr />
-
-<p>n 값이 소인수분해 가능하게 작음</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">p</span> <span class="o">=</span> <span class="mi">15631612382272805561</span>
-<span class="n">q</span> <span class="o">=</span> <span class="mi">18413880828441662521</span>
-
-<span class="n">n</span> <span class="o">=</span> <span class="mi">287838647563564518717519107521814079281</span>
-<span class="n">e</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="n">c</span> <span class="o">=</span> <span class="mi">258476617615202392748150555415953446503</span>
-
-<span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">d</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">long_to_bytes</span><span class="p">(</span><span class="nf">pow</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">)))</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">byuctf{too_smol}</code></p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry><entry><title type="html">RSA2</title><link href="https://neutrinox4b1.github.io/blog/2023/rsa2/" rel="alternate" type="text/html" title="RSA2" /><published>2023-05-20T00:00:00+00:00</published><updated>2023-05-20T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/rsa2</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/rsa2/"><![CDATA[<h2 id="background">Background</h2>
-<hr />
-
-<blockquote>
-  <p>n = 546014635841741214724882952304387823741798461149589549073179989118942746109940806878269775538274570065946589413677004071487344751464649121103982272835006900203922112014630898761428602513684456008956735791010937229939856259403186940249737579526542460562078728957198932156520780835942292131829398548678970431263462917223085165930683353518778015361505451889259321493813123084031407195410778661720394898118828299025325200597986154170392835072784810370185329392356423340408483449291280713796374297147668615988522804223480631576577707073715128342533703842150980913675658012799681575774731843549389349977365287936534707998476564357339504431638612839358093914282814270477657856345062084136585402704930924062452984009716927826681976269057923158930326380110735873715506666086031427627450725825495228912040943784627278987497908133546573083543604901933763330940965980882566819970423354937076331119777415405707162588442490342746115310986462330781467571631209829523895479737199963129517613642920935109776495829400236613168913129178658637967592913193540283532220304664924612246117951571439486418122093867454452618997458068515332016877486822805232899716524040444751997121936138984564834862354469295078855441829018404782747219665338778379471257704041</p>
-
-  <p>e = 65537</p>
-
-  <p>c = 497483520135207500611760341868934810216889295862727367409205471739457798733223813938415492642898622071289502771394670201759355356873731071744923938304067196827981196823596976532284031567818944043351160692892539254848854527943095670705184836531463778923699513154523281624336593518751911469590777921172775020125081803529411082078530404614569485860638460689961289946436553586222781503048987585305336865777424252321433817251942278548031598867440246798562662298880488044382840476214732326114298681849826143159014132251265975612736174765852107701466877003101250308950535660691651846052082123375934624356694170453897672257371991315676787548733520567289929667876604682273501711766130944645562650989837328685043543330211830184365436596077862055649246517141787872170320358968622818470064395975654949073402489903952399985907827496667385839890041608685588908200009780210043116940593521695695047783434230143405184690206691002634954008353327872663055826018481013718627348218684688250775372760462829705754318024652361552668830110066219305953343851243676904796434142570868419087560131333056695456062994781034014322792678534785191950145702468201676105282230660132801024614625267740668507168119879074770666830923799616054485447308126877109671082189614</p>
-
-</blockquote>
-
-<p><br />
-<br />
-<br /></p>
-
-<h2 id="solution">Solution</h2>
-
-<hr />
-
-<p>이번에는 값이 커진 것 같지만 factordb에 있는 수임</p>
-
-<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cfa7e156-1bdf-4ccf-954b-f72690da0ec5/Untitled.png" alt="Untitled" /></p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">n</span> <span class="o">=</span> <span class="mi">546014635841741214724882952304387823741798461149589549073179989118942746109940806878269775538274570065946589413677004071487344751464649121103982272835006900203922112014630898761428602513684456008956735791010937229939856259403186940249737579526542460562078728957198932156520780835942292131829398548678970431263462917223085165930683353518778015361505451889259321493813123084031407195410778661720394898118828299025325200597986154170392835072784810370185329392356423340408483449291280713796374297147668615988522804223480631576577707073715128342533703842150980913675658012799681575774731843549389349977365287936534707998476564357339504431638612839358093914282814270477657856345062084136585402704930924062452984009716927826681976269057923158930326380110735873715506666086031427627450725825495228912040943784627278987497908133546573083543604901933763330940965980882566819970423354937076331119777415405707162588442490342746115310986462330781467571631209829523895479737199963129517613642920935109776495829400236613168913129178658637967592913193540283532220304664924612246117951571439486418122093867454452618997458068515332016877486822805232899716524040444751997121936138984564834862354469295078855441829018404782747219665338778379471257704041</span>
-
-<span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
-
-<span class="n">c</span> <span class="o">=</span> <span class="mi">497483520135207500611760341868934810216889295862727367409205471739457798733223813938415492642898622071289502771394670201759355356873731071744923938304067196827981196823596976532284031567818944043351160692892539254848854527943095670705184836531463778923699513154523281624336593518751911469590777921172775020125081803529411082078530404614569485860638460689961289946436553586222781503048987585305336865777424252321433817251942278548031598867440246798562662298880488044382840476214732326114298681849826143159014132251265975612736174765852107701466877003101250308950535660691651846052082123375934624356694170453897672257371991315676787548733520567289929667876604682273501711766130944645562650989837328685043543330211830184365436596077862055649246517141787872170320358968622818470064395975654949073402489903952399985907827496667385839890041608685588908200009780210043116940593521695695047783434230143405184690206691002634954008353327872663055826018481013718627348218684688250775372760462829705754318024652361552668830110066219305953343851243676904796434142570868419087560131333056695456062994781034014322792678534785191950145702468201676105282230660132801024614625267740668507168119879074770666830923799616054485447308126877109671082189614</span>
-
-<span class="n">p</span> <span class="o">=</span> <span class="mi">23354146979807319379999035616961227366315140956417473671454187034894451162291754802462941941792796900830979379875976598091266482784685424013905480696388873312112449447015212036533336920764065285748033710474328055812364692120325949818178301777905279103958955246642416286153474237338739835798119305508201074075918506331902107847659951627678483765213310235851319160745426496852724170929530989982548624157909773262752522594414435161921211944019434983046703898010646693649668494220236993757035493132421299985405030215783112721654976457363937286689672094963265015048673356916456174809392166143308820305157390154213277022361</span>
-
-<span class="n">q</span> <span class="o">=</span> <span class="mi">23379772179812068808174060753537744579203831235837216258047345717791206838844783973094148970269358352883567686183840162453475135997997950171025172534250066839781721720291637394109275750765747393807129441718738564581300844549866075387635571271298099970059805382997224172143494300775742278526976057440901844970233807992493192827375594281731619879000721912671268883932814086571959959837609600236134071446484378655039534937911808777812990351810838102078057859303673209338100518315299313874836179635779981742550281014611235035038725280128727341135995530457136512443488805309366834219571741391932893715725604175334445964881</span>
-
-<span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">d</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="nf">long_to_bytes</span><span class="p">(</span><span class="nf">pow</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">)))</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">byuctf{rsa_is_only_secure_when_p_and_q_are_unknown}</code></p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry></feed>
+<p>12nd</p>]]></content><author><name>neutrinox4b1</name></author><category term="crypto" /><category term="CTFs" /><summary type="html"><![CDATA[Team. Security Factorial]]></summary></entry></feed>

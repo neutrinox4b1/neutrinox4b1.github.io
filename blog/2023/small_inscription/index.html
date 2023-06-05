@@ -10,9 +10,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>keyservice | Neutrinox4b1 ⚛  </title>
+    <title>Small Inscription | Neutrinox4b1 ⚛  </title>
     <meta name="author" content="Neutrinox4b1 ⚛  ">
-    <meta name="description" content="BSidesSF CTF 2023">
+    <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+">
 
 
     <!-- Bootstrap & MDB -->
@@ -32,7 +33,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://neutrinox4b1.github.io/blog/2023/keyservice/">
+    <link rel="canonical" href="https://neutrinox4b1.github.io/blog/2023/small_inscription/">
     
     <!-- Dark Mode -->
     
@@ -117,8 +118,8 @@
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">keyservice</h1>
-    <p class="post-meta">April 22, 2023</p>
+    <h1 class="post-title">Small Inscription</h1>
+    <p class="post-meta">June 3, 2023</p>
     <p class="post-tags">
       <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
         ·  
@@ -131,131 +132,71 @@
 
   <article class="post-content">
     <h2 id="background">Background</h2>
+
 <hr>
-<blockquote>
-  <p>WienerCorp has a new keyservice that can generate specially optimized keys! All empolyees are expected to connect to the service and get a new key by COB Friday.</p>
 
-  <p>nc <a href="http://keyservice-96f72922.challenges.bsidessf.net/" rel="external nofollow noopener" target="_blank">keyservice-96f72922.challenges.bsidessf.net</a> 1031</p>
-</blockquote>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
+</span>
+<span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">bytes_to_long</span><span class="p">,</span> <span class="n">getPrime</span>
+<span class="kn">from</span> <span class="n">secret</span> <span class="kn">import</span> <span class="n">FLAG</span>
 
-<p><img width="100%" alt="Untitled (7)" src="https://user-images.githubusercontent.com/101745344/236091431-fdf6167d-a2a7-4920-8f0c-b1df70686b25.png"></p>
+<span class="k">assert</span> <span class="nf">len</span><span class="p">(</span><span class="n">FLAG</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">30</span>
 
-<p><img width="100%" alt="Untitled (8)" src="https://user-images.githubusercontent.com/101745344/236091446-22d847e1-e7ae-4900-a1d8-b2cf165c7512.png"></p>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
 
-<blockquote>
-  <p>help types</p>
+    <span class="n">msg</span> <span class="o">=</span> <span class="nf">bytes_to_long</span><span class="p">(</span>
+        <span class="sa">b</span><span class="sh">'</span><span class="s">There is something reeeally important you should know, the flag is </span><span class="sh">'</span><span class="o">+</span><span class="n">FLAG</span><span class="p">)</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nf">getPrime</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">*</span><span class="nf">getPrime</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="mi">3</span>
 
-  <p>The keyservice has the ability to generate a “standard” key or a
-signing-optimized key.  If you are unsure which to pick, go with a
-standard key.</p>
-
-  <p>Standard keys are optimized for fast encryption and serve most users
-well. Signing-optimized keys are much slower for encryption but enable
-substantially faster signing.  Signing-optimized keys are still secure
-by ensuring your private exponent has 128 bits of entropy. The only
-drawback in that your resulting public exponent is much larger.</p>
-
-</blockquote>
-
-<p>listkeys</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User  0. (Michael, Wiener)
-Public modulus: 23688712016268069111957434004706792845435035134674317452941249047394388384339340162303677821524105079444156178402473729333292677634064574356352459213998507795947080043734519874960255696085079398956977662003566771135478670568954128746139542483672079261449854702431638345016117956154265558192465040609108240826200608326280057289262571839392713499567857386131701105291901630759932811453630053115111615168755998780337872709649064936703148839513147543106870694861880274622449224084646147285320440553817283657444086246729935317218167694390763475285940639359466202483878847327555490486804276371433398306839838788086263318989
-Public exponent: 3865363620121948671835054378324102522041599582880477323765025997361013454635674378451127282582241194920119864895285625836542696455666170840678063690565104517339899367326128991616289651301409583513097518518355770101773568574774581490687703099425413899625998244463532711668250046230332751817055181424699901610714700152050001283276027181125456539460880944775054151332255736310896532881824031442395478210779709078179055058304830480140813706982963841220086313208832034019770661263713923706357303383444013251482711558202699801492808596246472330590588504570327062292884439468167837672629968578977422091184520103195463780465
+    <span class="n">ct</span> <span class="o">=</span> <span class="nf">pow</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">ct</span><span class="o">=</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">N</span><span class="o">=</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>이름이 Michael, Wiener인것을 보아 Wiener’s attack을 이용하는 거 같다.</p>
+<p>output</p>
 
-<p>public modulus는 n을 의미하고 public exponent는 공개키 e를 말하는거 같은데</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ct</span><span class="o">=</span><span class="mi">747861028284745583986165203504322648396510749839398405070811323707600711491863944680330526354962376022146478962637944671170833980881833864618493670661754856280282476606632288562133960228178540799118953209069757642578754327847269832940273765635707176669208611276095564465950147643941533690293945372328223742576232667549253123094054598941291288949397775419176103429124455420699502573739842580940268711628697334920678442711510187864949808113210697096786732976916002133678253353848775265650016864896187184151924272716863071499925744529203583206734774883138969347565787210674308042083803787880001925683349235960512445949</span>
+<span class="n">N</span><span class="o">=</span><span class="mi">20948184905072216948549865445605798631663501453911333956435737119029531982149517142273321144075961800694876109056203145122426451759388059831044529163118093342195028080582365702020138256379699270302368673086923715628087508705525518656689253472590622223905341942685751355443776992006890500774938631896675247850244098414397183590972496171655304801215957299268404242039713841456437577844606152809639584428764129318729971500384064454823140992681760685982999247885351122505154646928804561614506313946302901152432476414517575301827992421830229939161942896560958118364164451179787855749084154517490249401036072261469298158281</span>
+</code></pre></div></div>
 
-<p><img width="100%" alt="Untitled (9)" src="https://user-images.githubusercontent.com/101745344/236092140-f7cbed95-5e79-4118-8303-f9dacc00d21d.png"></p>
-
-<p>listmsgs를 보면 user0에 msg가 존재한다.</p>
-
-<p>이 평문을 읽어들이면 flag가 있을 것만 같다.</p>
+<p>코드가 주어지고 그 결과가 주어진다. 여기서 e라는 작은 지수를 사용하였기 때문에 작은 지수 공격이 가능하다.</p>
 
 <p><br>
 <br>
 <br></p>
 
 <h2 id="solution">Solution</h2>
+
 <hr>
-<p><img width="100%" alt="Untitled (10)" src="https://user-images.githubusercontent.com/101745344/236092229-2e6ed99a-3e66-4529-9d3e-cfc1331d4caf.png"></p>
 
-<p>0번에 대한 readmsg를 하기 위해서 서명을 해야한다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="n">gmpy2</span> <span class="kn">import</span> <span class="o">*</span>
 
-<p>wiener’s Attack은 e값이 매우 큰 경우 사용된다. 이 문제에서는 e와 n값이 대략 256bit 정도 되는 것 같다.</p>
+<span class="n">ct</span><span class="o">=</span><span class="mi">747861028284745583986165203504322648396510749839398405070811323707600711491863944680330526354962376022146478962637944671170833980881833864618493670661754856280282476606632288562133960228178540799118953209069757642578754327847269832940273765635707176669208611276095564465950147643941533690293945372328223742576232667549253123094054598941291288949397775419176103429124455420699502573739842580940268711628697334920678442711510187864949808113210697096786732976916002133678253353848775265650016864896187184151924272716863071499925744529203583206734774883138969347565787210674308042083803787880001925683349235960512445949</span>
+<span class="n">N</span><span class="o">=</span><span class="mi">20948184905072216948549865445605798631663501453911333956435737119029531982149517142273321144075961800694876109056203145122426451759388059831044529163118093342195028080582365702020138256379699270302368673086923715628087508705525518656689253472590622223905341942685751355443776992006890500774938631896675247850244098414397183590972496171655304801215957299268404242039713841456437577844606152809639584428764129318729971500384064454823140992681760685982999247885351122505154646928804561614506313946302901152432476414517575301827992421830229939161942896560958118364164451179787855749084154517490249401036072261469298158281</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">3</span>
 
-<p>e가 클 경우 d가 작을 확률이 높고 이를 이용해서 공격이 가능하다. 구체적으로는 \(e &gt; n^{3/2}\) 이면 사용 불가능하고, \(d &lt; {1/3}n^{1/4}\) 일때 쉽게 d를 얻을 수 있다.</p>
-
-<p><a href="https://github.com/pablocelayes/rsa-wiener-attack" rel="external nofollow noopener" target="_blank">https://github.com/pablocelayes/rsa-wiener-attack</a></p>
-
-<p>이미 wiener’s Attack을 수행하는 코드가 있다.</p>
-
-<p>위 모듈을 사용하는 익스 코드를 작성한다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">RSAwienerHacker</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">n</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">'</span><span class="s">input n: </span><span class="sh">'</span><span class="p">).</span><span class="nf">strip</span><span class="p">())</span>
-<span class="n">e</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">'</span><span class="s">input e: </span><span class="sh">'</span><span class="p">).</span><span class="nf">strip</span><span class="p">())</span>
-
-<span class="n">d</span> <span class="o">=</span> <span class="nf">hack_RSA</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">d</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-	<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">failed</span><span class="sh">'</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-	<span class="nf">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-	<span class="n">h</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">'</span><span class="s">input h for sign: </span><span class="sh">'</span><span class="p">).</span><span class="nf">strip</span><span class="p">())</span>
-	<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">signed h:</span><span class="sh">'</span><span class="p">,</span> <span class="nf">pow</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+<span class="k">with</span> <span class="nf">local_context</span><span class="p">()</span> <span class="k">as</span> <span class="n">lcx</span><span class="p">:</span>
+	<span class="n">lcx</span><span class="p">.</span><span class="n">precision</span> <span class="o">=</span> <span class="mi">5000</span>
+	<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">):</span>
+		<span class="n">msg</span> <span class="o">=</span> <span class="nf">long_to_bytes</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="nf">root</span><span class="p">(</span><span class="n">ct</span> <span class="o">+</span> <span class="n">_</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> <span class="n">e</span><span class="p">)))</span> 
+		<span class="k">if</span> <span class="sa">b</span><span class="sh">'</span><span class="s">There</span><span class="sh">'</span> <span class="ow">in</span> <span class="n">msg</span><span class="p">:</span>
+			<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">loop:</span><span class="sh">'</span><span class="p">,</span><span class="n">_</span><span class="p">)</span>
+			<span class="nf">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>d가 failed 되는 경우도 있는데 여러번 하다보면 된다.</p>
+<p>처음에는 단순히 croot를 계산했으나 답이 나오지 않았다. 작은 지수라 하더라도 모듈러가 적용되었던 것이다.</p>
 
-<p>근데 failed 되는 경우는 어떤 경우인지 모르겠다..? <a href="">블로그</a>에 공부하여 게시하도록 하였다.</p>
+<p>따라서 여기서는 brute force를 수행하였다.</p>
 
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
+<p>mod를 일일이 찾아가면서 브루트포싱을 수행했는데,</p>
 
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="https://user-images.githubusercontent.com/101745344/236094224-756765af-bdc1-4156-8c81-fd3d1f979f34-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="https://user-images.githubusercontent.com/101745344/236094224-756765af-bdc1-4156-8c81-fd3d1f979f34-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="https://user-images.githubusercontent.com/101745344/236094224-756765af-bdc1-4156-8c81-fd3d1f979f34-1400.webp"></source>
-    
+<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/8c5d35d5-1406-4000-8956-ca7b4aacbdbe" alt="Untitled" width="100%" height="100%"></p>
 
-    <!-- Fallback to the original file -->
-    <img src="https://user-images.githubusercontent.com/101745344/236094224-756765af-bdc1-4156-8c81-fd3d1f979f34.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+<p>3624번째 mod 에서 flag가 출력되었다.</p>
 
-  </picture>
-
-</figure>
-
-    </div>
-</div>
-
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="https://user-images.githubusercontent.com/101745344/236094361-c636d927-d53e-44dd-b3fe-9da5676f89b1-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="https://user-images.githubusercontent.com/101745344/236094361-c636d927-d53e-44dd-b3fe-9da5676f89b1-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="https://user-images.githubusercontent.com/101745344/236094361-c636d927-d53e-44dd-b3fe-9da5676f89b1-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="https://user-images.githubusercontent.com/101745344/236094361-c636d927-d53e-44dd-b3fe-9da5676f89b1.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-    </div>
-</div>
-
-<p><img width="100%" alt="Untitled (3)" src="https://user-images.githubusercontent.com/101745344/236094502-715443d7-bb3c-4e2c-a736-19a4ea1dd875.png"></p>
+<p><code class="language-plaintext highlighter-rouge">DANTE{sM4ll_R00tzz}</code></p>
 
   </article>
 
@@ -273,12 +214,6 @@ Public exponent: 386536362012194867183505437832410252204159958288047732376502599
   
 
   <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/small_inscription/">Small Inscription</a>
-  </li>
-
-  
-
-  <li class="my-2">
     <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/piedpic/">PiedPic</a>
   </li>
 
@@ -292,6 +227,12 @@ Public exponent: 386536362012194867183505437832410252204159958288047732376502599
 
   <li class="my-2">
     <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/adventurer_knapsack/">Adventurer's Knapsack</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/DanteCTF2023/">DanteCTF 2023: 28th</a>
   </li>
 
 </div>
