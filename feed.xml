@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-05T22:43:24+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-08T02:43:45+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">DanteCTF 2023: 28th</title><link href="https://neutrinox4b1.github.io/blog/2023/DanteCTF2023/" rel="alternate" type="text/html" title="DanteCTF 2023: 28th" /><published>2023-06-03T00:00:00+00:00</published><updated>2023-06-03T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/DanteCTF2023</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/DanteCTF2023/"><![CDATA[<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/176fe41a-fc4a-47a0-9d5c-cc913ab68707" alt="image" width="100%" height="100%" /></p>
 
 <h2 id="writeups">Writeups</h2>
@@ -90,9 +90,9 @@
 
 <p>문제 설명과도 맞는다.</p>
 
-<p>https://blog.sp301415.com/solving-integer-problems-using-lll/</p>
+<p><a href="https://blog.sp301415.com/solving-integer-problems-using-lll/">https://blog.sp301415.com/solving-integer-problems-using-lll/</a></p>
 
-<p>https://mathweb.ucsd.edu/~crypto/Projects/JenniferBakker/Math187/#Anchor-Th-54278</p>
+<p><a href="https://mathweb.ucsd.edu/~crypto/Projects/JenniferBakker/Math187/#Anchor-Th-54278">https://mathweb.ucsd.edu/~crypto/Projects/JenniferBakker/Math187/#Anchor-Th-54278</a></p>
 
 <p>LLL algorithm을 사용하면 복호화가 가능하다고는 한다</p>
 
@@ -151,7 +151,7 @@
             <span class="nf">print</span><span class="p">(</span><span class="n">Flag</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>수정된 writeup. sage로 작성하였고 해당 풀이는 https://eprint.iacr.org/2007/066.pdf 논문에 따라</p>
+<p>수정된 writeup. sage로 작성하였고 해당 풀이는 <a href="https://eprint.iacr.org/2007/066.pdf">https://eprint.iacr.org/2007/066.pdf</a> 논문에 따라</p>
 
 <p>더 효율적인 방법으로 풀이한 것으로 생각된다.</p>
 
