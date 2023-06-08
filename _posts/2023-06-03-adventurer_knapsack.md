@@ -74,9 +74,9 @@ flag_int의 상위 비트부터 i로 보면서 해당 값이 1이면 ct에 pubk[
 
 문제 설명과도 맞는다.
 
-https://blog.sp301415.com/solving-integer-problems-using-lll/
+[https://blog.sp301415.com/solving-integer-problems-using-lll/](https://blog.sp301415.com/solving-integer-problems-using-lll/)
 
-https://mathweb.ucsd.edu/~crypto/Projects/JenniferBakker/Math187/#Anchor-Th-54278
+[https://mathweb.ucsd.edu/~crypto/Projects/JenniferBakker/Math187/#Anchor-Th-54278](https://mathweb.ucsd.edu/~crypto/Projects/JenniferBakker/Math187/#Anchor-Th-54278)
 
 LLL algorithm을 사용하면 복호화가 가능하다고는 한다
 
@@ -136,7 +136,7 @@ for i in range(n + 1):
             print(Flag)
 ```
 
-수정된 writeup. sage로 작성하였고 해당 풀이는 https://eprint.iacr.org/2007/066.pdf 논문에 따라
+수정된 writeup. sage로 작성하였고 해당 풀이는 [https://eprint.iacr.org/2007/066.pdf](https://eprint.iacr.org/2007/066.pdf) 논문에 따라
 
 더 효율적인 방법으로 풀이한 것으로 생각된다.
 
