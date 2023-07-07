@@ -1,5 +1,208 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-08T02:43:45+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-</subtitle><entry><title type="html">DanteCTF 2023: 28th</title><link href="https://neutrinox4b1.github.io/blog/2023/DanteCTF2023/" rel="alternate" type="text/html" title="DanteCTF 2023: 28th" /><published>2023-06-03T00:00:00+00:00</published><updated>2023-06-03T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/DanteCTF2023</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/DanteCTF2023/"><![CDATA[<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/176fe41a-fc4a-47a0-9d5c-cc913ab68707" alt="image" width="100%" height="100%" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://neutrinox4b1.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://neutrinox4b1.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-07-07T04:04:26+00:00</updated><id>https://neutrinox4b1.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+</subtitle><entry><title type="html">CodeGate 2023 Qual: 11st</title><link href="https://neutrinox4b1.github.io/blog/2023/codegate_qual/" rel="alternate" type="text/html" title="CodeGate 2023 Qual: 11st" /><published>2023-06-17T00:00:00+00:00</published><updated>2023-06-17T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/codegate_qual</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/codegate_qual/"><![CDATA[<p><img width="100%" alt="image" src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/f0bc8d1c-0b78-423c-b292-ab2bd4683f7c" /></p>
+
+<h2 id="writeups">Writeups</h2>
+<h3 id="crypto">crypto</h3>
+<ul>
+  <li><a href="../secure_primegenerator">secure primeGenerator</a> (After CTF)</li>
+</ul>
+
+<h2 id="about">About</h2>
+<ul>
+  <li><a href="">archive</a></li>
+  <li>Starts: 2023.06.17 10:00 KST</li>
+  <li>Ends: 2023.06.18 10:00 KST</li>
+  <li>On-line (University)</li>
+  <li>Format: Jeopardy</li>
+  <li>Rating weight: 25.00</li>
+</ul>
+
+<h2 id="overview">Overview</h2>
+
+<p><img width="100%" alt="image" src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/70c63453-2dff-4b39-813c-eb337d474a42" /></p>
+
+<p><img width="668" alt="image" src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/e339a0bf-ff49-44df-a8c1-1f7dbe65597a" /></p>
+
+<p>11위를 하였으나 10위에서 부정행위로 인해 본선 진출</p>
+
+<p>계속 한 문제만 잡고 있었음에도 풀지 못함.</p>]]></content><author><name>neutrinox4b1</name></author><category term="crypto" /><category term="CTFs" /><summary type="html"><![CDATA[Team. Security Factorial]]></summary></entry><entry><title type="html">secure primeGenerator</title><link href="https://neutrinox4b1.github.io/blog/2023/secure_primegenerator/" rel="alternate" type="text/html" title="secure primeGenerator" /><published>2023-06-17T00:00:00+00:00</published><updated>2023-06-17T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/secure_primegenerator</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/secure_primegenerator/"><![CDATA[<h2 id="background">Background</h2>
+<hr />
+
+<blockquote>
+  <p>Do you miss prime generator from last year? We would like to introduce brand new one. This is more secure because p, q are not revealed.</p>
+</blockquote>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry><entry><title type="html">CCE 2023</title><link href="https://neutrinox4b1.github.io/blog/2023/cce2023/" rel="alternate" type="text/html" title="CCE 2023" /><published>2023-06-10T00:00:00+00:00</published><updated>2023-06-10T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/cce2023</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/cce2023/"><![CDATA[<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/7b2b139a-9e18-44bf-a84b-fb520f80c8ac" alt="image" width="100%" height="100%" /></p>
+
+<h2 id="writeups">Writeups</h2>
+<h3 id="crypto">crypto</h3>
+<ul>
+  <li><a href="../wrong_implementation">Wrong-Implementation (1)</a></li>
+  <li><a href="../the_miracle">the miracle</a> (After CTF)</li>
+  <li><a href="../NZK-SIARK">NZK-SIARK</a> (After CTF)</li>
+  <li><a href="../jycrypt">jycrypt</a> (After CTF)</li>
+</ul>
+
+<h2 id="about">About</h2>
+
+<ul>
+  <li><a href="https://github.com/neutrinox4b1/CTF_archives/tree/main/CTFs/CCE/2023/Quals/crypto">archive</a></li>
+  <li>Starts ~ Ends: 2023. 06. 10.(토) 09:00 ~ 20:00</li>
+  <li>On-line (General)</li>
+  <li>Format: Jeopardy</li>
+</ul>]]></content><author><name>neutrinox4b1</name></author><category term="crypto" /><category term="CTFs" /><summary type="html"><![CDATA[Team. Security Factorial]]></summary></entry><entry><title type="html">the miracle</title><link href="https://neutrinox4b1.github.io/blog/2023/the_miracle/" rel="alternate" type="text/html" title="the miracle" /><published>2023-06-10T00:00:00+00:00</published><updated>2023-06-10T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/the_miracle</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/the_miracle/"><![CDATA[<h2 id="background">Background</h2>
+<hr />
+
+<p><br />
+<br />
+<br /></p>
+
+<h2 id="solution">Solution</h2>
+<hr />]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry><entry><title type="html">Wrong-Implementation (1)</title><link href="https://neutrinox4b1.github.io/blog/2023/wrong_implementation/" rel="alternate" type="text/html" title="Wrong-Implementation (1)" /><published>2023-06-10T00:00:00+00:00</published><updated>2023-06-10T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/wrong_implementation</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/wrong_implementation/"><![CDATA[<h2 id="background">Background</h2>
+<hr />
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">AES</span>
+<span class="kn">from</span> <span class="n">Crypto.Util.Padding</span> <span class="kn">import</span> <span class="n">pad</span>
+<span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="n">time</span><span class="p">,</span> <span class="n">random</span><span class="p">,</span> <span class="n">sys</span>
+
+<span class="n">FLAG</span> <span class="o">=</span> <span class="sh">"</span><span class="s">cce2023{cce_schedule_20230610_0900_2000!!}</span><span class="sh">"</span><span class="p">.</span><span class="nf">encode</span><span class="p">()</span>
+<span class="n">Message</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Hello, Alice!. My flag is here.</span><span class="sh">"</span><span class="p">.</span><span class="nf">encode</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">K</span><span class="p">):</span>
+    <span class="n">aesCipher</span> <span class="o">=</span> <span class="n">AES</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">K</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">AES</span><span class="p">.</span><span class="n">MODE_ECB</span><span class="p">)</span>
+
+    <span class="n">N</span> <span class="o">=</span> <span class="n">FLAG</span><span class="p">[:</span><span class="nf">len</span><span class="p">(</span><span class="n">FLAG</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="c1">#print('N:', N)
+</span>    <span class="n">Counter</span> <span class="o">=</span> <span class="nf">hex</span><span class="p">(</span><span class="mh">0x00</span><span class="p">)[</span><span class="mi">2</span><span class="p">:].</span><span class="nf">zfill</span><span class="p">(</span><span class="mi">16</span><span class="p">).</span><span class="nf">encode</span><span class="p">()</span>
+    <span class="c1">#print('Counter:', Counter) #8byte
+</span>    <span class="n">keyStream</span> <span class="o">=</span> <span class="n">aesCipher</span><span class="p">.</span><span class="nf">encrypt</span><span class="p">(</span><span class="nf">pad</span><span class="p">(</span><span class="n">N</span> <span class="o">+</span> <span class="n">Counter</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
+    <span class="c1">#print('ks:',bytes_to_long(keyStream))
+</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">.</span><span class="nf">from_bytes</span><span class="p">(</span><span class="n">keyStream</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="sh">'</span><span class="s">big</span><span class="sh">'</span><span class="p">)</span> <span class="o">^</span> <span class="nb">int</span><span class="p">.</span><span class="nf">from_bytes</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="sh">'</span><span class="s">big</span><span class="sh">'</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
+    <span class="n">random</span><span class="p">.</span><span class="nf">seed</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">())</span>
+
+    <span class="c1"># I looking forward to the secret Key, which is very very safety
+</span>    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">K</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="nf">int</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">10000000</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span><span class="p">.</span><span class="nf">encode</span><span class="p">()</span>
+        <span class="n">K</span> <span class="o">+=</span> <span class="sh">"</span><span class="s">ABCDEFABC</span><span class="sh">"</span><span class="p">.</span><span class="nf">encode</span><span class="p">()</span> <span class="c1">## key = 7byte number + 9 byte ABCDEFABC
+</span>
+        <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">K</span><span class="p">)</span> <span class="o">==</span> <span class="mi">16</span><span class="p">:</span>
+            <span class="k">break</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">My Message! : </span><span class="si">{</span><span class="nf">hex</span><span class="p">(</span><span class="nf">encrypt</span><span class="p">(</span><span class="n">P</span><span class="o">=</span><span class="n">Message</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="n">K</span><span class="p">))[</span><span class="mi">2</span><span class="si">:</span><span class="p">]</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">My FLAG! : </span><span class="si">{</span><span class="nf">hex</span><span class="p">(</span><span class="nf">encrypt</span><span class="p">(</span><span class="n">P</span><span class="o">=</span><span class="n">FLAG</span><span class="p">[</span><span class="nf">len</span><span class="p">(</span><span class="n">FLAG</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="si">:</span><span class="p">],</span> <span class="n">K</span><span class="o">=</span><span class="n">K</span><span class="p">))[</span><span class="mi">2</span><span class="si">:</span><span class="p">]</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">sys</span><span class="p">.</span><span class="nf">exit</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>중간 중간 print하는 부분은 문제를 풀기 위해서 추가한 부분으로 원래는 해당 부분들이 없었다.</p>
+
+<p><br />
+<br />
+<br /></p>
+
+<h2 id="solution">Solution</h2>
+<hr />
+
+<p>문제에서는 AES에서 CTR mode를 잘못 구현하였다. 그리하여 단순히 XOR 하는 암호가 되었고,</p>
+
+<p>평문 “Hello, Alice!. My flag is here.”을 알고 있는 상태이다.</p>
+
+<p>이 상황에서 평문 메시지를 encrypt한 값을 얻으므로 keystream을 알아낼 수 있고 이를 통해 flag의 절반 하위 부분 복구가 가능하다.</p>
+
+<p>상위 부분은 encrypt 함수에서 N으로 사용된다.따라서 Key를 구해야 한다.</p>
+
+<p>keystream은 key를 이용하여 AES ECB를 거쳐 생성된 값이고 N은 그게 아니라 key로 암호화되기 전 값이기 때문이다.
+다행히도 key는 \(10^7\) 의 경우의 수를 가진다.</p>
+
+<p>따라서 이는 브루트포싱 가능하다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="n">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">AES</span>
+<span class="kn">from</span> <span class="n">Crypto.Util.Padding</span> <span class="kn">import</span> <span class="n">unpad</span>
+
+<span class="kn">from</span> <span class="n">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="nf">remote</span><span class="p">(</span><span class="sh">'</span><span class="s">20.214.200.9</span><span class="sh">'</span><span class="p">,</span> <span class="mi">18080</span><span class="p">)</span>
+
+<span class="n">p</span><span class="p">.</span><span class="nf">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="sh">'</span><span class="s">Message! : </span><span class="sh">'</span><span class="p">)</span>
+<span class="n">msg</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="nf">recvline</span><span class="p">().</span><span class="nf">strip</span><span class="p">().</span><span class="nf">decode</span><span class="p">())</span>
+
+<span class="n">p</span><span class="p">.</span><span class="nf">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="sh">'</span><span class="s">FLAG! : </span><span class="sh">'</span><span class="p">)</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="nf">recvline</span><span class="p">().</span><span class="nf">strip</span><span class="p">().</span><span class="nf">decode</span><span class="p">())</span>
+
+<span class="n">Message</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Hello, Alice!. My flag is here.</span><span class="sh">"</span><span class="p">.</span><span class="nf">encode</span><span class="p">()</span>
+
+<span class="n">ks</span> <span class="o">=</span> <span class="n">msg</span> <span class="o">^</span> <span class="nf">bytes_to_long</span><span class="p">(</span><span class="n">Message</span><span class="p">)</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="nf">long_to_bytes</span><span class="p">(</span><span class="n">flag</span> <span class="o">^</span> <span class="n">ks</span><span class="p">)</span>
+
+<span class="n">ks</span> <span class="o">=</span> <span class="nf">long_to_bytes</span><span class="p">(</span><span class="n">ks</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">tqdm</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">,</span> <span class="mi">9999999</span><span class="p">)):</span>
+	<span class="n">key</span> <span class="o">=</span> <span class="nf">str</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="nf">encode</span><span class="p">()</span> <span class="o">+</span> <span class="sa">b</span><span class="sh">'</span><span class="s">ABCDEFABC</span><span class="sh">'</span>
+	<span class="n">cipher</span> <span class="o">=</span> <span class="n">AES</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">AES</span><span class="p">.</span><span class="n">MODE_ECB</span><span class="p">)</span>
+	<span class="n">fhag</span> <span class="o">=</span> <span class="n">cipher</span><span class="p">.</span><span class="nf">decrypt</span><span class="p">(</span><span class="n">ks</span><span class="p">)</span>
+	<span class="k">if</span> <span class="sa">b</span><span class="sh">'</span><span class="s">cce2023</span><span class="sh">'</span> <span class="ow">in</span> <span class="n">fhag</span><span class="p">:</span>
+		<span class="nf">print</span><span class="p">(</span><span class="nf">unpad</span><span class="p">(</span><span class="n">fhag</span><span class="p">,</span> <span class="mi">16</span><span class="p">)[:</span> <span class="o">-</span><span class="mi">16</span><span class="p">]</span> <span class="o">+</span> <span class="n">flag</span><span class="p">)</span>
+		<span class="k">break</span>
+</code></pre></div></div>
+
+<p>디스코드 후기를 보고 tqdm을 사용해보았다.
+이런 모듈이 있는지 처음 알았다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="n">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">AES</span>
+<span class="kn">from</span> <span class="n">Crypto.Util.Padding</span> <span class="kn">import</span> <span class="n">unpad</span>
+
+<span class="kn">from</span> <span class="n">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
+<span class="kn">from</span> <span class="n">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">pn</span><span class="p">):</span>
+	<span class="n">p</span> <span class="o">=</span> <span class="nf">remote</span><span class="p">(</span><span class="sh">'</span><span class="s">20.214.200.9</span><span class="sh">'</span><span class="p">,</span> <span class="mi">18080</span><span class="p">)</span>
+
+	<span class="n">p</span><span class="p">.</span><span class="nf">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="sh">'</span><span class="s">Message! : </span><span class="sh">'</span><span class="p">)</span>
+	<span class="n">msg</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="nf">recvline</span><span class="p">().</span><span class="nf">strip</span><span class="p">().</span><span class="nf">decode</span><span class="p">())</span>
+
+	<span class="n">p</span><span class="p">.</span><span class="nf">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="sh">'</span><span class="s">FLAG! : </span><span class="sh">'</span><span class="p">)</span>
+	<span class="n">flag</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="nf">recvline</span><span class="p">().</span><span class="nf">strip</span><span class="p">().</span><span class="nf">decode</span><span class="p">())</span>
+
+	<span class="n">Message</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Hello, Alice!. My flag is here.</span><span class="sh">"</span><span class="p">.</span><span class="nf">encode</span><span class="p">()</span>
+
+	<span class="n">ks</span> <span class="o">=</span> <span class="n">msg</span> <span class="o">^</span> <span class="nf">bytes_to_long</span><span class="p">(</span><span class="n">Message</span><span class="p">)</span>
+	<span class="n">flag</span> <span class="o">=</span> <span class="nf">long_to_bytes</span><span class="p">(</span><span class="n">flag</span> <span class="o">^</span> <span class="n">ks</span><span class="p">)</span>
+
+	<span class="n">ks</span> <span class="o">=</span> <span class="nf">long_to_bytes</span><span class="p">(</span><span class="n">ks</span><span class="p">)</span>
+
+	<span class="n">st</span> <span class="o">=</span> <span class="mi">10000000</span> <span class="o">//</span> <span class="mi">10</span> <span class="o">*</span> <span class="p">(</span><span class="n">pn</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">tqdm</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="n">st</span><span class="p">,</span> <span class="n">st</span><span class="o">+</span><span class="mi">1000000</span><span class="p">)):</span>
+		<span class="n">key</span> <span class="o">=</span> <span class="nf">str</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="nf">encode</span><span class="p">()</span> <span class="o">+</span> <span class="sa">b</span><span class="sh">'</span><span class="s">ABCDEFABC</span><span class="sh">'</span>
+		<span class="n">cipher</span> <span class="o">=</span> <span class="n">AES</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">AES</span><span class="p">.</span><span class="n">MODE_ECB</span><span class="p">)</span>
+		<span class="n">fhag</span> <span class="o">=</span> <span class="n">cipher</span><span class="p">.</span><span class="nf">decrypt</span><span class="p">(</span><span class="n">ks</span><span class="p">)</span>
+		<span class="k">if</span> <span class="sa">b</span><span class="sh">'</span><span class="s">cce2023</span><span class="sh">'</span> <span class="ow">in</span> <span class="n">fhag</span><span class="p">:</span>
+			<span class="nf">print</span><span class="p">(</span><span class="nf">unpad</span><span class="p">(</span><span class="n">fhag</span><span class="p">,</span> <span class="mi">16</span><span class="p">)[:</span> <span class="o">-</span><span class="mi">16</span><span class="p">]</span> <span class="o">+</span> <span class="n">flag</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
+	<span class="n">procs</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+		<span class="n">p</span> <span class="o">=</span> <span class="nc">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="p">))</span>
+		<span class="n">p</span><span class="p">.</span><span class="nf">start</span><span class="p">()</span>
+		<span class="n">procs</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+	<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">procs</span><span class="p">:</span>
+		<span class="n">p</span><span class="p">.</span><span class="nf">join</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>다른 방법으로 멀티 프로세싱을 사용하였다.
+이러면 속도가 매우 빨라진다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">cce2023{a80107b0ac3bc2980625bbcfa2f2958da}</code></p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry><entry><title type="html">DanteCTF 2023: 28th</title><link href="https://neutrinox4b1.github.io/blog/2023/DanteCTF2023/" rel="alternate" type="text/html" title="DanteCTF 2023: 28th" /><published>2023-06-03T00:00:00+00:00</published><updated>2023-06-03T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/DanteCTF2023</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/DanteCTF2023/"><![CDATA[<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/176fe41a-fc4a-47a0-9d5c-cc913ab68707" alt="image" width="100%" height="100%" /></p>
 
 <h2 id="writeups">Writeups</h2>
 <h3 id="crypto">crypto</h3>
@@ -7,7 +210,7 @@
   <li><a href="../small_inscription">Small Inscription</a></li>
   <li><a href="../diy_enc">DIY enc</a></li>
   <li><a href="../adventurer_knapsack">Adventurer’s Knapsack</a></li>
-  <li><a href="../piedpic">PiedPic</a> (after CTF)</li>
+  <li><a href="../piedpic">PiedPic</a> (After CTF)</li>
 </ul>
 
 <h2 id="about">About</h2>
@@ -772,184 +975,4 @@
 
 <p>3624번째 mod 에서 flag가 출력되었다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">DANTE{sM4ll_R00tzz}</code></p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry><entry><title type="html">TJCTF 2023</title><link href="https://neutrinox4b1.github.io/blog/2023/TJCTF-2023/" rel="alternate" type="text/html" title="TJCTF 2023" /><published>2023-05-27T00:00:00+00:00</published><updated>2023-05-27T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/TJCTF%202023</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/TJCTF-2023/"><![CDATA[<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/b7b0e77f-60e1-427e-9c43-7326efd07d80" alt="image" width="100%" height="100%" /></p>
-
-<h2 id="writeups">Writeups</h2>
-<h3 id="crypto">crypto</h3>
-<ul>
-  <li><a href="../babyrsa">baby-rsa</a></li>
-  <li><a href="../ezdlp">ezdlp</a> (after CTF)</li>
-</ul>
-
-<h2 id="about">About</h2>
-
-<ul>
-  <li>Starts: 금요일, 26 5 2023, 09:00 KST</li>
-  <li>Ends: 일요일, 28 5 2023, 09:00 KST</li>
-  <li>On-line</li>
-  <li>Format: Jeopardy</li>
-  <li>Rating weight: 24.76</li>
-</ul>
-
-<h2 id="overview">Overview</h2>
-
-<p>DEFCON은 풀어보다가 너무 어렵고, 리버싱에 벽을 느꼈다.
-리버싱도 공부해서 돌아와야겠다.</p>]]></content><author><name>neutrinox4b1</name></author><category term="crypto" /><category term="CTFs" /><summary type="html"><![CDATA[Team. Security Factorial]]></summary></entry><entry><title type="html">Baby RSA</title><link href="https://neutrinox4b1.github.io/blog/2023/babyrsa/" rel="alternate" type="text/html" title="Baby RSA" /><published>2023-05-27T00:00:00+00:00</published><updated>2023-05-27T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/babyrsa</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/babyrsa/"><![CDATA[<h2 id="solution">Solution</h2>
-<hr />
-
-<p>낮은 지수 공격이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="n">gmpy2</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">n</span> <span class="o">=</span> <span class="mi">10888751337932558679268839254528888070769213269691871364279830513893837690735136476085167796992556016532860022833558342573454036339582519895539110327482234861870963870144864609120375793020750736090740376786289878349313047032806974605398302398698622431086259032473375162446051603492310000290666366063094482985737032132318650015539702912720882013509099961316767073167848437729826084449943115059234376990825162006299979071912964494228966947974497569783878833130690399504361180345909411669130822346252539746722020515514544334793717997364522192699435604525968953070151642912274210943050922313389271251805397541777241902027</span>
-<span class="n">e</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">c</span> <span class="o">=</span> <span class="mi">2449457955338174702664398437699732241330055959255401949300755756893329242892325068765174475595370736008843435168081093064803408113260941928784442707977000585466461075146434876354981528996602615111767938231799146073229307631775810351487333</span>
-
-<span class="k">with</span> <span class="nf">local_context</span><span class="p">()</span> <span class="k">as</span> <span class="n">lcx</span><span class="p">:</span>
-    <span class="n">lcx</span><span class="p">.</span><span class="n">precision</span> <span class="o">=</span> <span class="mi">1000</span>
-    <span class="nf">print</span><span class="p">(</span><span class="nf">long_to_bytes</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="nf">root</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">e</span><span class="p">))))</span>
-</code></pre></div></div>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Solution]]></summary></entry><entry><title type="html">ezdlp</title><link href="https://neutrinox4b1.github.io/blog/2023/ezdlp/" rel="alternate" type="text/html" title="ezdlp" /><published>2023-05-27T00:00:00+00:00</published><updated>2023-05-27T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/ezdlp</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/ezdlp/"><![CDATA[<h2 id="background">Background</h2>
-<hr />
-
-<blockquote>
-  <p>one easy dlp</p>
-</blockquote>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">g</span> <span class="o">=</span> <span class="mi">8999</span> 
-<span class="n">s</span> <span class="o">=</span> <span class="mi">11721478752747238947534577901795278971298347908127389421908790123</span> 
-<span class="n">p</span> <span class="o">=</span> <span class="mi">12297383901740584470151577318651150337988716807049317851420298478128932232846789427512414204247770572072680737351875225891650166807323215624748551744377958007176198392481481171792078565005580006750936049744616851983231170824931892761202881982041842121034608612146861881334101500003915726821683000760611763097</span>
-
-<span class="n">g</span><span class="o">^</span><span class="n">x</span> <span class="o">=</span> <span class="n">s</span> <span class="n">mod</span> <span class="n">p</span>
-<span class="n">flag</span> <span class="o">=</span> <span class="n">tjctf</span><span class="p">{</span><span class="n">x</span><span class="p">}</span>
-
-</code></pre></div></div>
-
-<p>\(g^X = s \bmod p\) 에서 x를 구하면 된다.</p>
-
-<p>이를 이산로그 문제(Decrete Logrithm Problem, DLP)라고 한다. 이산로그 문제는 \(a^x = b\) 를 계산하기는 쉽지만, \(x = \log_a b\) 를 계산하기는 어렵다는 문제에 기반한다.</p>
-
-<p><br />
-<br />
-<br /></p>
-
-<h2 id="solution">Solution</h2>
-<hr />
-
-<p>sage를 사용한다. sage에는 이산로그 문제를 푸는 함수가 존재한다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">g</span> <span class="o">=</span> <span class="mi">8999</span>
-<span class="n">s</span> <span class="o">=</span> <span class="mi">11721478752747238947534577901795278971298347908127389421908790123</span>
-<span class="n">p</span> <span class="o">=</span> <span class="mi">12297383901740584470151577318651150337988716807049317851420298478128932232846789427512414204247770572072680737351875225891650166807323215624748551744377958007176198392481481171792078565005580006750936049744616851983231170824931892761202881982041842121034608612146861881334101500003915726821683000760611763097</span>
-
-<span class="n">Fp</span> <span class="o">=</span> <span class="nc">IntegerModRing</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-<span class="n">g_modp</span> <span class="o">=</span> <span class="nc">Fp</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-<span class="n">s_modp</span> <span class="o">=</span> <span class="nc">Fp</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="nf">discrete_log</span><span class="p">(</span><span class="n">s_modp</span><span class="p">,</span> <span class="n">g_modp</span><span class="p">)</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">The value of x is:</span><span class="sh">"</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">he value of x is: 26104478854569770948763268629079094351020764258425704346666185171631094713742516526074910325202612575130356252792856014835908436517926646322189289728462011794148513926930343382081388714077889318297349665740061482743137948635476088264751212120906948450722431680198753238856720828205708702161666784517</code></p>
-
-<p>ㅎ ㅏ sage 쓰는 법을 몰라서 못풀었다.</p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry><entry><title type="html">006 serises</title><link href="https://neutrinox4b1.github.io/blog/2023/006series/" rel="alternate" type="text/html" title="006 serises" /><published>2023-05-20T00:00:00+00:00</published><updated>2023-05-20T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/006series</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/006series/"><![CDATA[<h2 id="background">Background</h2>
-<hr />
-
-<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/d9a93a77-2890-4f78-aa10-ba5f5512574c" alt="Untitled (7)" width="100%" height="100%" /></p>
-
-<p><img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/30267e82-570c-46d7-83bf-fb749ca81926" alt="Untitled (8)" /></p>
-
-<p><br />
-<br />
-<br /></p>
-
-<h2 id="solution">Solution</h2>
-<hr />
-<p>3개의 문제로 되어있고, 각 문제 파일에는 특정 알고리즘으로 hash화 된 암호가 있다.</p>
-
-<p><a href="https://crackstation.net/">CrackStation - Online Password Hash Cracking - MD5, SHA1, Linux, Rainbow Tables, etc.</a></p>
-
-<p>이 사이트에 넣으면 대부분 나오고</p>
-
-<p>안나오는 암호는</p>
-
-<p><a href="https://hashes.com/en/decrypt/hash">Decrypt MD5, SHA1, MySQL, NTLM, SHA256, SHA512, Wordpress, Bcrypt hashes for free online</a></p>
-
-<p>여기에 넣으면 나왔다.</p>
-
-<p>md5, sha256, sha512 알고리즘이 사용되었다.</p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry><entry><title type="html">BYUCTF 2023 12nd</title><link href="https://neutrinox4b1.github.io/blog/2023/BYUCTF-2023/" rel="alternate" type="text/html" title="BYUCTF 2023 12nd" /><published>2023-05-20T00:00:00+00:00</published><updated>2023-05-20T00:00:00+00:00</updated><id>https://neutrinox4b1.github.io/blog/2023/BYUCTF%202023</id><content type="html" xml:base="https://neutrinox4b1.github.io/blog/2023/BYUCTF-2023/"><![CDATA[<p><img src="https://ctftime.org/media/events/_97185d4c-8460-47e4-9498-cb0e8a4e2f0e.jpg" alt="image" width="60%" height="100%" /></p>
-
-<h2 id="writeups">Writeups</h2>
-<h3 id="crypto">crypto</h3>
-<ul>
-  <li><a href="../rsa1">RSA1</a></li>
-  <li><a href="../rsa2">RSA2</a></li>
-  <li><a href="../rsa3">RSA3</a></li>
-  <li><a href="../rsa4">RSA4</a></li>
-  <li><a href="../rsa5">RSA5</a></li>
-  <li><a href="../compact">Compact</a></li>
-  <li><a href="../deseret">𐐗𐐡𐐆𐐑𐐓𐐄?</a></li>
-  <li><a href="../poem">Poem</a></li>
-</ul>
-
-<h3 id="misc">misc</h3>
-<ul>
-  <li><a href="../006series">006 serises</a></li>
-</ul>
-
-<h2 id="about">About</h2>
-
-<ul>
-  <li>Starts: 토요일, 20 5 2023, 02:00 KST</li>
-  <li>Ends: 일요일, 21 5 2023, 14:00 KST</li>
-  <li>On-line</li>
-  <li>Format: Jeopardy</li>
-  <li>Rating weight: 20.91</li>
-</ul>
-
-<h2 id="overview">Overview</h2>
-
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/2c17951c-fe6c-4895-bb9f-1edef3c3e81f-480.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/2c17951c-fe6c-4895-bb9f-1edef3c3e81f-800.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/2c17951c-fe6c-4895-bb9f-1edef3c3e81f-1400.webp" />
-    
-
-    <!-- Fallback to the original file -->
-    <img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/2c17951c-fe6c-4895-bb9f-1edef3c3e81f" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
-
-  </picture>
-
-</figure>
-
-    </div>
-</div>
-
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/bbbdea28-56a6-4464-92ee-056c20d80518-480.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/bbbdea28-56a6-4464-92ee-056c20d80518-800.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/bbbdea28-56a6-4464-92ee-056c20d80518-1400.webp" />
-    
-
-    <!-- Fallback to the original file -->
-    <img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/bbbdea28-56a6-4464-92ee-056c20d80518" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
-
-  </picture>
-
-</figure>
-
-    </div>
-</div>
-
-<p>12nd</p>]]></content><author><name>neutrinox4b1</name></author><category term="crypto" /><category term="CTFs" /><summary type="html"><![CDATA[Team. Security Factorial]]></summary></entry></feed>
+<p><code class="language-plaintext highlighter-rouge">DANTE{sM4ll_R00tzz}</code></p>]]></content><author><name></name></author><category term="crypto" /><summary type="html"><![CDATA[Background]]></summary></entry></feed>

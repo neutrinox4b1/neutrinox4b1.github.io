@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <!-- Head -->
+<!-- _layouts/distill.html --><html>
   <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
     
@@ -10,9 +8,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Chandi bot 4 | Neutrinox4b1 ⚛  </title>
+    <title>CodeGate 2023 Qual: 11st | Neutrinox4b1 ⚛  </title>
     <meta name="author" content="Neutrinox4b1 ⚛  ">
-    <meta name="description" content="RITSEC CTF 2023">
+    <meta name="description" content="Team. Security Factorial">
 
 
     <!-- Bootstrap & MDB -->
@@ -32,7 +30,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://neutrinox4b1.github.io/blog/2023/chandi_bot_4/">
+    <link rel="canonical" href="https://neutrinox4b1.github.io/blog/2023/codegate_qual/">
     
     <!-- Dark Mode -->
     
@@ -42,10 +40,82 @@
     <script src="/assets/js/dark_mode.js"></script>
     
 
+
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    <script src="/assets/js/distillpub/overrides.js"></script>
+    
+    <!-- Page/Post style -->
+    <style type="text/css">
+      .fake-img {
+  background: #bbb;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 11px;
+} .fake-img p {
+  font-family: monospace;
+  color: white;
+  text-align: left;
+  margin: 12px 0;
+  text-align: center;
+  font-size: 16px;
+}
+
+    </style>
   </head>
 
-  <!-- Body -->
-  <body class="fixed-top-nav sticky-bottom-footer">
+  <body>
+<d-front-matter>
+    <script async type="text/json">{
+      "title": "CodeGate 2023 Qual: 11st",
+      "description": "Team. Security Factorial",
+      "published": "June 17, 2023",
+      "authors": [
+        {
+          "author": "neutrinox4b1",
+          "authorURL": "",
+          "affiliations": [
+            {
+              "name": "Security Factorial",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  
 
     <!-- Header -->
     <header>
@@ -111,97 +181,91 @@
 
 
     <!-- Content -->
-    <div class="container mt-5">
-      <!-- _layouts/post.html -->
+    <div class="post distill">
 
-<div class="post">
+      <d-title>
+        <h1>CodeGate 2023 Qual: 11st</h1>
+        <p>Team. Security Factorial</p>
+      </d-title>
 
-  <header class="post-header">
-    <h1 class="post-title">Chandi bot 4</h1>
-    <p class="post-meta">April 1, 2023</p>
-    <p class="post-tags">
-      <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
-        ·  
-        <a href="/blog/category/misc">
-          <i class="fas fa-tag fa-sm"></i> misc</a>  
-          
+      <d-byline></d-byline>
 
-    </p>
-  </header>
+      <d-article>
+        <d-contents>
+          <nav class="l-text figcaption">
+          <h3>Contents</h3>
+            <div><a href="#writeups">writeups</a></div>
+            <div><a href="#about">about</a></div>
+            <div><a href="#overview">overview</a></div>
+            
+          </nav>
+        </d-contents>
 
-  <article class="post-content">
-    <h2 id="background">Background</h2>
-<hr>
-<p><img width="418" alt="Untitled" src="https://user-images.githubusercontent.com/101745344/231843579-630a035a-a50a-4190-9a67-7642e4552b7b.png"></p>
+        <p><img width="100%" alt="image" src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/f0bc8d1c-0b78-423c-b292-ab2bd4683f7c"></p>
 
-<p>/balance 라고 하면 현재 포인트를 출력한다.</p>
+<h2 id="writeups">Writeups</h2>
+<h3 id="crypto">crypto</h3>
+<ul>
+  <li>
+<a href="../secure_primegenerator">secure primeGenerator</a> (After CTF)</li>
+</ul>
 
-<p>/rps는 찬디와 가위바위보를 하는 건데 항상 짐.</p>
+<h2 id="about">About</h2>
+<ul>
+  <li><a href="">archive</a></li>
+  <li>Starts: 2023.06.17 10:00 KST</li>
+  <li>Ends: 2023.06.18 10:00 KST</li>
+  <li>On-line (University)</li>
+  <li>Format: Jeopardy</li>
+  <li>Rating weight: 25.00</li>
+</ul>
 
-<p>가위바위보 시에 포인트를 걸고 하는데, 포인트를 정수로 입력받는다.
-<br>
-<br>
-<br></p>
+<h2 id="overview">Overview</h2>
 
-<h2 id="solution">Solution</h2>
-<hr>
+<p><img width="100%" alt="image" src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/70c63453-2dff-4b39-813c-eb337d474a42"></p>
 
-<p>포인트는 0이면 안되고 자신의 포인트보다 작거나 같아야 한다는 걸 조건으로 사용하는 듯.</p>
+<p><img width="668" alt="image" src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/e339a0bf-ff49-44df-a8c1-1f7dbe65597a"></p>
 
-<p>포인트를 음수로 지정하고 lose하면 오히려 포인트를 번다.</p>
+<p>11위를 하였으나 10위에서 부정행위로 인해 본선 진출</p>
 
-<p><img width="472" alt="Untitled (1)" src="https://user-images.githubusercontent.com/101745344/231843564-a70b4d63-62c8-468e-9ed3-6f098318850f.png"></p>
+<p>계속 한 문제만 잡고 있었음에도 풀지 못함.</p>
 
-<p>음수를 검사하지 않으므로</p>
+      </d-article>
 
-<p><img width="388" alt="Untitled (2)" src="https://user-images.githubusercontent.com/101745344/231843571-797f1e5a-f230-4252-8522-f9b02fda3576.png"></p>
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
 
-<p><img width="567" alt="Untitled (3)" src="https://user-images.githubusercontent.com/101745344/231843575-f0bb5c16-457d-4f0e-a776-8f85d44fde03.png"></p>
+      <d-bibliography src="/assets/bibliography/"></d-bibliography><div id="giscus_thread" style="max-width: 800px; margin: 0 auto;">
+  <script>
+    let giscusTheme = localStorage.getItem("theme");
+    let giscusAttributes = {
+        "src": "https://giscus.app/client.js",
+        "data-repo": "alshedivat/al-folio",
+        "data-repo-id": "R_kgDOJWM2aA",
+        "data-category": "General",
+        "data-category-id": "DIC_kwDOJWM2aM4CVvE4",
+        "data-mapping": "title",
+        "data-strict": "1",
+        "data-reactions-enabled": "1",
+        "data-emit-metadata": "0",
+        "data-input-position": "bottom",
+        "data-theme": giscusTheme,
+        "data-lang": "ko",
+        "crossorigin": "anonymous",
+        "async": "",
+    };
 
-<blockquote>
-  <p>RS{TWO_NEGATIVES_DO_MAKE_A_POSITIVE}</p>
-</blockquote>
 
-  </article>
-
-
-  
-    
-    <br>
-    <hr>
-    <br>
-    <ul class="list-disc pl-8"></ul>
-
-    <!-- Adds related posts to the end of an article -->
-    <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2>
-    <p class="mb-2">Here are some more articles you might like to read next:</p>
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/secure_primegenerator/">secure primeGenerator</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/codegate_qual/">CodeGate 2023 Qual: 11st</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/wrong_implementation/">Wrong-Implementation (1)</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/the_miracle/">the miracle</a>
-  </li>
-
+    let giscusScript = document.createElement("script");
+    Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+    document.getElementById("giscus_thread").appendChild(giscusScript);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" rel="external nofollow noopener" target="_blank">comments powered by giscus.</a>
+</noscript>
 </div>
-
-    </div>
+</div>
 
     <!-- Footer -->    <footer class="sticky-bottom mt-5">
       <div class="container">
@@ -210,39 +274,9 @@
       </div>
     </footer>
 
-    <!-- JavaScripts -->
-    <!-- jQuery -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
     <!-- Bootsrap & MDB scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
-
-    <!-- Masonry & imagesLoaded -->
-  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-  <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
-    
-  <!-- Medium Zoom JS -->
-  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
-  <script defer src="/assets/js/zoom.js"></script><!-- Load Common JS -->
-  <script defer src="/assets/js/common.js"></script>
-  <script defer src="/assets/js/copy_code.js" type="text/javascript"></script>
-
-    
-  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
-  <script async src="https://badge.dimensions.ai/badge.js"></script>
-
-    <!-- MathJax -->
-  <script type="text/javascript">
-    window.MathJax = {
-      tex: {
-        tags: 'ams'
-      }
-    };
-  </script>
-  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
-  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 
     
     
@@ -324,5 +358,6 @@
   }
 </script>
 
-  </body>
+  
+</body>
 </html>
