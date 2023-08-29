@@ -1,0 +1,8 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Categories - Category - Neutrinox4b1</title>
+        <link>http://example.org/categories/</link>
+        <description>Categories - Category - Neutrinox4b1</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>neutrinox4b1@gmail.com (neutrinox4b1)</managingEditor>
+            <webMaster>neutrinox4b1@gmail.com (neutrinox4b1)</webMaster><atom:link href="http://example.org/categories/" rel="self" type="application/rss+xml" /></channel>
+</rss>
