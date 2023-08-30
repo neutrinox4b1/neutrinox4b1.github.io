@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>CTF - Category - Neutrinox4b1</title>
-        <link>https://neutrinox4b1.xyz/categories/ctf/</link>
+        <link>https://neutrinox4b1.github.io/categories/ctf/</link>
         <description>CTF - Category - Neutrinox4b1</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>neutrinox4b1@gmail.com (neutrinox4b1)</managingEditor>
-            <webMaster>neutrinox4b1@gmail.com (neutrinox4b1)</webMaster><lastBuildDate>Sat, 01 Apr 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://neutrinox4b1.xyz/categories/ctf/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>neutrinox4b1@gmail.com (neutrinox4b1)</webMaster><lastBuildDate>Sat, 01 Apr 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://neutrinox4b1.github.io/categories/ctf/" rel="self" type="application/rss+xml" /><item>
     <title>RITSEC CTF 2023 - 110th</title>
-    <link>https://neutrinox4b1.xyz/posts/ritsec_ctf_2023/</link>
+    <link>https://neutrinox4b1.github.io/posts/ritsec_ctf_2023/</link>
     <pubDate>Sat, 01 Apr 2023 00:00:00 &#43;0000</pubDate>
     <author>neutrinox4b1</author>
-    <guid>https://neutrinox4b1.xyz/posts/ritsec_ctf_2023/</guid>
+    <guid>https://neutrinox4b1.github.io/posts/ritsec_ctf_2023/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Y6ZcgiMa4qLSGnexrwOIcA.png" referrerpolicy="no-referrer">
             </div>Team. Security Factorial]]></description>
