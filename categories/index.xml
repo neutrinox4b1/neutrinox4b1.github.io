@@ -4,5 +4,29 @@
         <link>https://neutrinox4b1.github.io/categories/</link>
         <description>Categories - Category - Neutrinox4b1</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>neutrinox4b1@gmail.com (neutrinox4b1)</managingEditor>
-            <webMaster>neutrinox4b1@gmail.com (neutrinox4b1)</webMaster><atom:link href="https://neutrinox4b1.github.io/categories/" rel="self" type="application/rss+xml" /></channel>
+            <webMaster>neutrinox4b1@gmail.com (neutrinox4b1)</webMaster><lastBuildDate>Tue, 29 Aug 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://neutrinox4b1.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>Insights</title>
+    <link>https://neutrinox4b1.github.io/categories/insights/</link>
+    <pubDate>Tue, 29 Aug 2023 00:00:00 &#43;0000</pubDate>
+    <author>neutrinox4b1</author>
+    <guid>https://neutrinox4b1.github.io/categories/insights/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Project</title>
+    <link>https://neutrinox4b1.github.io/categories/project/</link>
+    <pubDate>Tue, 29 Aug 2023 00:00:00 &#43;0000</pubDate>
+    <author>neutrinox4b1</author>
+    <guid>https://neutrinox4b1.github.io/categories/project/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>CTF</title>
+    <link>https://neutrinox4b1.github.io/categories/ctf/</link>
+    <pubDate>Sat, 01 Apr 2023 00:00:00 &#43;0000</pubDate>
+    <author>neutrinox4b1</author>
+    <guid>https://neutrinox4b1.github.io/categories/ctf/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
 </rss>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>RITSEC CTF 2023 - 110th - Neutrinox4b1</title><meta name="Description" content="Team. Security Factorial"><meta property="og:title" content="RITSEC CTF 2023 - 110th" />
+<meta property="og:description" content="Team. Security Factorial" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://neutrinox4b1.github.io/posts/ritsec_ctf_2023/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-04-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-04-01T00:00:00+00:00" /><meta property="og:site_name" content="Neutrinox4b1" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="RITSEC CTF 2023 - 110th"/>
+<meta name="twitter:description" content="Team. Security Factorial"/>
+<meta name="application-name" content="Neutrinox4b1">
+<meta name="apple-mobile-web-app-title" content="Neutrinox4b1"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.ico/"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://neutrinox4b1.github.io/posts/ritsec_ctf_2023/" /><link rel="next" href="https://neutrinox4b1.github.io/posts/announce/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><meta name="google-site-verification" content="SuTZj3pOuAHCN3GPkDaksyjrtSKZ71OkBTC6T7IyoSc" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "RITSEC CTF 2023 - 110th",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/neutrinox4b1.github.io\/posts\/ritsec_ctf_2023\/"
+        },"genre": "posts","keywords": "crypto, steg, misc","wordcount":  448 ,
+        "url": "https:\/\/neutrinox4b1.github.io\/posts\/ritsec_ctf_2023\/","datePublished": "2023-04-01T00:00:00+00:00","dateModified": "2023-04-01T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "neutrinox4b1"
+            },"description": "Team. Security Factorial"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Neutrinox4b1">Neu@security-blog:~$</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> ./Posts </a><a class="menu-item" href="/tags/"> ./Tags </a><a class="menu-item" href="/categories/"> ./Categories </a><a class="menu-item" href="/about/"> ./About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Neutrinox4b1">Neu@security-blog:~$</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">./Posts</a><a class="menu-item" href="/tags/" title="">./Tags</a><a class="menu-item" href="/categories/" title="">./Categories</a><a class="menu-item" href="/about/" title="">./About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">RITSEC CTF 2023 - 110th</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/about/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>neutrinox4b1</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ctf/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>CTF</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-04-01">2023-04-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;448 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Y6ZcgiMa4qLSGnexrwOIcA.png"
+        data-srcset="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Y6ZcgiMa4qLSGnexrwOIcA.png, https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Y6ZcgiMa4qLSGnexrwOIcA.png 1.5x, https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Y6ZcgiMa4qLSGnexrwOIcA.png 2x"
+        data-sizes="auto"
+        alt="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Y6ZcgiMa4qLSGnexrwOIcA.png"
+        title="Team. Security Factorial" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#writeups">Writeups</a>
+      <ul>
+        <li><a href="#either-or-nither-nor-crypto">Either or Nither nor (crypto)</a>
+          <ul>
+            <li><a href="#background">Background</a></li>
+            <li><a href="#solution">Solution</a></li>
+          </ul>
+        </li>
+        <li><a href="#a-fine-cipher-crypto">A Fine Cipher (crypto)</a>
+          <ul>
+            <li><a href="#background-1">Background</a></li>
+            <li><a href="#solution-1">Solution</a></li>
+          </ul>
+        </li>
+        <li><a href="#weird-steg">Weird (steg)</a>
+          <ul>
+            <li><a href="#background-2">Background</a></li>
+            <li><a href="#solution-2">Solution</a></li>
+          </ul>
+        </li>
+        <li><a href="#turtle-steg">Turtle (steg)</a>
+          <ul>
+            <li><a href="#background-3">Background</a></li>
+            <li><a href="#solution-3">Solution</a></li>
+          </ul>
+        </li>
+        <li><a href="#chandi-bot-1-2-4-5-misc">Chandi bot 1, 2, 4, 5 (misc)</a>
+          <ul>
+            <li><a href="#1-solution">1. Solution</a></li>
+            <li><a href="#2-solution">2. Solution</a></li>
+            <li><a href="#4-background">4. Background</a></li>
+            <li><a href="#4-solution">4. Solution</a></li>
+            <li><a href="#5-solution">5. Solution</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="about">About</h1>
+<ul>
+<li>Starts: 토요일, 01 4 2023, 01:00 KST</li>
+<li>Ends: 월요일, 03 4 2023, 01:00 KST</li>
+<li>On-line</li>
+<li>Format: Jeopardy</li>
+<li>Future weight: 25.44</li>
+<li>Rating weight: 30.62</li>
+</ul>
+<br>
+<h1 id="overview">Overview</h1>
+<p><a class="lightgallery" href="https://user-images.githubusercontent.com/101745344/232290343-9c5f04bd-1488-472c-b281-ad38e6916d28.png" title="image" data-thumbnail="https://user-images.githubusercontent.com/101745344/232290343-9c5f04bd-1488-472c-b281-ad38e6916d28.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://user-images.githubusercontent.com/101745344/232290343-9c5f04bd-1488-472c-b281-ad38e6916d28.png"
+            data-srcset="https://user-images.githubusercontent.com/101745344/232290343-9c5f04bd-1488-472c-b281-ad38e6916d28.png, https://user-images.githubusercontent.com/101745344/232290343-9c5f04bd-1488-472c-b281-ad38e6916d28.png 1.5x, https://user-images.githubusercontent.com/101745344/232290343-9c5f04bd-1488-472c-b281-ad38e6916d28.png 2x"
+            data-sizes="auto"
+            alt="image" width="75%" />
+    </a>
+<a class="lightgallery" href="https://user-images.githubusercontent.com/101745344/232303426-d503e5cf-974d-4967-9875-aec13ea19820.png" title="image" data-thumbnail="https://user-images.githubusercontent.com/101745344/232303426-d503e5cf-974d-4967-9875-aec13ea19820.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://user-images.githubusercontent.com/101745344/232303426-d503e5cf-974d-4967-9875-aec13ea19820.png"
+            data-srcset="https://user-images.githubusercontent.com/101745344/232303426-d503e5cf-974d-4967-9875-aec13ea19820.png, https://user-images.githubusercontent.com/101745344/232303426-d503e5cf-974d-4967-9875-aec13ea19820.png 1.5x, https://user-images.githubusercontent.com/101745344/232303426-d503e5cf-974d-4967-9875-aec13ea19820.png 2x"
+            data-sizes="auto"
+            alt="image" width="75%" />
+    </a></p>
+<br>
+<h1 id="writeups">Writeups</h1>
+<h2 id="either-or-nither-nor-crypto">Either or Nither nor (crypto)</h2>
+<h3 id="background">Background</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#! /usr/bin/env python</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">flag</span> <span class="o">=</span> <span class="s2">&#34;XXXXXXXXXXXXXXXXXXXXX&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">enc_flag</span> <span class="o">=</span> <span class="p">[</span><span class="mi">91</span><span class="p">,</span><span class="mi">241</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">166</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">192</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">188</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">164</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">152</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">252</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">152</span><span class="p">,</span><span class="mi">117</span><span class="p">,</span><span class="mi">164</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">162</span><span class="p">,</span><span class="mi">107</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">KEY_LEN</span> <span class="o">=</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Encrypt the flag</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">flag</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">enc_flag</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">^</span> <span class="n">key</span><span class="p">[</span><span class="n">idx</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The python code in the enc_flag part is wrong..</p>
+<p>Anyway</p>
+<p>In the problem, because the FLAG format is MetaCTF{}, we know the original</p>
+<p>using the self-inverse property of XOR.</p>
+<h3 id="solution">Solution</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#! /usr/bin/env python</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">flag</span> <span class="o">=</span> <span class="s2">&#34;XXXXXXXXXXXXXXXXXXXXX&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">enc_flag</span> <span class="o">=</span> <span class="p">[</span><span class="mi">91</span><span class="p">,</span><span class="mi">241</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">166</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">192</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">188</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">164</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">152</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">252</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">152</span><span class="p">,</span><span class="mi">117</span><span class="p">,</span><span class="mi">164</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">162</span><span class="p">,</span><span class="mi">107</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">148</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">199</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">KEY_LEN</span> <span class="o">=</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">enc_flag</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Encrypt the flag</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#for idx, c in enumerate(flag):</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#    enc_flag = ord(c) ^ key[idx % len(key)]</span>
+</span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">enc_flag</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="n">res</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">c</span> <span class="o">^</span> <span class="n">key</span><span class="p">[</span><span class="n">idx</span> <span class="o">%</span> <span class="n">KEY_LEN</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#print(enc_flag[0] ^ ord(&#39;M&#39;))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#print(enc_flag[1] ^ ord(&#39;e&#39;))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#print(enc_flag[2] ^ ord(&#39;t&#39;))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#print(enc_flag[3] ^ ord(&#39;a&#39;))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Meta is outputted with xor value and is put in the key to attempt decoding.</p>
+<blockquote>
+<p>MetaCTF{x0r_th3_c0re}</p>
+</blockquote>
+<br>
+<h2 id="a-fine-cipher-crypto">A Fine Cipher (crypto)</h2>
+<h3 id="background-1">Background</h3>
+<p>A ciphertext is given.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">JSNRZHIVJUCVIVFCVYBMVBDRZCXRIVBINCORBCSFHCBINOCRMHBD
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="solution-1">Solution</h3>
+<p><a href="https://www.dcode.fr/cipher-identifier" target="_blank" rel="noopener noreffer ">https://www.dcode.fr/cipher-identifier</a></p>
+<p>I thought there might be a hint in the title, so I thought of Affine Cipher. (recently unwrapped from Incognito CTF)</p>
+<blockquote>
+<p>RS{IFYOUAREINTERESTEDCHECKOUTMORECRYTPOCTFSATCRYPTOHACK}</p>
+</blockquote>
+<br>
+<h2 id="weird-steg">Weird (steg)</h2>
+<h3 id="background-2">Background</h3>
+<p>This file was supposed to contain a secret message but it looks like just a blank page. Something weird is going on here.</p>
+<br>
+<h3 id="solution-2">Solution</h3>
+<p>It was just the beginning, so I watched it thinking it would be released if I turned stegsolve.</p>
+<p>It was on blue plane zero.</p>
+<blockquote>
+<p>RS{Th4t5_w4cky_m4n}</p>
+</blockquote>
+<br>
+<h2 id="turtle-steg">Turtle (steg)</h2>
+<h3 id="background-3">Background</h3>
+<p>On a frame-by-frame basis, you can see a dot on the back of the turtle like a Morse code.
+<br></p>
+<h3 id="solution-3">Solution</h3>
+<p>At first, I thought it was Morse code,</p>
+<p>There was just a flag in the 40th frame.</p>
+<blockquote>
+<p>RS{G00D_3Y3_&amp;H4PPY_TUR713}</p>
+</blockquote>
+<br>
+<br>
+<h2 id="chandi-bot-1-2-4-5-misc">Chandi bot 1, 2, 4, 5 (misc)</h2>
+<h3 id="1-solution">1. Solution</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://user-images.githubusercontent.com/101745344/231845298-29aeaf6d-04ee-4b37-a226-766de025d880.png"
+        data-srcset="https://user-images.githubusercontent.com/101745344/231845298-29aeaf6d-04ee-4b37-a226-766de025d880.png, https://user-images.githubusercontent.com/101745344/231845298-29aeaf6d-04ee-4b37-a226-766de025d880.png 1.5x, https://user-images.githubusercontent.com/101745344/231845298-29aeaf6d-04ee-4b37-a226-766de025d880.png 2x"
+        data-sizes="auto"
+        alt="https://user-images.githubusercontent.com/101745344/231845298-29aeaf6d-04ee-4b37-a226-766de025d880.png"
+        title="ritsec2023_4" /></p>
+<blockquote>
+<p>RS{QUANTUM_RESISTANT_ENCRYPTION}</p>
+</blockquote>
+<br>
+<h3 id="2-solution">2. Solution</h3>
+<p>lost image</p>
+<blockquote>
+<p>RS{HMMM_WHAT_ARE_YOU_LOOKING_AT}</p>
+</blockquote>
+<br>
+<h3 id="4-background">4. Background</h3>
+<a class="lightgallery" href="https://user-images.githubusercontent.com/101745344/231843579-630a035a-a50a-4190-9a67-7642e4552b7b.png" title="Untitled" data-thumbnail="https://user-images.githubusercontent.com/101745344/231843579-630a035a-a50a-4190-9a67-7642e4552b7b.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://user-images.githubusercontent.com/101745344/231843579-630a035a-a50a-4190-9a67-7642e4552b7b.png"
+            data-srcset="https://user-images.githubusercontent.com/101745344/231843579-630a035a-a50a-4190-9a67-7642e4552b7b.png, https://user-images.githubusercontent.com/101745344/231843579-630a035a-a50a-4190-9a67-7642e4552b7b.png 1.5x, https://user-images.githubusercontent.com/101745344/231843579-630a035a-a50a-4190-9a67-7642e4552b7b.png 2x"
+            data-sizes="auto"
+            alt="Untitled" width="418" />
+    </a>
+<p>If you say /balance, it outputs the current point.</p>
+<p>/rps is to play rock paper scissors with Chandi, but I always lose.</p>
+<p>When playing rock-paper-scissors, points are hung, and points are input as integers.</p>
+<br>
+<h3 id="4-solution">4. Solution</h3>
+<hr>
+<p>It seems that the point should not be zero and should be less than or equal to your point.</p>
+<p>If you specify a point as a negative number and lose it, you will earn the point.</p>
+<a class="lightgallery" href="https://user-images.githubusercontent.com/101745344/231843564-a70b4d63-62c8-468e-9ed3-6f098318850f.png" title="Untitled (1)" data-thumbnail="https://user-images.githubusercontent.com/101745344/231843564-a70b4d63-62c8-468e-9ed3-6f098318850f.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://user-images.githubusercontent.com/101745344/231843564-a70b4d63-62c8-468e-9ed3-6f098318850f.png"
+            data-srcset="https://user-images.githubusercontent.com/101745344/231843564-a70b4d63-62c8-468e-9ed3-6f098318850f.png, https://user-images.githubusercontent.com/101745344/231843564-a70b4d63-62c8-468e-9ed3-6f098318850f.png 1.5x, https://user-images.githubusercontent.com/101745344/231843564-a70b4d63-62c8-468e-9ed3-6f098318850f.png 2x"
+            data-sizes="auto"
+            alt="Untitled (1)" width="472" />
+    </a>
+<a class="lightgallery" href="https://user-images.githubusercontent.com/101745344/231843571-797f1e5a-f230-4252-8522-f9b02fda3576.png" title="Untitled (2)" data-thumbnail="https://user-images.githubusercontent.com/101745344/231843571-797f1e5a-f230-4252-8522-f9b02fda3576.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://user-images.githubusercontent.com/101745344/231843571-797f1e5a-f230-4252-8522-f9b02fda3576.png"
+            data-srcset="https://user-images.githubusercontent.com/101745344/231843571-797f1e5a-f230-4252-8522-f9b02fda3576.png, https://user-images.githubusercontent.com/101745344/231843571-797f1e5a-f230-4252-8522-f9b02fda3576.png 1.5x, https://user-images.githubusercontent.com/101745344/231843571-797f1e5a-f230-4252-8522-f9b02fda3576.png 2x"
+            data-sizes="auto"
+            alt="Untitled (2)" width="388" />
+    </a>
+<a class="lightgallery" href="https://user-images.githubusercontent.com/101745344/231843575-f0bb5c16-457d-4f0e-a776-8f85d44fde03.png" title="Untitled (3)" data-thumbnail="https://user-images.githubusercontent.com/101745344/231843575-f0bb5c16-457d-4f0e-a776-8f85d44fde03.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://user-images.githubusercontent.com/101745344/231843575-f0bb5c16-457d-4f0e-a776-8f85d44fde03.png"
+            data-srcset="https://user-images.githubusercontent.com/101745344/231843575-f0bb5c16-457d-4f0e-a776-8f85d44fde03.png, https://user-images.githubusercontent.com/101745344/231843575-f0bb5c16-457d-4f0e-a776-8f85d44fde03.png 1.5x, https://user-images.githubusercontent.com/101745344/231843575-f0bb5c16-457d-4f0e-a776-8f85d44fde03.png 2x"
+            data-sizes="auto"
+            alt="Untitled (3)" width="567" />
+    </a>
+<blockquote>
+<p>RS{TWO_NEGATIVES_DO_MAKE_A_POSITIVE}</p>
+</blockquote>
+<br>
+<h3 id="5-solution">5. Solution</h3>
+<hr>
+<a class="lightgallery" href="https://user-images.githubusercontent.com/101745344/231844470-cdbbbebe-cc80-4e50-bbd4-6a95885acbcc.png" title="Untitled (4)" data-thumbnail="https://user-images.githubusercontent.com/101745344/231844470-cdbbbebe-cc80-4e50-bbd4-6a95885acbcc.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://user-images.githubusercontent.com/101745344/231844470-cdbbbebe-cc80-4e50-bbd4-6a95885acbcc.png"
+            data-srcset="https://user-images.githubusercontent.com/101745344/231844470-cdbbbebe-cc80-4e50-bbd4-6a95885acbcc.png, https://user-images.githubusercontent.com/101745344/231844470-cdbbbebe-cc80-4e50-bbd4-6a95885acbcc.png 1.5x, https://user-images.githubusercontent.com/101745344/231844470-cdbbbebe-cc80-4e50-bbd4-6a95885acbcc.png 2x"
+            data-sizes="auto"
+            alt="Untitled (4)" width="495" />
+    </a>
+<p>brute force..</p>
+<blockquote>
+<p>RS{TRIVIAL_TRIVIA_TRIUMPHS}</p>
+</blockquote>
+<br>
+<p>Other than this, I think it would be good to check the <a href="https://gitlab.ritsec.cloud/competitions/ctf-2023-public" target="_blank" rel="noopener noreffer ">writeup</a>. Steg et al..</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-04-01</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/ritsec_ctf_2023/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://neutrinox4b1.github.io/posts/ritsec_ctf_2023/" data-title="RITSEC CTF 2023 - 110th" data-via="neutrinox4b1" data-hashtags="crypto,steg,misc"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://neutrinox4b1.github.io/posts/ritsec_ctf_2023/" data-hashtag="crypto"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://neutrinox4b1.github.io/posts/ritsec_ctf_2023/" data-title="RITSEC CTF 2023 - 110th"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://neutrinox4b1.github.io/posts/ritsec_ctf_2023/" data-title="RITSEC CTF 2023 - 110th"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/crypto/">crypto</a>,&nbsp;<a href="/tags/steg/">steg</a>,&nbsp;<a href="/tags/misc/">misc</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/posts/announce/" class="next" rel="next" title="Announcement">Announcement<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.117.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/about/" target="_blank">neutrinox4b1</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"giscus":{"category":"Q\u0026A","categoryId":"DIC_kwDOKMfEfM4CY8DM","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"en","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"neutrinox4b1/neutrinox4b1.github.io","repoId":"R_kgDOKMfEfA"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

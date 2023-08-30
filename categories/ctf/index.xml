@@ -1,18 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>All Posts - Neutrinox4b1</title>
-        <link>https://neutrinox4b1.github.io/posts/</link>
-        <description>All Posts | Neutrinox4b1</description>
+        <title>CTF - Category - Neutrinox4b1</title>
+        <link>https://neutrinox4b1.github.io/categories/ctf/</link>
+        <description>CTF - Category - Neutrinox4b1</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>neutrinox4b1@gmail.com (neutrinox4b1)</managingEditor>
-            <webMaster>neutrinox4b1@gmail.com (neutrinox4b1)</webMaster><lastBuildDate>Tue, 29 Aug 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://neutrinox4b1.github.io/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>Announcement</title>
-    <link>https://neutrinox4b1.github.io/posts/announce/</link>
-    <pubDate>Tue, 29 Aug 2023 00:00:00 &#43;0000</pubDate>
-    <author>neutrinox4b1</author>
-    <guid>https://neutrinox4b1.github.io/posts/announce/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
+            <webMaster>neutrinox4b1@gmail.com (neutrinox4b1)</webMaster><lastBuildDate>Sat, 01 Apr 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://neutrinox4b1.github.io/categories/ctf/" rel="self" type="application/rss+xml" /><item>
     <title>RITSEC CTF 2023 - 110th</title>
     <link>https://neutrinox4b1.github.io/posts/ritsec_ctf_2023/</link>
     <pubDate>Sat, 01 Apr 2023 00:00:00 &#43;0000</pubDate>
