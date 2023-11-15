@@ -28,5 +28,11 @@ git commit -m "commit message"
 git push origin master
 ```
 
+# set font
+
+![image](https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/35138cf0-e1ff-4ba5-8b8a-c2c1a76d4d8d)
+how to set font? where is css file?
+
+
 # reference
 - [hugo blog](https://hugoloveit.com/posts/)
