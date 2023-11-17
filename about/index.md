@@ -11,6 +11,8 @@ I'm interested in System Hacking(pwn), Cryptography, and next-generation securit
 
 Here is my other [blog](https://thfist-1071.tistory.com).
 
+<br>
+
 ## Education 🧑🏼‍🎓
 ### B.S.
 - Sejong University, Seoul, Korea (2022 ~ )
@@ -20,16 +22,32 @@ Here is my other [blog](https://thfist-1071.tistory.com).
 <!-- ## Honors and Awards 🏆 -->
 <!-- ## Speaker 🎤 -->
 
+
+<br>
+
 ## Experiences
 - [42 Seoul](https://42seoul.kr/seoul42/main/view), Cadet jelee2 (2023.03 ~ 2023.06)
+
 - [Best of the Best](https://www.kitribob.kr/) Vulnerability Analysis (2023.07 ~ )
+<!-- - [Hacktheon Sejong](https://hacktheon.org/) Final (2023) -->
+<!-- - [CodeGate](https://codegate.org/) Final (2023) -->
+
+
+<br>
 
 ## Contribution
 - Security Factorial, vice president (2023)
 
+
+<br>
+
 ## License/Certificate 🪪
 - 네트워크 관리사 2급 (ICQA, 한국정보통신자격협회)
 
+
+<br>
+
 ## Other Contact
 - [dreamhack](https://dreamhack.io/users/15351/)
+
 - [solved.ac](https://solved.ac/profile/neutrinox4b1#)
