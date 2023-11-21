@@ -7,7 +7,7 @@
 
 My name is Jeongmin Lee and I'm majoring in Information Security🔒 at Sejong University.
 
-I'm interested in System Hacking(pwn), Cryptography, and next-generation security. I definitely wanna be a awesome hacker. 🙃
+I'm interested in System Hacking(pwn), Cryptography, embedded hacking and next-generation security. <br>I definitely wanna be a awesome hacker. 🙃
 
 Here is my other [blog](https://thfist-1071.tistory.com).
 

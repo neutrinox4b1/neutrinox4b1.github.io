@@ -4,40 +4,50 @@
         <link>https://neutrinox4b1.xyz/</link>
         <description>Security Tech blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>neutrinox4b1@gmail.com (neutrinox4b1)</managingEditor>
-            <webMaster>neutrinox4b1@gmail.com (neutrinox4b1)</webMaster><lastBuildDate>Wed, 15 Nov 2023 00:00:00 &#43;0000</lastBuildDate>
+            <webMaster>neutrinox4b1@gmail.com (neutrinox4b1)</webMaster><lastBuildDate>Tue, 21 Nov 2023 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://neutrinox4b1.xyz/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>2023년도 정보보호 인재 취업지원 성과발표회</title>
+    <link>https://neutrinox4b1.xyz/posts/5/</link>
+    <pubDate>Tue, 21 Nov 2023 00:00:00 &#43;0000</pubDate>
+    <author>neutrinox4b1</author>
+    <guid>https://neutrinox4b1.xyz/posts/5/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/32da0b7d-4ec2-45f4-ab84-69a12182cdd1%20" referrerpolicy="no-referrer">
+            </div>]]></description>
+</item>
+<item>
     <title>Team. PPP - CTF 운영에 대한 제안</title>
-    <link>https://neutrinox4b1.xyz/posts/suggestions-for-running-a-ctf/</link>
+    <link>https://neutrinox4b1.xyz/posts/3/</link>
     <pubDate>Wed, 15 Nov 2023 00:00:00 &#43;0000</pubDate>
     <author>neutrinox4b1</author>
-    <guid>https://neutrinox4b1.xyz/posts/suggestions-for-running-a-ctf/</guid>
+    <guid>https://neutrinox4b1.xyz/posts/3/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/c9bb6052-ee9c-4a78-aac0-0352ec2d9fad" referrerpolicy="no-referrer">
             </div>]]></description>
 </item>
 <item>
     <title>Ship-BoB</title>
-    <link>https://neutrinox4b1.xyz/posts/shipbob/</link>
+    <link>https://neutrinox4b1.xyz/posts/4/</link>
     <pubDate>Tue, 14 Nov 2023 00:00:00 &#43;0000</pubDate>
     <author>neutrinox4b1</author>
-    <guid>https://neutrinox4b1.xyz/posts/shipbob/</guid>
+    <guid>https://neutrinox4b1.xyz/posts/4/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>how to use hugo blog? (for me)</title>
-    <link>https://neutrinox4b1.xyz/posts/announce/</link>
+    <link>https://neutrinox4b1.xyz/posts/2/</link>
     <pubDate>Tue, 29 Aug 2023 00:00:00 &#43;0000</pubDate>
     <author>neutrinox4b1</author>
-    <guid>https://neutrinox4b1.xyz/posts/announce/</guid>
+    <guid>https://neutrinox4b1.xyz/posts/2/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>RITSEC CTF 2023 - 110th</title>
-    <link>https://neutrinox4b1.xyz/posts/ritsec_ctf_2023/</link>
+    <link>https://neutrinox4b1.xyz/posts/1/</link>
     <pubDate>Sat, 01 Apr 2023 00:00:00 &#43;0000</pubDate>
     <author>neutrinox4b1</author>
-    <guid>https://neutrinox4b1.xyz/posts/ritsec_ctf_2023/</guid>
+    <guid>https://neutrinox4b1.xyz/posts/1/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Y6ZcgiMa4qLSGnexrwOIcA.png" referrerpolicy="no-referrer">
             </div>Team. Security Factorial]]></description>
