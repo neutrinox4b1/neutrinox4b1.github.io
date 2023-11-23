@@ -1,7 +1,7 @@
 # About neutrinox4b1
 
 
-{{<image src="/profile.jpg" width="15%" height="15%">}}
+<img src="/profile.jpg" width="15%" height="15%" style="margin-left: 0; margin-right: auto;">
 
 `Hello World!`
 

@@ -10,13 +10,9 @@
 - Future weight: 25.44    
 - Rating weight: 30.62    
 
-<br>
-
 # Overview
 {{<image width="75%" alt="image" src="https://user-images.githubusercontent.com/101745344/232290343-9c5f04bd-1488-472c-b281-ad38e6916d28.png">}}
 {{<image width="75%" alt="image" src="https://user-images.githubusercontent.com/101745344/232303426-d503e5cf-974d-4967-9875-aec13ea19820.png">}}
-
-<br>
 
 # Writeups
 ## Either or Nither nor (crypto)
@@ -73,8 +69,6 @@ Meta is outputted with xor value and is put in the key to attempt decoding.
 
 > MetaCTF{x0r_th3_c0re}
 
-<br>
-
 ## A Fine Cipher (crypto)
 ### Background
 A ciphertext is given.
@@ -89,13 +83,9 @@ I thought there might be a hint in the title, so I thought of Affine Cipher. (re
 
 > RS{IFYOUAREINTERESTEDCHECKOUTMORECRYTPOCTFSATCRYPTOHACK}
 
-<br>
-
 ## Weird (steg)
 ### Background
 This file was supposed to contain a secret message but it looks like just a blank page. Something weird is going on here.
-
-<br>
 
 ### Solution
 It was just the beginning, so I watched it thinking it would be released if I turned stegsolve.
@@ -104,13 +94,10 @@ It was on blue plane zero.
 
 > RS{Th4t5_w4cky_m4n}
 
-<br>
-
 ## Turtle (steg)
 ### Background
 
 On a frame-by-frame basis, you can see a dot on the back of the turtle like a Morse code.
-<br>
 
 ### Solution
 
@@ -118,8 +105,6 @@ At first, I thought it was Morse code,
 
 There was just a flag in the 40th frame.
 > RS{G00D_3Y3_&H4PPY_TUR713}
-
-<br>
 
 <br>
 
@@ -131,14 +116,10 @@ There was just a flag in the 40th frame.
 
 > RS{QUANTUM_RESISTANT_ENCRYPTION}
 
-<br>
-
 ### 2. Solution
 lost image
 
 > RS{HMMM_WHAT_ARE_YOU_LOOKING_AT}
-
-<br>
 
 ### 4. Background
 {{<image width="418" alt="Untitled" src="https://user-images.githubusercontent.com/101745344/231843579-630a035a-a50a-4190-9a67-7642e4552b7b.png">}} 
@@ -148,8 +129,6 @@ If you say /balance, it outputs the current point.
 /rps is to play rock paper scissors with Chandi, but I always lose.
 
 When playing rock-paper-scissors, points are hung, and points are input as integers.
-
-<br>
 
 ### 4. Solution
 ---
@@ -166,8 +145,6 @@ If you specify a point as a negative number and lose it, you will earn the point
 
 > RS{TWO_NEGATIVES_DO_MAKE_A_POSITIVE}
 
-<br>
-
 ### 5. Solution
 ---
 
@@ -176,7 +153,5 @@ If you specify a point as a negative number and lose it, you will earn the point
 brute force..
 
 > RS{TRIVIAL_TRIVIA_TRIUMPHS}
-
-<br>
 
 Other than this, I think it would be good to check the [writeup](https://gitlab.ritsec.cloud/competitions/ctf-2023-public). Steg et al..  
