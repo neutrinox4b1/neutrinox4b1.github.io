@@ -4,7 +4,31 @@
         <link>https://neutrinox4b1.xyz/tags/</link>
         <description>Tags - Tag - Neutrinox4b1</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>neutrinox4b1@gmail.com (neutrinox4b1)</managingEditor>
-            <webMaster>neutrinox4b1@gmail.com (neutrinox4b1)</webMaster><lastBuildDate>Thu, 23 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://neutrinox4b1.xyz/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>neutrinox4b1@gmail.com (neutrinox4b1)</webMaster><lastBuildDate>Fri, 24 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://neutrinox4b1.xyz/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>crypto</title>
+    <link>https://neutrinox4b1.xyz/tags/crypto/</link>
+    <pubDate>Fri, 24 Nov 2023 00:00:00 &#43;0000</pubDate>
+    <author>neutrinox4b1</author>
+    <guid>https://neutrinox4b1.xyz/tags/crypto/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>misc</title>
+    <link>https://neutrinox4b1.xyz/tags/misc/</link>
+    <pubDate>Fri, 24 Nov 2023 00:00:00 &#43;0000</pubDate>
+    <author>neutrinox4b1</author>
+    <guid>https://neutrinox4b1.xyz/tags/misc/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>steg</title>
+    <link>https://neutrinox4b1.xyz/tags/steg/</link>
+    <pubDate>Fri, 24 Nov 2023 00:00:00 &#43;0000</pubDate>
+    <author>neutrinox4b1</author>
+    <guid>https://neutrinox4b1.xyz/tags/steg/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>web</title>
     <link>https://neutrinox4b1.xyz/tags/web/</link>
     <pubDate>Thu, 23 Nov 2023 00:00:00 &#43;0000</pubDate>
@@ -34,30 +58,6 @@
     <pubDate>Tue, 29 Aug 2023 00:00:00 &#43;0000</pubDate>
     <author>neutrinox4b1</author>
     <guid>https://neutrinox4b1.xyz/tags/blog/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>crypto</title>
-    <link>https://neutrinox4b1.xyz/tags/crypto/</link>
-    <pubDate>Sat, 01 Apr 2023 00:00:00 &#43;0000</pubDate>
-    <author>neutrinox4b1</author>
-    <guid>https://neutrinox4b1.xyz/tags/crypto/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>misc</title>
-    <link>https://neutrinox4b1.xyz/tags/misc/</link>
-    <pubDate>Sat, 01 Apr 2023 00:00:00 &#43;0000</pubDate>
-    <author>neutrinox4b1</author>
-    <guid>https://neutrinox4b1.xyz/tags/misc/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>steg</title>
-    <link>https://neutrinox4b1.xyz/tags/steg/</link>
-    <pubDate>Sat, 01 Apr 2023 00:00:00 &#43;0000</pubDate>
-    <author>neutrinox4b1</author>
-    <guid>https://neutrinox4b1.xyz/tags/steg/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

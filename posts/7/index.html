@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>IncognitoCTF 2023 - Neutrinox4b1</title><meta name="Description" content="Team. Security Factorial"><meta property="og:title" content="IncognitoCTF 2023" />
+<meta property="og:description" content="Team. Security Factorial" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://neutrinox4b1.xyz/posts/7/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-11-24T00:00:00+00:00" /><meta property="og:site_name" content="Neutrinox4b1" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="IncognitoCTF 2023"/>
+<meta name="twitter:description" content="Team. Security Factorial"/>
+<meta name="application-name" content="Neutrinox4b1">
+<meta name="apple-mobile-web-app-title" content="Neutrinox4b1"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://neutrinox4b1.xyz/posts/7/" /><link rel="prev" href="https://neutrinox4b1.xyz/posts/6/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><meta name="google-site-verification" content="SuTZj3pOuAHCN3GPkDaksyjrtSKZ71OkBTC6T7IyoSc" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "IncognitoCTF 2023",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/neutrinox4b1.xyz\/posts\/7\/"
+        },"genre": "posts","keywords": "crypto, steg, misc","wordcount":  1328 ,
+        "url": "https:\/\/neutrinox4b1.xyz\/posts\/7\/","datePublished": "2023-11-24T00:00:00+00:00","dateModified": "2023-11-24T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "neutrinox4b1"
+            },"description": "Team. Security Factorial"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Neutrinox4b1">Neu@security-blog:~$</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> ./Posts </a><a class="menu-item" href="/tags/"> ./Tags </a><a class="menu-item" href="/categories/"> ./Categories </a><a class="menu-item" href="/about/"> ./About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Neutrinox4b1">Neu@security-blog:~$</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">./Posts</a><a class="menu-item" href="/tags/" title="">./Tags</a><a class="menu-item" href="/categories/" title="">./Categories</a><a class="menu-item" href="/about/" title="">./About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">IncognitoCTF 2023</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/about/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>neutrinox4b1</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ctf/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>CTF</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-24">2023-11-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1328 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;7 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/970a6681-bc74-41d6-a95e-dad2555fc9bd"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/970a6681-bc74-41d6-a95e-dad2555fc9bd, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/970a6681-bc74-41d6-a95e-dad2555fc9bd 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/970a6681-bc74-41d6-a95e-dad2555fc9bd 2x"
+        data-sizes="auto"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/970a6681-bc74-41d6-a95e-dad2555fc9bd"
+        title="Team. Security Factorial" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#writeups">Writeups</a>
+      <ul>
+        <li><a href="#find-the-locationcrypto">Find the Location(crypto)</a>
+          <ul>
+            <li><a href="#background">Background</a></li>
+            <li><a href="#solution">Solution</a></li>
+          </ul>
+        </li>
+        <li><a href="#find-my-name-1-reversing">Find my name! (1) (reversing)</a>
+          <ul>
+            <li><a href="#background-1">Background</a></li>
+            <li><a href="#solution-1">Solution</a></li>
+          </ul>
+        </li>
+        <li><a href="#random-vs-random-crypto">Random VS Random (crypto)</a>
+          <ul>
+            <li><a href="#background-2">Background</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="about">About</h1>
+<ul>
+<li>Starts: 24 11 2023, 20:00 KST</li>
+<li>Ends: 25 11 2023, 20:00 KST</li>
+<li>On-line</li>
+<li>Format: Jeopardy</li>
+</ul>
+<h1 id="overview">Overview</h1>
+<p>no image</p>
+<h1 id="writeups">Writeups</h1>
+<h2 id="find-the-locationcrypto">Find the Location(crypto)</h2>
+<h3 id="background">Background</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/b6cc1fc5-26a8-424a-88ea-95e7755d1309"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/b6cc1fc5-26a8-424a-88ea-95e7755d1309, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/b6cc1fc5-26a8-424a-88ea-95e7755d1309 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/b6cc1fc5-26a8-424a-88ea-95e7755d1309 2x"
+        data-sizes="auto"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/b6cc1fc5-26a8-424a-88ea-95e7755d1309"
+        title="image" /></p>
+<p>ENC file</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">NDA3NzU5ODQwNzc1OTM0MDc3NTg4MzkzOTgzODQwNzc2MTIzOTM5ODQwNDA3NzU3NjM5Mzk4NTY0MDc3NjY0NDA3NzYxMTQwNzc2ODYzOTM5ODM4MzkzOTgxOTM5Mzk4MTIzOTM5ODcxMzkzOTg1NjM5Mzk4NDczOTM5ODE4NDA3NzU5NjQwNzc1OTM0MDc3NTkyMzkzOTg0MjQwNzc2ODg0MDc3NjgzMzkzOTg4MTM5Mzk4NzI0MDc3NTg0MzkzOTkzNDM5Mzk4OTM0MDc3NjQ3NDA3NzY1MDM5Mzk5NDIzOTM5ODQxNDA3NzY5MTM5Mzk3NzczOTM5ODUwNDA3NzY4MjM5Mzk5NDY0MDc3NjQ2MzkzOTg1ODQwNzc2NTYzOTM5OTM4MzkzOTc5MzQwNzc2NzM0MDc3NjY0NDA3NzY3MzQwNzc2NTQ0MDc3NjY5MzkzOTg2NzM5Mzk5NDY0MDc3NjY4MzkzOTc4MjM5Mzk3ODEzOTM5Nzc4NDA3NzY3ODM5Mzk5NTgzOTM5ODUxMzkzOTg2NjQwNzc2NjY0MDc3NjYzNDA3NzY0NjM5Mzk4OTA0MDc3NTc2MzkzOTkwODM5Mzk5MTEzOTM5ODQ0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>encrypt.py</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">base64</span> <span class="k">as</span> <span class="nn">b64</span> 
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">encode</span> <span class="p">(</span><span class="n">O0000OO00OO000O00</span> <span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">O0OOOOOO0O0O00O0O</span> <span class="o">=</span><span class="nb">list</span> <span class="p">(</span><span class="n">O0000OO00OO000O00</span> <span class="o">.</span><span class="n">encode</span> <span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">OOO0000OOOO0O0O0O</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span> <span class="p">(</span><span class="n">O0OOOOOO0O0O00O0O</span> <span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">O0OOOOOO0O0O00O0O</span> <span class="p">[</span><span class="n">OOO0000OOOO0O0O0O</span> <span class="p">]</span><span class="o">=~</span><span class="p">(</span><span class="n">O0OOOOOO0O0O00O0O</span> <span class="p">[</span><span class="n">OOO0000OOOO0O0O0O</span> <span class="p">]</span><span class="o">^~</span><span class="p">(</span><span class="n">OOO0000OOOO0O0O0O</span> <span class="o">-</span><span class="mh">0x123456</span> <span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">O0OOOOOO0O0O00O0O</span> <span class="p">[</span><span class="n">OOO0000OOOO0O0O0O</span> <span class="p">]</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span><span class="mi">0</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">O0OOOOOO0O0O00O0O</span> <span class="p">[</span><span class="n">OOO0000OOOO0O0O0O</span> <span class="p">]</span><span class="o">=</span><span class="n">O0OOOOOO0O0O00O0O</span> <span class="p">[</span><span class="n">OOO0000OOOO0O0O0O</span> <span class="p">]</span><span class="o">+</span><span class="mh">0x22222</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">O0OOOOOO0O0O00O0O</span> <span class="p">[</span><span class="n">OOO0000OOOO0O0O0O</span> <span class="p">]</span><span class="o">=</span><span class="n">O0OOOOOO0O0O00O0O</span> <span class="p">[</span><span class="n">OOO0000OOOO0O0O0O</span> <span class="p">]</span><span class="o">^~</span><span class="p">(</span><span class="n">OOO0000OOOO0O0O0O</span> <span class="o">+</span><span class="mh">0x2C0C02</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">OO00OO000OO0O0000</span> <span class="o">=</span><span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span> <span class="p">([</span><span class="nb">str</span> <span class="p">(</span><span class="n">O00O000OOO00OOOOO</span> <span class="p">)</span><span class="k">for</span> <span class="n">O00O000OOO00OOOOO</span> <span class="ow">in</span> <span class="n">O0OOOOOO0O0O00O0O</span> <span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">OO00OO000OO0O0000</span> <span class="o">=</span><span class="n">OO00OO000OO0O0000</span> <span class="o">.</span><span class="n">encode</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">OO00OO000OO0O0000</span> <span class="o">=</span><span class="n">b64</span> <span class="o">.</span><span class="n">b64encode</span> <span class="p">(</span><span class="n">OO00OO000OO0O0000</span> <span class="p">)</span><span class="o">.</span><span class="n">decode</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Hashed code = </span><span class="si">{</span><span class="n">OO00OO000OO0O0000</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">OO00OO000OO0O0000</span> <span class="o">==</span><span class="n">FLAG_HASH</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">True</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">False</span> 
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&#34;ENC.txt&#34;</span><span class="p">,</span><span class="s2">&#34;r&#34;</span><span class="p">)</span><span class="k">as</span> <span class="n">f</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">FLAG_HASH</span> <span class="o">=</span><span class="n">f</span> <span class="o">.</span><span class="n">read</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="kc">True</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pw</span> <span class="o">=</span><span class="nb">input</span> <span class="p">(</span><span class="s2">&#34;Flag is? : &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">encode</span> <span class="p">(</span><span class="n">pw</span> <span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span> 
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="p">(</span><span class="s2">&#34;Try Again!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">________________</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Correct! Submit </span><span class="si">{</span><span class="n">pw</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>encode 함수를 빼고? 일단. enc.txt를 열어서 read하고<br>무한반복으로 flag를 질문하여 pw를 입력받는다. 입력받은 문자열 pw를 encode한 값이 true이면 break하여 프로그램이 종료된다.</p>
+<p>결과적으로 encode 함수에 어떤 값을 넣어야 true를 반환하는지가 관건이다.</p>
+<p>gpt한테 해석을 맡긴다.</p>
+<p>해석을 맡기는 와중에 생각으로 변수명을 난해하게 한 것 같다.</p>
+<p>그냥 변수명만 치환해서 생각해보자.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">base64</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">encode</span><span class="p">(</span><span class="n">input_string</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 문자열을 바이트 배열로 변환</span>
+</span></span><span class="line"><span class="cl">    <span class="n">byte_array</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">input_string</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 각 바이트에 대해 복잡한 변환 수행</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">byte_array</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">byte</span> <span class="o">=</span> <span class="n">byte_array</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 비트 반전과 XOR 연산 수행</span>
+</span></span><span class="line"><span class="cl">        <span class="n">byte</span> <span class="o">=</span> <span class="o">~</span><span class="p">(</span><span class="n">byte</span> <span class="o">^</span> <span class="o">~</span><span class="p">(</span><span class="n">index</span> <span class="o">-</span> <span class="mh">0x123456</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 바이트가 짝수이면 특정 값 추가</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">byte</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">byte</span> <span class="o">+=</span> <span class="mh">0x22222</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 다시 비트 반전과 XOR 연산 수행</span>
+</span></span><span class="line"><span class="cl">        <span class="n">byte</span> <span class="o">=</span> <span class="n">byte</span> <span class="o">^</span> <span class="o">~</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mh">0x2C0C02</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">byte_array</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">byte</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 변환된 바이트 배열을 문자열로 변환 후 Base64 인코딩</span>
+</span></span><span class="line"><span class="cl">    <span class="n">transformed_string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">byte</span><span class="p">)</span> <span class="k">for</span> <span class="n">byte</span> <span class="ow">in</span> <span class="n">byte_array</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">encoded_string</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">transformed_string</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 결과 출력</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Hashed code = </span><span class="si">{</span><span class="n">encoded_string</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 결과 비교 및 반환</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">encoded_string</span> <span class="o">==</span> <span class="n">FLAG_HASH</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 파일에서 FLAG_HASH 읽기</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;ENC.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">FLAG_HASH</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 사용자 입력 처리</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">input_value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Flag is? : &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">encode</span><span class="p">(</span><span class="n">input_value</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Try Again!</span><span class="se">\n</span><span class="s2">________________</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Correct! Submit </span><span class="si">{</span><span class="n">input_value</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>gpt가 해준거</p>
+<h3 id="solution">Solution</h3>
+<p>왜 계속 역연산이 안되나 싶었는데, flag를 받을 때 숫자로 해석했어야 했다. 이는 조금만 encrypt.py를 돌려보면 알 수 있는 부분이었는데..</p>
+<p>exploit code</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">base64</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ENC.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">flag_hash</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">flag_hash_string</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">flag_hash</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">flag_byte</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">flag_hash_string</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span><span class="o">+</span><span class="mi">7</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">flag_hash_string</span><span class="p">),</span> <span class="mi">7</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">flag_byte</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">flag_byte</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">byte</span> <span class="o">=</span> <span class="n">flag_byte</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">byte</span> <span class="o">=</span> <span class="n">byte</span> <span class="o">^</span> <span class="o">~</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mh">0x2c0c02</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">byte</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">byte</span> <span class="o">-=</span> <span class="mh">0x22222</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">byte</span> <span class="o">=</span> <span class="o">~</span><span class="n">byte</span>
+</span></span><span class="line"><span class="cl">    <span class="n">byte</span> <span class="o">=</span> <span class="p">(</span><span class="n">byte</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="o">~</span><span class="p">(</span><span class="n">index</span> <span class="o">-</span> <span class="mh">0x123456</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">flag_byte</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">byte</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="n">byte</span><span class="p">)</span> <span class="k">for</span> <span class="n">byte</span> <span class="ow">in</span> <span class="n">flag_byte</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>INCO{yOu&rsquo;l1_NEver_KNOw_Tha7_thE_pl4ce_Is_G4ngnArn_s747IoN_Exi7_12}</p>
+</blockquote>
+<h2 id="find-my-name-1-reversing">Find my name! (1) (reversing)</h2>
+<h3 id="background-1">Background</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/27ff2341-a17c-4fb4-8e45-c9ba5cebcdb8"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/27ff2341-a17c-4fb4-8e45-c9ba5cebcdb8, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/27ff2341-a17c-4fb4-8e45-c9ba5cebcdb8 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/27ff2341-a17c-4fb4-8e45-c9ba5cebcdb8 2x"
+        data-sizes="auto"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/27ff2341-a17c-4fb4-8e45-c9ba5cebcdb8"
+        title="image" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cb87b8b1-4773-4c4b-b230-76650942462a"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cb87b8b1-4773-4c4b-b230-76650942462a, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cb87b8b1-4773-4c4b-b230-76650942462a 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cb87b8b1-4773-4c4b-b230-76650942462a 2x"
+        data-sizes="auto"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cb87b8b1-4773-4c4b-b230-76650942462a"
+        title="image" /></p>
+<p>static analysis<br>
+amd64 PEfile</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/d9491b66-94de-4379-a9e3-569121db41f6"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/d9491b66-94de-4379-a9e3-569121db41f6, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/d9491b66-94de-4379-a9e3-569121db41f6 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/d9491b66-94de-4379-a9e3-569121db41f6 2x"
+        data-sizes="auto"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/d9491b66-94de-4379-a9e3-569121db41f6"
+        title="image" /></p>
+<p>dynamic analysis<br> Guess the number라는 문자열 찾기</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/0ff0d0af-bf1c-4e58-9069-a186f4b97b16"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/0ff0d0af-bf1c-4e58-9069-a186f4b97b16, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/0ff0d0af-bf1c-4e58-9069-a186f4b97b16 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/0ff0d0af-bf1c-4e58-9069-a186f4b97b16 2x"
+        data-sizes="auto"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/0ff0d0af-bf1c-4e58-9069-a186f4b97b16"
+        title="image" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/5ac71b75-74f0-4eb9-b74e-19060e528dd8"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/5ac71b75-74f0-4eb9-b74e-19060e528dd8, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/5ac71b75-74f0-4eb9-b74e-19060e528dd8 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/5ac71b75-74f0-4eb9-b74e-19060e528dd8 2x"
+        data-sizes="auto"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/5ac71b75-74f0-4eb9-b74e-19060e528dd8"
+        title="image" /></p>
+<p>입력한 v13이 v12와 같아야 함.
+랜덤이 하나의 플래그가 되는건 말이 안되는디;; Seed가 정해져 있어서 그런가?</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/75ead9a4-ec9d-4b8a-b8d9-b2fbf4a3bcff"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/75ead9a4-ec9d-4b8a-b8d9-b2fbf4a3bcff, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/75ead9a4-ec9d-4b8a-b8d9-b2fbf4a3bcff 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/75ead9a4-ec9d-4b8a-b8d9-b2fbf4a3bcff 2x"
+        data-sizes="auto"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/75ead9a4-ec9d-4b8a-b8d9-b2fbf4a3bcff"
+        title="image" /></p>
+<p>그냥 동적분석하면 되지 않나 싶었는데..</p>
+<h3 id="solution-1">Solution</h3>
+<blockquote>
+<p>INCO{7716b2901c6ccf1b8ea936dbcf7cb14bd32b7e9c}</p>
+</blockquote>
+<p>모르겠따.. 맞는지 틀린지라도 좀 알려줬으면 좋을듯.
+동적분석으로 바로 풀리면 누구나 다 맞췄겠지 싶다.</p>
+<h2 id="random-vs-random-crypto">Random VS Random (crypto)</h2>
+<h3 id="background-2">Background</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/python3</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">bytes_to_long</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">signal</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">timeout</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;BYE ~&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">User</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">secret</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRandom</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">rng</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">Random</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">secret</span> <span class="o">=</span> <span class="n">bytes_to_long</span><span class="p">(</span><span class="n">secret</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@staticmethod</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">getRandom</span><span class="p">(</span><span class="n">generator</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">generator</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">getrandbits</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">generator</span><span class="o">.</span><span class="n">getrandbits</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="nd">@staticmethod</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">res</span> <span class="o">+=</span> <span class="p">(</span><span class="n">a</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">a</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="n">b</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">res</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;[</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">] Recent Key : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRandom</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;[</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">] Key Updated !! &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">rng</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">Random</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">)</span>        
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRandom</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rng</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">secret</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">res</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span>  <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGALRM</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">signal</span><span class="o">.</span><span class="n">alarm</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">32</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Alice</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s2">&#34;Alice&#34;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Bob</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s2">&#34;Bob&#34;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Point</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">menu</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Menu &gt; &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Please input the int value&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">menu</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;BYE ~&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">menu</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Alice</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">menu</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Bob</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">menu</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># fight</span>
+</span></span><span class="line"><span class="cl">            <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">Alice</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="o">-</span> <span class="n">Bob</span><span class="o">.</span><span class="n">start</span><span class="p">())</span> <span class="o">%</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">res</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Oh, Alice WIN !!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">elif</span> <span class="n">res</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Oh, Bob WIN :(&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">elif</span> <span class="n">res</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;TIE&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">menu</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">Alice</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="o">-</span> <span class="n">Bob</span><span class="o">.</span><span class="n">start</span><span class="p">())</span> <span class="o">%</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">res</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Point</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Current Point : </span><span class="si">{</span><span class="n">Point</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Nah...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">Point</span> <span class="o">==</span> <span class="mi">100</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/home/ctf/flag.txt&#39;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>chall.py이고</p>
+<p>User는 name과 secret을 받는다. rng는 random nubmer generator인거 같은데, random모듈을 사용한다. secret에서는 byte_to_long으로 정수 형태로 넣는다.</p>
+<p>getRandom 메소드는 generator가 none면 random모듈의 getrandbits로 32bit를 받고. 아니면 generator로 32bit를 받는다.</p>
+<p>key는 random을 사용하므로 random을 key로 하여 난수 생성기를 사용한다.</p>
+<p>sum은 두 숫자의 각 비트를 곱한 결과의 합을 계산한다. 즉 and를 한 결과의 1의 갯수이다.</p>
+<p>reset은 사용자 키를 재설정하고 rng도 재설정된다.</p>
+<p>start는 rng를 사용하여 값을 생성하고 이를 secre과 sum의 인자로 하여 그 결과를 반환한다.</p>
+<p>point가 100이 되면 플래그를 획득한다. 이는 20초 이내로 이루어져야 한다.</p>
+<p>메뉴가 0이면 alice키를 재설정, 1이면 bob키를 재설정한다.</p>
+<p>2면 alice의 start값에서 bob의 start값을 빼고 3으로 나눈 나머지를 취한다.<br>
+나머지가 1이면 alice가 이기고 2면 bob가 이기고 0이면 비긴다.</p>
+<p>메뉴가 3이면 아까처럼 Alic start에서 bob start를 빼는데 이때 res%3가 1이면 point를 증가시키고 아니면 종료한다.<br>
+포인트를 증가시킬 수단은 이것 뿐이다.</p>
+<p>즉, 100번 연속으로 Alice가 이겨야 한다.</p>
+<br>
+<p>그러기 위해서는 start값을 예측 == sum을  예측 == secret과 getRandom값을 알아야 함(secret은 예측 불가) == rng 예측 == key 예측 =&gt; 초기 getrandbits를 알면 key를 아는 것 =&gt; random.seed는 한 프로그램 내에서 고정.</p>
+<p>key나 rng를 어떻게 예측하는가?</p>
+<p>reset에서 출력되는 값은 Recent Key이다.<br>어? key값이 getRandom에서 항상 random.getrandbits로 고정되어있다. rng에서 다시 생성되는 줄 알았는데 이러면 예측이 쉬워진다.</p>
+<p>그럼 Recent Key로 key를 예측하고. 이를 통해 예측된 rng에서 예측된 val의 정확한 값을 알아낼 수 있음.<br>문제는 res의 예측인데. secret은 고정이므로, 초반 val 데이터를 가지고 항상 같은 결과를 내는 val의 1 갯수를 알 수 있을 것임 =&gt; 이는 menu 2번으로 확인 가능함.</p>
+<p>남은 시간에서는 해당 조건에 맞을 때마다 menu 3을 사용하여 point를 100을 채우는 것임.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cab72285-837d-47d6-9b42-030983bc8db2"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cab72285-837d-47d6-9b42-030983bc8db2, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cab72285-837d-47d6-9b42-030983bc8db2 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cab72285-837d-47d6-9b42-030983bc8db2 2x"
+        data-sizes="auto"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cab72285-837d-47d6-9b42-030983bc8db2"
+        title="image" /></p>
+<p>val예측까지 성공했으나, secret에서 막힘..</p>
+<p>alice가 이기는 패턴만 모아서 할 수는 없나..?</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span>  <span class="nn">randcrack</span> <span class="kn">import</span> <span class="n">RandCrack</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">menu</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">.</span><span class="n">sendlineafter</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;&gt; &#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">cmd</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;Recent Key : &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pdrc_alice</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recvline</span><span class="p">()))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">cmd</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;Recent Key : &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pdrc_bob</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recvline</span><span class="p">()))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="c1"># p = remote(&#39;13.125.251.104&#39;, 12010)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="s1">&#39;./chall.py&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">pdrc_alice</span> <span class="o">=</span> <span class="n">RandCrack</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">pdrc_bob</span> <span class="o">=</span> <span class="n">RandCrack</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">624</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">menu</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">624</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">menu</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">alice_key</span> <span class="o">=</span> <span class="n">pdrc_alice</span><span class="o">.</span><span class="n">predict_getrandbits</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">bob_key</span> <span class="o">=</span> <span class="n">pdrc_bob</span><span class="o">.</span><span class="n">predict_getrandbits</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># print(&#39;alice_key:&#39;,alice_key)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># print(&#39;bob_key:&#39;, bob_key)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pattern</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">alice_rng</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">Random</span><span class="p">(</span><span class="n">alice_key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">bob_rng</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">Random</span><span class="p">(</span><span class="n">bob_key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">alice_val</span> <span class="o">=</span> <span class="n">alice_rng</span><span class="o">.</span><span class="n">getrandbits</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">bob_val</span> <span class="o">=</span> <span class="n">bob_rng</span><span class="o">.</span><span class="n">getrandbits</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print(&#39;alice_val:&#39;, alice_val)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print(&#39;bob_val:&#39;, bob_val)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">menu</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="sa">b</span><span class="s1">&#39;Alice&#39;</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">recvline</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pattern</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">alice_val</span><span class="p">,</span> <span class="n">bob_val</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">alice_val</span> <span class="o">=</span> <span class="n">alice_rng</span><span class="o">.</span><span class="n">getrandbits</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">alice_val</span> <span class="o">=</span> <span class="n">bob_rng</span><span class="o">.</span><span class="n">getrandbits</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">alice_val</span><span class="p">,</span> <span class="n">bob_val</span><span class="p">)</span> <span class="ow">in</span> <span class="n">pattern</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">menu</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recvline</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># if b&#39;100&#39; in p.recvline():</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#     break</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">menu</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recvline</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>현재까지 작성한 코드..</p>
+<p>여기까지가 끝인가보오.</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-11-24</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/7/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://neutrinox4b1.xyz/posts/7/" data-title="IncognitoCTF 2023" data-via="neutrinox4b1" data-hashtags="crypto,steg,misc"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://neutrinox4b1.xyz/posts/7/" data-hashtag="crypto"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://neutrinox4b1.xyz/posts/7/" data-title="IncognitoCTF 2023"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://neutrinox4b1.xyz/posts/7/" data-title="IncognitoCTF 2023"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/crypto/">crypto</a>,&nbsp;<a href="/tags/steg/">steg</a>,&nbsp;<a href="/tags/misc/">misc</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/6/" class="prev" rel="prev" title="RFC-2616: HTTP Method"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>RFC-2616: HTTP Method</a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.117.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/about/" target="_blank">neutrinox4b1</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"giscus":{"category":"Q\u0026A","categoryId":"DIC_kwDOKMfEfM4CY8DM","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"en","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"neutrinox4b1/neutrinox4b1.github.io","repoId":"R_kgDOKMfEfA"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
