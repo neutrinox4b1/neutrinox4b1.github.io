@@ -25,7 +25,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/neutrinox4b1.xyz\/posts\/6\/"
-        },"genre": "posts","keywords": "web","wordcount":  398 ,
+        },"genre": "posts","keywords": "web","wordcount":  855 ,
         "url": "https:\/\/neutrinox4b1.xyz\/posts\/6\/","datePublished": "2023-11-23T00:00:00+00:00","dateModified": "2023-11-23T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -98,9 +98,9 @@
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">RFC-2616: HTTP Method</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/about/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>neutrinox4b1</a></span>&nbsp;<span class="post-category">included in <a href="/categories/insight/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Insight</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-23">2023-11-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;398 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+            <div class="post-meta-line"><span class="post-author"><a href="/about/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>neutrinox4b1</a></span>&nbsp;<span class="post-category">included in <a href="/categories/review/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Review</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-23">2023-11-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;855 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -132,6 +132,7 @@
                 <li><a href="#idempotent-methods">Idempotent Methods</a></li>
               </ul>
             </li>
+            <li><a href="#options">OPTIONS</a></li>
           </ul>
         </li>
       </ul>
@@ -143,7 +144,7 @@
 <p>GET, POST 메소드 이외에도 다양한 메소드가 사용될 수 있기에 알아둬서 나쁠게 없다고 생각된다. 따라서 본문을 작성한다.</p>
 <h1 id="rfc-2616">RFC-2616</h1>
 <ul>
-<li>HTTP/1.1 1999년 6월</li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc2616.html#section-5" target="_blank" rel="noopener noreffer ">HTTP/1.1 1999년 6월</a></li>
 </ul>
 <h2 id="request">Request</h2>
 <p>클라이언트에서 서버로의 요청 메시지 첫 번째 줄에는 다음이 포함된다:</p>
@@ -206,7 +207,7 @@
 <p>Method:</p>
 <ul>
 <li>
-<p><a href="" rel="">OPTIONS</a></p>
+<p><a href="#options" rel="">OPTIONS</a></p>
 </li>
 <li>
 <p><a href="" rel="">GET</a></p>
@@ -241,13 +242,70 @@
 <h2 id="method-definitions">Method Definitions</h2>
 <p>HTTP/1.1의 일반적인 메서드는 아래에 정의된다. 이 세트는 확장될 수 있지만, 추가 메소드가 별도로 확장된 클라이언트 및 서버에 대해 동일한 의미를 공유한다고 가정할 수는 없다.<br>호스트 요청 헤더 필드는 HTTP/1.1 요청과 함께 제공되어야 한다.</p>
 <h3 id="safe-and-idempotent-methods">Safe and Idempotent Methods</h3>
+<p>메소드의 성질로 멱등성과 안정성에 대해 기술하는 것으로 보인다.</p>
+<p>다음은 이러한 성질에 대한 <a href="https://www.mscharhag.com/api-design/http-idempotent-safe" target="_blank" rel="noopener noreffer ">다른 글</a>이다.</p>
 <h4 id="safe-methods">Safe Methods</h4>
 <p>소프트웨어는 인터넷을 통해 사용자를 대표한다. 따라서 개발자들은 사용자가 예상치 못한 중요한 행동을 취할 수 있다는 점을 인식하고, 사용자가 이러한 행동을 할 때 그것이 어떤 의미를 가지는지 알 수 있도록 주의해야 한다.</p>
 <p>일반적으로, GET과 HEAD 메소드는 단순히 정보를 검색하는 데 사용되며, 다른 행동을 취하는 데 사용되어서는 안 된다. 이러한 메소드는 &ldquo;안전하다&quot;고 간주되어야 한다.<br>
 이는 사용자 에이전트가 POST, PUT, DELETE와 같은 다른 메소드를 특별한 방식으로 표시할 수 있도록 하여, 사용자가 보다 위험할 수 있는 행동을 요청하고 있다는 것을 인지하게 만든다.</p>
 <p>서버가 GET 요청을 수행함에 따라 부수적인 효과를 발생시킬 수 있음을 인식하는 것이 중요하다.<br>
 실제로 일부 동적 리소스는 이를 기능으로 간주한다. 여기서 중요한 구분은 사용자가 이러한 부수 효과를 요청하지 않았기 때문에, 이로 인한 결과에 대해 책임을 지지 않는다는 것이다.</p>
-<h4 id="idempotent-methods">Idempotent Methods</h4></div><div class="post-footer" id="post-footer">
+<h4 id="idempotent-methods">Idempotent Methods</h4>
+<p>메소드는 또한 멱등성(Idempotent)이라는 특성을 가질 수 있는데, 이는 오류나 만료 문제를 제외하고 N &gt; 0개의 동일한 요청에 대한 부수 효과가 단일 요청과 동일하다는 것을 의미한다.</p>
+<p>GET, HEAD, PUT, DELETE 메소드가 이 특성을 공유한다.<br>또한, OPTIONS 및 TRACE 메소드는 부수 효과가 없어야 하며, 따라서 본질적으로 멱등성을 가진다.</p>
+<p>그러나 모든 메소드가 멱등성을 가지고 있다 하더라도, 여러 요청의 연속이 멱등하지 않을 수 있다. (연속이 멱등하다는 것은 전체 연속의 단일 실행이 항상 동일한 결과를 가져오며 그 연속의 전체 또는 일부를 재실행해도 결과가 변경되지 않는 것을 의미한다.)<br>예를 들어, 연속의 결과가 나중에 같은 연속에서 수정되는 값에 의존하는 경우, 그 연속은 멱등하지 않다.</p>
+<p>부수 효과가 절대 없는 연속은 정의상 멱등하다. (동일한 자원 집합에 대해 동시에 실행되는 작업이 없다는 전제 하에.)</p>
+<p>=&gt; 동일한 요청을 한 번 보내는 것과 여러번 연속으로 보내는 것이 같은 효과를 지니고 서버의 상태도 동일하게 남을 때, 해당 HTTP메소드는 멱등성을 가졌다고 한다.</p>
+<div class="details admonition example open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ol fa-fw" aria-hidden="true"></i>e.g.<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ol>
+<li>
+<p>GET:<br>
+웹 페이지나 API로 요청을 할 때 멱등성을 가지는 GET을 사용한다. 사용자 정보 가져오기라는 요청을 할 때, 요청을 한 번 보내든 여러번 보내든 서버에 저장도니 사용자 프로필은 변하지 않는다.</p>
+</li>
+<li>
+<p>POST:<br>
+POST는 새로운 데이터를 서버에 생성할 때 사용된다. 새로운 게시글을 작성할 때 POST를 한 번 보내면 하나의 게시글이 생성되고 다시 보내면 또 동일한 내용의 게시글이 생성된다.<br>이러한 경우에 같은 요청을 여러 번 보내면 서버의 상태가 변한다고 할 수 있다.</p>
+</li>
+</ol>
+</div>
+        </div>
+    </div>
+<br>
+<div class="details admonition question">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Question<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">멱등성을 가지는 HTTP 요청은 Race Condition이 일어나지 않는가?</div>
+        </div>
+    </div>
+<div class="details admonition success">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw" aria-hidden="true"></i>Answer<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>물론, Race Conditon이 일어날 수 있을거라 생각하지만 (GPT 답변도 그렇고)</p>
+<p>이에 대해 명확히 정리되고 예시가 있는 글을 찾지 못하였다.<br>GPT가 들어준 예시도 적절하지 않아보이므로 이에 대해서는 남겨둔다.</p>
+</div>
+        </div>
+    </div>
+<h3 id="options">OPTIONS</h3>
+<p>OPTIONS 메소드는 Request-URI에 의해 식별된 요청/응답 체인에서 사용 가능한 통신 옵션에 대한 정보를 요청한다.<br></p>
+<p>이 메소드는 클라이언트가 리소스와 관련된 옵션 및/또는 요구 사항 또는 리소스 작업을 암시하거나 리소스 검색을 시작하지 않고 서버의 능력을 판단할 수 있게 한다.<br>
+이 메소드에 대한 응답은 캐시할 수 없다.</p>
+<p>OPTIONS 요청에 엔티티-바디가 포함되어 있으면(콘텐츠 길이 또는 전송 인코딩의 존재로 나타남), 미디어 타입은 콘텐츠 타입 필드에 의해 표시되어야 한다.<br>
+이 명세는 그러한 바디에 대한 사용을 정의하지 않지만, 미래의 HTTP 확장은 서버에 대한 더 자세한 쿼리를 위해 OPTIONS 본문을 사용할 수 있다.<br>
+그러한 확장을 지원하지 않는 서버는 요청 본문을 버릴 수 있다.</p>
+<p>Request-URI가 애스터리스크(&rdquo;<em>&quot;)인 경우, OPTIONS 요청은 특정 리소스가 아니라 일반적으로 서버에 적용될 것을 의도한다.<br>
+서버의 통신 옵션은 일반적으로 리소스에 따라 다르기 때문에, &ldquo;</em>&rdquo; 요청은 &ldquo;ping&quot;이나 &ldquo;no-op&rdquo; 유형의 메소드로만 유용하며, 클라이언트가 서버의 능력을 테스트하는 것 외에는 아무것도 하지 않는다.<br>
+예를 들어, 이는 프록시가 HTTP/1.1을 준수하는지 여부를 테스트하는 데 사용할 수 있다.</p>
+<p>Request-URI가 별표가 아닌 경우, OPTIONS 요청은 해당 리소스와 통신할 때 사용 가능한 옵션에만 적용된다.</p>
+<p>200 응답은 서버가 구현한 선택적 기능을 나타내는 헤더 필드(예: Allow)를 포함해야 하며, 이 명세에 의해 정의되지 않은 확장을 포함할 수도 있다.<br>
+Response 본문이 있다면, 그것은 또한 통신 옵션에 대한 정보를 포함해야 한다. 그러한 정보의 형식은 이 명세에 의해 정의되지 않았다.</p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

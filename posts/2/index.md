@@ -8,6 +8,10 @@ you can set your blog through /themes/LoveIt/config.toml
 # Writing
 write post /content/posts using md
 
+{{< admonition tip "Writing tip" true>}}
+https://hugoloveit.com/theme-documentation-extended-shortcodes/#4-admonition
+{{< /admonition >}}
+
 # local server
 ```bash
 hugo server
