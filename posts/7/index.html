@@ -4,34 +4,34 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>IncognitoCTF 2023 - Neutrinox4b1</title><meta name="Description" content="Team. Security Factorial"><meta property="og:title" content="IncognitoCTF 2023" />
-<meta property="og:description" content="Team. Security Factorial" />
+        <title>FPGA 기반 임베디드 시스템의 사이버 보안 위협 동향 분석 - Neutrinox4b1</title><meta name="Description" content="Security Tech blog"><meta property="og:title" content="FPGA 기반 임베디드 시스템의 사이버 보안 위협 동향 분석" />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://neutrinox4b1.xyz/posts/7/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-11-24T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-11-24T00:00:00+00:00" /><meta property="og:site_name" content="Neutrinox4b1" />
+<meta property="article:published_time" content="2024-01-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-01-13T00:00:00+00:00" /><meta property="og:site_name" content="Neutrinox4b1" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="IncognitoCTF 2023"/>
-<meta name="twitter:description" content="Team. Security Factorial"/>
+<meta name="twitter:title" content="FPGA 기반 임베디드 시스템의 사이버 보안 위협 동향 분석"/>
+<meta name="twitter:description" content=""/>
 <meta name="application-name" content="Neutrinox4b1">
-<meta name="apple-mobile-web-app-title" content="Neutrinox4b1"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://neutrinox4b1.xyz/posts/7/" /><link rel="prev" href="https://neutrinox4b1.xyz/posts/6/" /><link rel="next" href="https://neutrinox4b1.xyz/posts/8/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="Neutrinox4b1"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://neutrinox4b1.xyz/posts/7/" /><link rel="prev" href="https://neutrinox4b1.xyz/posts/6/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><meta name="google-site-verification" content="SuTZj3pOuAHCN3GPkDaksyjrtSKZ71OkBTC6T7IyoSc" /><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "IncognitoCTF 2023",
+        "headline": "FPGA 기반 임베디드 시스템의 사이버 보안 위협 동향 분석",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/neutrinox4b1.xyz\/posts\/7\/"
-        },"genre": "posts","keywords": "crypto, rev","wordcount":  1328 ,
-        "url": "https:\/\/neutrinox4b1.xyz\/posts\/7\/","datePublished": "2023-11-24T00:00:00+00:00","dateModified": "2023-11-24T00:00:00+00:00","publisher": {
+        },"genre": "posts","keywords": "EMBEDDED","wordcount":  359 ,
+        "url": "https:\/\/neutrinox4b1.xyz\/posts\/7\/","datePublished": "2024-01-13T00:00:00+00:00","dateModified": "2024-01-13T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
                 "name": "neutrinox4b1"
-            },"description": "Team. Security Factorial"
+            },"description": ""
     }
     </script></head>
     <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -97,724 +97,187 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">IncognitoCTF 2023</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/about/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>neutrinox4b1</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ctf/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>CTF</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-24">2023-11-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1328 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;7 minutes&nbsp;</div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">FPGA 기반 임베디드 시스템의 사이버 보안 위협 동향 분석</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/about/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>neutrinox4b1</a></span>&nbsp;<span class="post-category">included in <a href="/categories/review/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Review</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-13">2024-01-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;359 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/970a6681-bc74-41d6-a95e-dad2555fc9bd"
-        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/970a6681-bc74-41d6-a95e-dad2555fc9bd, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/970a6681-bc74-41d6-a95e-dad2555fc9bd 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/970a6681-bc74-41d6-a95e-dad2555fc9bd 2x"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/771495c1-f582-4f15-8a39-f83928990f6a"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/771495c1-f582-4f15-8a39-f83928990f6a, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/771495c1-f582-4f15-8a39-f83928990f6a 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/771495c1-f582-4f15-8a39-f83928990f6a 2x"
         data-sizes="auto"
-        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/970a6681-bc74-41d6-a95e-dad2555fc9bd"
-        title="Team. Security Factorial" /></div><div class="details toc" id="toc-static"  data-kept="">
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/771495c1-f582-4f15-8a39-f83928990f6a"
+        title="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/771495c1-f582-4f15-8a39-f83928990f6a" /></div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#writeups">Writeups</a>
+    <li>
       <ul>
-        <li><a href="#find-the-locationcrypto">Find the Location(crypto)</a>
+        <li><a href="#연구-배경-및-필요성">연구 배경 및 필요성</a></li>
+        <li><a href="#기존-fpga-기반-임베디드-시스템-생태계">기존 FPGA 기반 임베디드 시스템 생태계</a>
           <ul>
-            <li><a href="#background">Background</a></li>
-            <li><a href="#solution">Solution</a></li>
+            <li><a href="#dprdynamic-partial-reconfiguration">DPR(Dynamic partial reconfiguration)</a></li>
           </ul>
         </li>
-        <li><a href="#find-my-name-1-reversing">Find my name! (1) (reversing)</a>
+        <li><a href="#fpga-기반-임베디드-시스템의-위협">FPGA 기반 임베디드 시스템의 위협</a>
           <ul>
-            <li><a href="#background-1">Background</a></li>
-            <li><a href="#solution-1">Solution</a></li>
+            <li><a href="#개발생산-단계에서의-사이버-보안-위협">개발/생산 단계에서의 사이버 보안 위협</a></li>
+            <li><a href="#fpga-설치-단계에서의-사이버-보안-위협">FPGA 설치 단계에서의 사이버 보안 위협</a></li>
+            <li><a href="#fpga-운용관리단계에서의-사이버-보안-위협">FPGA 운용/관리단계에서의 사이버 보안 위협</a></li>
           </ul>
         </li>
-        <li><a href="#random-vs-random-crypto">Random VS Random (crypto)</a>
-          <ul>
-            <li><a href="#background-2">Background</a></li>
-          </ul>
-        </li>
+        <li><a href="#결론">결론</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h1 id="about">About</h1>
+            </div><div class="content" id="content"><div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>제목: FPGA 기반 임베디드 시스템의 사이버 보안 위협 동향 분석</p>
+<p>저자명: 정세연, 조민기, 황은비, 권태경</p>
+<p>발행일자: 2020.08.</p>
+<p>논문 종류: 국내학술저널</p>
+<p>컨퍼런스명/저널명: Journal of the KNST</p>
+</div>
+        </div>
+    </div>
+<h2 id="연구-배경-및-필요성">연구 배경 및 필요성</h2>
+<p>FPGA(Field programmable gate array)는 하드웨어 제조사, 서드파티 IP 제공자, 위탁업체 등에 의해 하드웨어 설계가 이루어지므로 HT(Hardware Troijan)을 삽입할 가능성이 존재함.</p>
+<p>따라서 본 논문에서는 FPGA를 대상으로 이루어질 수 있는 보안 위협과 FPGA 기반 임베디드 시스템의 위협 동향을 분석하였다.</p>
+<h2 id="기존-fpga-기반-임베디드-시스템-생태계">기존 FPGA 기반 임베디드 시스템 생태계</h2>
+<p>기존 FPGA 생태계는</p>
+<ol>
+<li>개발/생산 단계</li>
+<li>설치 단계</li>
+<li>운용 관리 단계</li>
+</ol>
+<p>로 나뉘며, 펌웨어 파일을 비트스트림이라고 지칭한다.</p>
+<p>이는 개발자는 HDL(Hardware Description Language)로 회로를 설계, 합성(synthesis), 과정, 그리고 배치 및 배선 등을 수행하여 비트스트림 파일로 변환한다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/102bd4ee-2e83-4b03-8b7a-51343686bf9f"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/102bd4ee-2e83-4b03-8b7a-51343686bf9f, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/102bd4ee-2e83-4b03-8b7a-51343686bf9f 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/102bd4ee-2e83-4b03-8b7a-51343686bf9f 2x"
+        data-sizes="auto"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/102bd4ee-2e83-4b03-8b7a-51343686bf9f"
+        title="image" /></p>
+<h3 id="dprdynamic-partial-reconfiguration">DPR(Dynamic partial reconfiguration)</h3>
+<p>FPGA에서는 펌웨어 일부만 수정 가능하다는 장점이 있다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/82a77ddf-f48c-4b18-9f2d-c4040729c203"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/82a77ddf-f48c-4b18-9f2d-c4040729c203, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/82a77ddf-f48c-4b18-9f2d-c4040729c203 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/82a77ddf-f48c-4b18-9f2d-c4040729c203 2x"
+        data-sizes="auto"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/82a77ddf-f48c-4b18-9f2d-c4040729c203"
+        title="image" /></p>
+<p>이를 위해서 위와 같은 구조를 가진다.</p>
+<p>여러 VP(virtual portion)으로 나뉘는데 각각의 VP는 다른 VP의 운영에 영향을 주지 않고 독립적으로 작동한다.</p>
+<p>따라서 런타임에 다른 기능으로 재구성이 가능한데, 이를 DPR이라고 한다.</p>
+<h2 id="fpga-기반-임베디드-시스템의-위협">FPGA 기반 임베디드 시스템의 위협</h2>
+<p>논문에서는 FPGA 라이프사이클의 일반적인 예를 고려하여 나타낸 FPGA 위협 모델을 제시한다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/397c9883-8b63-4361-93c6-db15c8a9d305"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/397c9883-8b63-4361-93c6-db15c8a9d305, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/397c9883-8b63-4361-93c6-db15c8a9d305 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/397c9883-8b63-4361-93c6-db15c8a9d305 2x"
+        data-sizes="auto"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/397c9883-8b63-4361-93c6-db15c8a9d305"
+        title="image" /></p>
+<h3 id="개발생산-단계에서의-사이버-보안-위협">개발/생산 단계에서의 사이버 보안 위협</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/06f4fee4-ad59-4d34-b781-aea32c321091"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/06f4fee4-ad59-4d34-b781-aea32c321091, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/06f4fee4-ad59-4d34-b781-aea32c321091 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/06f4fee4-ad59-4d34-b781-aea32c321091 2x"
+        data-sizes="auto"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/06f4fee4-ad59-4d34-b781-aea32c321091"
+        title="image" /></p>
+<ol>
+<li>신뢰되지 않은 설계 도구</li>
+<li>신뢰되지 않은 개발자</li>
+<li>신뢰되지 않은 3PIP 제공자:<br>
+개발상의 편의를 위해 사용하는 서드파티에서 HT를 탑재</li>
+<li>신뢰되지 않은 SoC 통합자</li>
+</ol>
+<h3 id="fpga-설치-단계에서의-사이버-보안-위협">FPGA 설치 단계에서의 사이버 보안 위협</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/1cb2240d-59ef-4f3f-84c7-99481401542a"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/1cb2240d-59ef-4f3f-84c7-99481401542a, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/1cb2240d-59ef-4f3f-84c7-99481401542a 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/1cb2240d-59ef-4f3f-84c7-99481401542a 2x"
+        data-sizes="auto"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/1cb2240d-59ef-4f3f-84c7-99481401542a"
+        title="image" /></p>
+<p>부채널 공격으로 인한 사이버 보안 위협을 제시한다.</p>
+<p>FPGA에서는 전원이 들어올 때 비트스트림에 저장되어있는 프로그래밍된 회로 설정을 불러와서 회로를 구성한다.</p>
+<p>내부 비휘발성 메모리가 없으면 외부에서 비트스트림을 불러오는데, 이때 비트스트림 정보 유출을 막기 위해 암호화를 사용.</p>
+<p>회로 정보를 분석하고 HT 삽입을 위해 부채널 공격으로 복호화 시도 가능.</p>
 <ul>
-<li>Starts: 24 11 2023, 20:00 KST</li>
-<li>Ends: 25 11 2023, 20:00 KST</li>
-<li>On-line</li>
-<li>Format: Jeopardy</li>
+<li>2011년 <a href="https://dl.acm.org/doi/abs/10.1145/2046707.2046722" target="_blank" rel="noopener noreffer ">Moaradi 등의 연구</a>에서 전력분석방법으로 비밀키 추출에 활용가능한 것을 보여주었다.</li>
 </ul>
-<h1 id="overview">Overview</h1>
-<p>no image</p>
-<h1 id="writeups">Writeups</h1>
-<h2 id="find-the-locationcrypto">Find the Location(crypto)</h2>
-<h3 id="background">Background</h3>
+<p>암호화키를 추출한 후 비트스트림을 복호화하여 HT를 삽입 가능할 것이다.</p>
+<h3 id="fpga-운용관리단계에서의-사이버-보안-위협">FPGA 운용/관리단계에서의 사이버 보안 위협</h3>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/b6cc1fc5-26a8-424a-88ea-95e7755d1309"
-        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/b6cc1fc5-26a8-424a-88ea-95e7755d1309, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/b6cc1fc5-26a8-424a-88ea-95e7755d1309 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/b6cc1fc5-26a8-424a-88ea-95e7755d1309 2x"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/561acda8-b4a6-46d9-9929-3afd4b9441f6"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/561acda8-b4a6-46d9-9929-3afd4b9441f6, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/561acda8-b4a6-46d9-9929-3afd4b9441f6 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/561acda8-b4a6-46d9-9929-3afd4b9441f6 2x"
         data-sizes="auto"
-        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/b6cc1fc5-26a8-424a-88ea-95e7755d1309"
-        title="image" /></p>
-<p>ENC file</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">NDA3NzU5ODQwNzc1OTM0MDc3NTg4MzkzOTgzODQwNzc2MTIzOTM5ODQwNDA3NzU3NjM5Mzk4NTY0MDc3NjY0NDA3NzYxMTQwNzc2ODYzOTM5ODM4MzkzOTgxOTM5Mzk4MTIzOTM5ODcxMzkzOTg1NjM5Mzk4NDczOTM5ODE4NDA3NzU5NjQwNzc1OTM0MDc3NTkyMzkzOTg0MjQwNzc2ODg0MDc3NjgzMzkzOTg4MTM5Mzk4NzI0MDc3NTg0MzkzOTkzNDM5Mzk4OTM0MDc3NjQ3NDA3NzY1MDM5Mzk5NDIzOTM5ODQxNDA3NzY5MTM5Mzk3NzczOTM5ODUwNDA3NzY4MjM5Mzk5NDY0MDc3NjQ2MzkzOTg1ODQwNzc2NTYzOTM5OTM4MzkzOTc5MzQwNzc2NzM0MDc3NjY0NDA3NzY3MzQwNzc2NTQ0MDc3NjY5MzkzOTg2NzM5Mzk5NDY0MDc3NjY4MzkzOTc4MjM5Mzk3ODEzOTM5Nzc4NDA3NzY3ODM5Mzk5NTgzOTM5ODUxMzkzOTg2NjQwNzc2NjY0MDc3NjYzNDA3NzY0NjM5Mzk4OTA0MDc3NTc2MzkzOTkwODM5Mzk5MTEzOTM5ODQ0
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>encrypt.py</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">base64</span> <span class="k">as</span> <span class="nn">b64</span> 
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">encode</span> <span class="p">(</span><span class="n">O0000OO00OO000O00</span> <span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">O0OOOOOO0O0O00O0O</span> <span class="o">=</span><span class="nb">list</span> <span class="p">(</span><span class="n">O0000OO00OO000O00</span> <span class="o">.</span><span class="n">encode</span> <span class="p">())</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">OOO0000OOOO0O0O0O</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span> <span class="p">(</span><span class="n">O0OOOOOO0O0O00O0O</span> <span class="p">)):</span>
-</span></span><span class="line"><span class="cl">        <span class="n">O0OOOOOO0O0O00O0O</span> <span class="p">[</span><span class="n">OOO0000OOOO0O0O0O</span> <span class="p">]</span><span class="o">=~</span><span class="p">(</span><span class="n">O0OOOOOO0O0O00O0O</span> <span class="p">[</span><span class="n">OOO0000OOOO0O0O0O</span> <span class="p">]</span><span class="o">^~</span><span class="p">(</span><span class="n">OOO0000OOOO0O0O0O</span> <span class="o">-</span><span class="mh">0x123456</span> <span class="p">))</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">O0OOOOOO0O0O00O0O</span> <span class="p">[</span><span class="n">OOO0000OOOO0O0O0O</span> <span class="p">]</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span><span class="mi">0</span> <span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">O0OOOOOO0O0O00O0O</span> <span class="p">[</span><span class="n">OOO0000OOOO0O0O0O</span> <span class="p">]</span><span class="o">=</span><span class="n">O0OOOOOO0O0O00O0O</span> <span class="p">[</span><span class="n">OOO0000OOOO0O0O0O</span> <span class="p">]</span><span class="o">+</span><span class="mh">0x22222</span> 
-</span></span><span class="line"><span class="cl">        <span class="n">O0OOOOOO0O0O00O0O</span> <span class="p">[</span><span class="n">OOO0000OOOO0O0O0O</span> <span class="p">]</span><span class="o">=</span><span class="n">O0OOOOOO0O0O00O0O</span> <span class="p">[</span><span class="n">OOO0000OOOO0O0O0O</span> <span class="p">]</span><span class="o">^~</span><span class="p">(</span><span class="n">OOO0000OOOO0O0O0O</span> <span class="o">+</span><span class="mh">0x2C0C02</span> <span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">OO00OO000OO0O0000</span> <span class="o">=</span><span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span> <span class="p">([</span><span class="nb">str</span> <span class="p">(</span><span class="n">O00O000OOO00OOOOO</span> <span class="p">)</span><span class="k">for</span> <span class="n">O00O000OOO00OOOOO</span> <span class="ow">in</span> <span class="n">O0OOOOOO0O0O00O0O</span> <span class="p">])</span>
-</span></span><span class="line"><span class="cl">    <span class="n">OO00OO000OO0O0000</span> <span class="o">=</span><span class="n">OO00OO000OO0O0000</span> <span class="o">.</span><span class="n">encode</span> <span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="n">OO00OO000OO0O0000</span> <span class="o">=</span><span class="n">b64</span> <span class="o">.</span><span class="n">b64encode</span> <span class="p">(</span><span class="n">OO00OO000OO0O0000</span> <span class="p">)</span><span class="o">.</span><span class="n">decode</span> <span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Hashed code = </span><span class="si">{</span><span class="n">OO00OO000OO0O0000</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">OO00OO000OO0O0000</span> <span class="o">==</span><span class="n">FLAG_HASH</span> <span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">True</span> 
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">False</span> 
-</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&#34;ENC.txt&#34;</span><span class="p">,</span><span class="s2">&#34;r&#34;</span><span class="p">)</span><span class="k">as</span> <span class="n">f</span> <span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">FLAG_HASH</span> <span class="o">=</span><span class="n">f</span> <span class="o">.</span><span class="n">read</span> <span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="kc">True</span> <span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">pw</span> <span class="o">=</span><span class="nb">input</span> <span class="p">(</span><span class="s2">&#34;Flag is? : &#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">encode</span> <span class="p">(</span><span class="n">pw</span> <span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">break</span> 
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="p">(</span><span class="s2">&#34;Try Again!&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">________________</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Correct! Submit </span><span class="si">{</span><span class="n">pw</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>encode 함수를 빼고? 일단. enc.txt를 열어서 read하고<br>무한반복으로 flag를 질문하여 pw를 입력받는다. 입력받은 문자열 pw를 encode한 값이 true이면 break하여 프로그램이 종료된다.</p>
-<p>결과적으로 encode 함수에 어떤 값을 넣어야 true를 반환하는지가 관건이다.</p>
-<p>gpt한테 해석을 맡긴다.</p>
-<p>해석을 맡기는 와중에 생각으로 변수명을 난해하게 한 것 같다.</p>
-<p>그냥 변수명만 치환해서 생각해보자.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">base64</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">encode</span><span class="p">(</span><span class="n">input_string</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 문자열을 바이트 배열로 변환</span>
-</span></span><span class="line"><span class="cl">    <span class="n">byte_array</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">input_string</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1"># 각 바이트에 대해 복잡한 변환 수행</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">byte_array</span><span class="p">)):</span>
-</span></span><span class="line"><span class="cl">        <span class="n">byte</span> <span class="o">=</span> <span class="n">byte_array</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">        <span class="c1"># 비트 반전과 XOR 연산 수행</span>
-</span></span><span class="line"><span class="cl">        <span class="n">byte</span> <span class="o">=</span> <span class="o">~</span><span class="p">(</span><span class="n">byte</span> <span class="o">^</span> <span class="o">~</span><span class="p">(</span><span class="n">index</span> <span class="o">-</span> <span class="mh">0x123456</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1"># 바이트가 짝수이면 특정 값 추가</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">byte</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">byte</span> <span class="o">+=</span> <span class="mh">0x22222</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1"># 다시 비트 반전과 XOR 연산 수행</span>
-</span></span><span class="line"><span class="cl">        <span class="n">byte</span> <span class="o">=</span> <span class="n">byte</span> <span class="o">^</span> <span class="o">~</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mh">0x2C0C02</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">byte_array</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">byte</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1"># 변환된 바이트 배열을 문자열로 변환 후 Base64 인코딩</span>
-</span></span><span class="line"><span class="cl">    <span class="n">transformed_string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">byte</span><span class="p">)</span> <span class="k">for</span> <span class="n">byte</span> <span class="ow">in</span> <span class="n">byte_array</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">    <span class="n">encoded_string</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">transformed_string</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1"># 결과 출력</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Hashed code = </span><span class="si">{</span><span class="n">encoded_string</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1"># 결과 비교 및 반환</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">encoded_string</span> <span class="o">==</span> <span class="n">FLAG_HASH</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 파일에서 FLAG_HASH 읽기</span>
-</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;ENC.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">FLAG_HASH</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 사용자 입력 처리</span>
-</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">input_value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Flag is? : &#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">encode</span><span class="p">(</span><span class="n">input_value</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">break</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Try Again!</span><span class="se">\n</span><span class="s2">________________</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Correct! Submit </span><span class="si">{</span><span class="n">input_value</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>gpt가 해준거</p>
-<h3 id="solution">Solution</h3>
-<p>왜 계속 역연산이 안되나 싶었는데, flag를 받을 때 숫자로 해석했어야 했다. 이는 조금만 encrypt.py를 돌려보면 알 수 있는 부분이었는데..</p>
-<p>exploit code</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">base64</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ENC.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">flag_hash</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">flag_hash_string</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">flag_hash</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">flag_byte</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">flag_hash_string</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span><span class="o">+</span><span class="mi">7</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">flag_hash_string</span><span class="p">),</span> <span class="mi">7</span><span class="p">)]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">flag_byte</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">flag_byte</span><span class="p">)):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">byte</span> <span class="o">=</span> <span class="n">flag_byte</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="n">byte</span> <span class="o">=</span> <span class="n">byte</span> <span class="o">^</span> <span class="o">~</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mh">0x2c0c02</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">byte</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">byte</span> <span class="o">-=</span> <span class="mh">0x22222</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">byte</span> <span class="o">=</span> <span class="o">~</span><span class="n">byte</span>
-</span></span><span class="line"><span class="cl">    <span class="n">byte</span> <span class="o">=</span> <span class="p">(</span><span class="n">byte</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="o">~</span><span class="p">(</span><span class="n">index</span> <span class="o">-</span> <span class="mh">0x123456</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">flag_byte</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">byte</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">(</span><span class="n">byte</span><span class="p">)</span> <span class="k">for</span> <span class="n">byte</span> <span class="ow">in</span> <span class="n">flag_byte</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
-<p>INCO{yOu&rsquo;l1_NEver_KNOw_Tha7_thE_pl4ce_Is_G4ngnArn_s747IoN_Exi7_12}</p>
-</blockquote>
-<h2 id="find-my-name-1-reversing">Find my name! (1) (reversing)</h2>
-<h3 id="background-1">Background</h3>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/27ff2341-a17c-4fb4-8e45-c9ba5cebcdb8"
-        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/27ff2341-a17c-4fb4-8e45-c9ba5cebcdb8, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/27ff2341-a17c-4fb4-8e45-c9ba5cebcdb8 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/27ff2341-a17c-4fb4-8e45-c9ba5cebcdb8 2x"
-        data-sizes="auto"
-        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/27ff2341-a17c-4fb4-8e45-c9ba5cebcdb8"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/561acda8-b4a6-46d9-9929-3afd4b9441f6"
         title="image" /></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cb87b8b1-4773-4c4b-b230-76650942462a"
-        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cb87b8b1-4773-4c4b-b230-76650942462a, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cb87b8b1-4773-4c4b-b230-76650942462a 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cb87b8b1-4773-4c4b-b230-76650942462a 2x"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/6be7ba60-4780-4177-a101-a05fc7e0c4d8"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/6be7ba60-4780-4177-a101-a05fc7e0c4d8, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/6be7ba60-4780-4177-a101-a05fc7e0c4d8 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/6be7ba60-4780-4177-a101-a05fc7e0c4d8 2x"
         data-sizes="auto"
-        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cb87b8b1-4773-4c4b-b230-76650942462a"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/6be7ba60-4780-4177-a101-a05fc7e0c4d8"
         title="image" /></p>
-<p>static analysis<br>
-amd64 PEfile</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/d9491b66-94de-4379-a9e3-569121db41f6"
-        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/d9491b66-94de-4379-a9e3-569121db41f6, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/d9491b66-94de-4379-a9e3-569121db41f6 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/d9491b66-94de-4379-a9e3-569121db41f6 2x"
-        data-sizes="auto"
-        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/d9491b66-94de-4379-a9e3-569121db41f6"
-        title="image" /></p>
-<p>dynamic analysis<br> Guess the number라는 문자열 찾기</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/0ff0d0af-bf1c-4e58-9069-a186f4b97b16"
-        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/0ff0d0af-bf1c-4e58-9069-a186f4b97b16, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/0ff0d0af-bf1c-4e58-9069-a186f4b97b16 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/0ff0d0af-bf1c-4e58-9069-a186f4b97b16 2x"
-        data-sizes="auto"
-        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/0ff0d0af-bf1c-4e58-9069-a186f4b97b16"
-        title="image" /></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/5ac71b75-74f0-4eb9-b74e-19060e528dd8"
-        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/5ac71b75-74f0-4eb9-b74e-19060e528dd8, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/5ac71b75-74f0-4eb9-b74e-19060e528dd8 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/5ac71b75-74f0-4eb9-b74e-19060e528dd8 2x"
-        data-sizes="auto"
-        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/5ac71b75-74f0-4eb9-b74e-19060e528dd8"
-        title="image" /></p>
-<p>입력한 v13이 v12와 같아야 함.
-랜덤이 하나의 플래그가 되는건 말이 안되는디;; Seed가 정해져 있어서 그런가?</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/75ead9a4-ec9d-4b8a-b8d9-b2fbf4a3bcff"
-        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/75ead9a4-ec9d-4b8a-b8d9-b2fbf4a3bcff, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/75ead9a4-ec9d-4b8a-b8d9-b2fbf4a3bcff 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/75ead9a4-ec9d-4b8a-b8d9-b2fbf4a3bcff 2x"
-        data-sizes="auto"
-        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/75ead9a4-ec9d-4b8a-b8d9-b2fbf4a3bcff"
-        title="image" /></p>
-<p>그냥 동적분석하면 되지 않나 싶었는데..</p>
-<h3 id="solution-1">Solution</h3>
-<blockquote>
-<p>INCO{7716b2901c6ccf1b8ea936dbcf7cb14bd32b7e9c}</p>
-</blockquote>
-<p>모르겠따.. 맞는지 틀린지라도 좀 알려줬으면 좋을듯.
-동적분석으로 바로 풀리면 누구나 다 맞췄겠지 싶다.</p>
-<h2 id="random-vs-random-crypto">Random VS Random (crypto)</h2>
-<h3 id="background-2">Background</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
-</span><span class="lnt">68
-</span><span class="lnt">69
-</span><span class="lnt">70
-</span><span class="lnt">71
-</span><span class="lnt">72
-</span><span class="lnt">73
-</span><span class="lnt">74
-</span><span class="lnt">75
-</span><span class="lnt">76
-</span><span class="lnt">77
-</span><span class="lnt">78
-</span><span class="lnt">79
-</span><span class="lnt">80
-</span><span class="lnt">81
-</span><span class="lnt">82
-</span><span class="lnt">83
-</span><span class="lnt">84
-</span><span class="lnt">85
-</span><span class="lnt">86
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/python3</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">bytes_to_long</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">signal</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">timeout</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;BYE ~&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">User</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">secret</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRandom</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">rng</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">Random</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">)</span> 
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">secret</span> <span class="o">=</span> <span class="n">bytes_to_long</span><span class="p">(</span><span class="n">secret</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nd">@staticmethod</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">getRandom</span><span class="p">(</span><span class="n">generator</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">generator</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">getrandbits</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span> 
-</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">generator</span><span class="o">.</span><span class="n">getrandbits</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">    <span class="nd">@staticmethod</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">            <span class="n">res</span> <span class="o">+=</span> <span class="p">(</span><span class="n">a</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">a</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">            <span class="n">b</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">res</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;[</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">] Recent Key : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRandom</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;[</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">] Key Updated !! &#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">rng</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">Random</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">)</span>        
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRandom</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rng</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">secret</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">res</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span>  <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGALRM</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">signal</span><span class="o">.</span><span class="n">alarm</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">32</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Alice</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s2">&#34;Alice&#34;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Bob</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s2">&#34;Bob&#34;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Point</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">menu</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Menu &gt; &#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">        <span class="k">except</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Please input the int value&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="k">continue</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">menu</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;BYE ~&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">menu</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">Alice</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">menu</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">Bob</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">menu</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># fight</span>
-</span></span><span class="line"><span class="cl">            <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">Alice</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="o">-</span> <span class="n">Bob</span><span class="o">.</span><span class="n">start</span><span class="p">())</span> <span class="o">%</span> <span class="mi">3</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">res</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Oh, Alice WIN !!&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="k">elif</span> <span class="n">res</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Oh, Bob WIN :(&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="k">elif</span> <span class="n">res</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;TIE&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">menu</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">Alice</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="o">-</span> <span class="n">Bob</span><span class="o">.</span><span class="n">start</span><span class="p">())</span> <span class="o">%</span> <span class="mi">3</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">res</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">                <span class="n">Point</span> <span class="o">+=</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Current Point : </span><span class="si">{</span><span class="n">Point</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Nah...&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">                <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">Point</span> <span class="o">==</span> <span class="mi">100</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/home/ctf/flag.txt&#39;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">        
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>chall.py이고</p>
-<p>User는 name과 secret을 받는다. rng는 random nubmer generator인거 같은데, random모듈을 사용한다. secret에서는 byte_to_long으로 정수 형태로 넣는다.</p>
-<p>getRandom 메소드는 generator가 none면 random모듈의 getrandbits로 32bit를 받고. 아니면 generator로 32bit를 받는다.</p>
-<p>key는 random을 사용하므로 random을 key로 하여 난수 생성기를 사용한다.</p>
-<p>sum은 두 숫자의 각 비트를 곱한 결과의 합을 계산한다. 즉 and를 한 결과의 1의 갯수이다.</p>
-<p>reset은 사용자 키를 재설정하고 rng도 재설정된다.</p>
-<p>start는 rng를 사용하여 값을 생성하고 이를 secre과 sum의 인자로 하여 그 결과를 반환한다.</p>
-<p>point가 100이 되면 플래그를 획득한다. 이는 20초 이내로 이루어져야 한다.</p>
-<p>메뉴가 0이면 alice키를 재설정, 1이면 bob키를 재설정한다.</p>
-<p>2면 alice의 start값에서 bob의 start값을 빼고 3으로 나눈 나머지를 취한다.<br>
-나머지가 1이면 alice가 이기고 2면 bob가 이기고 0이면 비긴다.</p>
-<p>메뉴가 3이면 아까처럼 Alic start에서 bob start를 빼는데 이때 res%3가 1이면 point를 증가시키고 아니면 종료한다.<br>
-포인트를 증가시킬 수단은 이것 뿐이다.</p>
-<p>즉, 100번 연속으로 Alice가 이겨야 한다.</p>
-<br>
-<p>그러기 위해서는 start값을 예측 == sum을  예측 == secret과 getRandom값을 알아야 함(secret은 예측 불가) == rng 예측 == key 예측 =&gt; 초기 getrandbits를 알면 key를 아는 것 =&gt; random.seed는 한 프로그램 내에서 고정.</p>
-<p>key나 rng를 어떻게 예측하는가?</p>
-<p>reset에서 출력되는 값은 Recent Key이다.<br>어? key값이 getRandom에서 항상 random.getrandbits로 고정되어있다. rng에서 다시 생성되는 줄 알았는데 이러면 예측이 쉬워진다.</p>
-<p>그럼 Recent Key로 key를 예측하고. 이를 통해 예측된 rng에서 예측된 val의 정확한 값을 알아낼 수 있음.<br>문제는 res의 예측인데. secret은 고정이므로, 초반 val 데이터를 가지고 항상 같은 결과를 내는 val의 1 갯수를 알 수 있을 것임 =&gt; 이는 menu 2번으로 확인 가능함.</p>
-<p>남은 시간에서는 해당 조건에 맞을 때마다 menu 3을 사용하여 point를 100을 채우는 것임.</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cab72285-837d-47d6-9b42-030983bc8db2"
-        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cab72285-837d-47d6-9b42-030983bc8db2, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cab72285-837d-47d6-9b42-030983bc8db2 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cab72285-837d-47d6-9b42-030983bc8db2 2x"
-        data-sizes="auto"
-        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cab72285-837d-47d6-9b42-030983bc8db2"
-        title="image" /></p>
-<p>val예측까지 성공했으나, secret에서 막힘..</p>
-<p>alice가 이기는 패턴만 모아서 할 수는 없나..?</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span>  <span class="nn">randcrack</span> <span class="kn">import</span> <span class="n">RandCrack</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">menu</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">.</span><span class="n">sendlineafter</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;&gt; &#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">cmd</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;Recent Key : &#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">pdrc_alice</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recvline</span><span class="p">()))</span>
-</span></span><span class="line"><span class="cl">        <span class="n">p</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">cmd</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;Recent Key : &#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">pdrc_bob</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recvline</span><span class="p">()))</span>
-</span></span><span class="line"><span class="cl">        <span class="n">p</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl"><span class="c1"># p = remote(&#39;13.125.251.104&#39;, 12010)</span>
-</span></span><span class="line"><span class="cl"><span class="n">p</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="s1">&#39;./chall.py&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">pdrc_alice</span> <span class="o">=</span> <span class="n">RandCrack</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="n">pdrc_bob</span> <span class="o">=</span> <span class="n">RandCrack</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">624</span><span class="p">)):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">menu</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">624</span><span class="p">)):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">menu</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">alice_key</span> <span class="o">=</span> <span class="n">pdrc_alice</span><span class="o">.</span><span class="n">predict_getrandbits</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">bob_key</span> <span class="o">=</span> <span class="n">pdrc_bob</span><span class="o">.</span><span class="n">predict_getrandbits</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># print(&#39;alice_key:&#39;,alice_key)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># print(&#39;bob_key:&#39;, bob_key)</span>
-</span></span><span class="line"><span class="cl"><span class="n">pattern</span> <span class="o">=</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">alice_rng</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">Random</span><span class="p">(</span><span class="n">alice_key</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">bob_rng</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">Random</span><span class="p">(</span><span class="n">bob_key</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">alice_val</span> <span class="o">=</span> <span class="n">alice_rng</span><span class="o">.</span><span class="n">getrandbits</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">bob_val</span> <span class="o">=</span> <span class="n">bob_rng</span><span class="o">.</span><span class="n">getrandbits</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># print(&#39;alice_val:&#39;, alice_val)</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># print(&#39;bob_val:&#39;, bob_val)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">menu</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="sa">b</span><span class="s1">&#39;Alice&#39;</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">recvline</span><span class="p">():</span>
-</span></span><span class="line"><span class="cl">        <span class="n">pattern</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">alice_val</span><span class="p">,</span> <span class="n">bob_val</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">alice_val</span> <span class="o">=</span> <span class="n">alice_rng</span><span class="o">.</span><span class="n">getrandbits</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">alice_val</span> <span class="o">=</span> <span class="n">bob_rng</span><span class="o">.</span><span class="n">getrandbits</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">alice_val</span><span class="p">,</span> <span class="n">bob_val</span><span class="p">)</span> <span class="ow">in</span> <span class="n">pattern</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">menu</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recvline</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">        <span class="c1"># if b&#39;100&#39; in p.recvline():</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">#     break</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">menu</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recvline</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>현재까지 작성한 코드..</p>
-<p>여기까지가 끝인가보오.</p></div><div class="post-footer" id="post-footer">
+<p>원격 DRP기능으로 인한 사이버 위협이 발생할 것이다.</p>
+<p>2017년 <a href="https://www.sciencedirect.com/science/article/pii/S0141933116303970?casa_token=_wvKVyt69v4AAAAA:l9nf7E5i8sNBSdgyEtgYSADKdZ-lqYsosBMmKnLpmwSILHnNd4besB_kqrc_BrA0RurrSRu0hjc" target="_blank" rel="noopener noreffer ">Johnson 등의 연구</a>에서는 비트스트림 수정 및 재구성 기능으로 HT 삽입이 가능하다는 것을 제안함.</p>
+<p>이외에도 사전 DPR기능을 사용하여 트리거 가능하도록 HT를 탑재한 경우, 원격으로 HT를 동작시켜 피해를 유발할 가능이 존재한다. =&gt; 트리거 시 오버헤드를 줄이고 실용적이며, HT를 사전에 탐지하기 어렵게 한다.</p>
+<h2 id="결론">결론</h2>
+<p>FPGA는 현재 금융, 방위, 항공 우주 등 많은 곳어세 사용되고 있으며, 보편화되어가는 만큼 보안에 대해서도 관심을 가져야 한다.</p>
+<p>설명한 보안 위협 외에도 다양한 보안 위협이 있을 것이며 이러한 보안 위협을 막기 위해서<br>
+사용중인 기능에 대한 분석을 통해, 필요한 기능만 사용하고 HT탐지를 위한 활발한 연구가 진행되어야 한다.</p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2023-11-24</span>
+                <span>Updated on 2024-01-13</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
                             <a class="link-to-markdown" href="/posts/7/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://neutrinox4b1.xyz/posts/7/" data-title="IncognitoCTF 2023" data-via="neutrinox4b1" data-hashtags="crypto,rev"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://neutrinox4b1.xyz/posts/7/" data-hashtag="crypto"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://neutrinox4b1.xyz/posts/7/" data-title="IncognitoCTF 2023"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://neutrinox4b1.xyz/posts/7/" data-title="IncognitoCTF 2023"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://neutrinox4b1.xyz/posts/7/" data-title="FPGA 기반 임베디드 시스템의 사이버 보안 위협 동향 분석" data-via="neutrinox4b1" data-hashtags="EMBEDDED"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://neutrinox4b1.xyz/posts/7/" data-hashtag="EMBEDDED"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://neutrinox4b1.xyz/posts/7/" data-title="FPGA 기반 임베디드 시스템의 사이버 보안 위협 동향 분석"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://neutrinox4b1.xyz/posts/7/" data-title="FPGA 기반 임베디드 시스템의 사이버 보안 위협 동향 분석"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/crypto/">crypto</a>,&nbsp;<a href="/tags/rev/">rev</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/embedded/">EMBEDDED</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/6/" class="prev" rel="prev" title="RFC-2616: HTTP Method"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>RFC-2616: HTTP Method</a>
-            <a href="/posts/8/" class="next" rel="next" title="C&#43;&#43;에서 참조자(Reference) 구현에 대한 궁금증">C++에서 참조자(Reference) 구현에 대한 궁금증<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+    <div class="post-nav"><a href="/posts/6/" class="prev" rel="prev" title="IncognitoCTF 2023"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>IncognitoCTF 2023</a></div>
 </div>
 <div id="comments"><div id="giscus" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.117.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/about/" target="_blank">neutrinox4b1</a></span></div>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/about/" target="_blank">neutrinox4b1</a></span></div>
         </div>
     </footer></div>
 
