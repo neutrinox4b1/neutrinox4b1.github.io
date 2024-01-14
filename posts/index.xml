@@ -4,13 +4,23 @@
         <link>https://neutrinox4b1.xyz/posts/</link>
         <description>All Posts | Neutrinox4b1</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>neutrinox4b1@gmail.com (neutrinox4b1)</managingEditor>
-            <webMaster>neutrinox4b1@gmail.com (neutrinox4b1)</webMaster><lastBuildDate>Sat, 13 Jan 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://neutrinox4b1.xyz/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>neutrinox4b1@gmail.com (neutrinox4b1)</webMaster><lastBuildDate>Sun, 14 Jan 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://neutrinox4b1.xyz/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>논문 구성 및 분석</title>
+    <link>https://neutrinox4b1.xyz/posts/10/</link>
+    <pubDate>Sun, 14 Jan 2024 00:00:00 &#43;0000</pubDate>
+    <author>neutrinox4b1</author>
+    <guid>https://neutrinox4b1.xyz/posts/10/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>임베디드 디바이스 펌웨어의 웹 인터페이스 취약점 식별을 위한 에뮬레이션 기반 퍼징 기법</title>
     <link>https://neutrinox4b1.xyz/posts/8/</link>
     <pubDate>Sat, 13 Jan 2024 00:00:00 &#43;0000</pubDate>
     <author>neutrinox4b1</author>
     <guid>https://neutrinox4b1.xyz/posts/8/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/67fa081e-1c68-40ad-9604-adbefa57ea9c" referrerpolicy="no-referrer">
+            </div>]]></description>
 </item>
 <item>
     <title>FPGA 기반 임베디드 시스템의 사이버 보안 위협 동향 분석</title>
@@ -18,7 +28,9 @@
     <pubDate>Fri, 12 Jan 2024 00:00:00 &#43;0000</pubDate>
     <author>neutrinox4b1</author>
     <guid>https://neutrinox4b1.xyz/posts/7/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/771495c1-f582-4f15-8a39-f83928990f6a" referrerpolicy="no-referrer">
+            </div>]]></description>
 </item>
 <item>
     <title>IncognitoCTF 2023</title>
@@ -51,14 +63,6 @@
             </div>]]></description>
 </item>
 <item>
-    <title></title>
-    <link>https://neutrinox4b1.xyz/posts/4/</link>
-    <pubDate>Tue, 14 Nov 2023 00:00:00 &#43;0000</pubDate>
-    <author>neutrinox4b1</author>
-    <guid>https://neutrinox4b1.xyz/posts/4/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
     <title>how to use hugo blog? (for me)</title>
     <link>https://neutrinox4b1.xyz/posts/2/</link>
     <pubDate>Tue, 29 Aug 2023 00:00:00 &#43;0000</pubDate>
@@ -75,6 +79,22 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Y6ZcgiMa4qLSGnexrwOIcA.png" referrerpolicy="no-referrer">
             </div>Team. Security Factorial]]></description>
+</item>
+<item>
+    <title></title>
+    <link>https://neutrinox4b1.xyz/posts/4/</link>
+    <pubDate>Sat, 14 Jan 2023 00:00:00 &#43;0000</pubDate>
+    <author>neutrinox4b1</author>
+    <guid>https://neutrinox4b1.xyz/posts/4/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title></title>
+    <link>https://neutrinox4b1.xyz/posts/9/</link>
+    <pubDate>Sat, 14 Jan 2023 00:00:00 &#43;0000</pubDate>
+    <author>neutrinox4b1</author>
+    <guid>https://neutrinox4b1.xyz/posts/9/</guid>
+    <description><![CDATA[]]></description>
 </item>
 </channel>
 </rss>

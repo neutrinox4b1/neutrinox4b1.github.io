@@ -258,7 +258,7 @@ xinetd 대신 자체 fork/accept 서버를 사용하는 경우, 서비스를 Exp
 
 이 권장 사항을 따르는 샘플 fork/accept 서버는 [fork_accept.c](https://github.com/pwning/docs/blob/master/fork_accept.c) 를 참조하라.
 
-xinetd 서비스에 댛나 샘플 xinetd구성은 [example.xinetd](https://github.com/pwning/docs/blob/master/example.xinetd)를 참조하라.
+xinetd 서비스에 대한 샘플 xinetd구성은 [example.xinetd](https://github.com/pwning/docs/blob/master/example.xinetd)를 참조하라.
 
 chroot 또는 제한된 환경에서 챌린지를 시작하기로 한 경우, /bin/sh, /bin/bash, /bin/cat 같은 기본 프로그램이 있는지 확인한다. 이것이 불가능하다면 문제 설명에서 그 사실을 명확히 해야한다.
 

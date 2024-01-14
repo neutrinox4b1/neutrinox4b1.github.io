@@ -14,7 +14,7 @@
 <meta name="twitter:title" content="Team. PPP - CTF 운영에 대한 제안"/>
 <meta name="twitter:description" content=""/>
 <meta name="application-name" content="Neutrinox4b1">
-<meta name="apple-mobile-web-app-title" content="Neutrinox4b1"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://neutrinox4b1.xyz/posts/3/" /><link rel="prev" href="https://neutrinox4b1.xyz/posts/4/" /><link rel="next" href="https://neutrinox4b1.xyz/posts/5/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="Neutrinox4b1"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://neutrinox4b1.xyz/posts/3/" /><link rel="prev" href="https://neutrinox4b1.xyz/posts/2/" /><link rel="next" href="https://neutrinox4b1.xyz/posts/5/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><meta name="google-site-verification" content="SuTZj3pOuAHCN3GPkDaksyjrtSKZ71OkBTC6T7IyoSc" /><script type="application/ld+json">
     {
@@ -98,7 +98,7 @@
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Team. PPP - CTF 운영에 대한 제안</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/about/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>neutrinox4b1</a></span>&nbsp;<span class="post-category">included in <a href="/categories/review/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Review</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="/about/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>neutrinox4b1</a></span>&nbsp;<span class="post-category">included in <a href="/categories/curated/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Curated</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-15">2023-11-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;3061 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;15 minutes&nbsp;</div>
         </div><div class="featured-image"><img
@@ -368,7 +368,7 @@
 <p>xinetd 대신 자체 fork/accept 서버를 사용하는 경우, 서비스를 Exploit 하는 사람이 서비스를 종료하거나 점령할 수 없도록 특별한 주의를 기울여야 한다.</p>
 <p>일반적인 방법은 서비스를 루트로 시작하고 forking 후 권한을 하락시키는 것이다. (그리고 소켓 fd를 유출하지 않도록 주의한다)</p>
 <p>이 권장 사항을 따르는 샘플 fork/accept 서버는 <a href="https://github.com/pwning/docs/blob/master/fork_accept.c" target="_blank" rel="noopener noreffer ">fork_accept.c</a> 를 참조하라.</p>
-<p>xinetd 서비스에 댛나 샘플 xinetd구성은 <a href="https://github.com/pwning/docs/blob/master/example.xinetd" target="_blank" rel="noopener noreffer ">example.xinetd</a>를 참조하라.</p>
+<p>xinetd 서비스에 대한 샘플 xinetd구성은 <a href="https://github.com/pwning/docs/blob/master/example.xinetd" target="_blank" rel="noopener noreffer ">example.xinetd</a>를 참조하라.</p>
 <p>chroot 또는 제한된 환경에서 챌린지를 시작하기로 한 경우, /bin/sh, /bin/bash, /bin/cat 같은 기본 프로그램이 있는지 확인한다. 이것이 불가능하다면 문제 설명에서 그 사실을 명확히 해야한다.</p>
 <p>서비스를 완전히 Exploit하고 제한된 chroot에서 실행되고 있다는 것을 깨닫기까지 한 시간을 낭비하는 것은 매우 짜증나는 일이다.</p>
 <p>remote pwnalbe을 설정하기 위한 지침:</p>
@@ -560,7 +560,7 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/4/" class="prev" rel="prev" title=""><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i></a>
+    <div class="post-nav"><a href="/posts/2/" class="prev" rel="prev" title="how to use hugo blog? (for me)"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>how to use hugo blog? (for me)</a>
             <a href="/posts/5/" class="next" rel="next" title="RFC-2616: HTTP Method">RFC-2616: HTTP Method<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="giscus" class="comment"></div><noscript>

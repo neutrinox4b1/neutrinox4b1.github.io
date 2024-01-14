@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>논문 구성 및 분석 - Neutrinox4b1</title><meta name="Description" content="Security Tech blog"><meta property="og:title" content="논문 구성 및 분석" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://neutrinox4b1.xyz/posts/10/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-01-14T00:00:00+00:00" /><meta property="og:site_name" content="Neutrinox4b1" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="논문 구성 및 분석"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="Neutrinox4b1">
+<meta name="apple-mobile-web-app-title" content="Neutrinox4b1"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://neutrinox4b1.xyz/posts/10/" /><link rel="prev" href="https://neutrinox4b1.xyz/posts/8/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><meta name="google-site-verification" content="SuTZj3pOuAHCN3GPkDaksyjrtSKZ71OkBTC6T7IyoSc" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "논문 구성 및 분석",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/neutrinox4b1.xyz\/posts\/10\/"
+        },"genre": "posts","wordcount":  546 ,
+        "url": "https:\/\/neutrinox4b1.xyz\/posts\/10\/","datePublished": "2024-01-14T00:00:00+00:00","dateModified": "2024-01-14T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "neutrinox4b1"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Neutrinox4b1">Neu@security-blog:~$</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> ./Posts </a><a class="menu-item" href="/tags/"> ./Tags </a><a class="menu-item" href="/categories/"> ./Categories </a><a class="menu-item" href="/about/"> ./About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Neutrinox4b1">Neu@security-blog:~$</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">./Posts</a><a class="menu-item" href="/tags/" title="">./Tags</a><a class="menu-item" href="/categories/" title="">./Categories</a><a class="menu-item" href="/about/" title="">./About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">논문 구성 및 분석</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/about/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>neutrinox4b1</a></span>&nbsp;<span class="post-category">included in <a href="/categories/insights/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Insights</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-14">2024-01-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;546 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#논문-전반에-대하여">논문 전반에 대하여</a>
+          <ul>
+            <li><a href="#괄호의-띄어쓰기">괄호의 띄어쓰기</a></li>
+          </ul>
+        </li>
+        <li><a href="#제목">제목</a></li>
+        <li><a href="#초록요약">초록(요약)</a></li>
+        <li><a href="#서론">서론</a></li>
+        <li><a href="#관련-연구문헌-고찰">관련 연구(문헌 고찰)</a></li>
+        <li><a href="#연구-방법-및-결과">연구 방법 및 결과</a></li>
+        <li><a href="#결과에-대한-논의">결과에 대한 논의</a></li>
+        <li><a href="#servey-논문">Servey 논문?</a>
+          <ul>
+            <li><a href="#서론-1">서론</a></li>
+            <li><a href="#관련-연구">관련 연구</a></li>
+            <li><a href="#의-기술-동향">~의 기술 동향</a></li>
+            <li><a href="#결론">결론</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>내가 논문을 작성할 때 각 파트별로 어떤 내용이 들어가야 하는지, 주의할 점은 무엇인지 참고하기 위해 기록해둔다.</p>
+<h2 id="논문-전반에-대하여">논문 전반에 대하여</h2>
+<ul>
+<li>
+<p>논문 쓰기는 완벽히 준비가 되지 않았더라도 시작하라.</p>
+</li>
+<li>
+<p>욕심아니 완벽주의를 내려놓고 적당한 순간에 쓰다가 멈춰라.</p>
+</li>
+<li>
+<p>서론, 선행 연구 분석, 연구 방법, 연구 결과는 독자를 학부 2학년 정도를 대상으로 염두하여 작성한다.</p>
+</li>
+<li>
+<p>읽은 논문에 대해 질문을 던진다.</p>
+<ol>
+<li>저자들의 핵심 주장은 무엇인가?</li>
+<li>다른 연구의 주장과 어떻게 다르고 어떻게 유사한가?</li>
+<li>연구를 통해 채우지 못한 부분은 무엇인가?</li>
+</ol>
+</li>
+<li>
+<p>좋은 논문을 쓰고 싶다면 두려움 없이 과감히 질문을 던질 능력과 용기를 길러야 한다. =&gt; 늘 시비걸 준비를 해야한다.</p>
+</li>
+<li>
+<p>논문의 구성 요소들은 별개로 존재하는 것이 아니라 하나의 서사적 흐름을 가져야 한다.</p>
+</li>
+</ul>
+<h3 id="괄호의-띄어쓰기">괄호의 띄어쓰기</h3>
+<p>종종 헷갈리기 때문에 따로 빼둔다.</p>
+<p>괄호를 사용하여 단어에 대한 부가설명을 할 때, 국문에서는 띄어쓰기를 하지 않고 영문에서는 띄어쓰기를 사용한다.</p>
+<div class="details admonition example open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ol fa-fw" aria-hidden="true"></i>e.g.<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>packet loss rate(PLR) =&gt; X
+packet loss rate (PLR) =&gt; O</p>
+<p>커피(coffee) =&gt; O
+커피 (coffee) =&gt; X</p>
+</div>
+        </div>
+    </div>
+<h2 id="제목">제목</h2>
+<p>논문의 제목은</p>
+<ul>
+<li>짧으면서</li>
+<li>핵심을 짚고</li>
+<li>매력적이어야</li>
+</ul>
+<p>한다.</p>
+<p>제목에 전문적인 용어나 약어는 사용하지 않으며, 논문의 가치를 떨어트릴 수 있는 &lsquo;탐색적 연구&rsquo; 같은 표현은 지양한다.</p>
+<p>논문 제목에 000에 대한 연구, 000에 대한 고찰 같은 진부한 표현은 사용하지 않는 것이 좋다.</p>
+<h2 id="초록요약">초록(요약)</h2>
+<p>초록은</p>
+<ol>
+<li>논문의 목적</li>
+<li>논문의 주요 연구 문제와 가설</li>
+<li>논문의 방법론 소개</li>
+<li>논문의 주요 결과</li>
+</ol>
+<p>등을 포함한다.</p>
+<p>초록 안에 있는 내용은 초록 안에서 모두 이해되어야 하며,
+초록에는 다른 문헌을 인용하는 내용을 포함하지 않는다.</p>
+<h2 id="서론">서론</h2>
+<p>서론에는</p>
+<ol>
+<li>연구의 목적</li>
+<li>연구의 배경</li>
+<li>연구의 핵심 질문</li>
+<li>연구 방법 소개</li>
+</ol>
+<p>등의 내용이 들어가며, 순서는 상관없다.
+가장 신경써야 하는 부분은 연구의 목적을 명확하게 밝히는 것이다.</p>
+<p>서론의 첫 문장을 &ldquo;이 연구의 목적은 ~&ldquo;으로 시작할 수도 있다.</p>
+<p>연구의 배경은 연구 대상의 배경이 아니라 연구의 배경에 해당하는 내용을 담아야 한다.</p>
+<p>특정 주제에 대한 선행 연구들의 연구 결과가 연구 배경이 되는 경우, (연구 방향 수정, 대립되는 이론이나 결과, 다루지 않은 대상 점검 등)
+선행 연구들의 쟁점이 무엇인지 간략하게 설명하는 것이 연구 배경의 주요 내용이 될 것이다.</p>
+<p>서론은 가능하다면 짧은 것이 좋다. 2페이지를 넘어가지 않도록.
+서론의 내용은 서론 안에서 모두 이해되어야 한다.</p>
+<p>서론에 결론의 내용을 포함시켜서는 안 된다.</p>
+<h2 id="관련-연구문헌-고찰">관련 연구(문헌 고찰)</h2>
+<p>선행 연구에 대한 논의 부분은 내 연구 문제와 가설의 근거를 소개하는 것이다.
+선행 연구 논의 그 자체가 되어서는 안 된다.</p>
+<ol>
+<li>내 연구의 이론적 토대</li>
+<li>내 논문이 다루는 연구 질문에 대한 선행 연구들의 결과</li>
+<li>문제점과 가설 등이 들어가야 한다.</li>
+</ol>
+<p>내 연구 문제나 가설의 근거가 되는 것을 정리하는 부분이다.
+관련 주제나 이론의 교과서적인 내용이 되어서는 안 된다.</p>
+<h2 id="연구-방법-및-결과">연구 방법 및 결과</h2>
+<p>방법론 부분의 구성은</p>
+<ol>
+<li>자료 수집 방법 및 절차</li>
+<li>변인 측정 방법</li>
+<li>분석 방법
+의 요소를 갖춘다.</li>
+</ol>
+<p>연구 방법 부분의 시제는 과거형으로 하는 것이 좋다. (아직 모르겠다.)</p>
+<p>결과 부분에서 애매모호한 표현을 피하고 직설적이고 명확하게 결과의 내용을 제시한다.</p>
+<p>결과 부분도 과거형으로</p>
+<h2 id="결과에-대한-논의">결과에 대한 논의</h2>
+<p>결과에 대한 논의 부분은</p>
+<ol>
+<li>연구 목적 소개</li>
+<li>결과의 요약</li>
+<li>연구 결과의 이론적, 방법론적 의의</li>
+<li>연구 결과의 실제적 의의</li>
+<li>연구의 제한점(한계점)</li>
+<li>후속 연구 제안</li>
+<li>결론</li>
+</ol>
+<p>으로 구성된다.</p>
+<p>결과에 대한 논의 부분에서는 제 3자적인 시각으로 자기 연구의 장점과 단점을 비판적으로 살펴볼 수 있어야 한다.</p>
+<h2 id="servey-논문">Servey 논문?</h2>
+<p>Servey 논문은 위와 좀 다른 구성이 있는 것 같다.</p>
+<h3 id="서론-1">서론</h3>
+<ol>
+<li>연구의 배경</li>
+<li>연구의 목적 (~을 제고한다거나)</li>
+<li>연구의 구성</li>
+</ol>
+<h3 id="관련-연구">관련 연구</h3>
+<p>연구의 흐름에 따라서 특징, 장단점을 서술한다.</p>
+<h3 id="의-기술-동향">~의 기술 동향</h3>
+<ul>
+<li>국외 동향</li>
+<li>국내 동향</li>
+</ul>
+<p>으로 구분하여 분석할 수 있다.</p>
+<p>기술 정의(~는 ~이다.)와 기술에 대한 상세 정보를 포함하여 문단을 구성한다.</p>
+<p>수행되어왔던 연구를 공통된 기준으로 분류하여 Table을 작성하면 좋다.
+SCIE 논문의 preliminaries 부분을 작성한다는 느낌?</p>
+<h3 id="결론">결론</h3>
+<p>본 Servey 논문에서 무엇을 분석하였고 무엇을 제시했는지 언급한다.</p>
+<p>분석한 내용을 간략히 요약하며, 향후 수행할 연구에 대해 언급할 수 있다.</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2024-01-14</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/10/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://neutrinox4b1.xyz/posts/10/" data-title="논문 구성 및 분석" data-via="neutrinox4b1"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://neutrinox4b1.xyz/posts/10/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://neutrinox4b1.xyz/posts/10/" data-title="논문 구성 및 분석"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://neutrinox4b1.xyz/posts/10/" data-title="논문 구성 및 분석"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/8/" class="prev" rel="prev" title="임베디드 디바이스 펌웨어의 웹 인터페이스 취약점 식별을 위한 에뮬레이션 기반 퍼징 기법"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>임베디드 디바이스 펌웨어의 웹 인터페이스 취약점 식별을 위한 에뮬레이션 기반 퍼징 기법</a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.117.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/about/" target="_blank">neutrinox4b1</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"giscus":{"category":"Q\u0026A","categoryId":"DIC_kwDOKMfEfM4CY8DM","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"en","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"neutrinox4b1/neutrinox4b1.github.io","repoId":"R_kgDOKMfEfA"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

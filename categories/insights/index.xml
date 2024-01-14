@@ -4,23 +4,33 @@
         <link>https://neutrinox4b1.xyz/categories/insights/</link>
         <description>Insights - Category - Neutrinox4b1</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>neutrinox4b1@gmail.com (neutrinox4b1)</managingEditor>
-            <webMaster>neutrinox4b1@gmail.com (neutrinox4b1)</webMaster><lastBuildDate>Wed, 15 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://neutrinox4b1.xyz/categories/insights/" rel="self" type="application/rss+xml" /><item>
-    <title>Team. PPP - CTF 운영에 대한 제안</title>
-    <link>https://neutrinox4b1.xyz/posts/suggestions-for-running-a-ctf/</link>
-    <pubDate>Wed, 15 Nov 2023 00:00:00 &#43;0000</pubDate>
+            <webMaster>neutrinox4b1@gmail.com (neutrinox4b1)</webMaster><lastBuildDate>Sun, 14 Jan 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://neutrinox4b1.xyz/categories/insights/" rel="self" type="application/rss+xml" /><item>
+    <title>논문 구성 및 분석</title>
+    <link>https://neutrinox4b1.xyz/posts/10/</link>
+    <pubDate>Sun, 14 Jan 2024 00:00:00 &#43;0000</pubDate>
     <author>neutrinox4b1</author>
-    <guid>https://neutrinox4b1.xyz/posts/suggestions-for-running-a-ctf/</guid>
+    <guid>https://neutrinox4b1.xyz/posts/10/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>임베디드 디바이스 펌웨어의 웹 인터페이스 취약점 식별을 위한 에뮬레이션 기반 퍼징 기법</title>
+    <link>https://neutrinox4b1.xyz/posts/8/</link>
+    <pubDate>Sat, 13 Jan 2024 00:00:00 &#43;0000</pubDate>
+    <author>neutrinox4b1</author>
+    <guid>https://neutrinox4b1.xyz/posts/8/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/c9bb6052-ee9c-4a78-aac0-0352ec2d9fad" referrerpolicy="no-referrer">
+                <img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/67fa081e-1c68-40ad-9604-adbefa57ea9c" referrerpolicy="no-referrer">
             </div>]]></description>
 </item>
 <item>
-    <title>how to use hugo blog? (for me)</title>
-    <link>https://neutrinox4b1.xyz/posts/announce/</link>
-    <pubDate>Tue, 29 Aug 2023 00:00:00 &#43;0000</pubDate>
+    <title>FPGA 기반 임베디드 시스템의 사이버 보안 위협 동향 분석</title>
+    <link>https://neutrinox4b1.xyz/posts/7/</link>
+    <pubDate>Fri, 12 Jan 2024 00:00:00 &#43;0000</pubDate>
     <author>neutrinox4b1</author>
-    <guid>https://neutrinox4b1.xyz/posts/announce/</guid>
-    <description><![CDATA[]]></description>
+    <guid>https://neutrinox4b1.xyz/posts/7/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/771495c1-f582-4f15-8a39-f83928990f6a" referrerpolicy="no-referrer">
+            </div>]]></description>
 </item>
 </channel>
 </rss>
