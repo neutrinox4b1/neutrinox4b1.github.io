@@ -4,7 +4,17 @@
         <link>https://neutrinox4b1.xyz/tags/embedded/</link>
         <description>EMBEDDED - Tag - Neutrinox4b1</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>neutrinox4b1@gmail.com (neutrinox4b1)</managingEditor>
-            <webMaster>neutrinox4b1@gmail.com (neutrinox4b1)</webMaster><lastBuildDate>Sat, 13 Jan 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://neutrinox4b1.xyz/tags/embedded/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>neutrinox4b1@gmail.com (neutrinox4b1)</webMaster><lastBuildDate>Thu, 18 Jan 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://neutrinox4b1.xyz/tags/embedded/" rel="self" type="application/rss+xml" /><item>
+    <title>ARM64 아키텍처 기반 하드웨어 보안기술 분석 및 보안성 진단</title>
+    <link>https://neutrinox4b1.xyz/posts/11/</link>
+    <pubDate>Thu, 18 Jan 2024 00:00:00 &#43;0000</pubDate>
+    <author>neutrinox4b1</author>
+    <guid>https://neutrinox4b1.xyz/posts/11/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/ed08c57c-2286-4a73-9153-30b84751a612" referrerpolicy="no-referrer">
+            </div>]]></description>
+</item>
+<item>
     <title>임베디드 디바이스 펌웨어의 웹 인터페이스 취약점 식별을 위한 에뮬레이션 기반 퍼징 기법</title>
     <link>https://neutrinox4b1.xyz/posts/8/</link>
     <pubDate>Sat, 13 Jan 2024 00:00:00 &#43;0000</pubDate>

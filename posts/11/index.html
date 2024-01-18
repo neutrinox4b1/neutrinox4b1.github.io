@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>ARM64 아키텍처 기반 하드웨어 보안기술 분석 및 보안성 진단 - Neutrinox4b1</title><meta name="Description" content="Security Tech blog"><meta property="og:title" content="ARM64 아키텍처 기반 하드웨어 보안기술 분석 및 보안성 진단" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://neutrinox4b1.xyz/posts/11/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-01-18T00:00:00+00:00" /><meta property="og:site_name" content="Neutrinox4b1" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ARM64 아키텍처 기반 하드웨어 보안기술 분석 및 보안성 진단"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="Neutrinox4b1">
+<meta name="apple-mobile-web-app-title" content="Neutrinox4b1"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://neutrinox4b1.xyz/posts/11/" /><link rel="prev" href="https://neutrinox4b1.xyz/posts/10/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><meta name="google-site-verification" content="SuTZj3pOuAHCN3GPkDaksyjrtSKZ71OkBTC6T7IyoSc" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "ARM64 아키텍처 기반 하드웨어 보안기술 분석 및 보안성 진단",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/neutrinox4b1.xyz\/posts\/11\/"
+        },"genre": "posts","keywords": "EMBEDDED","wordcount":  1176 ,
+        "url": "https:\/\/neutrinox4b1.xyz\/posts\/11\/","datePublished": "2024-01-18T00:00:00+00:00","dateModified": "2024-01-18T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "neutrinox4b1"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Neutrinox4b1">Neu@security-blog:~$</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> ./Posts </a><a class="menu-item" href="/tags/"> ./Tags </a><a class="menu-item" href="/categories/"> ./Categories </a><a class="menu-item" href="/about/"> ./About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Neutrinox4b1">Neu@security-blog:~$</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">./Posts</a><a class="menu-item" href="/tags/" title="">./Tags</a><a class="menu-item" href="/categories/" title="">./Categories</a><a class="menu-item" href="/about/" title="">./About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">ARM64 아키텍처 기반 하드웨어 보안기술 분석 및 보안성 진단</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/about/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>neutrinox4b1</a></span>&nbsp;<span class="post-category">included in <a href="/categories/insights/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Insights</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-18">2024-01-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1176 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/ed08c57c-2286-4a73-9153-30b84751a612"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/ed08c57c-2286-4a73-9153-30b84751a612, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/ed08c57c-2286-4a73-9153-30b84751a612 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/ed08c57c-2286-4a73-9153-30b84751a612 2x"
+        data-sizes="auto"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/ed08c57c-2286-4a73-9153-30b84751a612"
+        title="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/ed08c57c-2286-4a73-9153-30b84751a612" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#서론">서론</a>
+          <ul>
+            <li><a href="#연구-배경-및-필요성">연구 배경 및 필요성</a></li>
+            <li><a href="#선행-연구의-한계점">선행 연구의 한계점</a></li>
+            <li><a href="#연구의-목적">연구의 목적</a></li>
+          </ul>
+        </li>
+        <li><a href="#관련-연구">관련 연구</a>
+          <ul>
+            <li><a href="#메모리-보호-기술">메모리 보호 기술</a></li>
+            <li><a href="#pointer-authentication">Pointer Authentication</a></li>
+            <li><a href="#pac-기반-메모리-보호기술">PAC 기반 메모리 보호기술</a>
+              <ul>
+                <li><a href="#pac를-활용한-방어연구">PAC를 활용한 방어연구</a></li>
+                <li><a href="#pac를-공격하는-연구">PAC를 공격하는 연구</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#pac-생성-및-관리-과정-분석">PAC 생성 및 관리 과정 분석</a>
+          <ul>
+            <li><a href="#pac-key-관리">PAC key 관리</a></li>
+            <li><a href="#pac-사용-과정">PAC 사용 과정</a>
+              <ul>
+                <li><a href="#forward-edge">Forward Edge</a></li>
+                <li><a href="#backward-edge">Backward Edge</a></li>
+              </ul>
+            </li>
+            <li><a href="#pac-오류-처리">PAC 오류 처리</a></li>
+          </ul>
+        </li>
+        <li><a href="#pac에-대한-공격">PAC에 대한 공격</a>
+          <ul>
+            <li><a href="#무차별-대입-공격">무차별 대입 공격</a></li>
+            <li><a href="#c-가상함수-공격">C++ 가상함수 공격</a></li>
+          </ul>
+        </li>
+        <li><a href="#실험">실험</a>
+          <ul>
+            <li><a href="#무차별-대입-공격-1">무차별 대입 공격</a></li>
+            <li><a href="#가상함수-공격">가상함수 공격</a></li>
+          </ul>
+        </li>
+        <li><a href="#결론">결론</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>제목: ARM64 아키텍처 기반 하드웨어 보안기술 분석 및 보안성 진단</p>
+<p>저자명: 심명규, 이호준</p>
+<p>발행일자: 2023.06.</p>
+<p>논문 종류: 국내학술저널</p>
+<p>컨퍼런스명/저널명: 정보보호학회 논문지</p>
+</div>
+        </div>
+    </div>
+<h2 id="서론">서론</h2>
+<h3 id="연구-배경-및-필요성">연구 배경 및 필요성</h3>
+<p>현대의 소프트웨어 공격은 실행 흐름 변조를 기본으로 한다.
+실행 흐름 변조는 메모리 변조로부터 시작된다.</p>
+<p>ARM에서 하드웨어를 사용한 <a href="https://www.qualcomm.com/content/dam/qcomm-martech/dm-assets/documents/pointer-auth-v7.pdf" target="_blank" rel="noopener noreffer ">메모리 보호기술</a>을 선보였으나, 개발 초기단계이므로 해당 기술이 적용된 사례는 많지 않다.</p>
+<p>하드웨어 보안 기술이 적용된 기기는 늘어날 예정이다.
+아직은 실제 사용 환경에서의 보안에 관한 연구가 많이 이루어지지 않았다. 실제 적용된 하드웨어에 관한 보안 연구도 다양하게 이루어지지 않았다.</p>
+<h3 id="선행-연구의-한계점">선행 연구의 한계점</h3>
+<p>메모리 보호를 소프트웨어적으로 해결하는 연구가 상당수 진행되고 있으나 성능의 저하가 극심함으로 인해
+실제 프로그램에 적용하기에는 한계가 존재한다.</p>
+<h3 id="연구의-목적">연구의 목적</h3>
+<p>ARM 하드웨어 보안 기술이 적용되어 있는 하드웨어의 적용 방식과 보안성에 대한 진단을 수행한다.</p>
+<h2 id="관련-연구">관련 연구</h2>
+<h3 id="메모리-보호-기술">메모리 보호 기술</h3>
+<ul>
+<li>
+<p>AddressSanitizer: 할당된 메모리를 벗어나는 것을 확인하여 다른 값으로 덮어씌워지는 것을 방지</p>
+</li>
+<li>
+<p>메모리 태깅: 메모리에 태그를 주어 특정 메모리 영역이 아닌 부분을 사용하는 것을 방지</p>
+</li>
+<li>
+<p>CCFI: 메모리 내부 포인터의 변조를 해시 등으로 보호</p>
+</li>
+<li>
+<p>ZeR∅: 캐시 내부에 메타데이터를 넣어 메모리의 변조를 방지</p>
+</li>
+<li>
+<p>Morpheus: RISC-V를 사용하여 메모리 도메인을 만들고 그에 대한 태깅, 변위 및 암호화로 포인터 변조 방지</p>
+</li>
+</ul>
+<p>하드웨어를 사용하여 메모리 보호 기술을 기존의 소프트웨어 방식보다 빠르게 하는 방향으로 변화 중</p>
+<ul>
+<li>PAC: 포인터 인증 방식, 포인터를 사용하기 전에 인증하여 포인터의 무결성을 보장한다.</li>
+</ul>
+<h3 id="pointer-authentication">Pointer Authentication</h3>
+<p>PA. 포인터에 암호학 서명을 넣어 무결성을 보장한다.
+상위 특정 비트에 PAC (Pointer Authentication Code)를 넣고 사용할 때 검증하여 변조 여부를 확인 할 수 있다.</p>
+<p>ARM v8.3-A에서 새로 추가됨.</p>
+<p>PAC는 128bit key, 64bit pointer, 64bit 수정자를 통해 포인터에 서명한다.
+표준에서는 QARMA라는 블록 암호를 이용하여 PAC를 계산할 것을 권장한다.</p>
+<p>포인터 종류에 따라 key가 다르며 5개까지 있다. 수정자는 일반적으로 스택 주소를 사용한다.</p>
+<p>PAC key</p>
+<ul>
+<li>code pointer: APIA, APIB</li>
+<li>data pointer: APDA, APDB</li>
+<li>general purpose: APGA</li>
+</ul>
+<p>여러 개의 키를 사용하는 이유는 하나의 인증된 포인터가 다른 포인터로 대체되는 포인터 대체 공격을 보호하기 위함이다.
+키는 시스템 레지스터에 저장되어 User mode인 EL0에서는 읽을 수 없다. =&gt; 유저는 PAC 서명에 사용되는 키를 읽거나 변경 불가능. <a href="https://googleprojectzero.blogspot.com/2019/02/examining-pointer-authentication-on.html" target="_blank" rel="noopener noreffer ">[ref]</a></p>
+<p>PAC 사용을 위해 ARMv8.3-A부터는 PAC으로 시작되는 명령어와 AUT로 시작되는 명령어가 추가되었다.</p>
+<p>PAC로 시작하는 명령어는 포인터에 PAC를 부여한다.
+AUT로 시작하는 명령어는 PAC가 추가된 포인터를 검증하여 포인터를 사용할 수 있도록 한다.</p>
+<p>리턴이나 점프 등 상황에서 사용할 수 있는 RETAA 명령어도 추가되었다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cceb8ddf-59c3-4ff3-a570-25b34fadfcd7"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cceb8ddf-59c3-4ff3-a570-25b34fadfcd7, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cceb8ddf-59c3-4ff3-a570-25b34fadfcd7 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cceb8ddf-59c3-4ff3-a570-25b34fadfcd7 2x"
+        data-sizes="auto"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/cceb8ddf-59c3-4ff3-a570-25b34fadfcd7"
+        title="image" /></p>
+<p>macOS에서 PAC는 포인터에 주소가 대입되는 시점에 계산하는 Forward edge,
+함수 종료 후 리턴 주소를 보호하는 Backward edge 두 가지의 보호를 지원한다.</p>
+<h3 id="pac-기반-메모리-보호기술">PAC 기반 메모리 보호기술</h3>
+<h4 id="pac를-활용한-방어연구">PAC를 활용한 방어연구</h4>
+<p>P. Nasahl 외 2명은 PAC를 이용하여 fault attack을 통한 간접 점프 공격을 보호하는 방법을 제시하였다. 점프하려고 하는 주소와 간접 주소 분기점 두 가지를 보호하여 공격자가 해당 주소를 실행하는 것을 방지한다.</p>
+<p>PAL은 커널 내부 실행 흐름 보호 방식이다. PAC를 사용하여 보호한다.</p>
+<p>A. Fanti 외 4명은 LLVM을 활용해 메모리에 레지스터가 저장될 때 PAC를 사용하여 레지스터의 값을 보호하는 방식을 제안한다.</p>
+<p>PTAuth는 힙에서 temporal memory corruption을 방지하기 위해 PAC를 사용하여 포인터의 무결성을 보장한다. 컴파일러를 수정하였다.</p>
+<p>PACMem은 PAC 명령어를 활용하여 객체 서명과 크기를 담은 메타 데이터를 생성, 이를 활용하여 객체의 temporal safety와 spatial safety를 보장한다.</p>
+<h4 id="pac를-공격하는-연구">PAC를 공격하는 연구</h4>
+<p>PACMAN은 커널에서 PAC를 인증하고 실행하는 특정한 gadget을 이용하여 PAC에 대한 검증을 오류 없이 진행, 무차별 대입으로 실제 수행되는 PAC의 값을 알아낸다. 맞는 지 검증하기 위해서는 부채널 공격을 수행하였다.
+2.94분 이내로 하나의 포인터에 대한 PAC를 알아낼 수 있고 정확도는 90%이다.</p>
+<p>에뮬레이션 된 PAC를 분석한 PAC it up에서는 포인터 생성 이전의 포인터 값과 수정자를 이용하여 원하는 PAC서명을 얻을 수 있다고 하였다.
+이를 통해, 서명된 포인터를 저장했다가 필요할 때 같은 수정자를 사용하는 함수에서 해당 포인터를 사용하여 서명 인증을 회피할 수 있다.</p>
+<h2 id="pac-생성-및-관리-과정-분석">PAC 생성 및 관리 과정 분석</h2>
+<p>M1에서 PAC이 어떻게 생성되고 관리되는지를 서술함.</p>
+<p>XNU 커널에서의 PAC는 부팅 시에 생성된다. CPU 권한 레벨과 PAC키의 레지스터를 이용하여 PAC키를 생성한다. 생성 이후에는 시스템 레지스터에 저장된다.</p>
+<p>유저가 사용하는 PAC키는 프로세스별로 분리된다. -&gt; 같은 프로세스의 스레드는 같은 키를 공유한다.
+APIA, APDA키는 주소 공간 공유영역 할당시 생성, APIB, APDB는 프로세스 생성 시 생성된다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/f8b67037-cdcc-4279-99df-0480844a5fa2"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/f8b67037-cdcc-4279-99df-0480844a5fa2, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/f8b67037-cdcc-4279-99df-0480844a5fa2 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/f8b67037-cdcc-4279-99df-0480844a5fa2 2x"
+        data-sizes="auto"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/f8b67037-cdcc-4279-99df-0480844a5fa2"
+        title="image" /></p>
+<p>유저가 사용하는 PAC키는 task 구조체에서 관리한다.
+task 구조체 내부 rop_pid, jop_pid 변수는 키를 저장한다.</p>
+<p>APIA, APDA -&gt; jop_pid
+APIB, APDB -&gt; rop_pid</p>
+<h3 id="pac-key-관리">PAC key 관리</h3>
+<p>커널의 PAC 키는 기본적으로 시스템 레지스터에 저장되나, 코어 절전이나 인터럽트같이 코어 내부 상태를 저장하는 경우 커널메모리에 커널 PAC키가 저장된다.</p>
+<p>$\therefore$ 커널 PAC키는 부팅 후 변경되지 않으므로 임의의 커널메모리를 읽을 수 있으면 PAC 키 값도 읽을 수 있다.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/96120731-9964-4695-8d1a-92074f367a77"
+        data-srcset="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/96120731-9964-4695-8d1a-92074f367a77, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/96120731-9964-4695-8d1a-92074f367a77 1.5x, https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/96120731-9964-4695-8d1a-92074f367a77 2x"
+        data-sizes="auto"
+        alt="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/96120731-9964-4695-8d1a-92074f367a77"
+        title="image" /></p>
+<p>유저 프로세스에서..</p>
+<p>A키는 공유영역 id가 같은 경우 같은 키를 사용하고
+B키는 fork 같이 메모리 주소 공간을 공유하는 경우 같은 키를 사용한다.</p>
+<h3 id="pac-사용-과정">PAC 사용 과정</h3>
+<p>macOS에서 arm64e_preview_abi를 활성화하고 arm64e 아키텍처로 컴파일 설정해야 한다.</p>
+<h4 id="forward-edge">Forward Edge</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">foo</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">bar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">ptr1</span><span class="p">)(</span><span class="kt">void</span><span class="p">)</span> <span class="o">=</span> <span class="n">foo</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">ptr2</span><span class="p">)(</span><span class="kt">void</span><span class="p">)</span> <span class="o">=</span> <span class="n">bar</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">ptr1</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>forward edge가 보호되는 상황.
+함수 포인터가 대임되는 시점에서 PAC이 계산된다. 계산에 사용되는 인자는 함수 포인터(ptr), IA 키, 수정자 0이다.</p>
+<p>이후에 함수 포인터를 사용하면 포인터 무결성을 체크하고 함수를 실행.</p>
+<h4 id="backward-edge">Backward Edge</h4>
+<p>ARM64에서 리턴주소는 X30(LR, Link Register)에 저장된다.
+함수 내부에서 또 다른 함수가 호출되면 그 리턴주소는 스택에 저장한다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">foo</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">bar</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">foo</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>bar 함수의 프롤로그에서 IA key, sp, ret주소를 이용하여 생성된 주소(PAC)를 스택에 저장한다. (sfp 뒤에 저장됨)</p>
+<p>foo로 분기 후 복귀까지 끝나면 bar의 에필로그에서 저장된 주소를 x30레지스터에 불러오고 retaa 명령어로 return과 동시에 포인터 검증을 수행한다. canary와 비슷한 느낌.</p>
+<h3 id="pac-오류-처리">PAC 오류 처리</h3>
+<p>PAC 인증 실패 시?
+인증 성공한 포인터에서 오류 비트가 추가된다.</p>
+<p>오류가 발생하는 부분은 PAC를 인증하는 곳이 아니라 인증 실패된 포인터를 사용하는 부분에서 일어난다.</p>
+<p>오류 비트는 상위 3bit에 1로 표시된다.
+발생하는 오류는 페이지 오류로 나타난다. =&gt; 인증 실패 포인터에서 오류 비트 변경 -&gt; PAC 처리된 포인터를 제약없이 사용 가능하다.</p>
+<p>&hellip;</p>
+<h2 id="pac에-대한-공격">PAC에 대한 공격</h2>
+<h3 id="무차별-대입-공격">무차별 대입 공격</h3>
+<p>PAC 크기는 7bit, 추측하는데에는 2^7이다.
+그러나 PAC을 생성할 때 포인터 주소, 스택주소, 키 3가지 요소가 존재하며 매번 PAC가 생성되므로 모든 PAC의 경우를 하나씩 대입하는 것으로는 공격 성공이 어렵다.</p>
+<p>유저 프로세스는 무한정 fork가 가능하므로 같은 키 프로세스를 무한정 생성 가능하여 성공 가능성이 존재.</p>
+<h3 id="c-가상함수-공격">C++ 가상함수 공격</h3>
+<p>가상함수 테이블은 APDA, 가상함수 포인터는 APIA 키로 보호되어있다.</p>
+<p>각자의 수정자는 클래스와 함수의 고유한 해시값으로 고정되어있다.
+공격자가 PAC 서명 명령어를 사용 가능하면 원하는 함수를 PAC 서명을 통해 실행할 수 있다.</p>
+<ol>
+<li>공격자가 원하는 가상함수 테이블을 생성</li>
+<li>목표로 하는 객체 가상함수의 해시값을 알아냄 -&gt; 객체, 가상함수의 이름에서 얻을 수 있고 컴파일 시기에 고정된값.</li>
+<li>해시값을 수정자로 하여 공격자가 만든 함수포인터, 테이블을 PAC 명령어로 서명한다.</li>
+<li>악의적인 포인터는 정상적인 인증과정을 거쳐 사용 가능하다.</li>
+<li>서명한 가상함수 테이블의 주소 포인터로 덮어씌우면 가상함수를 불러서 원하는 함수를 수행가능</li>
+</ol>
+<h2 id="실험">실험</h2>
+<h3 id="무차별-대입-공격-1">무차별 대입 공격</h3>
+<p>환경</p>
+<p>BOF 메모리 취약점이 있으나, PAC로 RET 주소가 무결성이 보장되고있다고 가정. 스레드 무한 생성 가능한 것으로 가정</p>
+<p>유저 프로그램에서 PAC로 서명하는 키는 프로세스 내부 스레드끼리 공유됨. 공격자가 실행하고자 하는 함수는 고정. 따라서 수정자에 의해서만 조정된다.</p>
+<p>결과</p>
+<p>공격 성공까지의 횟수와 시간으로 결과를 측정하였다.
+이전에 공격 설명에서 엔트로피, 성공확률 등을 수식으로 제시함.</p>
+<p>무차별 대입공격은 평균적으로 217초이내. 횟수는..? 뭐가 이상한거같은디..
+암튼 PAC 크기가 작은 점이 원인이다.</p>
+<p>-&gt; 성공 자체를 목표에 두는 공격에 취약하다.</p>
+<h3 id="가상함수-공격">가상함수 공격</h3>
+<p>환경</p>
+<p>힙 배치를 조절할 수 있다고 가정(힙 메모리 공격에서 이는 보편적임). 코드 재사용으로 PAC 서명 명령어를 사용할 수 있다고 가정. 프로그램의 소스코드를 통해 원하는 객체에 대한 정보를 확인할 수 있다고 가정.</p>
+<p>PAC로 보호되는 가상함수의 수정자를 알아내어 원하는 함수를 실행하는 공격을 수행.
+-&gt; PAC명령어로 서명된 포인터 획득, 일반적인 가상함수 공격을 진행한다.</p>
+<p>결과</p>
+<p>목표 객체의 가상함수 테이블에 서명한 포인터를 덮어씌우고 목표 객체의 가상함수를 실행 가능함을 확인함.</p>
+<h2 id="결론">결론</h2>
+<p>PAC는 하드웨어의 한계 및 수정자 유출로 취약한 모습을 보인다.</p>
+<p>앞으로의 연구를 통해 <b>PAC 시도횟수 제한 등</b>을 사용하여 더욱 안전한 하드웨어 기반 메모리 보호기법이 개발되기를 기대.</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2024-01-18</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/11/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://neutrinox4b1.xyz/posts/11/" data-title="ARM64 아키텍처 기반 하드웨어 보안기술 분석 및 보안성 진단" data-via="neutrinox4b1" data-hashtags="EMBEDDED"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://neutrinox4b1.xyz/posts/11/" data-hashtag="EMBEDDED"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://neutrinox4b1.xyz/posts/11/" data-title="ARM64 아키텍처 기반 하드웨어 보안기술 분석 및 보안성 진단"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://neutrinox4b1.xyz/posts/11/" data-title="ARM64 아키텍처 기반 하드웨어 보안기술 분석 및 보안성 진단"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/embedded/">EMBEDDED</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/10/" class="prev" rel="prev" title="논문 구성 및 분석"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>논문 구성 및 분석</a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.117.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/about/" target="_blank">neutrinox4b1</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"giscus":{"category":"Q\u0026A","categoryId":"DIC_kwDOKMfEfM4CY8DM","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"en","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"neutrinox4b1/neutrinox4b1.github.io","repoId":"R_kgDOKMfEfA"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
