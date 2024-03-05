@@ -4,9 +4,19 @@
         <link>https://neutrinox4b1.xyz/</link>
         <description>Security Tech blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>neutrinox4b1@gmail.com (neutrinox4b1)</managingEditor>
-            <webMaster>neutrinox4b1@gmail.com (neutrinox4b1)</webMaster><lastBuildDate>Thu, 18 Jan 2024 00:00:00 &#43;0000</lastBuildDate>
+            <webMaster>neutrinox4b1@gmail.com (neutrinox4b1)</webMaster><lastBuildDate>Sat, 03 Feb 2024 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://neutrinox4b1.xyz/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>A survey of Hardware-based Control Flow Integrity (CFI)</title>
+    <link>https://neutrinox4b1.xyz/posts/13/</link>
+    <pubDate>Sat, 03 Feb 2024 00:00:00 &#43;0000</pubDate>
+    <author>neutrinox4b1</author>
+    <guid>https://neutrinox4b1.xyz/posts/13/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://github.com/neutrinox4b1/neutrinox4b1.github.io/assets/101745344/3a63360e-0cbf-4a59-89b1-7e8f4dde6317" referrerpolicy="no-referrer">
+            </div>]]></description>
+</item>
+<item>
     <title>ARM64 아키텍처 기반 하드웨어 보안기술 분석 및 보안성 진단</title>
     <link>https://neutrinox4b1.xyz/posts/11/</link>
     <pubDate>Thu, 18 Jan 2024 00:00:00 &#43;0000</pubDate>
@@ -91,16 +101,6 @@
     <author>neutrinox4b1</author>
     <guid>https://neutrinox4b1.xyz/posts/2/</guid>
     <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>RITSEC CTF 2023 - 110th</title>
-    <link>https://neutrinox4b1.xyz/posts/1/</link>
-    <pubDate>Sat, 01 Apr 2023 00:00:00 &#43;0000</pubDate>
-    <author>neutrinox4b1</author>
-    <guid>https://neutrinox4b1.xyz/posts/1/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Y6ZcgiMa4qLSGnexrwOIcA.png" referrerpolicy="no-referrer">
-            </div>Team. Security Factorial]]></description>
 </item>
 </channel>
 </rss>
