@@ -3,9 +3,9 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: Neutrinox4b1 ⚛
+first_name: Jeongmin
 middle_name:
-last_name:
+last_name: LEE
 email: neutrinox4b1@sju.ac.kr
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
@@ -288,8 +288,7 @@ scholar:
   locale: en
 
   source: /_bibliography/
-  # bibliography: papers.bib
-  bibliography: test.bib
+  bibliography: papers.bib
   bibliography_template: bib
   # Note: if you have latex math in your bibtex, the latex filter
   # preprocessing may conflict with MathJAX if the latter is enabled.
