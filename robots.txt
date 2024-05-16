@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://neutrinox4b1.github.io/sitemap.xml
