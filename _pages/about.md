@@ -27,3 +27,5 @@ I am interested in Embedded System Hacking and Cryptography. I'm looking for a d
 For more information, see CV and Social icons. 🙂
 
 Here is my other [blog 1](https://thfist-1071.tistory.com), [blog 2](https://neutrinox4b1.tistory.com).
+
+Here is [Line Breaker](https://neutrinox4b1.github.io/RLB/index.html) for trnaslate
