@@ -18,7 +18,7 @@ latest_posts: true  # includes a list of the newest posts
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
-E-mail: neutrinox4b1@sju.ac.kr
+E-mail: neutrinox4b1@gmail.com
 
 I'm majoring in Information Security🔒 at Sejong University.
 
