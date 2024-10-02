@@ -22,9 +22,7 @@ E-mail: neutrinox4b1@gmail.com
 
 I'm majoring in Information Security🔒 at Sejong University.
 
-I am interested in Embedded System Hacking and Cryptography. I'm looking for a dream, but I definitely wanna be a awesome hacker. 🙃
-
-For more information, see CV and Social icons. 🙂
+I am interested in System Hacking (in AMD64 & ARM arch) and Cryptography. I'm looking for a dream, but I definitely wanna be a awesome hacker. 🙃
 
 Here is my other [blog 1](https://thfist-1071.tistory.com), [blog 2](https://neutrinox4b1.tistory.com).
 
