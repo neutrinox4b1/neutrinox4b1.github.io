@@ -8,10 +8,10 @@ related_posts: false
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://github.com/user-attachments/assets/4edd31e2-9fe4-4072-821d-4f6c7dde109b" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/news_img/announcement_1.1.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="https://github.com/user-attachments/assets/9d6b2776-57f6-48e0-8956-9f982b72bf66" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/news_img/announcement_1.2.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
