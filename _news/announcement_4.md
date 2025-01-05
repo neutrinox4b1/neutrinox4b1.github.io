@@ -12,3 +12,6 @@ related_posts: false
     </div>
 </div>
 
+교내 오픈소스SW 수업의 일환으로 참여한 oneM2M International Hackathon 2024에서 3등을 수상하였습니다.
+
+첫 국제 해커톤 경험이었지만, 생각보다 할만했던지라 앞으로도 이러한 대회활동에 적극 참여해보면 좋겠다는 생각이 들었습니다.
