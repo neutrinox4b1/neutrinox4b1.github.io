@@ -20,10 +20,10 @@ social: true  # includes social icons at the bottom of the page
 ---
 E-mail: neutrinox4b1@gmail.com
 
-I'm majoring in Information Security🔒 at Sejong University.
+I’m majoring in Information Security at Sejong University 🔒.
 
-I am interested in System Hacking (in AMD64 & ARM arch) and Cryptography. I'm looking for a dream, but I definitely wanna be a awesome hacker. 🙃
+I have a strong interest in system hacking (specializing in AMD64 and ARM architectures) and cryptography. While I’m still discovering my path, one thing is certain—I aspire to become an exceptional hacker. 🙃
 
-Here is my other [blog 1](https://thfist-1071.tistory.com), [blog 2](https://neutrinox4b1.tistory.com).
+Feel free to check out my other blogs: [Old Blog](https://thfist-1071.tistory.com) | [New Blog](https://neutrinox4b1.tistory.com).
 
-Here is [Line Breaker](https://neutrinox4b1.github.io/RLB/index.html) for translate
+Here's a [Line Breaker](https://neutrinox4b1.github.io/RLB/index.html) tool for translations
