@@ -24,6 +24,6 @@ I’m majoring in Information Security at Sejong University 🔒.
 
 I have a strong interest in system hacking (specializing in AMD64 and ARM architectures) and cryptography. While I’m still discovering my path, one thing is certain—I aspire to become an exceptional hacker. 🙃
 
-Feel free to check out my other blogs: [Old Blog](https://thfist-1071.tistory.com) | [New Blog](https://neutrinox4b1.tistory.com).
+Feel free to check out my other blogs: [Old Blog](https://thfist-1071.tistory.com), [New Blog](https://neutrinox4b1.tistory.com).
 
 Here's a [Line Breaker](https://neutrinox4b1.github.io/RLB/index.html) tool for translations
