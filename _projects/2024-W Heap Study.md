@@ -18,7 +18,7 @@ description: 2024-01-09 ~
 
 ## Curriculum
 ---
-<table id="table" data-toggle="table" data-url="{{ '/assets/json/2024-W_Heap_Study.json' | relative_url }}">
+<table id="table" data-toggle="table" data-url="{{ '/assets/json/2024-W Heap Study.json' | relative_url }}">
   <thead>
     <tr>
       <th data-field="week" data-align="center">Week</th>
