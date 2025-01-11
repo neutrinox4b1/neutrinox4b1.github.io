@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 2024-W Heap Study
-description: 2024-01-09 ~
+description: 2025-01-09 ~
 ---
 
 ## Overview
