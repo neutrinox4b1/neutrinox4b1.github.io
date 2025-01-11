@@ -1,9 +1,8 @@
 ---
 layout: page
-title: 2024-W Heap Study
-description: 2024-01-09 ~
+title: "2024-W Heap Study"
+description: "2024-01-09 ~"
 toc:
-    sidebar: left
     beginning: true
 ---
 
