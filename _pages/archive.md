@@ -2,7 +2,7 @@
 layout: page
 title: archive
 permalink: /archive/
-description: study archive
+description: Archive of Studies, Seminars, Lectures, and Related Activities
 nav: true
 nav_order: 3
 # display_categories: [work, fun]
