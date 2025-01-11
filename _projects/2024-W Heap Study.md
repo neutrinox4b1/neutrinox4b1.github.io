@@ -14,16 +14,16 @@ description: 2024-01-09 ~
 
 - member: 2 including me
 
-<br><br><br>
+<br><br>
 
 ## Curriculum
 ---
-<table id="table" data-toggle="table" data-url="{{ '/assets/json/table_data.json' | relative_url }}">
+<table id="table" data-toggle="table" data-url="{{ '/assets/json/2024-W_Heap_Study.json' | relative_url }}">
   <thead>
     <tr>
-      <th data-field="id" data-align="center">Week</th>
-      <th data-field="name" data-align="center">Topic</th>
-      <th data-field="price" data-align="center">Presenter</th>
+      <th data-field="week" data-align="center">Week</th>
+      <th data-field="topic" data-align="center">Topic</th>
+      <th data-field="presenter" data-align="center">Presenter</th>
     </tr>
   </thead>
 </table>
