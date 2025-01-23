@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 2024-W Heap Study
-description: 2025-01-09 ~
+description: 2025-01-09 ~ Halted
 ---
 
 ## Overview
@@ -12,7 +12,7 @@ description: 2025-01-09 ~
 
 - Location: Sejong University Library
 
-- member: 2 including me
+- member: Jeongmin Lee, Hyungyu Oh
 
 <br><br>
 
